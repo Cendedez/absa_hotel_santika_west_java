@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard Aspect-Based Sentiment Analysis menggunakan IndoBERT pada Ulasan OTA Hotel Santika di Jawa Barat">
+    <title>Dashboard ABSA — Hotel Santika</title>
+
+    <!-- Chart.js lokal agar dashboard tetap berjalan saat demo offline -->
+    <script src="/static/vendor/chart.umd.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/style.css?v=20260604-svg-icons">
+</head>
+<body>
+    <script>
+        window.ABSA_USER = {{ user|tojson }};
+    </script>
+    <svg class="icon-sprite" aria-hidden="true">
+        <symbol id="icon-overview" viewBox="0 0 24 24">
+            <path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 16V9"></path><path d="M12 16V6"></path><path d="M16 16v-4"></path>
+        </symbol>
+        <symbol id="icon-aspect" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="6"></circle><path d="m16 16 4 4"></path><path d="M8.5 11h5"></path><path d="M11 8.5v5"></path>
+        </symbol>
+        <symbol id="icon-hotel" viewBox="0 0 24 24">
+            <path d="M5 20V6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5V20"></path><path d="M3 20h18"></path><path d="M9 8h.01"></path><path d="M14 8h.01"></path><path d="M9 12h.01"></path><path d="M14 12h.01"></path><path d="M10 20v-4h4v4"></path>
+        </symbol>
+        <symbol id="icon-trend" viewBox="0 0 24 24">
+            <path d="M4 19h16"></path><path d="M4 19V5"></path><path d="m7 15 4-4 3 3 5-7"></path><path d="M17 7h2v2"></path>
+        </symbol>
+        <symbol id="icon-review" viewBox="0 0 24 24">
+            <path d="M7 4h7l4 4v12H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"></path><path d="M14 4v5h5"></path><path d="M8 13h8"></path><path d="M8 16h5"></path>
+        </symbol>
+        <symbol id="icon-ai" viewBox="0 0 24 24">
+            <rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9 2v3"></path><path d="M15 2v3"></path><path d="M9 19v3"></path><path d="M15 19v3"></path><path d="M2 9h3"></path><path d="M2 15h3"></path><path d="M19 9h3"></path><path d="M19 15h3"></path><path d="M10 12h4"></path>
+        </symbol>
+        <symbol id="icon-performance" viewBox="0 0 24 24">
+            <path d="M4 14a8 8 0 1 1 16 0"></path><path d="M12 14l4-4"></path><path d="M8 20h8"></path><path d="M12 17v3"></path>
+        </symbol>
+        <symbol id="icon-info" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle><path d="M12 10v6"></path><path d="M12 7h.01"></path>
+        </symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24">
+            <rect x="4" y="5" width="16" height="16" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M4 10h16"></path>
+        </symbol>
+        <symbol id="icon-platform" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="8"></circle><path d="M4 12h16"></path><path d="M12 4a13 13 0 0 1 0 16"></path><path d="M12 4a13 13 0 0 0 0 16"></path>
+        </symbol>
+        <symbol id="icon-positive" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle><path d="m8.5 12.5 2.5 2.5 5-6"></path>
+        </symbol>
+    </svg>
+    <div class="app-layout">
+        <!-- ======== SIDEBAR ======== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">AS</div>
+                    <div>
+                        <div class="sidebar-logo-text">ABSA Dashboard</div>
+                        <div class="sidebar-logo-sub">Hotel Santika</div>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">Analisis</div>
+                <div class="nav-item active" data-page="overview" id="nav-overview">
+                    <span class="nav-icon"><svg class="icon-svg"><use href="#icon-overview"></use></svg></span>
+                    <span>Overview</span>
+                </div>
+                <div class="nav-item" data-page="aspect" id="nav-aspect">
+                    <span class="nav-icon"><svg class="icon-svg"><use href="#icon-aspect"></use></svg></span>
+                    <span>Analisis Aspek</span>
+                </div>
+                <div class="nav-item" data-page="hotel-platform" id="nav-hotel-platform">
+                    <span class="nav-icon"><svg class="icon-svg"><use href="#icon-hotel"></use></svg></span>
+                    <span>Hotel & Platform</span>
+                </div>
+                <div class="nav-item" data-page="trend" id="nav-trend">
+                    <span class="nav-icon"><svg class="icon-svg"><use href="#icon-trend"></use></svg></span>
+                    <span>Tren Waktu</span>
+                </div>
+
+                <div class="nav-section-label">Data</div>
+                <div class="nav-item" data-page="reviews" id="nav-reviews">
+                    <span class="nav-icon"><svg class="icon-svg"><use href="#icon-review"></use></svg></span>
+                    <span>Review Explorer</span>
+                </div>
+                <div class="nav-item" data-page="predict" id="nav-predict">
+                    <span class="nav-icon"><svg class="icon-svg"><use href="#icon-ai"></use></svg></span>
+                    <span>Prediksi Manual</span>
+                </div>
+
+                <div class="nav-section-label">Sistem</div>
+                <div class="nav-item admin-only" data-page="performance" id="nav-performance">
+                    <span class="nav-icon"><svg class="icon-svg"><use href="#icon-performance"></use></svg></span>
+                    <span>Performa Model</span>
+                </div>
+                <div class="nav-item" data-page="about" id="nav-about">
+                    <span class="nav-icon"><svg class="icon-svg"><use href="#icon-info"></use></svg></span>
+                    <span>Tentang Sistem</span>
+                </div>
+            </nav>
+            <div style="padding: 14px 20px; border-top: 1px solid var(--border-default);">
+                <div style="font-size: 11px; color: var(--text-tertiary);">IndoBERT Fine-Tune v2</div>
+                <div style="font-size: 10px; color: var(--text-tertiary); margin-top: 2px;">Macro F1: 0.7418</div>
+            </div>
+        </aside>
+
+        <!-- ======== MAIN ======== -->
+        <main class="main-content">
+            <header class="main-header">
+                <div>
+                    <h1 class="page-title" id="page-title">Overview</h1>
+                    <div class="page-subtitle" id="page-subtitle">Ringkasan analisis sentimen ulasan Hotel Santika</div>
+                </div>
+                <div class="header-actions">
+                    <div class="user-chip" title="Pengguna aktif">
+                        <div class="user-avatar">{{ user.name[:1] if user else "U" }}</div>
+                        <div class="user-meta">
+                            <div class="user-name">{{ user.name if user else "User" }}</div>
+                            <div class="user-role">{{ user.role_label if user else "Internal" }}</div>
+                        </div>
+                    </div>
+                    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ganti tema dashboard">
+                        <span id="theme-toggle-icon">Dark</span>
+                        <span id="theme-toggle-text">Gelap</span>
+                    </button>
+                    <a class="btn btn-secondary btn-sm" href="/logout">Keluar</a>
+                    <button class="btn btn-secondary btn-sm" id="btn-mobile-menu" style="display:none;" onclick="document.getElementById('sidebar').classList.toggle('open')">
+                        &#9776; Menu
+                    </button>
+                </div>
+            </header>
+
+            <div class="main-body">
+                <!-- ======== OVERVIEW ======== -->
+                <section class="page-section active" id="page-overview">
+                    <div class="stat-cards" id="overview-stats"></div>
+                    <div class="insight-hero" id="overview-insight"></div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header"><div class="card-title">Mayoritas sentimen aspek bernada positif</div></div>
+                            <div class="card-body"><div class="chart-container"><canvas id="chart-sentiment-dist"></canvas></div></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header"><div class="card-title">Kenyamanan dan Fasilitas perlu diprioritaskan</div></div>
+                            <div class="card-body"><div class="chart-container"><canvas id="chart-negative-aspects"></canvas></div></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">Peta sentimen per aspek layanan</div></div>
+                        <div class="card-body"><div class="chart-container chart-container-lg"><canvas id="chart-overview-aspects"></canvas></div></div>
+                    </div>
+                </section>
+
+                <!-- ======== ANALISIS ASPEK ======== -->
+                <section class="page-section" id="page-aspect">
+                    <div class="filters-bar">
+                        <div class="form-group">
+                            <label class="form-label">Hotel</label>
+                            <select class="form-select filter-hotel" id="aspect-filter-hotel"><option value="all">Semua Hotel</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Platform</label>
+                            <select class="form-select filter-platform" id="aspect-filter-platform"><option value="all">Semua Platform</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Aspek</label>
+                            <select class="form-select" id="aspect-filter-aspect"><option value="all">Semua Aspek</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Sentimen</label>
+                            <select class="form-select" id="aspect-filter-sentiment">
+                                <option value="all">Semua</option>
+                                <option value="positif">Positif</option>
+                                <option value="negatif">Negatif</option>
+                                <option value="netral">Netral</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-sm" onclick="loadAspectAnalysis()">Terapkan</button>
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header"><div class="card-title">Distribusi Sentimen per Aspek</div></div>
+                            <div class="card-body"><div class="chart-container chart-container-lg"><canvas id="chart-aspect-detail"></canvas></div></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header"><div class="card-title">Rasio Sentimen per Aspek (%)</div></div>
+                            <div class="card-body"><div class="chart-container chart-container-lg"><canvas id="chart-aspect-ratio"></canvas></div></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">Contoh Review</div></div>
+                        <div class="card-body card-body-flush">
+                            <div class="data-table-wrapper" id="aspect-examples-table">
+                                <div class="empty-state"><div class="empty-state-text">Pilih aspek dan klik "Terapkan" untuk melihat contoh review.</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ======== HOTEL & PLATFORM ======== -->
+                <section class="page-section" id="page-hotel-platform">
+                    <div class="filters-bar">
+                        <div class="form-group">
+                            <label class="form-label">Hotel</label>
+                            <select class="form-select filter-hotel" id="hp-filter-hotel"><option value="all">Semua Hotel</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Platform</label>
+                            <select class="form-select filter-platform" id="hp-filter-platform"><option value="all">Semua Platform</option></select>
+                        </div>
+                        <button class="btn btn-primary btn-sm" onclick="loadHotelPlatform()">Terapkan</button>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">Perbandingan Sentimen Antar Hotel</div></div>
+                        <div class="card-body"><div class="chart-container chart-container-lg"><canvas id="chart-hotel-compare"></canvas></div></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">Perbandingan Sentimen Antar Platform OTA</div></div>
+                        <div class="card-body"><div class="chart-container"><canvas id="chart-platform-compare"></canvas></div></div>
+                    </div>
+                </section>
+
+                <!-- ======== TREN WAKTU ======== -->
+                <section class="page-section" id="page-trend">
+                    <div class="filters-bar">
+                        <div class="form-group">
+                            <label class="form-label">Hotel</label>
+                            <select class="form-select filter-hotel" id="trend-filter-hotel"><option value="all">Semua Hotel</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Platform</label>
+                            <select class="form-select filter-platform" id="trend-filter-platform"><option value="all">Semua Platform</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Aspek</label>
+                            <select class="form-select" id="trend-filter-aspect"><option value="all">Semua Aspek</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Granularitas</label>
+                            <select class="form-select" id="trend-granularity">
+                                <option value="year">Per Tahun</option>
+                                <option value="month">Per Bulan</option>
+                                <option value="week">Per Minggu</option>
+                                <option value="day">Per Hari</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Dari Tanggal</label>
+                            <input class="form-input" type="date" id="trend-date-from">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Sampai Tanggal</label>
+                            <input class="form-input" type="date" id="trend-date-to">
+                        </div>
+                        <button class="btn btn-primary btn-sm" onclick="loadTrend()">Terapkan</button>
+                        <button class="btn btn-secondary btn-sm" onclick="resetTrendFilters()">Reset</button>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Tren Sentimen</div>
+                            <div id="trend-summary" style="font-size:12px;color:var(--text-secondary);"></div>
+                        </div>
+                        <div class="card-body"><div class="chart-container chart-container-lg"><canvas id="chart-trend"></canvas></div></div>
+                    </div>
+                </section>
+
+                <!-- ======== REVIEW EXPLORER ======== -->
+                <section class="page-section" id="page-reviews">
+                    <div class="filters-bar">
+                        <div class="form-group">
+                            <label class="form-label">Hotel</label>
+                            <select class="form-select filter-hotel" id="review-filter-hotel"><option value="all">Semua Hotel</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Platform</label>
+                            <select class="form-select filter-platform" id="review-filter-platform"><option value="all">Semua Platform</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Aspek</label>
+                            <select class="form-select" id="review-filter-aspect"><option value="all">Semua Aspek</option></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Sentimen</label>
+                            <select class="form-select" id="review-filter-sentiment">
+                                <option value="all">Semua</option>
+                                <option value="positif">Positif</option>
+                                <option value="negatif">Negatif</option>
+                                <option value="netral">Netral</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Cari Keyword</label>
+                            <input class="form-input" type="text" id="review-filter-keyword" placeholder="Ketik kata kunci...">
+                        </div>
+                        <button class="btn btn-primary btn-sm" onclick="loadReviews(1)">Cari</button>
+                        <button class="btn btn-secondary btn-sm" onclick="exportReviews()">&#x2B07; Export CSV</button>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Daftar Review</div>
+                            <div id="review-count" style="font-size:12px;color:var(--text-secondary);"></div>
+                        </div>
+                        <div class="card-body card-body-flush">
+                            <div class="data-table-wrapper">
+                                <table class="data-table" id="reviews-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Hotel</th>
+                                            <th>Platform</th>
+                                            <th>Tanggal</th>
+                                            <th>Review</th>
+                                            <th>Lok</th><th>Ken</th><th>Pel</th><th>Keb</th><th>Har</th><th>Mak</th><th>Fas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="reviews-tbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination" id="reviews-pagination"></div>
+                </section>
+
+                <!-- ======== PREDIKSI MANUAL ======== -->
+                <section class="page-section" id="page-predict">
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header"><div class="card-title">Input Review Baru</div></div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label">Teks Review</label>
+                                    <textarea class="form-textarea" id="predict-input" placeholder="Masukkan teks review hotel yang ingin dianalisis...&#10;&#10;Contoh: Kamarnya bersih dan luas, tapi makanannya kurang enak. Staf ramah sekali." rows="6"></textarea>
+                                </div>
+                                <button class="btn btn-primary" id="btn-predict" onclick="runPrediction()">
+                                    Jalankan Prediksi Sentimen
+                                </button>
+                                <div id="predict-loading" class="loading-overlay" style="display:none;">
+                                    <div class="spinner"></div>
+                                    <span>Memproses dengan IndoBERT...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header"><div class="card-title">Hasil Prediksi</div></div>
+                            <div class="card-body">
+                                <div id="predict-results">
+                                    <div class="empty-state">
+                                        <div class="empty-state-icon">AI</div>
+                                        <div class="empty-state-text">Masukkan review dan klik "Prediksi Sentimen" untuk melihat hasilnya.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ======== PERFORMA MODEL ======== -->
+                <section class="page-section" id="page-performance">
+                    <div class="metric-cards" id="perf-metrics"></div>
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">Performa per Aspek</div></div>
+                        <div class="card-body"><div class="chart-container chart-container-lg"><canvas id="chart-perf-aspect"></canvas></div></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">Detail Performa per Aspek</div></div>
+                        <div class="card-body card-body-flush">
+                            <div class="data-table-wrapper" id="perf-table-wrapper"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">Catatan Interpretasi</div></div>
+                        <div class="card-body">
+                            <div class="about-block" style="border-left-color: var(--accent-orange);">
+                                <h3>&#x26A0; Catatan Penting</h3>
+                                <ul>
+                                    <li>Kelas <strong>netral</strong> masih memiliki performa rendah karena jumlah sampel terbatas dan sifatnya yang ambigu.</li>
+                                    <li><strong>Accuracy tinggi (92.4%)</strong> sebagian besar karena dominasi label <em>none</em>. Metrik yang lebih informatif adalah <strong>Macro F1</strong> dan <strong>Non-none F1</strong>.</li>
+                                    <li>Model paling baik di aspek <strong>Lokasi</strong> (F1: 0.83) dan <strong>Makanan</strong> (F1: 0.79).</li>
+                                    <li>Aspek <strong>Fasilitas</strong> (F1: 0.69) dan <strong>Kebersihan</strong> (F1: 0.70) memiliki performa terendah.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">Konfigurasi Model</div></div>
+                        <div class="card-body" id="perf-config"></div>
+                    </div>
+                </section>
+
+                <!-- ======== TENTANG SISTEM ======== -->
+                <section class="page-section" id="page-about">
+                    <div class="card">
+                        <div class="card-header"><div class="card-title">Tentang Sistem</div></div>
+                        <div class="card-body">
+                            <div class="about-block">
+                                <h3>Deskripsi Sistem</h3>
+                                <p>Sistem Dashboard Aspect-Based Sentiment Analysis (ABSA) ini dikembangkan untuk menganalisis ulasan tamu Hotel Santika di Jawa Barat yang berasal dari platform Online Travel Agent (OTA). Sistem menggunakan model IndoBERT yang telah di-fine-tune untuk mendeteksi sentimen pada 7 aspek layanan hotel secara bersamaan.</p>
+                            </div>
+                            <div class="about-block" style="border-left-color: var(--accent-green);">
+                                <h3>Alur Sistem</h3>
+                                <ul>
+                                    <li>Data ulasan dikumpulkan dari 3 platform OTA: Traveloka, Agoda, dan Tiket.com</li>
+                                    <li>Data dilabeli secara manual untuk 7 aspek dengan 4 kelas sentimen</li>
+                                    <li>Data dipreproses dan dibagi menjadi train/validation/test</li>
+                                    <li>Model IndoBERT di-fine-tune dengan arsitektur multi-head classifier</li>
+                                    <li>Model terbaik dipilih berdasarkan macro F1 pada validation set</li>
+                                    <li>Batch prediction dilakukan pada seluruh dataset</li>
+                                    <li>Dashboard menampilkan hasil analisis dan menyediakan fitur prediksi manual</li>
+                                </ul>
+                            </div>
+                            <div class="about-block" style="border-left-color: var(--accent-purple);">
+                                <h3>7 Aspek Layanan</h3>
+                                <ul>
+                                    <li><strong>Lokasi</strong> — Aksesibilitas dan posisi strategis hotel</li>
+                                    <li><strong>Kenyamanan</strong> — Kenyamanan kamar dan area hotel</li>
+                                    <li><strong>Pelayanan</strong> — Kualitas layanan staf hotel</li>
+                                    <li><strong>Kebersihan</strong> — Kebersihan kamar dan fasilitas</li>
+                                    <li><strong>Harga</strong> — Kesesuaian harga dengan kualitas</li>
+                                    <li><strong>Makanan</strong> — Kualitas makanan dan minuman</li>
+                                    <li><strong>Fasilitas</strong> — Kelengkapan dan kualitas fasilitas hotel</li>
+                                </ul>
+                            </div>
+                            <div class="about-block" style="border-left-color: var(--accent-orange);">
+                                <h3>Batasan Sistem</h3>
+                                <ul>
+                                    <li>Autentikasi dibuat sederhana untuk membatasi akses pengguna internal</li>
+                                    <li>Tidak ada registrasi publik karena akun disediakan oleh pengelola sistem</li>
+                                    <li>Tidak ada scraping real-time dari platform OTA</li>
+                                    <li>Tidak ada training ulang model secara otomatis</li>
+                                    <li>Sistem berjalan secara lokal untuk keperluan penelitian/demo</li>
+                                    <li>Dataset terbatas pada 6 cabang Hotel Santika di Jawa Barat</li>
+                                    <li>Model memiliki keterbatasan pada kelas netral</li>
+                                </ul>
+                            </div>
+                            <div class="about-block" style="border-left-color: var(--accent-cyan);">
+                                <h3>Informasi Teknis</h3>
+                                <ul>
+                                    <li><strong>Model:</strong> IndoBERT (indobenchmark/indobert-base-p1)</li>
+                                    <li><strong>Framework:</strong> PyTorch + Transformers</li>
+                                    <li><strong>Dashboard:</strong> Flask + Chart.js</li>
+                                    <li><strong>Dataset:</strong> 14.747 ulasan dari 3 platform OTA</li>
+                                    <li><strong>Rentang Data:</strong> 2010 - 2026</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/js/dashboard.js?v=20260604-svg-icons"></script>
+</body>
+</html>

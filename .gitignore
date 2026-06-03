@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+build/
+
+# Environment and local runtime
+.env
+.env.local
+.env.*.local
+
+# Local exports and temporary files
+Dashboard/export_temp.csv
+*.tmp
+*.log
+
+# Skripsi/report documents are kept outside the source repository
+*.docx
+*.pdf
+*.pptx
+~$*
+
+# OS/editor
+.DS_Store
+Thumbs.db
+desktop.ini

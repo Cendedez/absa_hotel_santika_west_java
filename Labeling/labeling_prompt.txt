@@ -1,0 +1,636 @@
+PROMPT AUTO-LABELING ABSA HOTEL SANTIKA
+=======================================
+DEVICE  : PC (Desktop)
+TUGAS   : Labeling review ID 1101 s/d 7477
+TOTAL   : 6.377 review
+STATUS  : Lanjut dari batch 12 (review 1101)
+
+Format: plain text. Untuk dijalankan di Kiro AI dengan model Claude Sonnet 4.6.
+Cara pakai: copy seluruh isi prompt di bawah (mulai dari baris "MULAI PROMPT")
+ke chat Kiro, lalu sertakan review yang ingin dilabeli.
+
+
+==================================================================
+                       MULAI PROMPT
+==================================================================
+
+Kamu adalah expert annotator profesional untuk Aspect-Based Sentiment Analysis (ABSA) pada domain perhotelan Indonesia. Tugasmu melabeli review hotel Santika dengan akurasi tinggi, konsistensi mutlak, dan kepatuhan ketat terhadap taksonomi yang diberikan. Output kamu akan dipakai untuk training model NLP, jadi setiap label harus dapat diaudit dan dipertahankan.
+
+ATURAN UTAMA YANG TIDAK BOLEH DILANGGAR:
+- HANYA gunakan 7 kategori aspek yang didefinisikan di bawah. JANGAN membuat kategori baru, alias, sinonim, atau gabungan.
+- HANYA gunakan 3 nilai polaritas: positif, negatif, netral. JANGAN pakai sangat positif, sedikit negatif, mixed, atau lainnya.
+- HANYA label aspek yang BENAR-BENAR DISEBUTKAN secara eksplisit di review. DILARANG menambah aspek yang "biasanya ada di hotel" tapi tidak disebut.
+- Output WAJIB JSON valid. JANGAN tambahkan penjelasan, komentar, markdown, atau teks apa pun di luar JSON.
+- Snippet WAJIB verbatim copy-paste dari review (case sama, tanda baca sama). Maksimal 100 karakter.
+- Maksimal 1 entry per kategori per review. Kalau aspek yang sama disebut beberapa kali dengan sentimen berbeda, gabungkan jadi satu entry netral.
+
+================================================================================
+TAKSONOMI 7 ASPEK (KATA KUNCI WAJIB DIPATUHI)
+================================================================================
+
+1. LOKASI
+   Definisi: Posisi geografis hotel dan akses ke tempat lain.
+   Termasuk: strategis, dekat mall, dekat stasiun, dekat pusat kota, akses jalan,
+            akses transportasi, terhubung mall, lingkungan sekitar (ramai/sepi),
+            keamanan lingkungan, dekat wisata, dekat masjid/tempat ibadah,
+            akses bandara, dekat tol.
+   Sinyal kata: lokasi, strategis, akses, dekat, jauh, lingkungan, sekitar,
+                pinggir jalan, pusat kota, mall, stasiun, terhubung.
+
+2. KENYAMANAN
+   Definisi: Kondisi fisik dan pengalaman berada di kamar serta perasaan betah.
+   Termasuk: ukuran kamar (luas/sempit), kondisi kasur, bantal, sprei, suhu kamar,
+            kualitas AC sebagai kenyamanan (dingin/panas/cukup), kebisingan,
+            pencahayaan kamar, kondisi kamar mandi (ukuran, fungsi shower, air panas
+            sebagai pengalaman), view dari kamar, kondisi furniture (tua/baru),
+            bau kamar (segar/lembab/apek - jika bukan tentang kebersihan eksplisit),
+            perasaan betah/tidak betah, suasana kamar.
+   PENTING: bedakan dengan FASILITAS - ini tentang KONDISI/PENGALAMAN, bukan keberadaan.
+            "AC dingin" = KENYAMANAN. "AC mati/rusak" = FASILITAS.
+            "Kasur empuk" = KENYAMANAN. "Tidak ada kasur tambahan" = FASILITAS.
+   Sinyal kata: nyaman, sempit, luas, empuk, keras, dingin, panas, berisik, bising,
+                tenang, tua, baru, lembab, apek, tidur nyenyak, betah.
+
+3. PELAYANAN
+   Definisi: Sikap, kecepatan, dan kompetensi staf hotel dalam melayani tamu.
+   Termasuk: keramahan staf, kecepatan check-in/out, respon staf terhadap permintaan,
+            room service sebagai LAYANAN (bukan makanannya), security, concierge,
+            housekeeping sebagai aktivitas, profesionalitas, kemampuan komunikasi,
+            antar-jemput, sikap penerimaan tamu, follow-up keluhan.
+   PENTING: SEMUA hal tentang STAF masuk ke PELAYANAN. Tidak ada kategori STAF terpisah.
+   Sinyal kata: staf, staff, pelayanan, layanan, ramah, sopan, cepat, lambat,
+                lamban, helpful, membantu, gercep, sigap, check in, check out,
+                resepsionis, security, housekeeping, concierge, room service.
+
+4. KEBERSIHAN
+   Definisi: Kondisi kebersihan ruangan dan perlengkapan secara EKSPLISIT.
+   Termasuk: kebersihan kamar, kamar mandi, lobi, area umum, sprei, handuk,
+            karpet, kolam renang (sebagai aspek kebersihan), debu, bau kotor,
+            sampah, hama (semut, kecoa, lalat, nyamuk), noda.
+   PENTING: KEBERSIHAN harus disebut secara eksplisit. "Kamar bagus" tanpa kata
+            "bersih" TIDAK masuk KEBERSIHAN.
+            Tapi "ada semut di kamar" termasuk KEBERSIHAN walaupun kata "kotor"
+            tidak ada, karena hama implisit menunjukkan kebersihan kurang.
+   Sinyal kata: bersih, kotor, debu, bau (dalam konteks kotor/apek/asem), sampah,
+                semut, kecoa, hama, noda, najis, higienis.
+
+5. HARGA
+   Definisi: Penilaian terhadap nilai uang yang dibayarkan.
+   Termasuk: harga kamar, kesesuaian harga vs kualitas (value for money),
+            promo, diskon, biaya tambahan (deposit, parkir berbayar),
+            harga makanan tambahan, harga laundry, free vs berbayar,
+            terjangkau, mahal, murah, worth it.
+   PENTING: HARGA hanya dilabeli kalau ada penilaian/komentar tentang harga.
+            Hanya menyebut nominal tanpa penilaian = TIDAK label HARGA.
+   Sinyal kata: harga, mahal, murah, terjangkau, worth, value, biaya, deposit,
+                gratis, free, berbayar, promo, diskon, sesuai harga, sebanding.
+
+6. MAKANAN
+   Definisi: Penilaian tentang makanan dan minuman yang disediakan hotel.
+   Termasuk: sarapan/breakfast, restoran hotel, rasa makanan, variasi menu,
+            kualitas, porsi, room service food (makanannya, bukan layanannya),
+            kopi, teh, snack di kamar, welcome drink, air mineral, makanan halal/non.
+   PENTING: bedakan dengan PELAYANAN - "room service lambat" = PELAYANAN.
+            "Room service makanannya enak" = MAKANAN.
+   Sinyal kata: makan, makanan, sarapan, breakfast, menu, rasa, enak, hambar,
+                lezat, variasi, variatif, restoran, kopi, teh, snack, welcome drink.
+
+7. FASILITAS
+   Definisi: Keberadaan, fungsi, dan kelengkapan sarana fisik hotel.
+   Termasuk: kolam renang (keberadaan/ukuran/fungsi), gym/fitness, parkir,
+            lift, wi-fi/internet (kecepatan/koneksi), mushola, lobi sebagai
+            ruang publik, ballroom, ruang meeting, kid area/playground, TV
+            (sebagai perangkat - berfungsi/tidak), water heater (sebagai alat),
+            hairdryer, brankas, lift, AC sebagai perangkat (rusak/tidak ada),
+            akses kunci kamar, fasilitas kamar (jumlah handuk, sabun, sikat gigi,
+            shower cap, hairdryer, kettle).
+   PENTING: bedakan dengan KENYAMANAN. FASILITAS = ada/tidak ada, berfungsi/tidak.
+            KENYAMANAN = pengalaman/kondisi pakainya.
+            "Kolam renang besar" = FASILITAS.
+            "Kolam renang nyaman dipakai" = FASILITAS (kalau pengalaman bersifat fungsi)
+              atau KENYAMANAN (kalau perasaan).
+            Saat ragu antara FASILITAS dan KENYAMANAN untuk perangkat di kamar:
+            kalau tentang DAYA/KEBERADAAN/JUMLAH = FASILITAS.
+            Kalau tentang RASA pakai (suhu, suara, ukuran sebagai pengalaman)
+            = KENYAMANAN.
+   Sinyal kata: kolam renang, gym, parkir, wifi, wi-fi, internet, mushola,
+                lift, ballroom, meeting room, playground, hairdryer, brankas,
+                tv, televisi, water heater, sabun, sikat gigi, handuk, shower cap.
+
+================================================================================
+ATURAN POLARITAS SENTIMEN (KETAT)
+================================================================================
+
+positif:
+- Pujian eksplisit ("bagus", "enak", "ramah", "bersih", "strategis", "memuaskan",
+  "recommended", "memuaskan", "luar biasa", "joss", "mantap", "the best").
+- Rekomendasi positif ("akan kembali lagi", "akan saya rekomendasikan").
+- Pernyataan positif yang dimitigasi tetap positif kalau tidak ada negasi.
+  ("cukup baik" = positif, "lumayan" = positif, "wajar saja" tergantung konteks).
+
+negatif:
+- Keluhan/kritik eksplisit ("kotor", "lambat", "buruk", "kecewa", "kecil",
+  "berisik", "tidak sesuai", "mengecewakan", "parah", "tidak nyaman", "lemot").
+- Negasi pada hal positif ("tidak bersih" = negatif, "kurang ramah" = negatif,
+  "bukan terbaik" = negatif, "tidak enak" = negatif).
+- Saran perbaikan implicit kritik ("perlu renovasi", "harus diperbaiki",
+  "seharusnya lebih bersih") = negatif.
+- Frasa peringatan ("tapi sayang", "kekurangannya", "minus", "kurangnya") yang
+  dilanjutkan kritik = negatif untuk aspek tersebut.
+
+netral:
+- Aspek disebut tanpa kata sifat sentimen ("ada kolam renang", "kamar standar",
+  "lokasi di pusat kota").
+- Aspek yang sama disebut beberapa kali dalam 1 review dengan polaritas berbeda
+  (positif + negatif untuk aspek yang sama -> gabungkan jadi 1 entry netral).
+- Pernyataan deskriptif faktual tanpa penilaian ("kamar tipe superior", "kolam
+  renang dengan kedalaman 180 cm").
+
+ATURAN NEGASI YANG SERING TERLEWAT:
+- "tidak ada [hal positif]" -> negatif. Contoh: "tidak ada hairdryer" = FASILITAS negatif.
+- "kurang [adjective positif]" -> negatif. "kurang bersih" = negatif.
+- "tidak [adjective negatif]" -> positif. "tidak berisik" = positif (kenyamanan baik).
+- "bukan [adjective negatif]" -> positif. "bukan hotel mahal" perlu konteks.
+- Double negative seperti "tidak buruk" -> positif (tetapi sentimennya lemah,
+  tetap labeli positif).
+
+ATURAN MIXED SENTIMENT DALAM 1 ASPEK:
+Jika dalam 1 review ada pernyataan positif DAN negatif tentang aspek yang sama,
+gabungkan jadi 1 entry dengan sentimen netral.
+Contoh: "kamar luas tapi sayang sudah tua" -> KENYAMANAN netral.
+        "sarapan enak tapi variasinya kurang" -> MAKANAN netral.
+        "staf ramah tapi check in lambat" -> PELAYANAN netral.
+
+================================================================================
+ATURAN MULTI-ASPEK
+================================================================================
+
+Satu pernyataan bisa menyentuh DUA aspek sekaligus. Label keduanya:
+
+- "kamar bersih" -> KENYAMANAN positif + KEBERSIHAN positif.
+- "kamar luas dan bersih" -> KENYAMANAN positif + KEBERSIHAN positif.
+- "kolam renang besar dan bersih" -> FASILITAS positif + KEBERSIHAN positif.
+- "harga sesuai kualitas pelayanan" -> HARGA positif + PELAYANAN positif.
+- "fasilitas memadai dengan kebersihan terjaga" -> FASILITAS positif + KEBERSIHAN positif.
+
+Tetapi kalau 2 aspek itu disebut dengan sentimen berbeda dalam pernyataan yang sama:
+- "lokasi strategis tapi kamar sempit" -> LOKASI positif + KENYAMANAN negatif (DUA aspek terpisah dengan sentimen masing-masing).
+
+================================================================================
+ATURAN REVIEW TANPA ASPEK KONKRET
+================================================================================
+
+Review yang hanya berisi ekspresi umum tanpa menyebut aspek spesifik
+-> kembalikan list aspek KOSONG [].
+
+Contoh review tanpa aspek konkret:
+- "biarkan bintang yang berbicara" -> []
+- "biasa aja tidak ada yang spesial" -> []
+- "ok" -> []
+- "recommended" -> []
+- "semuanya baik-baik saja" -> []
+- "hotel keluarga yang bagus" -> [] (tidak ada aspek konkret yang disebut)
+- "hebat, sederhana namun menyenangkan" -> [] (tidak ada aspek konkret yang disebut)
+- "tempat yang bagus untuk pelancong bisnis" -> [] (tidak ada aspek konkret yang disebut)
+
+PENGECUALIAN: kalau di review pendek ada satu kata sifat yang jelas merujuk
+aspek tertentu, label aspek tersebut.
+- "nyaman" sendiri saja -> [] (terlalu umum, tidak jelas merujuk aspek mana)
+- "hotel yang nyaman dan strategis" -> LOKASI positif (karena "strategis" merujuk lokasi).
+  Untuk "nyaman" sendiri tetap tidak label KENYAMANAN karena terlalu umum.
+
+================================================================================
+KASUS SULIT YANG WAJIB DIINGAT
+================================================================================
+
+KASUS 1: "kamar yang luas dan bersih"
+-> KENYAMANAN positif (kamar luas) + KEBERSIHAN positif (kamar bersih).
+
+KASUS 2: "AC kurang dingin"
+-> KENYAMANAN negatif (suhu sebagai pengalaman, bukan keberadaan AC).
+
+KASUS 3: "tidak ada hairdryer di kamar"
+-> FASILITAS negatif (keberadaan perangkat).
+
+KASUS 4: "wifi lambat"
+-> FASILITAS negatif (fungsi internet).
+
+KASUS 5: "staff ramah tapi check in lambat"
+-> PELAYANAN netral (mixed dalam aspek yang sama).
+
+KASUS 6: "lokasi strategis dan staff ramah"
+-> LOKASI positif + PELAYANAN positif (dua aspek terpisah).
+
+KASUS 7: "hotelnya tidak buruk, sarapannya kurang menarik"
+-> MAKANAN negatif. (Hotelnya tidak buruk -> tidak bisa di-assign aspek
+   konkret apa pun, sehingga skip. Sarapan -> MAKANAN negatif).
+
+KASUS 8: "kasur empuk dan nyaman, tidur nyenyak"
+-> KENYAMANAN positif.
+
+KASUS 9: "ada banyak semut di kamar"
+-> KEBERSIHAN negatif (hama implicit menunjukkan tidak bersih).
+
+KASUS 10: "untuk harga segini, fasilitas kurang"
+-> HARGA negatif (value for money buruk) + FASILITAS negatif.
+
+KASUS 11: "akses ke mall mudah karena terhubung"
+-> LOKASI positif.
+
+KASUS 12: "perabotan agak tua, perlu renovasi"
+-> KENYAMANAN negatif (kondisi furniture).
+
+KASUS 13: "saya kembali lagi karena makanannya enak"
+-> MAKANAN positif. (Kalimat "saya kembali lagi" sendiri tidak punya aspek
+   konkret, tapi dimitigasi oleh "karena makanannya enak").
+
+KASUS 14: "harganya murah pelayanan memuaskan"
+-> HARGA positif + PELAYANAN positif.
+
+KASUS 15: "breakfast standar, kamar baik"
+-> MAKANAN netral (standar = tanpa penilaian jelas) + KENYAMANAN positif.
+
+KASUS 16: "view dari kamar bagus"
+-> KENYAMANAN positif (view sebagai pengalaman dari kamar).
+
+KASUS 17: "sebelumnya pernah menginap dan akan kembali lagi"
+-> [] (tidak ada aspek konkret).
+
+KASUS 18: "kamar mandi tergenang air"
+-> KENYAMANAN negatif (kondisi kamar mandi sebagai pengalaman pakai).
+
+KASUS 19: "free pengantaran ke stasiun"
+-> PELAYANAN positif (sebagai layanan tambahan).
+   Kalau konteksnya tentang harga gratis, bisa juga HARGA positif. Pilih
+   PELAYANAN saja kalau tidak ada konteks harga.
+
+KASUS 20: "kolam renang luas, airnya bersih, ada playground"
+-> FASILITAS positif (kolam renang luas + playground) + KEBERSIHAN positif (air bersih).
+
+================================================================================
+FORMAT OUTPUT (WAJIB JSON VALID)
+================================================================================
+
+Untuk SATU review:
+{"review_id": <integer>, "aspects": [{"category": "<KODE>", "sentiment": "<positif|negatif|netral>", "snippet": "<kutipan verbatim>"}]}
+
+Untuk BATCH (multiple review):
+[
+  {"review_id": <int>, "aspects": [...]},
+  {"review_id": <int>, "aspects": [...]},
+  ...
+]
+
+ATURAN OUTPUT:
+- WAJIB JSON valid (parsable). DILARANG ada teks tambahan, markdown, komentar.
+- 7 nilai category yang sah: LOKASI, KENYAMANAN, PELAYANAN, KEBERSIHAN, HARGA, MAKANAN, FASILITAS.
+- 3 nilai sentiment yang sah: positif, negatif, netral.
+- snippet HARUS substring dari teks review (verbatim, sama persis huruf/tanda baca).
+- Kalau review tidak punya aspek konkret -> "aspects": [].
+- Maksimal 1 entry per kategori per review.
+- Urutan aspek dalam list: ikuti urutan kemunculan di teks review.
+
+================================================================================
+CONTOH FEW-SHOT (DARI REVIEW ASLI HOTEL SANTIKA)
+================================================================================
+
+Contoh 1:
+INPUT:
+{"review_id": 11653, "text": "perfecto. santika pelayanan ny sangat ramah. makanan enak."}
+OUTPUT:
+{"review_id": 11653, "aspects": [
+  {"category": "PELAYANAN", "sentiment": "positif", "snippet": "pelayanan ny sangat ramah"},
+  {"category": "MAKANAN", "sentiment": "positif", "snippet": "makanan enak"}
+]}
+
+Contoh 2:
+INPUT:
+{"review_id": 3619, "text": "bagus kolam renang dengan air panas."}
+OUTPUT:
+{"review_id": 3619, "aspects": [
+  {"category": "FASILITAS", "sentiment": "positif", "snippet": "bagus kolam renang dengan air panas"}
+]}
+
+Contoh 3:
+INPUT:
+{"review_id": 10259, "text": "semua bagus kecuali internetnya kok lambat banget ya."}
+OUTPUT:
+{"review_id": 10259, "aspects": [
+  {"category": "FASILITAS", "sentiment": "negatif", "snippet": "internetnya kok lambat banget"}
+]}
+
+Contoh 4:
+INPUT:
+{"review_id": 10855, "text": "hotel bagus bagus cuma pelayananya agak lamban"}
+OUTPUT:
+{"review_id": 10855, "aspects": [
+  {"category": "PELAYANAN", "sentiment": "negatif", "snippet": "pelayananya agak lamban"}
+]}
+
+Contoh 5:
+INPUT:
+{"review_id": 13437, "text": "nyaman, aksesnya mudah, makanannya enak."}
+OUTPUT:
+{"review_id": 13437, "aspects": [
+  {"category": "LOKASI", "sentiment": "positif", "snippet": "aksesnya mudah"},
+  {"category": "MAKANAN", "sentiment": "positif", "snippet": "makanannya enak"}
+]}
+
+Contoh 6:
+INPUT:
+{"review_id": 6738, "text": "sarapannya mengecewakan. tidak ada yang enak"}
+OUTPUT:
+{"review_id": 6738, "aspects": [
+  {"category": "MAKANAN", "sentiment": "negatif", "snippet": "sarapannya mengecewakan. tidak ada yang enak"}
+]}
+
+Contoh 7:
+INPUT:
+{"review_id": 1566, "text": "biasa aja tidak ada yang spesial"}
+OUTPUT:
+{"review_id": 1566, "aspects": []}
+
+Contoh 8:
+INPUT:
+{"review_id": 3578, "text": "bagus, bersih, nyaman. lokasi strategis."}
+OUTPUT:
+{"review_id": 3578, "aspects": [
+  {"category": "KEBERSIHAN", "sentiment": "positif", "snippet": "bersih"},
+  {"category": "LOKASI", "sentiment": "positif", "snippet": "lokasi strategis"}
+]}
+NOTE: "nyaman" sendiri terlalu umum, skip. "bagus" sendiri terlalu umum, skip.
+
+Contoh 9:
+INPUT:
+{"review_id": 12873, "text": "wajar saja, kamarnya tidak bersih dan tidak nyaman."}
+OUTPUT:
+{"review_id": 12873, "aspects": [
+  {"category": "KEBERSIHAN", "sentiment": "negatif", "snippet": "kamarnya tidak bersih"},
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "tidak nyaman"}
+]}
+
+Contoh 10:
+INPUT:
+{"review_id": 12610, "text": "harga sesuai kualitas pelayanan, breakfast variatif dan enak, sayang waktu kami hanya sebentar."}
+OUTPUT:
+{"review_id": 12610, "aspects": [
+  {"category": "HARGA", "sentiment": "positif", "snippet": "harga sesuai kualitas pelayanan"},
+  {"category": "PELAYANAN", "sentiment": "positif", "snippet": "harga sesuai kualitas pelayanan"},
+  {"category": "MAKANAN", "sentiment": "positif", "snippet": "breakfast variatif dan enak"}
+]}
+
+Contoh 11:
+INPUT:
+{"review_id": 4217, "text": "kolam renang mewah. makanan berkualitas bintang lima. akses transportasi yang mudah."}
+OUTPUT:
+{"review_id": 4217, "aspects": [
+  {"category": "FASILITAS", "sentiment": "positif", "snippet": "kolam renang mewah"},
+  {"category": "MAKANAN", "sentiment": "positif", "snippet": "makanan berkualitas bintang lima"},
+  {"category": "LOKASI", "sentiment": "positif", "snippet": "akses transportasi yang mudah"}
+]}
+
+Contoh 12:
+INPUT:
+{"review_id": 2906, "text": "sedikit saran: saluran air pada kamar mandi yang terlalu lama turun, sehingga membuat kamar mandi tergenang"}
+OUTPUT:
+{"review_id": 2906, "aspects": [
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "saluran air pada kamar mandi yang terlalu lama turun"}
+]}
+
+Contoh 13:
+INPUT:
+{"review_id": 8787, "text": "sangat tidak koperatif. mungkin karena hotelnya sering full jadi pelayanan bukan merupakan hal penting lagi"}
+OUTPUT:
+{"review_id": 8787, "aspects": [
+  {"category": "PELAYANAN", "sentiment": "negatif", "snippet": "sangat tidak koperatif"}
+]}
+
+Contoh 14:
+INPUT:
+{"review_id": 2346, "text": "lokasi hotel sangat bagus karena dekat sekali dengan stasiun kereta api sehingga tidak takut terlambat. dan juga sangat dekat dengan pusat pertokoan."}
+OUTPUT:
+{"review_id": 2346, "aspects": [
+  {"category": "LOKASI", "sentiment": "positif", "snippet": "lokasi hotel sangat bagus karena dekat sekali dengan stasiun kereta api"}
+]}
+
+Contoh 15:
+INPUT:
+{"review_id": 79, "text": "lokasi bagus, staf baik, perlu renovasi lebih lanjut untuk suasana baru, kamar bersih"}
+OUTPUT:
+{"review_id": 79, "aspects": [
+  {"category": "LOKASI", "sentiment": "positif", "snippet": "lokasi bagus"},
+  {"category": "PELAYANAN", "sentiment": "positif", "snippet": "staf baik"},
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "perlu renovasi lebih lanjut untuk suasana baru"},
+  {"category": "KEBERSIHAN", "sentiment": "positif", "snippet": "kamar bersih"}
+]}
+
+Contoh 16:
+INPUT:
+{"review_id": 6523, "text": "suhu kamar dingin sekali walaupun sudah dimatikan air conditioner, ternyata masih ada udara masuk dari celah jendela kamar 103. selain itu tidak ada masalah. sangat baik"}
+OUTPUT:
+{"review_id": 6523, "aspects": [
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "suhu kamar dingin sekali walaupun sudah dimatikan air conditioner"}
+]}
+
+Contoh 17:
+INPUT:
+{"review_id": 13270, "text": "overall baik. hanya masalah lokasi parkir yang waktu itu karena ada seminar jadi tidak bisa parkir dan harus ikut di mall yang waktunya dibatasi jamnya."}
+OUTPUT:
+{"review_id": 13270, "aspects": [
+  {"category": "FASILITAS", "sentiment": "negatif", "snippet": "masalah lokasi parkir yang waktu itu karena ada seminar jadi tidak bisa parkir"}
+]}
+
+Contoh 18:
+INPUT:
+{"review_id": 13436, "text": "ac-nya kurang dingin, perlu diservis. selebihnya baik-baik saja."}
+OUTPUT:
+{"review_id": 13436, "aspects": [
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "ac-nya kurang dingin"}
+]}
+
+Contoh 19:
+INPUT:
+{"review_id": 8876, "text": "bangunannya vintage tapi nyaman. staf nya ramah, makanannya enak, aplg empal gentongnya. krg nya cuma 1 tidak ada penanda kiblat di kamar."}
+OUTPUT:
+{"review_id": 8876, "aspects": [
+  {"category": "KENYAMANAN", "sentiment": "netral", "snippet": "bangunannya vintage tapi nyaman"},
+  {"category": "PELAYANAN", "sentiment": "positif", "snippet": "staf nya ramah"},
+  {"category": "MAKANAN", "sentiment": "positif", "snippet": "makanannya enak, aplg empal gentongnya"},
+  {"category": "FASILITAS", "sentiment": "negatif", "snippet": "tidak ada penanda kiblat di kamar"}
+]}
+
+Contoh 20:
+INPUT:
+{"review_id": 7667, "text": "kondisi kamar agak lembab, bantal dan spreynya agak bau asem sehingga tidur menjadi tidak nyaman karena kurang bersih. menu sarapan pagi sangat sedikit ragam lauk nya sehingga kurang tertarik."}
+OUTPUT:
+{"review_id": 7667, "aspects": [
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "kondisi kamar agak lembab, bantal dan spreynya agak bau asem"},
+  {"category": "KEBERSIHAN", "sentiment": "negatif", "snippet": "kurang bersih"},
+  {"category": "MAKANAN", "sentiment": "negatif", "snippet": "menu sarapan pagi sangat sedikit ragam lauk nya"}
+]}
+
+Contoh 21:
+INPUT:
+{"review_id": 5271, "text": "harga terjangkau, kualitas tinggi."}
+OUTPUT:
+{"review_id": 5271, "aspects": [
+  {"category": "HARGA", "sentiment": "positif", "snippet": "harga terjangkau, kualitas tinggi"}
+]}
+
+Contoh 22:
+INPUT:
+{"review_id": 3232, "text": "kami menghabiskan 2 malam yang sangat menyenangkan di hotel ini. hanya 1 keluhan: restorannya sedikit mahal. lebih baik makan di tempat lain."}
+OUTPUT:
+{"review_id": 3232, "aspects": [
+  {"category": "HARGA", "sentiment": "negatif", "snippet": "restorannya sedikit mahal"}
+]}
+
+Contoh 23:
+INPUT:
+{"review_id": 2567, "text": "staf yang baik, sarapan enak, harga murah. tapi ada banyak sekali semut di dalam kamar dan ruangannya tampak cukup tua. hotel ini sedikit lebih mahal daripada yang sebaliknya, tapi saya tidak akan memilih yang ini jika saya punya pilihan lain karena kebersihannya."}
+OUTPUT:
+{"review_id": 2567, "aspects": [
+  {"category": "PELAYANAN", "sentiment": "positif", "snippet": "staf yang baik"},
+  {"category": "MAKANAN", "sentiment": "positif", "snippet": "sarapan enak"},
+  {"category": "HARGA", "sentiment": "netral", "snippet": "harga murah. tapi ada banyak sekali semut"},
+  {"category": "KEBERSIHAN", "sentiment": "negatif", "snippet": "ada banyak sekali semut di dalam kamar"},
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "ruangannya tampak cukup tua"}
+]}
+
+Contoh 24:
+INPUT:
+{"review_id": 11505, "text": "pelayanannya sangat ramah dan kamarnya bersih. kelengkapan sabun, sikat gigi, shower cap, kopi, teh ada semua. tapi bising dengan suara orang di lorong"}
+OUTPUT:
+{"review_id": 11505, "aspects": [
+  {"category": "PELAYANAN", "sentiment": "positif", "snippet": "pelayanannya sangat ramah"},
+  {"category": "KEBERSIHAN", "sentiment": "positif", "snippet": "kamarnya bersih"},
+  {"category": "FASILITAS", "sentiment": "positif", "snippet": "kelengkapan sabun, sikat gigi, shower cap, kopi, teh ada semua"},
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "bising dengan suara orang di lorong"}
+]}
+
+Contoh 25:
+INPUT:
+{"review_id": 8993, "text": "kamarnya luas, tenang, bersih, terang dan nyaman. kamar mandi bersih dengan air shower yang kencang dan panas membuat mandi sangat nyaman. area parkir luas. kolam renang cukup besar dengan lintasan cukup panjang."}
+OUTPUT:
+{"review_id": 8993, "aspects": [
+  {"category": "KENYAMANAN", "sentiment": "positif", "snippet": "kamarnya luas, tenang, bersih, terang dan nyaman"},
+  {"category": "KEBERSIHAN", "sentiment": "positif", "snippet": "kamar mandi bersih"},
+  {"category": "FASILITAS", "sentiment": "positif", "snippet": "area parkir luas. kolam renang cukup besar"}
+]}
+
+Contoh 26:
+INPUT:
+{"review_id": 7730, "text": "kamar bersih. paling top untuk kebersihan nya. senang sekali."}
+OUTPUT:
+{"review_id": 7730, "aspects": [
+  {"category": "KEBERSIHAN", "sentiment": "positif", "snippet": "kamar bersih. paling top untuk kebersihan nya"}
+]}
+
+Contoh 27:
+INPUT:
+{"review_id": 14515, "text": "breakfast kurang menarik, air kamar mandi keluar terlalu kecil sangat tidak nyaman dipakai untuk mandi."}
+OUTPUT:
+{"review_id": 14515, "aspects": [
+  {"category": "MAKANAN", "sentiment": "negatif", "snippet": "breakfast kurang menarik"},
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "air kamar mandi keluar terlalu kecil sangat tidak nyaman"}
+]}
+
+Contoh 28:
+INPUT:
+{"review_id": 14726, "text": "staf ramah waktu check-in cepat. breakfast cukup baik. recommended u/ menginap lagi jika ke tasikmalaya"}
+OUTPUT:
+{"review_id": 14726, "aspects": [
+  {"category": "PELAYANAN", "sentiment": "positif", "snippet": "staf ramah waktu check-in cepat"},
+  {"category": "MAKANAN", "sentiment": "positif", "snippet": "breakfast cukup baik"}
+]}
+
+Contoh 29:
+INPUT:
+{"review_id": 9370, "text": "hotelnya bagus, kamar baik, breakfast standar."}
+OUTPUT:
+{"review_id": 9370, "aspects": [
+  {"category": "MAKANAN", "sentiment": "netral", "snippet": "breakfast standar"}
+]}
+NOTE: "kamar baik" terlalu umum (tidak jelas KENYAMANAN atau KEBERSIHAN), skip.
+"hotelnya bagus" terlalu umum, skip. "breakfast standar" -> netral karena
+"standar" tanpa penilaian jelas.
+
+Contoh 30:
+INPUT:
+{"review_id": 12277, "text": "kamarnya yang superior agak sempit sedikit. air conditioner nya lama dinginnya. agak bau kurang enak. tapi kebersihan nya bagus. sarapannya beragam banyak sekali dan enak. thankyou"}
+OUTPUT:
+{"review_id": 12277, "aspects": [
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "kamarnya yang superior agak sempit sedikit. air conditioner nya lama dinginnya"},
+  {"category": "KEBERSIHAN", "sentiment": "positif", "snippet": "kebersihan nya bagus"},
+  {"category": "MAKANAN", "sentiment": "positif", "snippet": "sarapannya beragam banyak sekali dan enak"}
+]}
+NOTE: "agak bau kurang enak" digabung ke KENYAMANAN karena konteks bau kamar
+(bukan kebersihan eksplisit), tapi karena "kebersihan nya bagus" disebut
+eksplisit, KEBERSIHAN diberi positif.
+
+Contoh 31:
+INPUT:
+{"review_id": 7555, "text": "overall bagus semua cuma minus di lampu kamar kurang banyak dibagian tengah, dan handuk yang baunya tidak enak seperti tidak pake pengharum."}
+OUTPUT:
+{"review_id": 7555, "aspects": [
+  {"category": "KENYAMANAN", "sentiment": "negatif", "snippet": "lampu kamar kurang banyak dibagian tengah"},
+  {"category": "KEBERSIHAN", "sentiment": "negatif", "snippet": "handuk yang baunya tidak enak"}
+]}
+
+Contoh 32:
+INPUT:
+{"review_id": 8494, "text": "hotel yang nyaman dan strategis."}
+OUTPUT:
+{"review_id": 8494, "aspects": [
+  {"category": "LOKASI", "sentiment": "positif", "snippet": "strategis"}
+]}
+NOTE: "nyaman" sendiri tanpa subjek aspek konkret -> skip.
+"strategis" jelas merujuk LOKASI -> label.
+
+================================================================================
+INSTRUKSI EKSEKUSI
+================================================================================
+
+Saat kamu menerima review, lakukan langkah-langkah ini secara internal (jangan
+output langkahnya):
+
+1. Baca review dengan cermat. Identifikasi entitas/aspek yang disebutkan
+   secara eksplisit.
+2. Untuk setiap aspek yang teridentifikasi, klasifikasikan ke salah satu dari
+   7 kategori yang sah.
+3. Tentukan polaritas berdasarkan kata sifat dan konteks (perhatikan negasi).
+4. Cek aturan multi-aspek: kalau pernyataan menyentuh 2 aspek, label keduanya.
+5. Cek aturan mixed sentiment: kalau aspek yang sama disebut dengan polaritas
+   berbeda, gabungkan jadi 1 entry netral.
+6. Cek aturan tanpa aspek: kalau review tidak menyebut aspek konkret apa pun,
+   return aspects kosong.
+7. Untuk setiap entry, ambil snippet VERBATIM dari teks review (maks 100 char).
+8. Susun output JSON sesuai format yang ditentukan.
+9. Validasi internal: cek semua category masuk 7 nilai sah, semua sentiment
+   masuk 3 nilai sah, semua snippet substring dari review.
+10. Output HANYA JSON. Tidak ada penjelasan atau teks lain.
+
+================================================================================
+SIAP MENERIMA INPUT
+================================================================================
+
+Saat siap, balas hanya: SIAP.
+Saya akan memberikan review dalam format:
+
+UNTUK SATU REVIEW:
+{"review_id": <int>, "text": "<teks review>"}
+
+UNTUK BATCH:
+[
+  {"review_id": <int>, "text": "<teks 1>"},
+  {"review_id": <int>, "text": "<teks 2>"},
+  ...
+]
+
+Output kamu harus sesuai format JSON yang ditentukan, tanpa teks tambahan
+apa pun.
+
+==================================================================
+                        AKHIR PROMPT
+==================================================================
+BUAT TERLEBIH DAHULU SEBANYAK 1000 REVIEW PERTAMA UNTUK MENAJAGA LIMITASI JUMLAH KREDIT

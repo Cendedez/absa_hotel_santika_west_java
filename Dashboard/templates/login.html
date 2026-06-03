@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login internal Dashboard ABSA Hotel Santika">
+    <title>Login - Dashboard ABSA Hotel Santika</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=20260604-svg-icons">
+</head>
+<body class="auth-page">
+    <main class="auth-shell">
+        <section class="auth-brief">
+            <div class="auth-brand">
+                <div class="auth-brand-mark">AS</div>
+                <div>
+                    <div class="auth-brand-title">ABSA Hotel Santika</div>
+                    <div class="auth-brand-subtitle">Internal sentiment intelligence dashboard</div>
+                </div>
+            </div>
+            <div class="auth-copy">
+                <div class="auth-eyebrow">Akses Internal</div>
+                <h1>Dashboard analisis ulasan untuk kebutuhan evaluasi layanan hotel.</h1>
+                <p>
+                    Sistem ini menampilkan hasil Aspect-Based Sentiment Analysis pada ulasan OTA
+                    dan dibatasi untuk pengguna internal yang memiliki akun.
+                </p>
+            </div>
+            <div class="auth-points">
+                <div>
+                    <span>01</span>
+                    <strong>Role-based access</strong>
+                    <p>Admin/Peneliti dan Manajemen Hotel masuk dengan hak akses yang dibedakan.</p>
+                </div>
+                <div>
+                    <span>02</span>
+                    <strong>Tanpa register publik</strong>
+                    <p>Akun disediakan oleh pengelola sistem agar scope tetap sesuai penelitian.</p>
+                </div>
+                <div>
+                    <span>03</span>
+                    <strong>Analisis terpusat</strong>
+                    <p>Insight sentimen, tren historis, dan detail review berada dalam satu dashboard.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-card">
+            <div class="auth-card-header">
+                <div>
+                    <h2>Masuk ke Dashboard</h2>
+                    <p>Gunakan akun internal yang telah disediakan.</p>
+                </div>
+            </div>
+
+            {% if error %}
+            <div class="auth-alert">{{ error }}</div>
+            {% endif %}
+
+            <form method="post" class="auth-form">
+                <div class="form-group">
+                    <label class="form-label" for="username">ID Pengguna</label>
+                    <input class="form-input" id="username" name="username" type="text" autocomplete="username" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="password">Kata Sandi</label>
+                    <input class="form-input" id="password" name="password" type="password" autocomplete="current-password" required>
+                </div>
+                <button class="btn btn-primary auth-submit" type="submit">Masuk</button>
+            </form>
+
+            <div class="auth-note">
+                Tidak tersedia registrasi mandiri karena dashboard ini ditujukan sebagai sistem internal perusahaan.
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,352 @@
+[
+  {
+    "ID_Review": "67",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "4/11/2025",
+    "Text_Review": "selalu senang menginap di hotel santika bandung, stafnya ramah dan baik dalam pelayanan. kamarnya bersih, fasilitasnya lengkap. lokasi dikelilingi pusat perbelanjaan dan kuliner. sarapannya lengkap, bervariasi, dan juga enak. saya tidak pernah bosan tinggal di sini."
+  },
+  {
+    "ID_Review": "438",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "5/23/2024",
+    "Text_Review": "kamar pinggir jalan tidak bisa tidur karena berisik motor. hindari kamar pinggir jalan. sarapannya enak."
+  },
+  {
+    "ID_Review": "463",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "1/26/2025",
+    "Text_Review": "kamar nyaman, lokasi strategis, breakfast banyak pilihan dan enak"
+  },
+  {
+    "ID_Review": "500",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "6/17/2023",
+    "Text_Review": "lokasi, suasana, sarapan semua bagus bagi kami sekeluarga"
+  },
+  {
+    "ID_Review": "518",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "8/7/2020",
+    "Text_Review": "stay disini sangat menyenangkan dan staf sangat ramah, pertahankan ya, saya akan balik lagi pokoknya"
+  },
+  {
+    "ID_Review": "1488",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Bogor",
+    "Review_Date": "10/19/2019",
+    "Text_Review": "saya keluarga dengan anak kecil. merasa nyaman di hotel. kebersihan baik"
+  },
+  {
+    "ID_Review": "1713",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Cirebon",
+    "Review_Date": "7/2/2024",
+    "Text_Review": "ini adalah hotel yang cukup tua tapi terawat dengan baik. kamarnya bersih dan luas, stafnya sangat baik dan ramah. sarapannya bisa lebih baik, perlu ditingkatkan. lokasi sangat bagus, ada pusat perbelanjaan dan restoran di dekatnya."
+  },
+  {
+    "ID_Review": "1804",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Cirebon",
+    "Review_Date": "10/26/2024",
+    "Text_Review": "banyak pilihan hotel kecil yang lebih murah di cirebon, tapi kami cukup sering stay disini. untuk: sarapan enak, kamar luas dan staf yang membantu."
+  },
+  {
+    "ID_Review": "1910",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Cirebon",
+    "Review_Date": "8/6/2018",
+    "Text_Review": "yang terbaik dari hotel ini adalah staf dan sarapannya. juga sangat disarankan untuk makan malam di taman dengan permainan musik lokal yang lembut untuk sebuah band tetapi membawa lotion nyamuk dalam jumlah besar. kamarnya besar dan bagus tetapi perlu pemeliharaan."
+  },
+  {
+    "ID_Review": "2468",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "3/29/2026",
+    "Text_Review": "kenyamanan untuk keluarga dan kebersihan juga tempatnya strategis"
+  },
+  {
+    "ID_Review": "2746",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "5/18/2025",
+    "Text_Review": "seru banget nginep disana. dikasih birthday cake buat anak yang ulang tahun."
+  },
+  {
+    "ID_Review": "2802",
+    "Platform": "Agoda",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "8/13/2023",
+    "Text_Review": "enak tempat nya pas d atas mall, bersih, staf nya ramah2 makanan nya banyak, enak2 lagi, rekomendasi tempat menginap lagi untuk yang akan dtg"
+  },
+  {
+    "ID_Review": "3576",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "12/31/2025",
+    "Text_Review": "hotel dengan letak yang strategis. disamping kiri mall bip dan disebrangnya ada riau junction ( yogya ). sarapan menunya variatif hanya kekurangan nya kolam renang nya airnya terlalu dingin"
+  },
+  {
+    "ID_Review": "3821",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "12/24/2019",
+    "Text_Review": "hotel santika bandung tempat ny nyaman kualitas sesuai dan pelayanan nya sangat ramah ramah hotel yang sangat rekomendasi banget"
+  },
+  {
+    "ID_Review": "3856",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "11/11/2019",
+    "Text_Review": "keluhan air mandi yang tidak lancar langsung diperbaiki dan kembali normal. permintaan pick up laundry juga sigap housekeeping nya langsung datang"
+  },
+  {
+    "ID_Review": "3872",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "12/31/2022",
+    "Text_Review": "tua tapi emas bagi mereka yang menikmati udara segar hotel ini adalah pilihan yang baik. mengadopsi arsitektur tropis dengan ventilasi yang baik di sepanjang koridor dan atrium utama, hotel ini sangat nyaman untuk iklim bandung. makanan mereka juga rasanya enak. lokasinya sangat strategis. persimpangan riau di seberang jalan untuk berbagai pilihan makanan dan bahan makanan lokal. bagi yang nyari fasilitas gym hanya menyediakan fasilitas sedikit, tidak ada barbelnya. kami menikmati masa menginap kami, anak-anak juga menikmati kolam renangnya meskipun ukurannya kecil."
+  },
+  {
+    "ID_Review": "3900",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "7/28/2025",
+    "Text_Review": "pesan kamar large bed tapi ternyata twin bed digabungin, tapi overall baik"
+  },
+  {
+    "ID_Review": "4010",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "1/22/2022",
+    "Text_Review": "kamar luas, fasilitas baik dan dekat dengan bip."
+  },
+  {
+    "ID_Review": "4165",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "6/25/2022",
+    "Text_Review": "buruk orang merokok di kamar dan berisik di koridor sampai jam 12 malem tidak ada yang action, air conditioner kamar karena central jd bau semua, bed nya enak sarapan mayan yang paling baik petugas di resto nya sama di parkiran dan housekeeping, yang laen belajar lagi deh sama orang2 ini"
+  },
+  {
+    "ID_Review": "4563",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Mega City Bekasi",
+    "Review_Date": "3/7/2024",
+    "Text_Review": "kebersihannya baik banget. tersedia layanan antar-jemput. diskon besar. tersedia layanan shuttle ke pusat kota. fasilitas terbaik."
+  },
+  {
+    "ID_Review": "4604",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Mega City Bekasi",
+    "Review_Date": "9/23/2023",
+    "Text_Review": "senang banget nginap dihotel ini. kamarnya bersih sarapannya beranekaragam menunya enak. pelayanannya"
+  },
+  {
+    "ID_Review": "4606",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Mega City Bekasi",
+    "Review_Date": "9/7/2023",
+    "Text_Review": "menyenangkan menginap di sini, sarapan dan kamar juga baik. meski tidak bisa mendapat kamar dengan balkon karena penuh, saya diberi kamar yang lebih luas."
+  },
+  {
+    "ID_Review": "5482",
+    "Platform": "Tiket",
+    "Nama_Hotel": "Hotel Santika Cirebon",
+    "Review_Date": "4/2/2026",
+    "Text_Review": "bagus banget lokasi bagus kolamnya bagus"
+  },
+  {
+    "ID_Review": "6355",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "11/7/2018",
+    "Text_Review": "walaupun hotel sudah lama namun kamar sudah terupdate menjadi lebih baru, makanan enak semua, dekat dari fasilitas perbelanjaan dan kuliner."
+  },
+  {
+    "ID_Review": "6377",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "8/15/2018",
+    "Text_Review": "pelayanannya sangat ramah. untuk makanan lumayan bervariasi dan rasanya cukup. saya pesan kamar superior tapi karena penuh di upgrade ke executive. puas pelayanan disini dan next untuk liburan bisa kesini lagi."
+  },
+  {
+    "ID_Review": "6385",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "7/4/2018",
+    "Text_Review": "1. layanan bagus. parkir mudah dan mobil dicuci 2. kamar mandi/closet (kamar 352) agak bau, mungkin karena saluran pembuangan kurang baik 3. lokasi strategis, dekat pusat perbelanjaan"
+  },
+  {
+    "ID_Review": "6663",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Bandung",
+    "Review_Date": "6/14/2017",
+    "Text_Review": "bangunan nya sudah cukup tua tapi terawat dengan baik."
+  },
+  {
+    "ID_Review": "7767",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Bogor",
+    "Review_Date": "6/23/2021",
+    "Text_Review": "pelayanan sangat ramah sekali dan nyaman"
+  },
+  {
+    "ID_Review": "8128",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Bogor",
+    "Review_Date": "1/9/2019",
+    "Text_Review": "layanan ini luar biasa, saya memiliki waktu santai yang baik di sini. makanannya juga enak."
+  },
+  {
+    "ID_Review": "8132",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Bogor",
+    "Review_Date": "1/2/2019",
+    "Text_Review": "kamarnya bagus dan cukup besar, posisi kamar dekat dengan restoran dan kolam renang. namun, lokasi parkir mobilnya yang agak susah karena satu lokasi dengan botani square."
+  },
+  {
+    "ID_Review": "8275",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Bogor",
+    "Review_Date": "4/4/2018",
+    "Text_Review": "overal kamar yang luas dekar dengan mall tapi sarapan kurang menarik terima kasih, ,"
+  },
+  {
+    "ID_Review": "8936",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Cirebon",
+    "Review_Date": "10/2/2024",
+    "Text_Review": "staf sangat ramah dan membantu. fasilitas untuk kursi roda tersedia. recommended."
+  },
+  {
+    "ID_Review": "8947",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Cirebon",
+    "Review_Date": "7/17/2024",
+    "Text_Review": "saya menginap di hotel ini selama 2 hari dan mendapatkan pelayanan jemputan dari stasiun cirebon sampai hotel hs. staff-nya sangat ramah sekali, hotel ter-rekomendasi di cirebon. terima kasih you santika and see you"
+  },
+  {
+    "ID_Review": "9057",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Cirebon",
+    "Review_Date": "3/16/2022",
+    "Text_Review": "internet (wifi) tidak berfungsi dan kami mendapatkan kamar selain layanan kamar yang sangat mengganggu dan keras, tetapi layanan di resepsionis saat check out baik dan membantu ketika kami membutuhkan beberapa dokumen yang dicetak."
+  },
+  {
+    "ID_Review": "9409",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Cirebon",
+    "Review_Date": "12/27/2017",
+    "Text_Review": "hotel santika itu nyaman, kolam renang bersih, pelayanan ramah, cuma makanan di hotel kurang pas, untuk makanan tradisional seperti nasi jamblang rasanya jauh dari mang dul, lontong opornya keras, bubur ayam dengan kuah yang tidak enak, mohon diperhatikan, agar konsumen tetap mau datang kembali, terima kasih"
+  },
+  {
+    "ID_Review": "9531",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Cirebon",
+    "Review_Date": "6/7/2017",
+    "Text_Review": "banyak waktu selalu menginap di hotel ini, semua fasilitasnya sangat nyaman."
+  },
+  {
+    "ID_Review": "10162",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "1/25/2023",
+    "Text_Review": "hotel mewah, pelayanan baik, room kurang dan sarapan pagi memuaskan menunya."
+  },
+  {
+    "ID_Review": "10365",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "1/8/2020",
+    "Text_Review": "makanannya enak, viewnya juga bagus tapi kasurnya agak kurang bersih, tidak wangi, pelayanan ramah."
+  },
+  {
+    "ID_Review": "10397",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "10/30/2019",
+    "Text_Review": "tidak ada masalah dengan kamar, tetapi saat sarapan, ketika saya makan pancake, ada 3 helai rambut dan itu sangat mengganggu meskipun menu makanannya beragam, tetapi tetap saja mengurangi nafsu makan saya."
+  },
+  {
+    "ID_Review": "10542",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "1/30/2019",
+    "Text_Review": "cocok untuk istirahat. lokasi 1 akses dengan mal. depok sekarang ramai banget. recommended."
+  },
+  {
+    "ID_Review": "10738",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "6/27/2018",
+    "Text_Review": "bagus dan top, cuma rak handuk tidak ada dan dibawa ranjang kotor."
+  },
+  {
+    "ID_Review": "10786",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "4/4/2018",
+    "Text_Review": "pokoknya bagus deh hotel santika, semua fasiliyas n pelayanan serta kesantunan personil nya baik banget."
+  },
+  {
+    "ID_Review": "10795",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "3/21/2018",
+    "Text_Review": "kamar berisik. ketika pagi menjelang siang petugas membersihkan kamar yang berada di sebelah saya dengan gaduh. suara vacum dan suara orang yang teriak2 membersihkan kama terdengar hingga ke kamar saya. saat itu sudah complaint ke reception. tetapi tidak ada respon sampai akhirnya saya check out."
+  },
+  {
+    "ID_Review": "10979",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Depok",
+    "Review_Date": "7/5/2017",
+    "Text_Review": "untuk diperbaiki roti tawarnya jangan terlalu keras dan mesesnya seperti beras."
+  },
+  {
+    "ID_Review": "11822",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Mega City Bekasi",
+    "Review_Date": "4/15/2026",
+    "Text_Review": "staycation with my hubby, keramahan staf saat check-in berkesan karena mereka akhirnya berusaha untuk memenuhi request kamar, ditambah wi-fi, lokasi, menu rasa sarapan cukup baik, bahkan late check out pun dikasih 1 jam pihak hotel santika. berkesan, menyenangkan, god bless for all crew santika mega city hotel yee"
+  },
+  {
+    "ID_Review": "12245",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Mega City Bekasi",
+    "Review_Date": "3/11/2020",
+    "Text_Review": "makanannya enak, kamarnya bagus, pelayanannya bagus."
+  },
+  {
+    "ID_Review": "12279",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Mega City Bekasi",
+    "Review_Date": "1/15/2020",
+    "Text_Review": "tempatnya bagus dan nyaman, cuma memang aksesnya hanya dari mall, jadi kalau mau masuk hotel naik taksi online drop off nya di mall tidak lagsug lobby hotel hehe. overall bagus nyaman, menu breakfast juga enak dan beragam."
+  },
+  {
+    "ID_Review": "12839",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Mega City Bekasi",
+    "Review_Date": "8/22/2018",
+    "Text_Review": "sudah 2 kali menginap disana, tapi selalu dapat kamar ac-nya tidak dingin."
+  },
+  {
+    "ID_Review": "13072",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Mega City Bekasi",
+    "Review_Date": "12/27/2017",
+    "Text_Review": "over all service sangat bagus, untuk menu breakfast banyak variannya. bagus job"
+  },
+  {
+    "ID_Review": "14018",
+    "Platform": "Traveloka",
+    "Nama_Hotel": "Hotel Santika Tasikmalaya",
+    "Review_Date": "6/5/2019",
+    "Text_Review": "check-in cepat, belum jam 12, kamar sudah ready dan bisa masuk, tenang, bersih, recommended pokoknya."
+  }
+]
