@@ -293,7 +293,7 @@ function renderOverviewInsight(data, posRate) {
 
     insightEl.innerHTML = `
         <div class="insight-card insight-primary">
-            <div class="insight-eyebrow">Cerita utama</div>
+            <div class="insight-eyebrow insight-alert-label">SEGERA DIPERBAIKI</div>
             <h2>${mainNeg.aspect} dan ${secondNeg.aspect} adalah sumber keluhan terbesar.</h2>
             <p>
                 Dari ${data.total_reviews.toLocaleString()} review, sentimen positif masih dominan (${posRate}%).
@@ -897,9 +897,8 @@ async function runPrediction() {
         data.results.forEach(r => {
             const confPct = (r.confidence * 100).toFixed(1);
             const confClass = r.confidence >= 0.7 ? 'high' : r.confidence >= 0.4 ? 'medium' : 'low';
-            const isActive = r.prediction !== 'none';
 
-            html += `<div class="prediction-row" style="${isActive ? 'border-color: var(--border-default);' : ''}">
+            html += `<div class="prediction-row is-${r.prediction}">
                 <span class="prediction-aspect">${r.aspect}</span>
                 ${createBadge(r.prediction)}
                 <div class="confidence-bar">
