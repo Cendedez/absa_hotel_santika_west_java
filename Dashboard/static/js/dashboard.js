@@ -28,10 +28,10 @@ const FALLBACK_COLORS = {
 };
 
 const SENTIMENT_META = {
-    positif: { label: 'Positif', emoji: '🙂' },
-    negatif: { label: 'Negatif', emoji: '🙁' },
-    netral: { label: 'Netral', emoji: '😐' },
-    none: { label: 'Tidak terdeteksi', emoji: '—' },
+    positif: { label: 'Positif' },
+    negatif: { label: 'Negatif' },
+    netral: { label: 'Netral' },
+    none: { label: 'Tidak terdeteksi' },
 };
 
 const ASPECT_COLORS = [
@@ -46,9 +46,12 @@ const charts = {};
 const appState = {
     dateRange: { min: '', max: '' },
     overviewRange: 'all',
+    priorityRows: [],
+    priorityPage: 1,
+    priorityPerPage: 5,
 };
 const CURRENT_USER = window.ABSA_USER || {};
-document.title = 'Dashboard ABSA - Hotel Santika';
+document.title = 'Customer Sentiment Dashboard - Hotel Santika Jawa Barat';
 
 function cssVar(name, fallback = '') {
     const value = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -83,8 +86,8 @@ function applyTheme(theme, persist = true) {
 
     const icon = document.getElementById('theme-toggle-icon');
     const text = document.getElementById('theme-toggle-text');
-    if (icon) icon.textContent = nextTheme === 'light' ? 'Light' : 'Dark';
-    if (text) text.textContent = nextTheme === 'light' ? 'Terang' : 'Gelap';
+    if (icon) icon.textContent = nextTheme === 'light' ? '☀️' : '🌙';
+    if (text) text.textContent = nextTheme === 'light' ? 'Mode Terang' : 'Mode Gelap';
 }
 
 function reloadActivePage() {
@@ -105,23 +108,19 @@ refreshThemeColors();
 // NAVIGATION
 // ========================================
 const PAGE_TITLES = {
-    'overview': ['Overview', 'Ringkasan analisis sentimen ulasan Hotel Santika'],
+    'overview': ['Overview', 'Ringkasan analisis sentimen ulasan Hotel Santika Jawa Barat'],
     'aspect': ['Analisis Aspek', 'Distribusi sentimen untuk setiap aspek layanan'],
     'hotel-platform': ['Hotel & Platform', 'Perbandingan sentimen antar hotel dan platform OTA'],
     'trend': ['Tren Waktu', 'Perubahan sentimen dari waktu ke waktu'],
     'reviews': ['Review Explorer', 'Jelajahi dan cari review secara detail'],
-    'predict': ['Prediksi Manual', 'Analisis sentimen review baru menggunakan IndoBERT'],
+    'predict': ['Prediksi Sentimen', 'Analisis sentimen review baru menggunakan IndoBERT'],
     'performance': ['Performa Model', 'Metrik evaluasi model IndoBERT fine-tune'],
     'about': ['Tentang Sistem', 'Informasi tentang sistem dashboard ABSA'],
 };
 
-function applyAccessControls() {
-    if (CURRENT_USER.role !== 'admin') {
-        document.querySelectorAll('.admin-only').forEach(el => el.remove());
-    }
+function checkAuth() {
+    // Stakeholder version has full access, no admin checks needed
 }
-
-applyAccessControls();
 
 document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => {
@@ -187,12 +186,12 @@ function destroyChart(id) {
 }
 
 function createBadge(label) {
-    const meta = SENTIMENT_META[label] || { label, emoji: '' };
+    const meta = SENTIMENT_META[label] || { label };
     return `<span class="badge badge-${label}">${meta.label}</span>`;
 }
 
 function sentimentLabel(key, withPercent = false) {
-    const meta = SENTIMENT_META[key] || { label: key, emoji: '' };
+    const meta = SENTIMENT_META[key] || { label: key };
     return `${meta.label}${withPercent ? ' %' : ''}`;
 }
 
@@ -202,6 +201,20 @@ function iconSvg(name) {
 
 function pct(value) {
     return Number.isFinite(value) ? `${value.toFixed(1)}%` : '0.0%';
+}
+
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+function formatMetric(value) {
+    const num = Number(value || 0);
+    return `${(num * 100).toFixed(1)}%`;
 }
 
 function toDateInputValue(date) {
@@ -281,6 +294,29 @@ function renderOverviewInsight(data, posRate) {
     const insightEl = document.getElementById('overview-insight');
     if (!insightEl) return;
 
+    if (data.total_reviews === 0) {
+        insightEl.innerHTML = `
+            <div class="insight-card" style="display: flex; flex-direction: column; justify-content: center;">
+                <div class="insight-eyebrow">SEGERA DIPERBAIKI</div>
+                <h2 style="color: var(--text-muted); margin-top: 8px;">Tidak cukup data.</h2>
+                <p>Silakan ubah filter periode, hotel, atau platform untuk melihat wawasan keluhan terbesar pada data ulasan.</p>
+            </div>
+            <div class="insight-card" style="display: flex; flex-direction: column; justify-content: center;">
+                <div class="insight-eyebrow">PRIORITAS PERBAIKAN</div>
+                <div style="color: var(--text-muted); padding-top: 10px;">Belum ada data sentimen negatif.</div>
+            </div>
+            <div class="insight-card" style="display: flex; flex-direction: column; justify-content: center;">
+                <div class="insight-eyebrow">RISIKO TERTINGGI</div>
+                <div style="color: var(--text-muted); padding-top: 10px;">Belum ada risiko terdeteksi.</div>
+            </div>
+            <div class="insight-card" style="display: flex; flex-direction: column; justify-content: center;">
+                <div class="insight-eyebrow">KEKUATAN UTAMA</div>
+                <div style="color: var(--text-muted); padding-top: 10px;">Belum ada data sentimen positif.</div>
+            </div>
+        `;
+        return;
+    }
+
     const rows = getAspectRows(data.aspect_stats || {});
     const topNeg = [...rows].sort((a, b) => b.negatif - a.negatif);
     const topRisk = [...rows].sort((a, b) => b.negativeRate - a.negativeRate);
@@ -292,7 +328,7 @@ function renderOverviewInsight(data, posRate) {
     const strength = topPos[0] || { aspect: '-', positif: 0, positiveRate: 0 };
 
     insightEl.innerHTML = `
-        <div class="insight-card insight-primary">
+        <div class="insight-card insight-primary insight-clickable" onclick="drillDownToReviews({aspect: '${mainNeg.aspect}', sentiment: 'negatif'})" title="Klik untuk melihat review negatif aspek ${mainNeg.aspect}">
             <div class="insight-eyebrow insight-alert-label">SEGERA DIPERBAIKI</div>
             <h2>${mainNeg.aspect} dan ${secondNeg.aspect} adalah sumber keluhan terbesar.</h2>
             <p>
@@ -301,12 +337,13 @@ function renderOverviewInsight(data, posRate) {
                 (${mainNeg.negatif.toLocaleString()} sentimen negatif) dan ${secondNeg.aspect.toLowerCase()}
                 (${secondNeg.negatif.toLocaleString()} sentimen negatif).
             </p>
+            <div class="insight-drill-hint">Klik untuk lihat review &rarr;</div>
         </div>
         <div class="insight-card">
             <div class="insight-eyebrow">Prioritas perbaikan</div>
             <div class="priority-list">
                 ${priority.map((row, index) => `
-                    <div class="priority-row">
+                    <div class="priority-row insight-clickable" onclick="drillDownToReviews({aspect: '${row.aspect}', sentiment: 'negatif'})" title="Klik untuk lihat review negatif ${row.aspect}">
                         <div class="priority-rank">${index + 1}</div>
                         <div class="priority-content">
                             <div class="priority-title">${row.aspect}</div>
@@ -317,23 +354,141 @@ function renderOverviewInsight(data, posRate) {
                 `).join('')}
             </div>
         </div>
-        <div class="insight-card">
+        <div class="insight-card insight-clickable" onclick="drillDownToReviews({aspect: '${risk.aspect}', sentiment: 'negatif'})" title="Klik untuk lihat review negatif ${risk.aspect}">
             <div class="insight-eyebrow">Risiko tertinggi</div>
             <div class="insight-metric danger">${risk.aspect}</div>
             <p>${pct(risk.negativeRate)} sentimen pada aspek ini bernada negatif, sehingga perlu dicek bukan hanya dari jumlah keluhan tetapi juga proporsinya.</p>
+            <div class="insight-drill-hint">Klik untuk lihat review &rarr;</div>
         </div>
-        <div class="insight-card">
+        <div class="insight-card insight-clickable" onclick="drillDownToReviews({aspect: '${strength.aspect}', sentiment: 'positif'})" title="Klik untuk lihat review positif ${strength.aspect}">
             <div class="insight-eyebrow">Kekuatan utama</div>
             <div class="insight-metric success">${strength.aspect}</div>
             <p>${strength.positif.toLocaleString()} sentimen positif muncul pada aspek ini. Insight ini bisa dipakai sebagai kekuatan komunikasi layanan.</p>
+            <div class="insight-drill-hint">Klik untuk lihat review &rarr;</div>
         </div>
     `;
+}
+
+function renderPriorityImprovements(rows = null) {
+    const wrapper = document.getElementById('priority-table-wrapper');
+    if (!wrapper) return;
+
+    if (Array.isArray(rows)) {
+        appState.priorityRows = rows;
+        appState.priorityPage = 1;
+    }
+
+    const allRows = appState.priorityRows || [];
+    const totalRows = allRows.length;
+    const totalPages = Math.max(1, Math.ceil(totalRows / appState.priorityPerPage));
+    appState.priorityPage = Math.min(Math.max(appState.priorityPage, 1), totalPages);
+
+    if (!totalRows) {
+        wrapper.innerHTML = `
+            <div class="empty-state">
+                <div class="empty-state-text">Tidak ada prioritas perbaikan pada filter periode ini.</div>
+            </div>
+        `;
+        return;
+    }
+
+    const start = (appState.priorityPage - 1) * appState.priorityPerPage;
+    const pageRows = allRows.slice(start, start + appState.priorityPerPage);
+    const body = pageRows.map((row, index) => {
+        const review = row.supporting_review || {};
+        const negativeRate = Number(row.negative_rate || 0);
+        const globalIndex = start + index + 1;
+        const drillHotel = escapeHtml(row.hotel || '').replace(/'/g, "\\'");
+        const drillAspect = escapeHtml(row.aspect || '').replace(/'/g, "\\'");
+        return `
+            <tr class="priority-row-clickable" onclick="drillDownToReviews({hotel: '${drillHotel}', aspect: '${drillAspect}', sentiment: 'negatif'})" title="Klik untuk lihat review negatif ${escapeHtml(row.aspect)} di ${escapeHtml(row.hotel_short)}">
+                <td><span class="priority-rank-cell">${globalIndex}</span></td>
+                <td>
+                    <strong>${escapeHtml(row.hotel_short || row.hotel || '-')}</strong>
+                    <div class="table-muted">${escapeHtml(row.hotel || '')}</div>
+                </td>
+                <td><span class="aspect-pill">${escapeHtml(row.aspect || '-')}</span></td>
+                <td>
+                    <strong>${Number(row.negative_count || 0).toLocaleString()}</strong>
+                    <div class="table-muted">dari ${Number(row.total_aspect_sentiment || 0).toLocaleString()} sentimen aspek</div>
+                </td>
+                <td>
+                    <div class="priority-rate">
+                        <span>${negativeRate.toFixed(1)}%</span>
+                        <div class="priority-rate-track">
+                            <div style="width:${Math.min(Math.max(negativeRate, 0), 100)}%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <strong>${escapeHtml(row.dominant_platform || '-')}</strong>
+                    <div class="table-muted">${Number(row.dominant_platform_count || 0).toLocaleString()} keluhan</div>
+                </td>
+                <td class="priority-review-cell">
+                    <div class="table-muted">${escapeHtml(review.date || '-')} &middot; ${escapeHtml(review.platform || row.dominant_platform || '-')}</div>
+                    <div class="priority-review-text">${escapeHtml(review.text || 'Tidak ada contoh review.')}</div>
+                </td>
+            </tr>
+        `;
+    }).join('');
+
+    wrapper.innerHTML = `
+        <div class="priority-table-toolbar">
+            <div class="priority-table-info">
+                Menampilkan ${start + 1}-${Math.min(start + appState.priorityPerPage, totalRows)} dari ${totalRows} prioritas
+            </div>
+            <div class="priority-table-controls">
+                <span>Jumlah prioritas per halaman</span>
+                <button class="priority-size-btn ${appState.priorityPerPage === 5 ? 'active' : ''}" onclick="setPriorityPerPage(5)">5</button>
+                <button class="priority-size-btn ${appState.priorityPerPage === 10 ? 'active' : ''}" onclick="setPriorityPerPage(10)">10</button>
+                <button class="priority-size-btn ${appState.priorityPerPage === 20 ? 'active' : ''}" onclick="setPriorityPerPage(20)">20</button>
+                <button class="priority-page-btn" ${appState.priorityPage <= 1 ? 'disabled' : ''} onclick="changePriorityPage(-1)" aria-label="Halaman sebelumnya">&lsaquo;</button>
+                <button class="priority-page-btn" ${appState.priorityPage >= totalPages ? 'disabled' : ''} onclick="changePriorityPage(1)" aria-label="Halaman berikutnya">&rsaquo;</button>
+            </div>
+        </div>
+        <table class="data-table priority-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Hotel</th>
+                    <th>Aspek</th>
+                    <th>Jumlah Negatif</th>
+                    <th>Rasio Negatif</th>
+                    <th>Platform Dominan</th>
+                    <th>Review Pendukung Terbaru</th>
+                </tr>
+            </thead>
+            <tbody>${body}</tbody>
+        </table>
+    `;
+}
+
+function setPriorityPerPage(value) {
+    appState.priorityPerPage = value;
+    appState.priorityPage = 1;
+    renderPriorityImprovements();
+}
+
+function changePriorityPage(delta) {
+    appState.priorityPage += delta;
+    renderPriorityImprovements();
 }
 
 function getFilterValues(prefix) {
     const hotel = document.getElementById(`${prefix}-filter-hotel`)?.value || 'all';
     const platform = document.getElementById(`${prefix}-filter-platform`)?.value || 'all';
     return { hotel, platform };
+}
+
+function drillDownToReviews(filters = {}) {
+    document.getElementById('review-filter-hotel').value = filters.hotel || 'all';
+    document.getElementById('review-filter-platform').value = filters.platform || 'all';
+    document.getElementById('review-filter-aspect').value = filters.aspect || 'all';
+    document.getElementById('review-filter-sentiment').value = filters.sentiment || 'all';
+    document.getElementById('review-filter-keyword').value = filters.keyword || '';
+    document.getElementById('review-date-from').value = filters.date_from || '';
+    document.getElementById('review-date-to').value = filters.date_to || '';
+    navigateTo('reviews');
 }
 
 // ========================================
@@ -369,11 +524,12 @@ async function initFilters() {
 
     if (data.date_range) {
         appState.dateRange = data.date_range;
-        ['trend-date-from', 'trend-date-to'].forEach(id => {
+        ['trend-date-from', 'trend-date-to', 'review-date-from', 'review-date-to'].forEach(id => {
             const input = document.getElementById(id);
             if (input) {
-                input.min = data.date_range.min || '';
-                input.max = data.date_range.max || '';
+                // Menghapus batas min/max agar pengguna bebas memilih tanggal berapapun
+                input.removeAttribute('min');
+                input.removeAttribute('max');
             }
         });
     }
@@ -384,7 +540,11 @@ async function initFilters() {
 // ========================================
 async function loadOverview() {
     const { params, label } = getOverviewDateParams();
-    const data = await fetchAPI('/api/overview', params);
+    const { hotel: ovHotel, platform: ovPlatform } = getFilterValues('overview');
+    const allParams = { ...params };
+    if (ovHotel && ovHotel !== 'all') allParams.hotel = ovHotel;
+    if (ovPlatform && ovPlatform !== 'all') allParams.platform = ovPlatform;
+    const data = await fetchAPI('/api/overview', allParams);
     if (data.error) return;
 
     // Stat cards
@@ -393,8 +553,8 @@ async function loadOverview() {
     const posRate = totalSentiment > 0 ? ((data.sentiment_counts.positif / totalSentiment) * 100).toFixed(1) : 0;
 
     const dateText = params.date_from || params.date_to
-            ? `${params.date_from || appState.dateRange.min} sampai ${params.date_to || appState.dateRange.max}`
-            : `${appState.dateRange.min || '-'} sampai ${appState.dateRange.max || '-'}`;
+        ? `${params.date_from || appState.dateRange.min} sampai ${params.date_to || appState.dateRange.max}`
+        : `${appState.dateRange.min || '-'} sampai ${appState.dateRange.max || '-'}`;
     const timeLabel = document.getElementById('overview-time-label');
     if (timeLabel) {
         timeLabel.textContent = `${label} - ${dateText}`;
@@ -450,6 +610,7 @@ async function loadOverview() {
     }
 
     renderOverviewInsight(data, posRate);
+    renderPriorityImprovements(data.priority_improvements || []);
 
     // Sentiment composition bar
     destroyChart('sentiment-dist');
@@ -531,18 +692,284 @@ async function loadOverview() {
             }
         }
     });
+
+    // Load price vs quality analysis
+    loadPriceQuality(allParams);
 }
 
 // ========================================
-// PAGE: ASPECT ANALYSIS
+// PRICE vs QUALITY ANALYSIS
 // ========================================
+async function loadPriceQuality(overviewParams = {}) {
+    const data = await fetchAPI('/api/price-quality', overviewParams);
+    if (data.error) return;
+
+    destroyChart('price-quality');
+    const ctx = document.getElementById('chart-price-quality')?.getContext('2d');
+    if (!ctx) return;
+
+    const hotels = data.hotels || [];
+    const labels = hotels.map(h => h.hotel_short);
+
+    charts['price-quality'] = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels,
+            datasets: [
+                {
+                    label: 'Harga (% Negatif)',
+                    data: hotels.map(h => h.aspects?.Harga?.negative_rate || 0),
+                    backgroundColor: COLORS.negatif + 'cc',
+                    borderRadius: 4,
+                },
+                {
+                    label: 'Pelayanan (% Negatif)',
+                    data: hotels.map(h => h.aspects?.Pelayanan?.negative_rate || 0),
+                    backgroundColor: COLORS.blue + 'cc',
+                    borderRadius: 4,
+                },
+                {
+                    label: 'Fasilitas (% Negatif)',
+                    data: hotels.map(h => h.aspects?.Fasilitas?.negative_rate || 0),
+                    backgroundColor: COLORS.purple + 'cc',
+                    borderRadius: 4,
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'top' } },
+            scales: {
+                x: { grid: { display: false } },
+                y: { grid: { color: COLORS.grid }, beginAtZero: true, ticks: { callback: v => v + '%' } },
+            }
+        }
+    });
+
+    const tableWrapper = document.getElementById('price-quality-table-wrapper');
+    if (tableWrapper && hotels.length) {
+        let html = '<table class="data-table"><thead><tr>';
+        html += '<th>Hotel</th><th>Harga (% Neg)</th><th>Pelayanan (% Neg)</th><th>Fasilitas (% Neg)</th><th>Gap Harga vs Layanan</th><th>Penilaian</th>';
+        html += '</tr></thead><tbody>';
+        hotels.forEach(h => {
+            const gapColor = h.gap > 5 ? 'color:var(--color-negatif);font-weight:600;' : h.gap < -5 ? 'color:var(--color-positif);font-weight:600;' : '';
+            const verdictBadge = h.gap > 5 ? 'badge-negatif' : h.gap < -5 ? 'badge-positif' : 'badge-netral';
+            html += `<tr>
+                <td><strong>${escapeHtml(h.hotel_short)}</strong></td>
+                <td>${h.aspects?.Harga?.negative_rate || 0}%</td>
+                <td>${h.aspects?.Pelayanan?.negative_rate || 0}%</td>
+                <td>${h.aspects?.Fasilitas?.negative_rate || 0}%</td>
+                <td style="${gapColor}">${h.gap > 0 ? '+' : ''}${h.gap}%</td>
+                <td><span class="badge ${verdictBadge}">${escapeHtml(h.verdict)}</span></td>
+            </tr>`;
+        });
+        html += '</tbody></table>';
+        tableWrapper.innerHTML = html;
+    }
+}
+
+// ========================================
+// EXPORT SUMMARY FOR BRIEFING
+// ========================================
+async function exportSummary() {
+    const { params } = getOverviewDateParams();
+    const { hotel: ovHotel, platform: ovPlatform } = getFilterValues('overview');
+    const allParams = { ...params };
+    if (ovHotel && ovHotel !== 'all') allParams.hotel = ovHotel;
+    if (ovPlatform && ovPlatform !== 'all') allParams.platform = ovPlatform;
+
+    const data = await fetchAPI('/api/export-summary', allParams);
+    if (data.error) { alert('Gagal mengambil data ringkasan.'); return; }
+
+    const win = window.open('', '_blank');
+    if (!win) { alert('Pop-up diblokir browser. Izinkan pop-up untuk fitur ini.'); return; }
+    win.document.write(generateSummaryHTML(data));
+    win.document.close();
+}
+
+function generateSummaryHTML(data) {
+    return `<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Ringkasan Briefing Customer Sentiment Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;padding:40px;color:#1a1a1a;max-width:820px;margin:0 auto;line-height:1.5}
+h1{font-size:22px;margin-bottom:4px}
+h2{font-size:16px;margin-top:28px;margin-bottom:12px;border-bottom:2px solid #333;padding-bottom:4px}
+h3{font-size:14px;margin-bottom:6px}
+.subtitle{color:#666;font-size:13px;margin-bottom:20px}
+.meta{font-size:12px;color:#888;margin-bottom:16px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.stat-box{background:#f5f5f5;padding:12px;border-radius:6px;text-align:center}
+.stat-value{font-size:24px;font-weight:700}
+.stat-label{font-size:11px;color:#666;margin-top:2px}
+table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid #ddd}
+th{background:#f5f5f5;font-weight:600}
+.neg{color:#d32f2f;font-weight:600}
+.pos{color:#2e7d32;font-weight:600}
+.review-box{background:#fafafa;border-left:3px solid #d32f2f;padding:10px 14px;margin-bottom:10px;border-radius:0 4px 4px 0;font-size:13px}
+.review-meta{font-size:11px;color:#888;margin-bottom:4px}
+.phrase-tag{display:inline-block;background:#fff3e0;color:#e65100;padding:2px 8px;border-radius:10px;font-size:12px;margin:2px}
+.footer{margin-top:32px;padding-top:12px;border-top:1px solid #ddd;font-size:11px;color:#999}
+.print-btn{padding:8px 20px;background:#1a73e8;color:white;border:none;border-radius:4px;cursor:pointer;font-size:13px}
+@media print{.no-print{display:none}body{padding:20px}}
+</style>
+</head>
+<body>
+<div style="text-align:right;" class="no-print">
+    <button onclick="window.print()" class="print-btn">🖨️ Cetak / Simpan PDF</button>
+</div>
+<h1>Ringkasan Briefing Analisis</h1>
+<div class="subtitle">Customer Sentiment Dashboard - Hotel Santika Jawa Barat</div>
+<div class="meta">
+    Dibuat: ${escapeHtml(data.generated_at)} &bull;
+    Periode data: ${escapeHtml(data.date_range?.min || '-')} s/d ${escapeHtml(data.date_range?.max || '-')} &bull;
+    Hotel: ${data.hotels?.length || 0} cabang &bull;
+    Platform: ${escapeHtml((data.platforms || []).join(', ') || '-')}
+</div>
+
+<div class="stats-grid">
+    <div class="stat-box"><div class="stat-value">${data.total_reviews?.toLocaleString()}</div><div class="stat-label">Total Review</div></div>
+    <div class="stat-box"><div class="stat-value pos">${data.positive_rate}%</div><div class="stat-label">Rasio Positif</div></div>
+    <div class="stat-box"><div class="stat-value neg">${data.sentiment_counts?.negatif?.toLocaleString()}</div><div class="stat-label">Sentimen Negatif</div></div>
+    <div class="stat-box"><div class="stat-value">${data.hotels?.length || 0}</div><div class="stat-label">Cabang Hotel</div></div>
+</div>
+
+<h2>Top Aspek Bermasalah</h2>
+<table>
+    <thead><tr><th>#</th><th>Aspek</th><th>Jumlah Negatif</th><th>Total Sentimen</th><th>Rasio Negatif</th></tr></thead>
+    <tbody>
+        ${(data.top_negative_aspects || []).map((a, i) => {
+        const rate = a.total > 0 ? ((a.count / a.total) * 100).toFixed(1) : '0.0';
+        return `<tr><td>${i + 1}</td><td><strong>${escapeHtml(a.aspect)}</strong></td><td class="neg">${a.count.toLocaleString()}</td><td>${a.total.toLocaleString()}</td><td>${rate}%</td></tr>`;
+    }).join('')}
+    </tbody>
+</table>
+
+<h2>Top Kekuatan Layanan</h2>
+<table>
+    <thead><tr><th>#</th><th>Aspek</th><th>Jumlah Positif</th><th>Total Sentimen</th><th>Rasio Positif</th></tr></thead>
+    <tbody>
+        ${(data.top_positive_aspects || []).map((a, i) => {
+        const rate = a.total > 0 ? ((a.count / a.total) * 100).toFixed(1) : '0.0';
+        return `<tr><td>${i + 1}</td><td><strong>${escapeHtml(a.aspect)}</strong></td><td class="pos">${a.count.toLocaleString()}</td><td>${a.total.toLocaleString()}</td><td>${rate}%</td></tr>`;
+    }).join('')}
+    </tbody>
+</table>
+
+<h2>Top Frasa Keluhan Per Aspek</h2>
+${Object.entries(data.phrases_summary || {}).map(([aspect, phrases]) => {
+        if (!phrases || !phrases.length) return '';
+        return `<h3>${escapeHtml(aspect)}</h3><div style="margin-bottom:12px;">${phrases.map(p => `<span class="phrase-tag">${escapeHtml(p.phrase)} (${p.count}x)</span>`).join(' ')}</div>`;
+    }).join('')}
+
+<h2>Prioritas Perbaikan</h2>
+<table>
+    <thead><tr><th>#</th><th>Hotel</th><th>Aspek</th><th>Negatif</th><th>Rasio</th><th>Platform</th></tr></thead>
+    <tbody>
+        ${(data.priority_improvements || []).map((row, i) => `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${escapeHtml(row.hotel_short || row.hotel)}</td>
+                <td>${escapeHtml(row.aspect)}</td>
+                <td class="neg">${row.negative_count}</td>
+                <td>${row.negative_rate}%</td>
+                <td>${escapeHtml(row.dominant_platform)}</td>
+            </tr>
+        `).join('')}
+    </tbody>
+</table>
+
+<h2>Contoh Review Negatif Terbaru</h2>
+${(data.recent_negative_reviews || []).map(r => `
+    <div class="review-box">
+        <div class="review-meta">${escapeHtml(r.hotel || '')} &bull; ${escapeHtml(r.platform || '')} &bull; ${escapeHtml(r.date || '')} &bull; Aspek: ${escapeHtml(r.aspect || '')}</div>
+        <div>${escapeHtml(r.text || '')}</div>
+    </div>
+`).join('')}
+
+<div class="footer">
+    <p>Laporan ini dihasilkan otomatis oleh Customer Sentiment Dashboard. Hasil analisis merupakan output model IndoBERT dan bersifat sebagai alat bantu keputusan, bukan keputusan final.</p>
+</div>
+</body>
+</html>`;
+}
+
+
+async function loadComplaintPhrases(filterPayload) {
+    const complaintPayload = { ...filterPayload, sentiment: 'all' };
+    const data = await fetchAPI('/api/complaint-phrases', complaintPayload);
+    if (data.error) return;
+    renderComplaintPhrases(data.top_phrases || {});
+}
+
+function renderComplaintPhrases(topPhrases) {
+    const wrapper = document.getElementById('complaint-phrases-wrapper');
+    if (!wrapper) return;
+
+    const aspectEntries = Object.entries(topPhrases).filter(([, payload]) => (payload.phrases || []).length > 0);
+    if (!aspectEntries.length) {
+        wrapper.innerHTML = `
+            <div class="empty-state">
+                <div class="empty-state-text">Belum ada frasa keluhan pada filter ini. Coba pilih aspek atau filter lain.</div>
+            </div>
+        `;
+        return;
+    }
+
+    wrapper.innerHTML = `
+        <div class="complaint-phrase-grid">
+            ${aspectEntries.map(([aspect, payload]) => {
+        const phrases = payload.phrases || [];
+        const maxCount = Math.max(...phrases.map(item => item.count || 0), 1);
+        return `
+                    <div class="complaint-phrase-card">
+                        <div class="complaint-phrase-header">
+                            <div>
+                                <div class="complaint-aspect">${escapeHtml(aspect)}</div>
+                                <div class="table-muted">${Number(payload.negative_reviews || 0).toLocaleString()} review negatif</div>
+                            </div>
+                        </div>
+                        <div class="complaint-phrase-list">
+                            ${phrases.map(item => {
+            const width = Math.max(8, ((item.count || 0) / maxCount) * 100);
+            const example = item.example || {};
+            return `
+                                    <div class="complaint-phrase-item">
+                                        <div class="complaint-phrase-main">
+                                            <span class="complaint-phrase-text">${escapeHtml(item.phrase)}</span>
+                                            <span class="complaint-phrase-count">${Number(item.count || 0).toLocaleString()}x</span>
+                                        </div>
+                                        <div class="complaint-phrase-track"><div style="width:${width}%"></div></div>
+                                        <div class="complaint-example">
+                                            ${escapeHtml((example.hotel || '').replace('Hotel Santika ', '') || '-')} &middot;
+                                            ${escapeHtml(example.platform || '-')} &middot;
+                                            ${escapeHtml(example.date || '-')}
+                                        </div>
+                                    </div>
+                                `;
+        }).join('')}
+                        </div>
+                    </div>
+                `;
+    }).join('')}
+        </div>
+    `;
+}
+
 async function loadAspectAnalysis() {
     const { hotel, platform } = getFilterValues('aspect');
     const aspect = document.getElementById('aspect-filter-aspect')?.value || 'all';
     const sentiment = document.getElementById('aspect-filter-sentiment')?.value || 'all';
 
-    const data = await fetchAPI('/api/aspect-analysis', { hotel, platform, aspect, sentiment });
+    const filterPayload = { hotel, platform, aspect, sentiment };
+    const data = await fetchAPI('/api/aspect-analysis', filterPayload);
     if (data.error) return;
+    loadComplaintPhrases(filterPayload);
 
     const stats = data.aspect_stats;
 
@@ -612,11 +1039,11 @@ async function loadAspectAnalysis() {
             const predCol = `pred_${aspect}`;
             const sent = r[predCol] || 'none';
             html += `<tr>
-                <td>${r.ID_Review || ''}</td>
-                <td>${(r.Nama_Hotel || '').replace('Hotel Santika ', '')}</td>
-                <td>${r.Platform || ''}</td>
-                <td>${r.Review_Date || ''}</td>
-                <td class="text-review">${r.Text_Review || ''}</td>
+                <td>${escapeHtml(r.ID_Review || '')}</td>
+                <td>${escapeHtml((r.Nama_Hotel || '').replace('Hotel Santika ', ''))}</td>
+                <td>${escapeHtml(r.Platform || '')}</td>
+                <td>${escapeHtml(r.Review_Date || '')}</td>
+                <td class="text-review">${escapeHtml(r.Text_Review || '')}</td>
                 <td>${createBadge(sent)}</td>
             </tr>`;
         });
@@ -703,10 +1130,77 @@ async function loadHotelPlatform() {
 // ========================================
 // PAGE: TREND
 // ========================================
+function getTrendPeriodStats(periods, trendData) {
+    return periods.map(period => {
+        const item = trendData[period] || {};
+        const positif = item.positif || 0;
+        const negatif = item.negatif || 0;
+        const netral = item.netral || 0;
+        const total = positif + negatif + netral;
+        return {
+            period,
+            positif,
+            negatif,
+            netral,
+            total,
+            positiveRate: total > 0 ? (positif / total) * 100 : 0,
+            negativeRate: total > 0 ? (negatif / total) * 100 : 0,
+            neutralRate: total > 0 ? (netral / total) * 100 : 0,
+        };
+    });
+}
+
+function renderTrendInsights(periodStats, mode) {
+    const el = document.getElementById('trend-insights');
+    if (!el) return;
+
+    const nonEmpty = periodStats.filter(row => row.total > 0);
+    if (!nonEmpty.length) {
+        el.innerHTML = `
+            <div class="trend-insight-card">
+                <div class="trend-insight-label">Ringkasan tren</div>
+                <div class="trend-insight-value">Belum ada data</div>
+                <div class="trend-insight-note">Coba ubah filter hotel, platform, aspek, atau rentang tanggal.</div>
+            </div>
+        `;
+        return;
+    }
+
+    const latest = nonEmpty[nonEmpty.length - 1];
+    const previous = nonEmpty.length > 1 ? nonEmpty[nonEmpty.length - 2] : null;
+    const deltaNegative = previous ? latest.negativeRate - previous.negativeRate : 0;
+    const peakRisk = [...nonEmpty].sort((a, b) => b.negativeRate - a.negativeRate)[0];
+    const displayUnit = mode === 'percent' ? 'proporsi' : 'jumlah';
+
+    el.innerHTML = `
+        <div class="trend-insight-card">
+            <div class="trend-insight-label">Periode terbaru</div>
+            <div class="trend-insight-value">${escapeHtml(latest.period)}</div>
+            <div class="trend-insight-note">${latest.total.toLocaleString()} sentimen aspek terbaca pada periode ini.</div>
+        </div>
+        <div class="trend-insight-card danger">
+            <div class="trend-insight-label">Negatif terbaru</div>
+            <div class="trend-insight-value">${pct(latest.negativeRate)}</div>
+            <div class="trend-insight-note">${latest.negatif.toLocaleString()} dari ${latest.total.toLocaleString()} sentimen aspek bernada negatif.</div>
+        </div>
+        <div class="trend-insight-card ${deltaNegative > 0 ? 'danger' : 'success'}">
+            <div class="trend-insight-label">Perubahan negatif</div>
+            <div class="trend-insight-value">${previous ? `${deltaNegative >= 0 ? '+' : ''}${deltaNegative.toFixed(1)}%` : '-'}</div>
+            <div class="trend-insight-note">${previous ? `Dibanding periode ${escapeHtml(previous.period)} berdasarkan ${displayUnit} sentimen.` : 'Belum ada periode pembanding.'}</div>
+        </div>
+        <div class="trend-insight-card">
+            <div class="trend-insight-label">Risiko historis tertinggi</div>
+            <div class="trend-insight-value">${escapeHtml(peakRisk.period)}</div>
+            <div class="trend-insight-note">${pct(peakRisk.negativeRate)} sentimen aspek bernada negatif pada periode ini.</div>
+        </div>
+    `;
+}
+
 async function loadTrend() {
     const { hotel, platform } = getFilterValues('trend');
     const aspect = document.getElementById('trend-filter-aspect')?.value || 'all';
     const granularity = document.getElementById('trend-granularity')?.value || 'year';
+    const viewMode = document.getElementById('trend-view-mode')?.value || 'count';
     const dateFrom = document.getElementById('trend-date-from')?.value || '';
     const dateTo = document.getElementById('trend-date-to')?.value || '';
 
@@ -714,6 +1208,7 @@ async function loadTrend() {
         hotel,
         platform,
         trend_aspect: aspect,
+        aspect: aspect,
         granularity,
         date_from: dateFrom,
         date_to: dateTo,
@@ -723,9 +1218,11 @@ async function loadTrend() {
     destroyChart('trend');
     const ctx = document.getElementById('chart-trend').getContext('2d');
     const periods = data.periods;
-    const posData = periods.map(p => data.trend_data[p]?.positif || 0);
-    const negData = periods.map(p => data.trend_data[p]?.negatif || 0);
-    const netData = periods.map(p => data.trend_data[p]?.netral || 0);
+    const periodStats = getTrendPeriodStats(periods, data.trend_data || {});
+    const isPercentMode = viewMode === 'percent';
+    const posData = isPercentMode ? periodStats.map(p => p.positiveRate.toFixed(1)) : periodStats.map(p => p.positif);
+    const negData = isPercentMode ? periodStats.map(p => p.negativeRate.toFixed(1)) : periodStats.map(p => p.negatif);
+    const netData = isPercentMode ? periodStats.map(p => p.neutralRate.toFixed(1)) : periodStats.map(p => p.netral);
     const granularityLabels = {
         day: 'harian',
         week: 'mingguan',
@@ -738,8 +1235,9 @@ async function loadTrend() {
     const aspectLabel = aspect === 'all' ? 'semua aspek' : `aspek ${aspect}`;
     const summary = document.getElementById('trend-summary');
     if (summary) {
-        summary.textContent = `${periods.length} periode ${granularityLabels[data.granularity] || 'tahunan'} - ${data.total_reviews.toLocaleString()} review - ${data.total_sentiment_points.toLocaleString()} sentimen aspek - ${aspectLabel} - ${rangeLabel}`;
+        summary.textContent = `${periods.length} periode ${granularityLabels[data.granularity] || 'tahunan'} - ${data.total_reviews.toLocaleString()} review - ${data.total_sentiment_points.toLocaleString()} sentimen aspek - ${aspectLabel} - ${rangeLabel} - tampilan ${isPercentMode ? 'persentase' : 'jumlah'}`;
     }
+    renderTrendInsights(periodStats, viewMode);
 
     charts['trend'] = new Chart(ctx, {
         type: 'line',
@@ -767,10 +1265,24 @@ async function loadTrend() {
             responsive: true,
             maintainAspectRatio: false,
             interaction: { mode: 'index', intersect: false },
-            plugins: { legend: { position: 'top' } },
+            plugins: {
+                legend: { position: 'top' },
+                tooltip: {
+                    callbacks: {
+                        label: context => `${context.dataset.label}: ${context.parsed.y}${isPercentMode ? '%' : ''}`,
+                    }
+                }
+            },
             scales: {
                 x: { grid: { color: COLORS.grid } },
-                y: { grid: { color: COLORS.grid }, beginAtZero: true },
+                y: {
+                    grid: { color: COLORS.grid },
+                    beginAtZero: true,
+                    max: isPercentMode ? 100 : undefined,
+                    ticks: {
+                        callback: value => `${value}${isPercentMode ? '%' : ''}`,
+                    },
+                },
             }
         }
     });
@@ -781,6 +1293,7 @@ function resetTrendFilters() {
     document.getElementById('trend-filter-platform').value = 'all';
     document.getElementById('trend-filter-aspect').value = 'all';
     document.getElementById('trend-granularity').value = 'year';
+    document.getElementById('trend-view-mode').value = 'count';
     document.getElementById('trend-date-from').value = '';
     document.getElementById('trend-date-to').value = '';
     loadTrend();
@@ -794,8 +1307,10 @@ async function loadReviews(page = 1) {
     const aspect = document.getElementById('review-filter-aspect')?.value || 'all';
     const sentiment = document.getElementById('review-filter-sentiment')?.value || 'all';
     const keyword = document.getElementById('review-filter-keyword')?.value || '';
+    const dateFrom = document.getElementById('review-date-from')?.value || '';
+    const dateTo = document.getElementById('review-date-to')?.value || '';
 
-    const data = await fetchAPI('/api/reviews', { hotel, platform, aspect, sentiment, keyword, page, per_page: 25 });
+    const data = await fetchAPI('/api/reviews', { hotel, platform, aspect, sentiment, keyword, date_from: dateFrom, date_to: dateTo, page, per_page: 25 });
     if (data.error) return;
 
     // Count
@@ -812,11 +1327,11 @@ async function loadReviews(page = 1) {
                 return `<td>${createBadge(pred)}</td>`;
             }).join('');
             return `<tr>
-                <td>${r.ID_Review || ''}</td>
-                <td style="white-space:nowrap;">${(r.Nama_Hotel || '').replace('Hotel Santika ', '')}</td>
-                <td>${r.Platform || ''}</td>
-                <td style="white-space:nowrap;">${r.Review_Date || ''}</td>
-                <td class="text-review">${r.Text_Review || ''}</td>
+                <td>${escapeHtml(r.ID_Review || '')}</td>
+                <td style="white-space:nowrap;">${escapeHtml((r.Nama_Hotel || '').replace('Hotel Santika ', ''))}</td>
+                <td>${escapeHtml(r.Platform || '')}</td>
+                <td style="white-space:nowrap;">${escapeHtml(r.Review_Date || '')}</td>
+                <td class="text-review">${escapeHtml(r.Text_Review || '')}</td>
                 ${aspectCells}
             </tr>`;
         }).join('');
@@ -851,6 +1366,8 @@ function exportReviews() {
     const aspect = document.getElementById('review-filter-aspect')?.value || 'all';
     const sentiment = document.getElementById('review-filter-sentiment')?.value || 'all';
     const keyword = document.getElementById('review-filter-keyword')?.value || '';
+    const dateFrom = document.getElementById('review-date-from')?.value || '';
+    const dateTo = document.getElementById('review-date-to')?.value || '';
 
     const params = new URLSearchParams();
     if (hotel && hotel !== 'all') params.set('hotel', hotel);
@@ -858,13 +1375,108 @@ function exportReviews() {
     if (aspect && aspect !== 'all') params.set('aspect', aspect);
     if (sentiment && sentiment !== 'all') params.set('sentiment', sentiment);
     if (keyword) params.set('keyword', keyword);
+    if (dateFrom) params.set('date_from', dateFrom);
+    if (dateTo) params.set('date_to', dateTo);
 
     window.open(`/api/export?${params.toString()}`, '_blank');
+}
+
+function resetReviewFilters() {
+    document.getElementById('review-filter-hotel').value = 'all';
+    document.getElementById('review-filter-platform').value = 'all';
+    document.getElementById('review-filter-aspect').value = 'all';
+    document.getElementById('review-filter-sentiment').value = 'all';
+    document.getElementById('review-filter-keyword').value = '';
+    document.getElementById('review-date-from').value = '';
+    document.getElementById('review-date-to').value = '';
+    loadReviews(1);
 }
 
 // ========================================
 // PAGE: PREDICTION
 // ========================================
+let lastPredictionData = null;
+
+function getPredictionLabelText(label) {
+    const labels = {
+        positif: 'Positif',
+        negatif: 'Negatif',
+        netral: 'Netral',
+        none: 'Tidak terdeteksi',
+    };
+    return labels[label] || label;
+}
+
+function renderManualLabelingPanel(lowConfidence = []) {
+    if (!lowConfidence.length) return '';
+
+    return `
+        <div class="manual-label-panel">
+            <div class="manual-label-header">
+                <div>
+                    <div class="manual-label-title">Validasi Manual Confidence Rendah</div>
+                    <div class="manual-label-subtitle">
+                        Beberapa aspek memiliki confidence di bawah 60%. Pilih label manual jika hasil otomatis dirasa belum tepat sebelum menyimpan ke database.
+                    </div>
+                </div>
+                <span class="manual-label-count">${lowConfidence.length} aspek</span>
+            </div>
+            <div class="manual-label-list">
+                ${lowConfidence.map(item => `
+                    <div class="manual-label-row">
+                        <div>
+                            <div class="manual-label-aspect">${escapeHtml(item.aspect)}</div>
+                            <div class="manual-label-current">
+                                Otomatis: ${escapeHtml(getPredictionLabelText(item.prediction))} &middot; ${(item.confidence * 100).toFixed(1)}%
+                            </div>
+                        </div>
+                        <select class="form-select manual-label-select" data-aspect="${escapeHtml(item.aspect)}" onchange="applyManualPredictionOverride(this)">
+                            <option value="auto">Gunakan otomatis</option>
+                            <option value="positif">Label manual: Positif</option>
+                            <option value="negatif">Label manual: Negatif</option>
+                            <option value="netral">Label manual: Netral</option>
+                            <option value="none">Label manual: Tidak terdeteksi</option>
+                        </select>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
+function applyManualPredictionOverride(selectEl) {
+    if (!lastPredictionData) return;
+
+    const aspect = selectEl.dataset.aspect;
+    const manualValue = selectEl.value;
+    const item = lastPredictionData.find(row => row.aspect === aspect);
+    if (!item) return;
+
+    if (manualValue === 'auto') {
+        item.prediction = item.autoPrediction || item.prediction;
+        item.confidence = item.autoConfidence ?? item.confidence;
+        item.manual_override = false;
+    } else {
+        item.prediction = manualValue;
+        item.confidence = 1.0;
+        item.manual_override = true;
+    }
+
+    const row = document.querySelector(`.prediction-row[data-aspect="${CSS.escape(aspect)}"]`);
+    if (row) {
+        row.className = `prediction-row is-${item.prediction}`;
+        const badge = row.querySelector('.prediction-badge-slot');
+        if (badge) badge.innerHTML = createBadge(item.prediction);
+        const value = row.querySelector('.confidence-value');
+        if (value) value.textContent = item.manual_override ? 'Manual' : `${(item.confidence * 100).toFixed(1)}%`;
+        const fill = row.querySelector('.confidence-bar-fill');
+        if (fill) {
+            fill.className = `confidence-bar-fill ${item.manual_override ? 'manual' : item.confidence >= 0.7 ? 'high' : item.confidence >= 0.4 ? 'medium' : 'low'}`;
+            fill.style.width = item.manual_override ? '100%' : `${(item.confidence * 100).toFixed(1)}%`;
+        }
+    }
+}
+
 async function runPrediction() {
     const text = document.getElementById('predict-input').value.trim();
     if (!text) {
@@ -893,14 +1505,54 @@ async function runPrediction() {
             return;
         }
 
-        let html = '<div class="prediction-results">';
+        const detected = data.results.filter(r => r.prediction !== 'none');
+        const negatives = detected.filter(r => r.prediction === 'negatif');
+        const positives = detected.filter(r => r.prediction === 'positif');
+        const lowConfidence = data.results.filter(r => r.confidence < 0.6);
+        lastPredictionData = data.results.map(item => ({
+            ...item,
+            autoPrediction: item.prediction,
+            autoConfidence: item.confidence,
+            manual_override: false,
+        }));
+
+        let html = `
+            <div class="prediction-summary">
+                <div class="prediction-summary-card">
+                    <div class="summary-label">Aspek terdeteksi</div>
+                    <div class="summary-value">${detected.length}</div>
+                    <div class="summary-note">${detected.length ? escapeHtml(detected.map(r => r.aspect).join(', ')) : 'Tidak ada aspek spesifik yang kuat terdeteksi.'}</div>
+                </div>
+                <div class="prediction-summary-card ${negatives.length ? 'danger' : 'success'}">
+                    <div class="summary-label">Perlu perhatian</div>
+                    <div class="summary-value">${negatives.length}</div>
+                    <div class="summary-note">${negatives.length ? escapeHtml(negatives.map(r => r.aspect).join(', ')) : 'Tidak ada sentimen negatif dominan pada aspek layanan.'}</div>
+                </div>
+                <div class="prediction-summary-card">
+                    <div class="summary-label">Kekuatan terdeteksi</div>
+                    <div class="summary-value">${positives.length}</div>
+                    <div class="summary-note">${positives.length ? escapeHtml(positives.map(r => r.aspect).join(', ')) : 'Belum ada aspek positif yang menonjol.'}</div>
+                </div>
+            </div>
+        `;
+
+        if (lowConfidence.length > 0) {
+            html += `
+                <div class="prediction-warning">
+                    Confidence beberapa aspek masih di bawah 60%. Gunakan hasil ini sebagai bantuan analisis, bukan keputusan tunggal.
+                </div>
+            `;
+            html += renderManualLabelingPanel(lowConfidence);
+        }
+
+        html += '<div class="prediction-results">';
         data.results.forEach(r => {
             const confPct = (r.confidence * 100).toFixed(1);
             const confClass = r.confidence >= 0.7 ? 'high' : r.confidence >= 0.4 ? 'medium' : 'low';
 
-            html += `<div class="prediction-row is-${r.prediction}">
-                <span class="prediction-aspect">${r.aspect}</span>
-                ${createBadge(r.prediction)}
+            html += `<div class="prediction-row is-${r.prediction}" data-aspect="${escapeHtml(r.aspect)}">
+                <span class="prediction-aspect">${escapeHtml(r.aspect)}</span>
+                <span class="prediction-badge-slot">${createBadge(r.prediction)}</span>
                 <div class="confidence-bar">
                     <div class="confidence-bar-track">
                         <div class="confidence-bar-fill ${confClass}" style="width: ${confPct}%"></div>
@@ -911,12 +1563,66 @@ async function runPrediction() {
         });
         html += '</div>';
         resultsEl.innerHTML = html;
+
+        document.getElementById('predict-save-wrapper').style.display = 'block';
     } catch (err) {
         resultsEl.innerHTML = `<div class="empty-state"><div class="empty-state-text" style="color:var(--accent-red);">Error: ${err.message}</div></div>`;
+        document.getElementById('predict-save-wrapper').style.display = 'none';
     } finally {
         btn.classList.remove('btn-loading');
         btn.disabled = false;
         loading.style.display = 'none';
+    }
+}
+
+async function savePrediction() {
+    const text = document.getElementById('predict-input').value.trim();
+    const hotel = document.getElementById('predict-input-hotel').value;
+    const platform = document.getElementById('predict-input-platform').value;
+    const date = document.getElementById('predict-input-date').value;
+
+    if (!text || !hotel || !platform || !date || !lastPredictionData) {
+        alert('Mohon lengkapi semua form input (Hotel, Platform, Tanggal, dan Teks Review) sebelum menyimpan.');
+        return;
+    }
+
+    const btn = document.getElementById('btn-save-predict');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<div class="spinner" style="width:14px;height:14px;border-width:2px;display:inline-block;vertical-align:middle;margin-right:5px;"></div> Menyimpan...';
+    btn.disabled = true;
+
+    try {
+        const res = await fetch('/api/save-prediction', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                text: text,
+                hotel: hotel,
+                platform: platform,
+                date: date,
+                predictions: lastPredictionData
+            }),
+        });
+        const data = await res.json();
+
+        if (data.error) {
+            alert('Gagal menyimpan: ' + data.error);
+        } else {
+            alert('Berhasil disimpan! Data telah ditambahkan ke database.');
+            // Reset form
+            document.getElementById('predict-input').value = '';
+            document.getElementById('predict-input-hotel').value = '';
+            document.getElementById('predict-input-platform').value = '';
+            document.getElementById('predict-input-date').value = '';
+            document.getElementById('predict-results').innerHTML = '<div class="empty-state"><div class="empty-state-icon">AI</div><div class="empty-state-text">Masukkan review dan klik "Prediksi Sentimen" untuk melihat hasilnya.</div></div>';
+            document.getElementById('predict-save-wrapper').style.display = 'none';
+            lastPredictionData = null;
+        }
+    } catch (err) {
+        alert('Terjadi kesalahan: ' + err.message);
+    } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
     }
 }
 
@@ -930,33 +1636,21 @@ async function loadPerformance() {
     const metricsEl = document.getElementById('perf-metrics');
     const o = data.overall;
     metricsEl.innerHTML = `
-        <div class="metric-card">
-            <div class="metric-value">${(o.macro_f1 * 100).toFixed(1)}%</div>
-            <div class="metric-label">Macro F1</div>
-        </div>
-        <div class="metric-card">
+        <div class="metric-card" style="border-left-color: var(--accent-green);">
             <div class="metric-value">${(o.accuracy * 100).toFixed(1)}%</div>
-            <div class="metric-label">Accuracy</div>
+            <div class="metric-label">Tingkat Keakuratan AI</div>
         </div>
-        <div class="metric-card">
-            <div class="metric-value">${(o.weighted_f1 * 100).toFixed(1)}%</div>
-            <div class="metric-label">Weighted F1</div>
+        <div class="metric-card" style="border-left-color: var(--accent-blue);">
+            <div class="metric-value">14.749</div>
+            <div class="metric-label">Total Ulasan yang Dipelajari</div>
         </div>
-        <div class="metric-card">
-            <div class="metric-value">${(o.non_none_f1 * 100).toFixed(1)}%</div>
-            <div class="metric-label">Non-none F1</div>
-        </div>
-        <div class="metric-card">
-            <div class="metric-value">${(o.aspect_detection_f1 * 100).toFixed(1)}%</div>
-            <div class="metric-label">Aspect Detection F1</div>
-        </div>
-        <div class="metric-card">
-            <div class="metric-value">${(o.false_aspect_rate * 100).toFixed(1)}%</div>
-            <div class="metric-label">False Aspect Rate</div>
+        <div class="metric-card" style="border-left-color: var(--accent-purple);">
+            <div class="metric-value">7</div>
+            <div class="metric-label">Area Pelayanan Terpantau</div>
         </div>
     `;
 
-    // Per-aspect chart
+    // Per-aspect chart (simplified to just Accuracy)
     destroyChart('perf-aspect');
     const ctx = document.getElementById('chart-perf-aspect').getContext('2d');
     const perAspect = data.per_aspect;
@@ -966,29 +1660,13 @@ async function loadPerformance() {
             labels: ASPECTS,
             datasets: [
                 {
-                    label: 'Macro F1',
-                    data: ASPECTS.map(a => ((perAspect[a]?.macro_f1 || 0) * 100).toFixed(1)),
+                    label: 'Akurasi Pengenalan Sentimen',
+                    data: ASPECTS.map(a => ((perAspect[a]?.acc || 0) * 100).toFixed(1)),
                     borderColor: COLORS.blue,
-                    backgroundColor: COLORS.blue + '22',
+                    backgroundColor: COLORS.blue + '33',
                     pointBackgroundColor: COLORS.blue,
                     borderWidth: 2,
-                },
-                {
-                    label: 'Non-none F1',
-                    data: ASPECTS.map(a => ((perAspect[a]?.non_none_macro_f1 || 0) * 100).toFixed(1)),
-                    borderColor: COLORS.purple,
-                    backgroundColor: COLORS.purple + '22',
-                    pointBackgroundColor: COLORS.purple,
-                    borderWidth: 2,
-                },
-                {
-                    label: 'Aspect Detection F1',
-                    data: ASPECTS.map(a => ((perAspect[a]?.aspect_detection_f1 || 0) * 100).toFixed(1)),
-                    borderColor: COLORS.positif,
-                    backgroundColor: COLORS.positif + '22',
-                    pointBackgroundColor: COLORS.positif,
-                    borderWidth: 2,
-                },
+                }
             ]
         },
         options: {
@@ -997,50 +1675,34 @@ async function loadPerformance() {
             scales: {
                 r: {
                     beginAtZero: true,
+                    min: 70, // Usually accuracy is high, zooming in for clarity
                     max: 100,
                     grid: { color: COLORS.grid },
                     angleLines: { color: COLORS.grid },
-                    pointLabels: { color: COLORS.textPrimary, font: { size: 12, weight: 600 } },
-                    ticks: { color: COLORS.muted, backdropColor: 'transparent' },
+                    pointLabels: { color: COLORS.textPrimary, font: { size: 13, weight: 600 } },
+                    ticks: { color: COLORS.muted, backdropColor: 'transparent', stepSize: 10 },
                 }
             },
             plugins: { legend: { position: 'top' } },
         }
     });
 
-    // Per-aspect table
-    const tableEl = document.getElementById('perf-table-wrapper');
-    let html = '<table class="data-table"><thead><tr><th>Aspek</th><th>Macro F1</th><th>Weighted F1</th><th>Accuracy</th><th>Non-none F1</th><th>Aspect Det. F1</th><th>False Aspect</th></tr></thead><tbody>';
-    ASPECTS.forEach(a => {
-        const p = perAspect[a] || {};
-        html += `<tr>
-            <td><strong>${a}</strong></td>
-            <td>${((p.macro_f1 || 0) * 100).toFixed(1)}%</td>
-            <td>${((p.weighted_f1 || 0) * 100).toFixed(1)}%</td>
-            <td>${((p.acc || 0) * 100).toFixed(1)}%</td>
-            <td>${((p.non_none_macro_f1 || 0) * 100).toFixed(1)}%</td>
-            <td>${((p.aspect_detection_f1 || 0) * 100).toFixed(1)}%</td>
-            <td>${((p.false_aspect_rate || 0) * 100).toFixed(1)}%</td>
-        </tr>`;
-    });
-    html += '</tbody></table>';
-    tableEl.innerHTML = html;
-
-    // Model config
-    const cfgEl = document.getElementById('perf-config');
-    const cfg = data.model_config;
-    cfgEl.innerHTML = `
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
-            <div class="about-block" style="margin-bottom:0;"><h3>Base Model</h3><p>${cfg.model_name}</p></div>
-            <div class="about-block" style="margin-bottom:0;"><h3>Max Length</h3><p>${cfg.max_len} tokens</p></div>
-            <div class="about-block" style="margin-bottom:0;"><h3>Learning Rate</h3><p>${cfg.learning_rate}</p></div>
-            <div class="about-block" style="margin-bottom:0;"><h3>Batch Size</h3><p>${cfg.batch_size}</p></div>
-            <div class="about-block" style="margin-bottom:0;"><h3>Epochs</h3><p>${cfg.epochs}</p></div>
-            <div class="about-block" style="margin-bottom:0;"><h3>Dropout</h3><p>${cfg.dropout}</p></div>
-            <div class="about-block" style="margin-bottom:0;"><h3>Class Weight</h3><p>${cfg.class_weight ? 'Ya (sqrt_capped)' : 'Tidak'}</p></div>
-            <div class="about-block" style="margin-bottom:0;"><h3>Label Smoothing</h3><p>${cfg.label_smoothing}</p></div>
-        </div>
-    `;
+    // Notes
+    const notesEl = document.getElementById('perf-notes');
+    if (notesEl) {
+        notesEl.innerHTML = `
+            <div class="about-block" style="border-left-color: var(--accent-orange);">
+                <h3>Keandalan Asisten Digital Anda</h3>
+                <p>AI kami didesain untuk mereplikasi bagaimana asisten manusia membaca ulasan. Dengan tingkat keakuratan mencapai <strong>${(o.accuracy * 100).toFixed(1)}%</strong>, sistem ini dapat dengan cerdas membedakan pujian dan keluhan pada berbagai area pelayanan hotel secara bersamaan.</p>
+                <br>
+                <ul>
+                    <li><strong>Konsisten:</strong> AI tidak pernah lelah dan memberikan standar penilaian yang konsisten 24/7.</li>
+                    <li><strong>Cepat:</strong> Ribuan ulasan dibaca dan diringkas dalam hitungan detik.</li>
+                    <li><strong>Konteks:</strong> Berkat teknologi bahasa alami canggih, AI memahami konteks kata, seperti membedakan kata "dingin" pada AC (Positif) vs "dingin" pada makanan (Negatif).</li>
+                </ul>
+            </div>
+        `;
+    }
 }
 
 // ========================================

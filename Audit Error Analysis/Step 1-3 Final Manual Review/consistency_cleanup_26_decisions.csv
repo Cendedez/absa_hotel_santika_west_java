@@ -1,0 +1,27 @@
+﻿cleanup_decision,ID_Review,aspect,old_label,new_label,old_reason,new_reason,note,Text_Review
+fill_missing_reason,13024,Fasilitas,negatif,negatif,harga terbaik tapi perlu menambahkan lebih banyak saluran televisi,harga terbaik tapi perlu menambahkan lebih banyak saluran televisi,Bukti aspek condong negatif.,harga terbaik tapi perlu menambahkan lebih banyak saluran televisi
+clear_misplaced_reason,13024,Makanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,harga terbaik tapi perlu menambahkan lebih banyak saluran televisi
+clear_misplaced_reason,13059,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,pelayanan dan fasilitasnya baik banget.
+clear_misplaced_reason,13059,Makanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,pelayanan dan fasilitasnya baik banget.
+clear_misplaced_reason,13196,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,fasilitas dan layanan yang baik
+clear_misplaced_reason,13196,Makanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,fasilitas dan layanan yang baik
+clear_misplaced_reason,13225,Lokasi,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,harga murah tapi pelayanan tidak murahan
+clear_misplaced_reason,13434,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,pelayanannya baik fasilitas hotelnya juga mantab
+clear_misplaced_reason,13434,Makanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,pelayanannya baik fasilitas hotelnya juga mantab
+clear_misplaced_reason,13455,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,fasilitas bagus. pelayanan baik.
+clear_misplaced_reason,13455,Makanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,fasilitas bagus. pelayanan baik.
+clear_misplaced_reason,13469,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,"pelayanan yang ramah, makanannya enak"
+clear_misplaced_reason,13659,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,pelayanannya sangat ramah namun untuk variasi sarapan perlu ditambahkan lagi
+clear_misplaced_reason,13664,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,semua fasilitas mantul pelayanan ramah
+clear_misplaced_reason,13664,Makanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,semua fasilitas mantul pelayanan ramah
+clear_misplaced_reason,13728,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,"hotel terfavorit, makanan banyak variasi, staf ramah"
+clear_misplaced_reason,13803,Fasilitas,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,"kamar kurang bersih, sarapan pagi menemukan rambut."
+clear_misplaced_reason,13901,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,fasilitas lengkap pelayanan memuaskan.
+clear_misplaced_reason,13901,Makanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,fasilitas lengkap pelayanan memuaskan.
+clear_misplaced_reason,14155,Pelayanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,"bahagia, bersih, baik, cantik."
+clear_misplaced_reason,14215,Pelayanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,"bagus, bagus, bersih, terawat."
+clear_misplaced_reason,14220,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,hotelnya bagus. bersih juga. pelayanan baik. tapi pesan yang king dikasih kamar yang standard.
+clear_invalid_empty_reason_label,14283,Kenyamanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,"pelayanan yang ramah, menu sarapan sangat beragam, check in dan check out dengan proses yang mudah dan cepat. shower besar."
+clear_misplaced_reason,14364,Harga,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,pelayanan dan fasilitas cukup memuaskan
+clear_misplaced_reason,14364,Makanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,pelayanan dan fasilitas cukup memuaskan
+clear_misplaced_reason,14676,Pelayanan,none,none,,,Tidak ada bukti aspek yang cukup pada teks review.,hotel ini bersih dan menarik tempatnya.

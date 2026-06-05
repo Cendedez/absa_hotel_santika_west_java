@@ -18,8 +18,14 @@ build/
 
 # Local exports and temporary files
 Dashboard/export_temp.csv
+Dashboard/login-preview*.png
+Dashboard/static/img/hs-logo.svg
+Dashboard/static/img/santika-logo.png
+Dashboard/templates/image/
+_extracted_progress_images/
 *.tmp
 *.log
+*.zip
 
 # Skripsi/report documents are kept outside the source repository
 *.docx

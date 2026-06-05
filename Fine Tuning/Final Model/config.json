@@ -1,0 +1,168 @@
+{
+  "model_name": "indobenchmark/indobert-base-p1",
+  "dataset_version": "v3_final_audited",
+  "split_version": "absa_santika_split_v3",
+  "split_manifest": {
+    "dataset_path": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Audit Error Analysis\\Step 1-3 Final Manual Review\\dataset_absa_labeled_v3_final_audited.csv",
+    "seed": 42,
+    "split_ratios": {
+      "train": 0.8,
+      "validation": 0.1,
+      "test": 0.1
+    },
+    "target_sizes": {
+      "train": 11797,
+      "validation": 1475,
+      "test": 1475
+    },
+    "actual_sizes": {
+      "train": 11797,
+      "validation": 1475,
+      "test": 1475
+    },
+    "n_rows": 14747,
+    "aspects": [
+      "Kenyamanan",
+      "Kebersihan",
+      "Pelayanan",
+      "Harga",
+      "Lokasi",
+      "Fasilitas",
+      "Makanan"
+    ],
+    "labels": [
+      "positif",
+      "negatif",
+      "netral",
+      "none"
+    ],
+    "max_abs_pct_diff_aspect_label": 0.0011481795205690037,
+    "mean_abs_pct_diff_aspect_label": 0.00024736630373368843,
+    "method": "greedy iterative multi-label stratified split using aspect-label indicators"
+  },
+  "train_rows": 11797,
+  "validation_rows": 1475,
+  "test_rows": 1475,
+  "train_path": "/kaggle/input/datasets/vince0014/absa-santika-split-v3/absa_santika_split_v3/train.csv",
+  "validation_path": "/kaggle/input/datasets/vince0014/absa-santika-split-v3/absa_santika_split_v3/validation.csv",
+  "test_path": "/kaggle/input/datasets/vince0014/absa-santika-split-v3/absa_santika_split_v3/test.csv",
+  "manifest_path": "/kaggle/input/datasets/vince0014/absa-santika-split-v3/absa_santika_split_v3/split_manifest.json",
+  "aspects": [
+    "Lokasi",
+    "Kenyamanan",
+    "Pelayanan",
+    "Kebersihan",
+    "Harga",
+    "Makanan",
+    "Fasilitas"
+  ],
+  "label2id": {
+    "none": 0,
+    "positif": 1,
+    "negatif": 2,
+    "netral": 3
+  },
+  "id2label": {
+    "0": "none",
+    "1": "positif",
+    "2": "negatif",
+    "3": "netral"
+  },
+  "max_len": 128,
+  "best_cfg": {
+    "name": "c4_p1_cw_ls",
+    "model_name": "indobenchmark/indobert-base-p1",
+    "lr": 3e-05,
+    "batch_size": 16,
+    "max_epochs": 10,
+    "max_len": 128,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "dropout": 0.2,
+    "scheduler": "linear",
+    "optimizer": "adamw",
+    "label_smoothing": 0.1,
+    "freeze_layers": 0,
+    "class_weight": true,
+    "patience": 3
+  },
+  "class_weight_mode": "sqrt_capped",
+  "class_weight_max": 4.0,
+  "class_weight_min": 0.25,
+  "val_macro_f1": 0.7672365564315479,
+  "test": {
+    "macro_f1": 0.7387052099549992,
+    "weighted_f1": 0.9327129507944335,
+    "acc": 0.9320096852300243,
+    "non_none_macro_f1": 0.6624931101839173,
+    "aspect_detection_f1": 0.9185543037725346,
+    "false_aspect_rate": 0.03986551164689188,
+    "sentiment_macro_f1_present": 0.712805030856425,
+    "per_aspect": {
+      "Lokasi": {
+        "macro_f1": 0.7252498648388029,
+        "weighted_f1": 0.9465625599832438,
+        "acc": 0.9464406779661017,
+        "non_none_macro_f1": 0.6427379032421049,
+        "aspect_detection_f1": 0.9407965554359526,
+        "false_aspect_rate": 0.03721841332027424,
+        "sentiment_macro_f1_present": 0.7112505678636705
+      },
+      "Kenyamanan": {
+        "macro_f1": 0.7173481549230083,
+        "weighted_f1": 0.8783380695518419,
+        "acc": 0.8779661016949153,
+        "non_none_macro_f1": 0.6484567577744393,
+        "aspect_detection_f1": 0.8827586206896552,
+        "false_aspect_rate": 0.08213096559378469,
+        "sentiment_macro_f1_present": 0.6942002872437655
+      },
+      "Pelayanan": {
+        "macro_f1": 0.7971512238680829,
+        "weighted_f1": 0.9356390464347306,
+        "acc": 0.9355932203389831,
+        "non_none_macro_f1": 0.7406786601721066,
+        "aspect_detection_f1": 0.9542168674698795,
+        "false_aspect_rate": 0.039627039627039624,
+        "sentiment_macro_f1_present": 0.7696095728414272
+      },
+      "Kebersihan": {
+        "macro_f1": 0.7274552068292307,
+        "weighted_f1": 0.9614208985220278,
+        "acc": 0.9606779661016949,
+        "non_none_macro_f1": 0.6433967734827134,
+        "aspect_detection_f1": 0.9487485101311085,
+        "false_aspect_rate": 0.02544769085768143,
+        "sentiment_macro_f1_present": 0.7098352673470667
+      },
+      "Harga": {
+        "macro_f1": 0.6916493644210724,
+        "weighted_f1": 0.9675708201349081,
+        "acc": 0.9661016949152542,
+        "non_none_macro_f1": 0.5925181201776947,
+        "aspect_detection_f1": 0.8584905660377359,
+        "false_aspect_rate": 0.01455604075691412,
+        "sentiment_macro_f1_present": 0.6539304317604825
+      },
+      "Makanan": {
+        "macro_f1": 0.7779812263646263,
+        "weighted_f1": 0.9331007540466766,
+        "acc": 0.9322033898305084,
+        "non_none_macro_f1": 0.7117269064706647,
+        "aspect_detection_f1": 0.9584120982986768,
+        "false_aspect_rate": 0.029411764705882353,
+        "sentiment_macro_f1_present": 0.737383952039984
+      },
+      "Fasilitas": {
+        "macro_f1": 0.7341014284401717,
+        "weighted_f1": 0.9063585068876059,
+        "acc": 0.9050847457627119,
+        "non_none_macro_f1": 0.6579366499676976,
+        "aspect_detection_f1": 0.8864569083447332,
+        "false_aspect_rate": 0.050666666666666665,
+        "sentiment_macro_f1_present": 0.7134251368985791
+      }
+    }
+  },
+  "no_aspect_audit": null
+}
