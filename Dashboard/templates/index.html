@@ -129,6 +129,87 @@
                         <span id="theme-toggle-icon" style="margin-right: 4px;">🌙</span>
                         <span id="theme-toggle-text">Mode Gelap</span>
                     </button>
+                    <div class="font-settings">
+                        <button class="theme-toggle" id="font-settings-toggle" type="button" aria-label="Pengaturan teks" title="Pengaturan teks">
+                            <span style="margin-right:4px;font-weight:800;">A</span>
+                            <span>Pengaturan Teks</span>
+                        </button>
+                        <div class="font-settings-panel" id="font-settings-panel" hidden>
+                            <div class="font-settings-header">
+                                <div class="font-settings-title">Pengaturan Tampilan</div>
+                                <button class="btn btn-secondary btn-sm font-settings-reset" id="fs-reset" type="button">Atur ulang semua</button>
+                            </div>
+
+                            <div class="fs-section">
+                                <div class="fs-section-label">Preset cepat</div>
+                                <div class="fs-preset-row">
+                                    <button class="fs-preset-btn" data-preset="kecil" type="button">Kecil</button>
+                                    <button class="fs-preset-btn" data-preset="normal" type="button">Normal</button>
+                                    <button class="fs-preset-btn" data-preset="besar" type="button">Besar</button>
+                                    <button class="fs-preset-btn" data-preset="ekstra" type="button">Sangat Besar</button>
+                                </div>
+                            </div>
+
+                            <div class="fs-section">
+                                <div class="fs-section-label">Ukuran teks</div>
+                                <div class="font-settings-group">
+                                    <div class="font-settings-row">
+                                        <label for="fs-heading">Judul &amp; Header</label>
+                                        <span class="font-settings-value" id="fs-heading-value">100%</span>
+                                    </div>
+                                    <input type="range" id="fs-heading" min="90" max="160" step="5" value="100" aria-label="Ukuran judul dan header">
+                                </div>
+                                <div class="font-settings-group">
+                                    <div class="font-settings-row">
+                                        <label for="fs-text">Teks &amp; Deskripsi</label>
+                                        <span class="font-settings-value" id="fs-text-value">100%</span>
+                                    </div>
+                                    <input type="range" id="fs-text" min="90" max="160" step="5" value="100" aria-label="Ukuran teks dan deskripsi">
+                                </div>
+                            </div>
+
+                            <div class="fs-section">
+                                <div class="fs-section-label">Keterbacaan</div>
+                                <div class="font-settings-group">
+                                    <div class="font-settings-row">
+                                        <label for="fs-weight">Ketebalan teks</label>
+                                        <span class="font-settings-value" id="fs-weight-value">Normal</span>
+                                    </div>
+                                    <input type="range" id="fs-weight" min="0" max="2" step="1" value="0" aria-label="Ketebalan teks">
+                                </div>
+                                <div class="font-settings-group">
+                                    <div class="font-settings-row">
+                                        <label for="fs-lineheight">Jarak antar baris</label>
+                                        <span class="font-settings-value" id="fs-lineheight-value">100%</span>
+                                    </div>
+                                    <input type="range" id="fs-lineheight" min="100" max="180" step="10" value="100" aria-label="Jarak antar baris">
+                                </div>
+                                <label class="fs-switch">
+                                    <input type="checkbox" id="fs-contrast" aria-label="Tingkatkan kontras teks">
+                                    <span>Tingkatkan kontras teks</span>
+                                </label>
+                            </div>
+
+                            <div class="fs-section">
+                                <div class="fs-section-label">Tata letak</div>
+                                <div class="font-settings-group">
+                                    <div class="font-settings-row">
+                                        <label for="fs-ui">Skala antarmuka (tombol &amp; ikon)</label>
+                                        <span class="font-settings-value" id="fs-ui-value">100%</span>
+                                    </div>
+                                    <input type="range" id="fs-ui" min="90" max="140" step="5" value="100" aria-label="Skala antarmuka">
+                                </div>
+                                <label class="fs-switch">
+                                    <input type="checkbox" id="fs-readwidth" aria-label="Batasi lebar baca paragraf">
+                                    <span>Batasi lebar baca paragraf</span>
+                                </label>
+                                <label class="fs-switch">
+                                    <input type="checkbox" id="fs-tableroomy" aria-label="Tabel lebih renggang">
+                                    <span>Tabel lebih renggang</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                     <a class="btn btn-secondary btn-sm" href="/logout">Keluar</a>
                     <button class="btn btn-secondary btn-sm" id="btn-mobile-menu" style="display:none;" onclick="document.getElementById('sidebar').classList.toggle('open')">
                         &#9776; Menu
@@ -152,6 +233,27 @@
                         <button class="btn btn-secondary btn-sm" onclick="exportSummary()" title="Export ringkasan untuk weekly meeting / morning briefing">&#x1F4CB; Export Ringkasan Briefing</button>
                     </div>
                     <div class="stat-cards" id="overview-stats"></div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header"><div class="card-title">Tingkat Sentimen Keseluruhan</div></div>
+                            <div class="card-body">
+                                <div class="sentiment-level-wrap">
+                                    <div class="sentiment-mini-chart"><canvas id="chart-sentiment-gauge"></canvas></div>
+                                    <div class="sentiment-level-meta" id="sentiment-level-meta"></div>
+                                </div>
+                                <div class="sentiment-scale-legend" id="sentiment-scale-legend"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header"><div class="card-title">Komposisi Sentimen</div></div>
+                            <div class="card-body">
+                                <div class="sentiment-comp-wrap">
+                                    <div class="sentiment-mini-chart"><canvas id="chart-sentiment-comp"></canvas></div>
+                                    <div class="sentiment-comp-legend" id="sentiment-comp-legend"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="insight-hero" id="overview-insight"></div>
                     <div class="card">
                         <div class="card-header">
@@ -364,24 +466,13 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">Daftar Review</div>
-                            <div id="review-count" style="font-size:12px;color:var(--text-secondary);"></div>
+                            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                                <div id="review-count" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;"></div>
+                                <div id="review-perpage-header" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);white-space:nowrap;"></div>
+                            </div>
                         </div>
                         <div class="card-body card-body-flush">
-                            <div class="data-table-wrapper">
-                                <table class="data-table" id="reviews-table">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Hotel</th>
-                                            <th>Platform</th>
-                                            <th>Tanggal</th>
-                                            <th>Review</th>
-                                            <th>Lok</th><th>Ken</th><th>Pel</th><th>Keb</th><th>Har</th><th>Mak</th><th>Fas</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="reviews-tbody"></tbody>
-                                </table>
-                            </div>
+                            <div class="review-list" id="reviews-tbody"></div>
                         </div>
                     </div>
                     <div class="pagination" id="reviews-pagination"></div>
@@ -451,11 +542,11 @@
                 <section class="page-section" id="page-performance">
                     <div class="metric-cards" id="perf-metrics"></div>
                     <div class="card">
-                        <div class="card-header"><div class="card-title">Keakuratan AI per Area Pelayanan</div></div>
+                        <div class="card-header"><div class="card-title">Performa Akurasi Semua Aspek</div></div>
                         <div class="card-body"><div class="chart-container chart-container-lg"><canvas id="chart-perf-aspect"></canvas></div></div>
                     </div>
                     <div class="card">
-                        <div class="card-header"><div class="card-title">Bagaimana Cara Kerja AI?</div></div>
+                        <div class="card-header"><div class="card-title">Catatan Performa Model</div></div>
                         <div class="card-body" id="perf-notes"></div>
                     </div>
                 </section>
@@ -465,39 +556,53 @@
                     <div class="card">
                         <div class="card-header"><div class="card-title">Tentang Sistem</div></div>
                         <div class="card-body">
+                            <div class="doc-callout">
+                                <h3>Ringkasan singkat</h3>
+                                <p>Dashboard ini membaca ulasan tamu Hotel Santika dari platform pemesanan online, lalu mengelompokkan isi setiap ulasan ke tujuh area layanan beserta sentimennya. Tujuannya sederhana: membantu manajemen melihat apa yang dipuji dan apa yang dikeluhkan tamu, tanpa harus membaca ribuan ulasan satu per satu.</p>
+                            </div>
+
                             <div class="about-block">
-                                <h3>Memahami Pelanggan dengan Kecerdasan Buatan (AI)</h3>
-                                <p>Customer Sentiment Dashboard adalah asisten cerdas berbasis Artificial Intelligence (AI) yang dirancang khusus untuk menganalisis puluhan ribu ulasan tamu Hotel Santika secara instan. Sistem ini bekerja seperti mata dan telinga digital bagi manajemen, membaca ulasan dari berbagai platform tiket online untuk memahami apa yang disukai dan apa yang dikeluhkan pelanggan secara otomatis.</p>
+                                <h3>Latar belakang</h3>
+                                <p>Tamu menulis ulasan di banyak tempat — Traveloka, Agoda, Tiket.com — dan jumlahnya terus bertambah setiap hari. Membaca semuanya secara manual memakan waktu, dan sulit menarik kesimpulan yang konsisten antar cabang. Sistem ini dibangun untuk merangkum ulasan-ulasan tersebut menjadi gambaran yang bisa langsung ditindaklanjuti.</p>
                             </div>
+
                             <div class="about-block" style="border-left-color: var(--accent-green);">
-                                <h3>Manfaat Bagi Manajemen Hotel</h3>
+                                <h3>Bagaimana ulasan diproses</h3>
+                                <p>Setiap ulasan melewati beberapa tahap sebelum tampil di dashboard:</p>
                                 <ul>
-                                    <li>Menghemat waktu ratusan jam yang biasanya dibutuhkan untuk membaca ulasan secara manual.</li>
-                                    <li>Mendapatkan gambaran kinerja hotel yang jujur dan komprehensif berdasarkan suara asli pelanggan.</li>
-                                    <li>Mengidentifikasi tren kepuasan dan keluhan secara dini sehingga masalah bisa segera diatasi.</li>
-                                    <li>Mengetahui keunggulan kompetitif hotel untuk keperluan promosi.</li>
+                                    <li>Ulasan dikumpulkan dari platform OTA, lalu dirapikan (membuang duplikat, menormalkan teks, dan menerjemahkan ulasan berbahasa asing).</li>
+                                    <li>Model bahasa membaca setiap ulasan dan menentukan, untuk masing-masing dari tujuh area layanan, apakah tamu menyebutnya dan bagaimana sentimennya.</li>
+                                    <li>Hasilnya diringkas menjadi grafik dan tabel yang bisa disaring berdasarkan hotel, platform, dan rentang tanggal.</li>
                                 </ul>
                             </div>
+
                             <div class="about-block" style="border-left-color: var(--accent-purple);">
-                                <h3>7 Area Pelayanan yang Dipantau</h3>
-                                <p>AI kami secara spesifik memantau dan memberikan penilaian sentimen (Positif/Negatif) pada 7 area kritis:</p>
+                                <h3>Tujuh area layanan</h3>
+                                <p>Sentimen tamu dikelompokkan ke dalam aspek-aspek berikut:</p>
                                 <ul>
-                                    <li><strong>Lokasi</strong> — Kepuasan tamu terhadap kemudahan akses dan lingkungan sekitar.</li>
-                                    <li><strong>Kenyamanan</strong> — Bagaimana tamu merasakan kualitas istirahat mereka.</li>
-                                    <li><strong>Pelayanan</strong> — Keramahan, kecepatan, dan profesionalisme staf hotel.</li>
-                                    <li><strong>Kebersihan</strong> — Standar kebersihan kamar tidur, kamar mandi, dan area publik.</li>
-                                    <li><strong>Harga</strong> — Persepsi tamu mengenai nilai uang (value for money).</li>
-                                    <li><strong>Makanan</strong> — Kualitas dan variasi hidangan sarapan maupun restoran.</li>
-                                    <li><strong>Fasilitas</strong> — Kelengkapan sarana pendukung seperti kolam renang, WiFi, dan area parkir.</li>
+                                    <li><strong>Lokasi</strong> — akses, jarak ke pusat kota, dan lingkungan sekitar hotel.</li>
+                                    <li><strong>Kenyamanan</strong> — kondisi kamar, kualitas tidur, suhu, dan ketenangan.</li>
+                                    <li><strong>Pelayanan</strong> — keramahan dan kecepatan respons staf.</li>
+                                    <li><strong>Kebersihan</strong> — kebersihan kamar, kamar mandi, dan area umum.</li>
+                                    <li><strong>Harga</strong> — kesesuaian harga dengan layanan yang diterima.</li>
+                                    <li><strong>Makanan</strong> — kualitas, variasi, dan rasa hidangan sarapan maupun restoran.</li>
+                                    <li><strong>Fasilitas</strong> — kelengkapan dan kondisi fasilitas seperti kolam renang, WiFi, parkir, dan gym.</li>
                                 </ul>
                             </div>
+
                             <div class="about-block" style="border-left-color: var(--accent-cyan);">
-                                <h3>Cakupan Laporan</h3>
+                                <h3>Sumber dan cakupan data</h3>
                                 <ul>
-                                    <li><strong>Sumber Data:</strong> Platform Online Travel Agent (OTA) seperti Traveloka, Agoda, dan Tiket.com.</li>
-                                    <li><strong>Volume Ulasan:</strong> Lebih dari 14.700 ulasan tamu secara historis.</li>
-                                    <li><strong>Wilayah:</strong> Fokus pada cabang-cabang Hotel Santika di wilayah Jawa Barat.</li>
+                                    <li><strong>Platform:</strong> Traveloka, Agoda, dan Tiket.com.</li>
+                                    <li><strong>Jumlah ulasan:</strong> lebih dari 15.000 ulasan tamu (data historis).</li>
+                                    <li><strong>Wilayah:</strong> cabang-cabang Hotel Santika di Jawa Barat.</li>
+                                    <li><strong>Bahasa:</strong> Bahasa Indonesia, termasuk ulasan asing yang diterjemahkan otomatis.</li>
                                 </ul>
+                            </div>
+
+                            <div class="doc-callout note">
+                                <h3>Hal yang perlu diperhatikan</h3>
+                                <p>Prediksi sentimen dihasilkan secara otomatis dan tidak selalu sempurna, terutama pada ulasan yang sangat singkat atau bermakna ganda. Angka pada dashboard sebaiknya dipakai sebagai indikator awal untuk menemukan pola, bukan sebagai satu-satunya dasar keputusan. Untuk hal yang penting, sebaiknya tetap dikonfirmasi dengan membaca ulasan aslinya atau pengecekan langsung di lapangan.</p>
                             </div>
                         </div>
                     </div>
@@ -507,6 +612,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="/static/js/dashboard.js?v=20260605-manual-label"></script>
+    <script src="/static/js/dashboard.js?v=20260608-score-legend"></script>
 </body>
 </html>

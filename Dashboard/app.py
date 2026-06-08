@@ -25,6 +25,7 @@ from transformers import AutoConfig, AutoModel, AutoTokenizer, BertConfig
 # ========================================
 BASE_DIR = Path(__file__).parent.parent  # ABSA Hotel Santika/
 MODEL_CANDIDATES = [
+    BASE_DIR / "Fine Tuning" / "Model Terbaik" / "best_absa_indobert",
     BASE_DIR / "Fine Tuning" / "Final Model",
     BASE_DIR / "Fine Tuning" / "best_absa_indobert",
 ]
@@ -681,7 +682,7 @@ def api_aspect_analysis():
             else:
                 sub = sub[sub[col] != "none"]
             sub = sort_reviews_newest_first(sub)
-            examples = sub.head(20)[["ID_Review", "Platform", "Nama_Hotel", "Review_Date", "Text_Review", col]].to_dict("records")
+            examples = sub.head(10)[["ID_Review", "Platform", "Nama_Hotel", "Review_Date", "Text_Review", col]].to_dict("records")
             aspect_examples[selected_aspect] = examples
 
     return jsonify({
@@ -1108,6 +1109,7 @@ def api_model_performance():
             "false_aspect_rate": test_metrics.get("false_aspect_rate"),
         },
         "per_aspect": test_metrics.get("per_aspect", {}),
+        "total_reviews": int(len(df)),
         "model_config": {
             "model_name": MODEL_NAME,
             "max_len": MAX_LEN,

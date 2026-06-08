@@ -111,6 +111,83 @@
         return { judul: '', teks_ulasan: '', is_original: false };
     }
 
+    /**
+     * Mengekstrak tanggal review dari sebuah review card.
+     *
+     * Agoda menampilkan tanggal dengan beberapa cara, jadi kita coba berurutan:
+     *   1. Elemen khusus tanggal (data-selenium / data-testid / class).
+     *   2. Teks dengan prefix "Reviewed" (EN) atau "Diulas" (ID).
+     *   3. Teks apa pun di dalam status bar yang cocok pola tanggal.
+     *
+     * Hasil dibersihkan dari prefix sehingga hanya menyisakan tanggalnya.
+     */
+    function extractReviewDate(reviewCard) {
+        const MONTHS_EN = '(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)';
+        const MONTHS_ID = '(?:Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember|Jan|Feb|Mar|Apr|Mei|Jun|Jul|Agu|Agt|Sep|Okt|Nov|Des)';
+        // Pola: "May 11, 2026", "11 May 2026", "11 Mei 2026", "11/05/2026", "2026-05-11"
+        const DATE_PATTERN = new RegExp(
+            `(${MONTHS_EN}\\s+\\d{1,2},?\\s*\\d{4}` +
+            `|\\d{1,2}\\s+${MONTHS_EN}\\s+\\d{4}` +
+            `|\\d{1,2}\\s+${MONTHS_ID}\\s+\\d{4}` +
+            `|\\d{1,2}[\\/\\-.]\\d{1,2}[\\/\\-.]\\d{2,4}` +
+            `|\\d{4}-\\d{2}-\\d{2})`,
+            'i'
+        );
+
+        const stripPrefix = (text) => {
+            return cleanText(text)
+                .replace(/^(Reviewed|Reviewed on|Diulas|Diulas pada|Tanggal ulasan|Review date)\s*:?\s*/i, '')
+                .trim();
+        };
+
+        // 1. Elemen khusus tanggal (paling andal jika ada)
+        const dateSelectors = [
+            '[data-selenium="review-date"]',
+            '[data-testid="review-date"]',
+            '[data-element-name="review-date"]',
+            '.Review-statusBar-date',
+            '.Review-comment-reviewDate',
+            'time[datetime]',
+        ];
+        for (const sel of dateSelectors) {
+            const el = qs(sel, reviewCard);
+            if (el) {
+                // Prioritaskan atribut datetime jika tersedia (format ISO)
+                const dt = el.getAttribute && el.getAttribute('datetime');
+                if (dt) {
+                    const m = String(dt).match(/\d{4}-\d{2}-\d{2}/);
+                    if (m) return m[0];
+                }
+                const txt = stripPrefix(el.textContent);
+                if (txt) return txt;
+            }
+        }
+
+        // 2 & 3. Telusuri semua elemen teks, cari prefix atau pola tanggal
+        const candidates = qsa('span, div, p, time', reviewCard);
+        let patternFallback = '';
+        for (const el of candidates) {
+            // Lewati elemen yang punya banyak child (kemungkinan kontainer besar)
+            if (el.children && el.children.length > 2) continue;
+            const raw = cleanText(el.textContent);
+            if (!raw || raw.length > 60) continue;
+
+            // Prefix eksplisit "Reviewed"/"Diulas"
+            if (/^(Reviewed|Diulas)\b/i.test(raw)) {
+                const stripped = stripPrefix(raw);
+                if (stripped) return stripped;
+            }
+
+            // Simpan kandidat pertama yang cocok pola tanggal sebagai fallback
+            if (!patternFallback) {
+                const match = raw.match(DATE_PATTERN);
+                if (match) patternFallback = match[0].trim();
+            }
+        }
+
+        return patternFallback;
+    }
+
     function extractReviewData(reviewCard, index) {
         const data = {
             review_index: index + 1,
@@ -182,16 +259,13 @@
             .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '')
             .trim();
 
-        // Date (e.g., "Reviewed May 11, 2026")
-        // Date is in the Review-statusBar or directly after the review body
-        const dateElements = qsa('span', reviewCard);
-        for (const el of dateElements) {
-            const text = el.textContent.trim();
-            if (/^Reviewed\s+/i.test(text)) {
-                data.tanggal = text.replace(/^Reviewed\s+/i, '').trim();
-                break;
-            }
-        }
+        // ---- DATE EXTRACTION ----
+        // Tanggal review di Agoda bisa muncul dalam beberapa format/lokasi:
+        //   - "Reviewed May 11, 2026"  (prefix bahasa Inggris)
+        //   - "Diulas 11 Mei 2026"     (prefix bahasa Indonesia)
+        //   - elemen khusus tanpa prefix, hanya tanggal "May 11, 2026" / "11 May 2026"
+        //   - di dalam .Review-statusBar atau elemen dengan data-* date
+        data.tanggal = extractReviewDate(reviewCard);
 
         return data;
     }

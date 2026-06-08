@@ -1,0 +1,38 @@
+{
+  "dataset_path": "/kaggle/input/datasets/vince0014/dataset-label/dataset_absa_labeled.csv",
+  "seed": 42,
+  "split_ratios": {
+    "train": 0.8,
+    "validation": 0.1,
+    "test": 0.1
+  },
+  "actual_sizes": {
+    "train": 12076,
+    "validation": 1510,
+    "test": 1511
+  },
+  "n_rows": 15097,
+  "aspects": [
+    "Kenyamanan",
+    "Kebersihan",
+    "Pelayanan",
+    "Harga",
+    "Lokasi",
+    "Fasilitas",
+    "Makanan"
+  ],
+  "labels": [
+    "none",
+    "positif",
+    "negatif",
+    "netral"
+  ],
+  "method": "MultilabelStratifiedKFold (iterative-stratification)",
+  "max_abs_pct_diff_aspect_label": 0.0008566677209234097,
+  "mean_abs_pct_diff_aspect_label": 0.00016532831052204827,
+  "overlaps": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  }
+}

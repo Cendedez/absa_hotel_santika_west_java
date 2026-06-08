@@ -49,6 +49,7 @@ const appState = {
     priorityRows: [],
     priorityPage: 1,
     priorityPerPage: 5,
+    reviewPerPage: 10,
 };
 const CURRENT_USER = window.ABSA_USER || {};
 document.title = 'Customer Sentiment Dashboard - Hotel Santika Jawa Barat';
@@ -190,6 +191,44 @@ function createBadge(label) {
     return `<span class="badge badge-${label}">${meta.label}</span>`;
 }
 
+// Render satu kartu review (dipakai di Review Explorer & Contoh Review Analisis Aspek).
+// Hanya menampilkan aspek yang punya sentimen (bukan 'none') agar ringkas.
+function renderReviewCard(r, options = {}) {
+    const sentClass = { positif: 'pos', negatif: 'neg', netral: 'net' };
+    const sentText = { positif: 'Positif', negatif: 'Negatif', netral: 'Netral' };
+    const hotel = (r.Nama_Hotel || '').replace('Hotel Santika ', '') || '-';
+    const platform = r.Platform || '-';
+    const date = r.Review_Date || '-';
+    const id = r.ID_Review || '';
+
+    // Jika options.onlyAspect diberikan, tonjolkan aspek itu; selain itu tampilkan semua aspek bersentimen.
+    const aspectsToShow = options.onlyAspect ? [options.onlyAspect] : ASPECTS;
+    const chips = aspectsToShow.map(a => {
+        const s = r[`pred_${a}`];
+        if (!s || s === 'none') return '';
+        return `<span class="review-aspect-chip ${sentClass[s] || ''}">
+                    <span class="chip-aspect">${escapeHtml(a)}</span>
+                    <span class="chip-sentiment">${sentText[s] || escapeHtml(s)}</span>
+                </span>`;
+    }).filter(Boolean).join('');
+
+    const chipsBlock = chips
+        ? `<div class="review-item-aspects">${chips}</div>`
+        : `<div class="review-item-aspects"><span class="review-aspect-chip"><span class="chip-aspect">Tidak ada aspek terdeteksi</span></span></div>`;
+
+    return `
+        <div class="review-item">
+            <div class="review-item-head">
+                <span class="review-item-hotel">${escapeHtml(hotel)}</span>
+                <span class="review-item-meta">${escapeHtml(platform)}</span>
+                <span class="review-item-meta">${escapeHtml(date)}</span>
+                ${id ? `<span class="review-item-meta">ID ${escapeHtml(id)}</span>` : ''}
+            </div>
+            <div class="review-item-text">${escapeHtml(r.Text_Review || '')}</div>
+            ${chipsBlock}
+        </div>`;
+}
+
 function sentimentLabel(key, withPercent = false) {
     const meta = SENTIMENT_META[key] || { label: key };
     return `${meta.label}${withPercent ? ' %' : ''}`;
@@ -321,6 +360,38 @@ function renderOverviewInsight(data, posRate) {
     const topNeg = [...rows].sort((a, b) => b.negatif - a.negatif);
     const topRisk = [...rows].sort((a, b) => b.negativeRate - a.negativeRate);
     const topPos = [...rows].sort((a, b) => b.positif - a.positif);
+
+    // Guard: tidak ada keluhan sama sekali
+    const totalNegatif = topNeg.reduce((s, r) => s + r.negatif, 0);
+    if (totalNegatif === 0) {
+        const strength = topPos[0] || null;
+        insightEl.innerHTML = `
+            <div class="insight-card" style="grid-column: 1 / span 2;">
+                <div class="insight-eyebrow" style="color: var(--accent-green);">TIDAK ADA KELUHAN</div>
+                <h2 style="color: var(--accent-green); margin-top: 8px;">Tidak ditemukan keluhan pada filter ini.</h2>
+                <p>Dari ${data.total_reviews.toLocaleString()} review dalam periode dan filter yang dipilih, tidak ada sentimen negatif yang terdeteksi. Semua ulasan tamu yang menyebutkan aspek layanan bernada positif atau netral.</p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-eyebrow">PRIORITAS PERBAIKAN</div>
+                <div style="color: var(--text-secondary); padding-top: 10px; font-size: 13px;">
+                    Tidak ada aspek dengan keluhan pada filter ini.
+                </div>
+            </div>
+            ${strength ? `
+            <div class="insight-card insight-clickable" onclick="drillDownToReviews({aspect: '${strength.aspect}', sentiment: 'positif'})" title="Klik untuk lihat review positif ${strength.aspect}">
+                <div class="insight-eyebrow">KEKUATAN UTAMA</div>
+                <div class="insight-metric success">${strength.aspect}</div>
+                <p>${strength.positif.toLocaleString()} ulasan positif pada aspek ini dalam periode yang dipilih.</p>
+                <div class="insight-drill-hint">Klik untuk lihat review &rarr;</div>
+            </div>` : `
+            <div class="insight-card">
+                <div class="insight-eyebrow">KEKUATAN UTAMA</div>
+                <div style="color: var(--text-secondary); padding-top: 10px; font-size: 13px;">Belum ada data sentimen positif.</div>
+            </div>`}
+        `;
+        return;
+    }
+
     const priority = topNeg.slice(0, 3);
     const mainNeg = topNeg[0] || { aspect: '-', negatif: 0, negativeRate: 0 };
     const secondNeg = topNeg[1] || { aspect: '-', negatif: 0, negativeRate: 0 };
@@ -369,10 +440,125 @@ function renderOverviewInsight(data, posRate) {
     `;
 }
 
+function renderSentimentSummary(data) {
+    const sc = data.sentiment_counts || { positif: 0, negatif: 0, netral: 0 };
+    const pos = sc.positif || 0, neg = sc.negatif || 0, net = sc.netral || 0;
+    const total = pos + neg + net;
+
+    const posPct = total > 0 ? (pos / total) * 100 : 0;
+    const negPct = total > 0 ? (neg / total) * 100 : 0;
+    const netPct = total > 0 ? (net / total) * 100 : 0;
+
+    // Skor 1-5: positif=5, netral=3, negatif=1 (rata-rata berbobot)
+    const score = total > 0 ? ((pos * 5 + net * 3 + neg * 1) / total) : 0;
+    let levelText = 'Netral', levelColor = COLORS.netral;
+    if (total === 0) { levelText = 'Tidak ada data'; levelColor = COLORS.muted; }
+    else if (score >= 3.8) { levelText = 'Positif'; levelColor = COLORS.positif; }
+    else if (score >= 2.6) { levelText = 'Netral'; levelColor = COLORS.netral; }
+    else { levelText = 'Negatif'; levelColor = COLORS.negatif; }
+
+    // ---- Gauge (setengah donut) ----
+    destroyChart('sentiment-gauge');
+    const gaugeCtx = document.getElementById('chart-sentiment-gauge');
+    if (gaugeCtx) {
+        const frac = Math.max(0, Math.min(1, score / 5));
+        charts['sentiment-gauge'] = new Chart(gaugeCtx.getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [frac, 1 - frac],
+                    backgroundColor: [levelColor, COLORS.grid],
+                    borderWidth: 0,
+                    circumference: 180,
+                    rotation: 270,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '72%',
+                plugins: { legend: { display: false }, tooltip: { enabled: false } },
+            }
+        });
+    }
+    const metaEl = document.getElementById('sentiment-level-meta');
+    if (metaEl) {
+        metaEl.innerHTML = `
+            <div class="sentiment-score" style="color:${levelColor};">${score.toFixed(2)}</div>
+            <div class="sentiment-score-sub">dari 5</div>
+            <div class="sentiment-level-badge" style="color:${levelColor};border-color:${levelColor};">${levelText}</div>
+            <div class="sentiment-level-note">${total.toLocaleString()} sentimen aspek dianalisis</div>
+        `;
+    }
+
+    const legendBox = document.getElementById('sentiment-scale-legend');
+    if (legendBox) {
+        legendBox.innerHTML = `
+            <div class="scale-legend-item${score < 2.6 && total > 0 ? ' active' : ''}">
+                <span class="scale-dot" style="background:${COLORS.negatif};"></span>
+                <span class="scale-range">1.0 &ndash; 2.5</span>
+                <span class="scale-name">Negatif</span>
+            </div>
+            <div class="scale-legend-item${score >= 2.6 && score < 3.8 && total > 0 ? ' active' : ''}">
+                <span class="scale-dot" style="background:${COLORS.netral};"></span>
+                <span class="scale-range">2.6 &ndash; 3.7</span>
+                <span class="scale-name">Netral</span>
+            </div>
+            <div class="scale-legend-item${score >= 3.8 && total > 0 ? ' active' : ''}">
+                <span class="scale-dot" style="background:${COLORS.positif};"></span>
+                <span class="scale-range">3.8 &ndash; 5.0</span>
+                <span class="scale-name">Positif</span>
+            </div>
+        `;
+    }
+
+    // ---- Donut komposisi ----
+    destroyChart('sentiment-comp');
+    const compCtx = document.getElementById('chart-sentiment-comp');
+    if (compCtx) {
+        charts['sentiment-comp'] = new Chart(compCtx.getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Positif', 'Negatif', 'Netral'],
+                datasets: [{
+                    data: [pos, neg, net],
+                    backgroundColor: [COLORS.positif, COLORS.negatif, COLORS.netral],
+                    borderWidth: 0,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '64%',
+                plugins: { legend: { display: false }, tooltip: { enabled: true } },
+            }
+        });
+    }
+    const legendEl = document.getElementById('sentiment-comp-legend');
+    if (legendEl) {
+        legendEl.innerHTML = `
+            <div class="comp-legend-item">
+                <span class="comp-dot" style="background:${COLORS.positif};"></span>
+                <span class="comp-pct" style="color:${COLORS.positif};">${posPct.toFixed(1)}%</span>
+                <span class="comp-label">Positif</span>
+            </div>
+            <div class="comp-legend-item">
+                <span class="comp-dot" style="background:${COLORS.negatif};"></span>
+                <span class="comp-pct" style="color:${COLORS.negatif};">${negPct.toFixed(1)}%</span>
+                <span class="comp-label">Negatif</span>
+            </div>
+            <div class="comp-legend-item">
+                <span class="comp-dot" style="background:${COLORS.netral};"></span>
+                <span class="comp-pct" style="color:${COLORS.netral};">${netPct.toFixed(1)}%</span>
+                <span class="comp-label">Netral</span>
+            </div>
+        `;
+    }
+}
+
 function renderPriorityImprovements(rows = null) {
     const wrapper = document.getElementById('priority-table-wrapper');
     if (!wrapper) return;
-
     if (Array.isArray(rows)) {
         appState.priorityRows = rows;
         appState.priorityPage = 1;
@@ -610,6 +796,7 @@ async function loadOverview() {
     }
 
     renderOverviewInsight(data, posRate);
+    renderSentimentSummary(data);
     renderPriorityImprovements(data.priority_improvements || []);
 
     // Sentiment composition bar
@@ -1034,21 +1221,10 @@ async function loadAspectAnalysis() {
     const exTable = document.getElementById('aspect-examples-table');
     const examples = data.aspect_examples;
     if (aspect !== 'all' && examples[aspect] && examples[aspect].length > 0) {
-        let html = '<table class="data-table"><thead><tr><th>ID</th><th>Hotel</th><th>Platform</th><th>Tanggal</th><th>Review</th><th>Sentimen</th></tr></thead><tbody>';
-        examples[aspect].forEach(r => {
-            const predCol = `pred_${aspect}`;
-            const sent = r[predCol] || 'none';
-            html += `<tr>
-                <td>${escapeHtml(r.ID_Review || '')}</td>
-                <td>${escapeHtml((r.Nama_Hotel || '').replace('Hotel Santika ', ''))}</td>
-                <td>${escapeHtml(r.Platform || '')}</td>
-                <td>${escapeHtml(r.Review_Date || '')}</td>
-                <td class="text-review">${escapeHtml(r.Text_Review || '')}</td>
-                <td>${createBadge(sent)}</td>
-            </tr>`;
-        });
-        html += '</tbody></table>';
-        exTable.innerHTML = html;
+        const cards = examples[aspect]
+            .map(r => renderReviewCard(r, { onlyAspect: aspect }))
+            .join('');
+        exTable.innerHTML = `<div class="review-list">${cards}</div>`;
     } else if (aspect === 'all') {
         exTable.innerHTML = '<div class="empty-state"><div class="empty-state-text">Pilih aspek spesifik untuk melihat contoh review.</div></div>';
     } else {
@@ -1310,57 +1486,53 @@ async function loadReviews(page = 1) {
     const dateFrom = document.getElementById('review-date-from')?.value || '';
     const dateTo = document.getElementById('review-date-to')?.value || '';
 
-    const data = await fetchAPI('/api/reviews', { hotel, platform, aspect, sentiment, keyword, date_from: dateFrom, date_to: dateTo, page, per_page: 25 });
+    const data = await fetchAPI('/api/reviews', { hotel, platform, aspect, sentiment, keyword, date_from: dateFrom, date_to: dateTo, page, per_page: appState.reviewPerPage });
     if (data.error) return;
 
     // Count
     document.getElementById('review-count').textContent = `${data.total.toLocaleString()} review ditemukan`;
 
-    // Table body
+    // List (kartu per-review)
     const tbody = document.getElementById('reviews-tbody');
     if (data.reviews.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="12" class="empty-state"><div class="empty-state-text">Tidak ada review ditemukan.</div></td></tr>';
+        tbody.innerHTML = '<div class="empty-state"><div class="empty-state-text">Tidak ada review ditemukan.</div></div>';
     } else {
-        tbody.innerHTML = data.reviews.map(r => {
-            const aspectCells = ASPECTS.map(a => {
-                const pred = r[`pred_${a}`] || 'none';
-                return `<td>${createBadge(pred)}</td>`;
-            }).join('');
-            return `<tr>
-                <td>${escapeHtml(r.ID_Review || '')}</td>
-                <td style="white-space:nowrap;">${escapeHtml((r.Nama_Hotel || '').replace('Hotel Santika ', ''))}</td>
-                <td>${escapeHtml(r.Platform || '')}</td>
-                <td style="white-space:nowrap;">${escapeHtml(r.Review_Date || '')}</td>
-                <td class="text-review">${escapeHtml(r.Text_Review || '')}</td>
-                ${aspectCells}
-            </tr>`;
-        }).join('');
+        tbody.innerHTML = data.reviews.map(r => renderReviewCard(r)).join('');
     }
 
-    // Pagination
+    // Selector per-halaman di card header (kanan atas sebelah "review ditemukan")
+    const perpageHeader = document.getElementById('review-perpage-header');
+    if (perpageHeader) {
+        const sizes = [5, 10, 20, 50];
+        perpageHeader.innerHTML = sizes.map(s =>
+            `<button class="priority-size-btn ${appState.reviewPerPage === s ? 'active' : ''}" onclick="setReviewPerPage(${s})">${s}</button>`
+        ).join('');
+    }
+
+    // Navigasi halaman di bawah
     const pagEl = document.getElementById('reviews-pagination');
-    if (data.total_pages <= 1) {
+    const totalPages = data.total_pages || 1;
+    if (totalPages <= 1) {
         pagEl.innerHTML = '';
         return;
     }
-
-    let pagHtml = '';
-    pagHtml += `<button class="pagination-btn" ${page <= 1 ? 'disabled' : ''} onclick="loadReviews(${page - 1})">&laquo;</button>`;
-
     const maxBtns = 7;
     let start = Math.max(1, page - Math.floor(maxBtns / 2));
-    let end = Math.min(data.total_pages, start + maxBtns - 1);
+    let end = Math.min(totalPages, start + maxBtns - 1);
     if (end - start < maxBtns - 1) start = Math.max(1, end - maxBtns + 1);
-
+    let navHtml = `<button class="pagination-btn" ${page <= 1 ? 'disabled' : ''} onclick="loadReviews(${page - 1})">&laquo;</button>`;
     for (let i = start; i <= end; i++) {
-        pagHtml += `<button class="pagination-btn ${i === page ? 'active' : ''}" onclick="loadReviews(${i})">${i}</button>`;
+        navHtml += `<button class="pagination-btn ${i === page ? 'active' : ''}" onclick="loadReviews(${i})">${i}</button>`;
     }
-
-    pagHtml += `<span class="pagination-info">Hal ${page}/${data.total_pages}</span>`;
-    pagHtml += `<button class="pagination-btn" ${page >= data.total_pages ? 'disabled' : ''} onclick="loadReviews(${page + 1})">&raquo;</button>`;
-    pagEl.innerHTML = pagHtml;
+    navHtml += `<span class="pagination-info">Hal ${page}/${totalPages}</span>`;
+    navHtml += `<button class="pagination-btn" ${page >= totalPages ? 'disabled' : ''} onclick="loadReviews(${page + 1})">&raquo;</button>`;
+    pagEl.innerHTML = navHtml;
 }
 
+function setReviewPerPage(value) {
+    appState.reviewPerPage = value;
+    loadReviews(1);
+}
 function exportReviews() {
     const { hotel, platform } = getFilterValues('review');
     const aspect = document.getElementById('review-filter-aspect')?.value || 'all';
@@ -1638,15 +1810,15 @@ async function loadPerformance() {
     metricsEl.innerHTML = `
         <div class="metric-card" style="border-left-color: var(--accent-green);">
             <div class="metric-value">${(o.accuracy * 100).toFixed(1)}%</div>
-            <div class="metric-label">Tingkat Keakuratan AI</div>
+            <div class="metric-label">Akurasi Keseluruhan</div>
         </div>
         <div class="metric-card" style="border-left-color: var(--accent-blue);">
-            <div class="metric-value">14.749</div>
+            <div class="metric-value">${(data.total_reviews || 0).toLocaleString('id-ID')}</div>
             <div class="metric-label">Total Ulasan yang Dipelajari</div>
         </div>
         <div class="metric-card" style="border-left-color: var(--accent-purple);">
             <div class="metric-value">7</div>
-            <div class="metric-label">Area Pelayanan Terpantau</div>
+            <div class="metric-label">Area Layanan Dianalisis</div>
         </div>
     `;
 
@@ -1660,8 +1832,13 @@ async function loadPerformance() {
             labels: ASPECTS,
             datasets: [
                 {
-                    label: 'Akurasi Pengenalan Sentimen',
-                    data: ASPECTS.map(a => ((perAspect[a]?.acc || 0) * 100).toFixed(1)),
+                    label: 'Akurasi per Aspek (%)',
+                    data: ASPECTS.map(a => {
+                        // acc dari backend berupa fraksi 0..1. Konversi ke persen,
+                        // lalu clamp 0..100 agar radar tidak meledak bila data anomali/kosong.
+                        const pct = (perAspect[a]?.acc || 0) * 100;
+                        return Math.max(0, Math.min(100, Number(pct.toFixed(1))));
+                    }),
                     borderColor: COLORS.blue,
                     backgroundColor: COLORS.blue + '33',
                     pointBackgroundColor: COLORS.blue,
@@ -1674,8 +1851,7 @@ async function loadPerformance() {
             maintainAspectRatio: false,
             scales: {
                 r: {
-                    beginAtZero: true,
-                    min: 70, // Usually accuracy is high, zooming in for clarity
+                    min: 60,
                     max: 100,
                     grid: { color: COLORS.grid },
                     angleLines: { color: COLORS.grid },
@@ -1691,14 +1867,16 @@ async function loadPerformance() {
     const notesEl = document.getElementById('perf-notes');
     if (notesEl) {
         notesEl.innerHTML = `
-            <div class="about-block" style="border-left-color: var(--accent-orange);">
-                <h3>Keandalan Asisten Digital Anda</h3>
-                <p>AI kami didesain untuk mereplikasi bagaimana asisten manusia membaca ulasan. Dengan tingkat keakuratan mencapai <strong>${(o.accuracy * 100).toFixed(1)}%</strong>, sistem ini dapat dengan cerdas membedakan pujian dan keluhan pada berbagai area pelayanan hotel secara bersamaan.</p>
-                <br>
+            <div class="doc-callout">
+                <h3>Cara membaca grafik ini</h3>
+                <p>Grafik menunjukkan seberapa sering prediksi model sesuai dengan label yang sudah diperiksa manual, untuk masing-masing area layanan. Angka diukur dari data uji yang tidak ikut dipakai saat melatih model, sehingga mencerminkan performa pada ulasan yang benar-benar baru bagi model.</p>
+            </div>
+            <div class="about-block" style="border-left-color: var(--accent-green);">
+                <h3>Yang perlu dipahami</h3>
                 <ul>
-                    <li><strong>Konsisten:</strong> AI tidak pernah lelah dan memberikan standar penilaian yang konsisten 24/7.</li>
-                    <li><strong>Cepat:</strong> Ribuan ulasan dibaca dan diringkas dalam hitungan detik.</li>
-                    <li><strong>Konteks:</strong> Berkat teknologi bahasa alami canggih, AI memahami konteks kata, seperti membedakan kata "dingin" pada AC (Positif) vs "dingin" pada makanan (Negatif).</li>
+                    <li>Akurasi di atas 85% menunjukkan prediksi model cukup dapat diandalkan untuk area tersebut.</li>
+                    <li>Wajar bila angkanya berbeda antar area. Area yang lebih jarang disebut tamu, seperti Harga, biasanya punya contoh data lebih sedikit sehingga hasilnya bisa bervariasi.</li>
+                    <li>Angka ini adalah rata-rata pada data historis. Performa pada ulasan baru bisa sedikit berbeda.</li>
                 </ul>
             </div>
         `;
@@ -1708,6 +1886,143 @@ async function loadPerformance() {
 // ========================================
 // INIT
 // ========================================
+const FS_DEFAULTS = {
+    heading: 100, text: 100, weight: 0, line: 100, ui: 100,
+    contrast: false, readwidth: false, tableroomy: false,
+};
+const FS_PRESETS = {
+    kecil:  { heading: 95,  text: 90,  line: 100 },
+    normal: { heading: 100, text: 100, line: 100 },
+    besar:  { heading: 115, text: 120, line: 120 },
+    ekstra: { heading: 130, text: 145, line: 140 },
+};
+const FS_WEIGHT_LABELS = ['Normal', 'Tebal', 'Sangat Tebal'];
+
+function getFontState() {
+    return {
+        heading: parseInt(localStorage.getItem('absa-fs-heading') || FS_DEFAULTS.heading, 10),
+        text: parseInt(localStorage.getItem('absa-fs-text') || FS_DEFAULTS.text, 10),
+        weight: parseInt(localStorage.getItem('absa-fs-weight') || FS_DEFAULTS.weight, 10),
+        line: parseInt(localStorage.getItem('absa-fs-line') || FS_DEFAULTS.line, 10),
+        ui: parseInt(localStorage.getItem('absa-fs-ui') || FS_DEFAULTS.ui, 10),
+        contrast: localStorage.getItem('absa-fs-contrast') === '1',
+        readwidth: localStorage.getItem('absa-fs-readwidth') === '1',
+        tableroomy: localStorage.getItem('absa-fs-tableroomy') === '1',
+    };
+}
+
+function applyFontState(s) {
+    const root = document.documentElement;
+    root.style.setProperty('--fs-heading-scale', s.heading / 100);
+    root.style.setProperty('--fs-text-scale', s.text / 100);
+    root.style.setProperty('--fs-line-scale', s.line / 100);
+    root.style.setProperty('--fs-ui-scale', s.ui / 100);
+
+    const body = document.body;
+    body.dataset.fsWeight = String(s.weight);
+    body.dataset.fsContrast = s.contrast ? 'on' : 'off';
+    body.dataset.fsReadwidth = s.readwidth ? 'on' : 'off';
+    body.dataset.fsTableroomy = s.tableroomy ? 'on' : 'off';
+
+    // Update label nilai
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    set('fs-heading-value', `${s.heading}%`);
+    set('fs-text-value', `${s.text}%`);
+    set('fs-weight-value', FS_WEIGHT_LABELS[s.weight] || 'Normal');
+    set('fs-lineheight-value', `${s.line}%`);
+    set('fs-ui-value', `${s.ui}%`);
+}
+
+function saveFontState(s) {
+    localStorage.setItem('absa-fs-heading', s.heading);
+    localStorage.setItem('absa-fs-text', s.text);
+    localStorage.setItem('absa-fs-weight', s.weight);
+    localStorage.setItem('absa-fs-line', s.line);
+    localStorage.setItem('absa-fs-ui', s.ui);
+    localStorage.setItem('absa-fs-contrast', s.contrast ? '1' : '0');
+    localStorage.setItem('absa-fs-readwidth', s.readwidth ? '1' : '0');
+    localStorage.setItem('absa-fs-tableroomy', s.tableroomy ? '1' : '0');
+}
+
+function syncFontControls(s) {
+    const setVal = (id, v) => { const el = document.getElementById(id); if (el) el.value = v; };
+    const setChk = (id, v) => { const el = document.getElementById(id); if (el) el.checked = v; };
+    setVal('fs-heading', s.heading);
+    setVal('fs-text', s.text);
+    setVal('fs-weight', s.weight);
+    setVal('fs-lineheight', s.line);
+    setVal('fs-ui', s.ui);
+    setChk('fs-contrast', s.contrast);
+    setChk('fs-readwidth', s.readwidth);
+    setChk('fs-tableroomy', s.tableroomy);
+    // Tandai preset aktif jika cocok
+    document.querySelectorAll('.fs-preset-btn').forEach(btn => {
+        const p = FS_PRESETS[btn.dataset.preset];
+        const match = p && p.heading === s.heading && p.text === s.text && p.line === s.line;
+        btn.classList.toggle('active', !!match);
+    });
+    // Tandai tema aktif
+    const theme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+    document.querySelectorAll('.fs-theme-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.themeChoice === theme);
+    });
+}
+
+function initFontSettings() {
+    const toggle = document.getElementById('font-settings-toggle');
+    const panel = document.getElementById('font-settings-panel');
+    if (!panel) return;
+
+    let state = getFontState();
+    applyFontState(state);
+    syncFontControls(state);
+
+    const update = (changes) => {
+        state = { ...state, ...changes };
+        applyFontState(state);
+        saveFontState(state);
+        syncFontControls(state);
+    };
+
+    document.getElementById('fs-heading')?.addEventListener('input', e => update({ heading: parseInt(e.target.value, 10) }));
+    document.getElementById('fs-text')?.addEventListener('input', e => update({ text: parseInt(e.target.value, 10) }));
+    document.getElementById('fs-weight')?.addEventListener('input', e => update({ weight: parseInt(e.target.value, 10) }));
+    document.getElementById('fs-lineheight')?.addEventListener('input', e => update({ line: parseInt(e.target.value, 10) }));
+    document.getElementById('fs-ui')?.addEventListener('input', e => update({ ui: parseInt(e.target.value, 10) }));
+    document.getElementById('fs-contrast')?.addEventListener('change', e => update({ contrast: e.target.checked }));
+    document.getElementById('fs-readwidth')?.addEventListener('change', e => update({ readwidth: e.target.checked }));
+    document.getElementById('fs-tableroomy')?.addEventListener('change', e => update({ tableroomy: e.target.checked }));
+
+    document.querySelectorAll('.fs-preset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const p = FS_PRESETS[btn.dataset.preset];
+            if (p) update({ heading: p.heading, text: p.text, line: p.line });
+        });
+    });
+
+    document.querySelectorAll('.fs-theme-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            applyTheme(btn.dataset.themeChoice);
+            syncFontControls(state);
+            reloadActivePage();
+        });
+    });
+
+    document.getElementById('fs-reset')?.addEventListener('click', () => {
+        update({ ...FS_DEFAULTS });
+    });
+
+    toggle?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        panel.hidden = !panel.hidden;
+    });
+    document.addEventListener('click', (e) => {
+        if (panel && !panel.hidden && !panel.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)) {
+            panel.hidden = true;
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     const themeFromUrl = new URLSearchParams(window.location.search).get('theme');
     applyTheme(themeFromUrl || localStorage.getItem('absa-dashboard-theme') || 'dark', !themeFromUrl);
@@ -1719,6 +2034,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     await initFilters();
     loadOverview();
+
+    initFontSettings();
 
     // Responsive menu button
     const mediaQuery = window.matchMedia('(max-width: 900px)');

@@ -1,0 +1,11 @@
+name,model_name,lr,batch_size,max_epochs,max_len,warmup_ratio,weight_decay,dropout,scheduler,optimizer,label_smoothing,freeze_layers,class_weight,seed,epochs_ran,val_macro_f1
+c4_p1_cw_192_bs8,indobenchmark/indobert-base-p1,2e-05,8,10,192,0.1,0.01,0.2,cosine,adamw,0.05,0,True,42,10,0.7477314956208687
+c8_lem_cw_160,indolem/indobert-base-uncased,3e-05,16,10,160,0.1,0.01,0.2,cosine,adamw,0.05,0,True,42,10,0.746096176904144
+c7_p1_cw_ls01,indobenchmark/indobert-base-p1,3e-05,16,10,160,0.1,0.1,0.3,cosine,adamw,0.1,0,True,42,10,0.7436435176887348
+c3_p1_cw_160,indobenchmark/indobert-base-p1,3e-05,16,10,160,0.1,0.01,0.2,linear,adamw,0.05,0,True,42,10,0.7425411395023046
+c2_p1_lr3_cw,indobenchmark/indobert-base-p1,3e-05,16,10,128,0.1,0.01,0.2,linear,adamw,0.05,0,True,42,10,0.733330067061058
+c6_p1_freeze6,indobenchmark/indobert-base-p1,3e-05,32,10,160,0.1,0.01,0.1,linear,adamw,0.0,6,False,42,10,0.7280048225872021
+c5_p1_cos_160,indobenchmark/indobert-base-p1,2e-05,16,8,160,0.06,0.01,0.1,cosine,adamw,0.0,0,False,42,8,0.7229278026237108
+c1_p1_base_128,indobenchmark/indobert-base-p1,2e-05,16,8,128,0.1,0.01,0.1,linear,adamw,0.0,0,False,42,8,0.7201911660643173
+c10_lite_fast_160,indobenchmark/indobert-lite-base-p1,3e-05,32,10,160,0.1,0.01,0.1,linear,adamw,0.0,0,False,42,10,0.6940842976634987
+c9_lem_base_128,indolem/indobert-base-uncased,2e-05,16,8,128,0.1,0.01,0.1,linear,adamw,0.0,0,False,42,8,0.6865830985064515

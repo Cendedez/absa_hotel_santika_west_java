@@ -1,7 +1,4 @@
 ﻿page,review_index,nama,tanggal,tipe_traveler,rating,teks_ulasan,sumber
-1,1,Gigi Gigi,23 Mei 2026,Trip Keluarga,"5,0",Tiap ke Cirebon selalu nginep di sini dan tidak mengecewakan,Ulasan terverifikasi dari tiket.com
-1,2,EP,20 Mei 2026,Trip Keluarga,"5,0","Parkirnya luas untungnya ada pengecasan EV, kamarnya cukup lega dan wangi, kolam renang cocok untuk anak dan dewasa boleh pinjem ban juga gratis, makanan bervariasi, staff juga ramah. Karena luas, kepikiran kalau ditambah minj playground anak2 pasti suka bgtLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-1,3,Tekanan darah,8 Mei 2026,Perjalanan Sendirian,"4,0",Hidangan tradisional yang lezat. Fasilitas olahraga yang lengkap.,Ulasan terverifikasi dari tiket.com
 1,4,Ayu Pradipta,25 April 2026,Trip Keluarga,"4,0","Bagus, ramah dan lengkap",Ulasan terverifikasi dari tiket.com
 1,5,Dan Triwiyanto,22 April 2026,Trip Pasangan,"5,0","Hotel yg nyaman, pelayanan good, next akan kesini lg",Ulasan terverifikasi dari tiket.com
 2,1,Papi Cb,22 April 2026,Trip Keluarga,"5,0",Hidangan segar dan lezat. Akses parkir mudah. ​​Kolam renang sangat bersih.,Ulasan terverifikasi dari tiket.com
@@ -15,44 +12,6 @@
 3,4,Riantara Herprianda,6 April 2026,Trip Keluarga,"4,0","Bagus, tapi bangunannya sudah tua dan perlu maintenance seperti ac kamar saya tidak dingin awalnya lalu pindah kamar",Ulasan terverifikasi dari tiket.com
 3,5,FR,5 April 2026,Perjalanan Sendirian,"5,0",Rapi dan terorganisir. Ranjang anak yang nyaman. Menu yang inovatif.,Ulasan terverifikasi dari tiket.com
 4,1,Faisal Agung,2 April 2026,Trip Keluarga,"4,8",Bagus banget lokasi bagus kolamnya bagus,Ulasan terverifikasi dari tiket.com
-4,2,TBC,30 Maret 2026,Trip Pasangan,"5,0",Sudah baik Terima kasih,Ulasan terverifikasi dari tiket.com
-4,3,Feri Herlina Anwar,28 Maret 2026,Trip Keluarga,"5,0",Area yang bersih dan hijau.,Ulasan terverifikasi dari tiket.com
-4,4,Sudarmaji Sudarmaji,27 Maret 2026,Trip Keluarga,"4,0",Hotel lama tapi selalu bikin kangen kalo ke Cirebon Pleasant environment. Responsive and amazing staff.,Ulasan terverifikasi dari tiket.com
-4,5,DM,25 Maret 2026,Trip Keluarga,"5,0",Fasilitas ramah keluarga.,Ulasan terverifikasi dari tiket.com
-5,1,Jeannette Virginia Riry,19 Maret 2026,Trip Keluarga,"2,0",Hotelnya sdh agak tua.. sbnrnya kalo dirawat intens bagus namun spertinya minim perawatan jd agak tak terawat liatnya.,Ulasan terverifikasi dari tiket.com
-5,2,PT,8 Maret 2026,Trip Pasangan,"5,0",Staf yang ramah. Staf yang ramah.,Ulasan terverifikasi dari tiket.com
-5,3,ITU,7 Maret 2026,Trip Keluarga,"5,0","Meskipun hotelnya sudah tua, hotelnya tetap bagus.",Ulasan terverifikasi dari tiket.com
-5,4,Theodorus Sugiarto Halim,4 Maret 2026,Trip Keluarga,"4,0","Sudah sering menginap di Santika Cirebon, kualitas pelayanan mantap tidak berubah, breakfast juga masih oke. Sayang nya fasilitas cuci mobil di pagi hari sudah ga ada, walaupun kelihatan sederhana, tapi saya cukup senang lho dengan fasilitas ini, bahkan suka kasih tips buat bapak pencuci nya. Kalau bisa fasilitas bonus ini diadakan lagi, bahkan bapaknya dimodalin sabun cuci mobil dan kanebo serta lap kering yang lebih proper kali ya.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-5,5,Ahmad Zaky Fauzi Assegaf,26 Februari 2026,Trip Keluarga,"5,0","Staf ramah dan membantu. Harga murah, sesuai dengan kualitas yang didapatkan.",Ulasan terverifikasi dari tiket.com
-6,1,veronica sinaga,25 Februari 2026,Perjalanan Sendirian,"5,0","Segalanya terasa baik, perasaan sangat bahagia.",Ulasan terverifikasi dari tiket.com
-6,2,MATAHARI,22 Februari 2026,Trip Pasangan,"5,0",Ruang tamu yang nyaman. Lingkungan yang segar. Staf yang luar biasa dan ramah. Suasana tenang di malam hari. Bersantai di tepi kolam renang.,Ulasan terverifikasi dari tiket.com
-6,3,Didi Prayudi,18 Februari 2026,Trip Keluarga,"5,0","Staffnya ramah dan sangat membantu,bersih tenang nyaman.",Ulasan terverifikasi dari tiket.com
-6,4,Ditulis oleh Yuliana Wandani,5 Februari 2026,Trip Keluarga,"5,0",Kamar bersih sarapan enak,Ulasan terverifikasi dari tiket.com
-6,5,Teguh Rahayu,3 Februari 2026,Perjalanan Bisnis,"5,0",Harga terjangkau dan berlokasi di pusat kota.,Ulasan terverifikasi dari tiket.com
-7,1,Susan Gotama,28 Januari 2026,Trip Keluarga,"4,0",Lumayan saja walaupun hotel bintang3 tp fasilitas oke Tengah kota juga Dpt penjemputan d stasiun There is an appetizing menu.,Ulasan terverifikasi dari tiket.com
-7,2,Sriyono Sriyono,26 Januari 2026,Trip Keluarga,"5,0",Layanan kamar cepat. Sarapan cocok untuk anak-anak.,Ulasan terverifikasi dari tiket.com
-7,3,HC,25 Januari 2026,Perjalanan Bisnis,"4,0","Bagus pelayanannya baik, makanannya pun cukup baik, walaupun hotel lama tetap terawat",Ulasan terverifikasi dari tiket.com
-7,4,PT BandarTrisula,22 Januari 2026,Perjalanan Bisnis,"5,0",Pilihan menu yang beragam dan lezat. Staf yang responsif dan luar biasa.,Ulasan terverifikasi dari tiket.com
-7,5,DI DALAM,19 Januari 2026,Trip Keluarga,"5,0","Kebetulan ada dinas luar dan bawa keluarga, tempatnya nyaman, dekat tempat kuliner, petugasnya ramah",Ulasan terverifikasi dari tiket.com
-8,1,Lim Hok Huwi,17 Januari 2026,Perjalanan Bisnis,"5,0","Staff ramah, kamar bersih",Ulasan terverifikasi dari tiket.com
-8,2,Muhamad Kadafi,15 Januari 2026,Trip Keluarga,"5,0",Menu inovatif. Keamanan parkir terbaik.,Ulasan terverifikasi dari tiket.com
-8,3,AINAH AINAH,15 Januari 2026,Trip Keluarga,"5,0","ramah pelayanannya, fasilitas oke",Ulasan terverifikasi dari tiket.com
-8,4,Herry Herry,13 Januari 2026,Trip Keluarga,"4,4",Resepsionis yang ramah dan ramah terhadap anak.,Ulasan terverifikasi dari tiket.com
-8,5,SEBAGAI,12 Januari 2026,Perjalanan Bisnis,"5,0",Kolam renang tersedia. Hemat biaya namun tetap mewah.,Ulasan terverifikasi dari tiket.com
-9,1,DD,12 Januari 2026,Trip Keluarga,"2,0","Hotel tua yang belum dimodernisasi. Kolong meja penuh debu, plafon rembes dan sempat dibersihkan di malam hari. Pengalaman paling tidak berkesan adalah diketuk pintu tengah malam di saat sedang tidur dan ternyata ojol salah antar. Sangat disayangkan SOP pengantaran paket tidak mengikuti standar perhotelan di mana harus diselesaikan di meja resepsionis. Staff sudah meminta maaf dan diberikan kompensasi 1x makan siang. Lokasi di pusat kota, parkir banyak walaupun outdoor.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-9,2,LF,9 Januari 2026,Trip bareng Teman,"4,0",nyaman tapi interior nya udh lumayan antik krn memang hotel lama,Ulasan terverifikasi dari tiket.com
-9,3,Anissa Maya Kania,5 Januari 2026,Trip Keluarga,"4,0","Bersih, terletak di tengah kota, dan lokasinya dekat dengan mana-mana.",Ulasan terverifikasi dari tiket.com
-9,4,Evangeline Hayu Chrisna Ginandi,5 Januari 2026,Trip Keluarga,"4,0",Lingkungan bersih dan terawat dengan baik. Pelayanan resepsionis memuaskan.,Ulasan terverifikasi dari tiket.com
-9,5,Evangeline Hayu Chrisna Ginandi,5 Januari 2026,Trip Keluarga,"4,0","Meskipun hotelnya bangunan lama, tapi kondisinya masih bagus, bersih, AC dingin, staff juga ramah & cepat tanggap. Parkiran cukup luas, ada EV charging station.",Ulasan terverifikasi dari tiket.com
-10,1,SATU,2 Januari 2026,Perjalanan Sendirian,"5,0",Pilihan menu anak-anak. Pemandangan kota yang memukau. Kebersihan parkir yang optimal.,Ulasan terverifikasi dari tiket.com
-10,2,Kartika Sekundina,31 Desember 2025,Perjalanan Sendirian,"5,0",Perabotan kamar berkualitas.,Ulasan terverifikasi dari tiket.com
-10,3,DAN,24 Desember 2025,Perjalanan Bisnis,"5,0","Kamar: Kamar tidak terlalu besar tapi nyaman banget. AC dingin..air lancar, panas dingin aman..bila ada masalah di kamar, petugasnya cepat datang dan menangani dengan cepat..ramah.. Mengikuti era go green..botol2 d kamar botol kaca merk c**o jadi ndak ada drama sampah2 plastik..sabun n shampoo tersedia.. Service: Pelayanan di resto sangat memuaskan..ramah semua..pelayanan di tempat makan (terlebih kk berseragam merah) sangat ramah (malu mau tanya nama n ndak sempat liat nametagnya..mau ngebantu semuanya..mau menerima permintaan saya yang mungkin agak ribet..piring2 kotor cepat dibersihkan jadi tidak ada yg berantakan/numpuk..mengikuti era go green..pakai serbet kain, tidak pakai tissue..makanan banyak..tidak tll banyak menu tapi enak2..cukup.. Restoran bersih dan nyaman..dlterpasang musik lembut.. Kolam renang bersih dan ramah anak2..enak..bersih.. Lokasi: Sangat strategis..pas d pinggir jalan..gampang ditemukan..Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-10,4,DW,22 Desember 2025,Trip Keluarga,"3,2",Sudah harus direnovasi dan di update barang barangnya,Ulasan terverifikasi dari tiket.com
-10,5,Asher Hidayat,15 Desember 2025,Perjalanan Bisnis,"4,0",Suasana tradisional namun modern.,Ulasan terverifikasi dari tiket.com
-11,1,Bibit Triono,12 Desember 2025,Trip Keluarga,"4,8","Menyenangkan. Lokasi dekat dengan stasiun Cirebon, Check in Lancar dan petugas juga ramah. Kolam renang bersih dan ada buat anak dan dewasa. Kamar luas dan bersih, Amenity dan complimentary komplit kamar mandi bersih dan air panas dan dingin berfungsi dengan baik. Petugas dan staf nya ramah-ramah. Check out lancar. Rekomnded. Terus pertahan kan dan Sukses selaluLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-11,2,affan fanani,12 Desember 2025,Perjalanan Bisnis,"3,0","Hotel tua yg dulu oke tp skr sudah sepi, mungkin krn sepi itu jd jarang dibersihkan. Lantai kamar sangat berdebu, sofa kain yg didudukin jd gatel gatel, resto buffet yg rasanya jg biasa bgt. Harga kamar jd sangat terasa mahal dgn yg didapat. Mudah2an ada perbaikan jd bisa lebih bersaing.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-11,3,Ruang Telur,10 Desember 2025,Trip Keluarga,"2,6","Efficient service. Bagus hotelnya, cantik kolam renang dan pemandangan, deket kemana mana.",Ulasan terverifikasi dari tiket.com
-11,4,veronica sinaga,4 Desember 2025,Perjalanan Sendirian,"5,0",Program kreatif untuk anak-anak. Hidangan berkualitas tinggi. Harga sebanding dengan apa yang Anda dapatkan. Staf yang ramah dan penuh perhatian.,Ulasan terverifikasi dari tiket.com
 11,5,Imam Maulana,29 November 2025,Perjalanan Bisnis,"5,0",Sarapan ini cocok untuk anak-anak. Rasanya luar biasa.,Ulasan terverifikasi dari tiket.com
 12,1,Safrizal Havia Fazri,28 November 2025,Trip Keluarga,"4,8",Hotelnya nyaman bersih adem Menu sarapannya bervariasi dan rasanya enak,Ulasan terverifikasi dari tiket.com
 12,2,PP,27 November 2025,Perjalanan Bisnis,"5,0","good view, sangat dekat dari stasiun dan kamarnya luas 👍🏻",Ulasan terverifikasi dari tiket.com
@@ -64,50 +23,9 @@
 13,3,Agam inaldi akbar,10 November 2025,Perjalanan Bisnis,"5,0","Pengaturan Air panas rusak, terlalu panas atau terlalu dingin sisanya menakjubkan",Ulasan terverifikasi dari tiket.com
 13,4,Agam inaldi akbar,10 November 2025,Perjalanan Bisnis,"5,0","Kebersihan dan makanannya sangat bagus, air shower terlalu kecil",Ulasan terverifikasi dari tiket.com
 13,5,Berkah,9 November 2025,Trip Pasangan,"2,0","Stafnya baik, kondisi hotel perlu direnovasi.",Ulasan terverifikasi dari Expedia
-14,1,T Ade Hafiz,7 Oktober 2025,Perjalanan Sendirian,"4,0","Hotel nyaman, makanan enak dan bersih",Ulasan terverifikasi dari tiket.com
-14,2,Mery Purnamasarie,4 Oktober 2025,Perjalanan Bisnis,"4,0","Pelayqnan ok,standrt hotel santika biasnya. Cumna syngnya kli masuk di loby beberapa terlihat kursi kayu atau rotan rusak tidakmdiperbaiki padahal ini wajah depan hotel. Mungkin mau meninjolkan kesan vintage tapi klu rusak di rawat dl yahLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-14,3,Benig Heriansa,4 Oktober 2025,Trip Keluarga,"4,0",Suasana historis klasik. Kamar-kamarnya berkilau.,Ulasan terverifikasi dari tiket.com
-14,4,Saya seorang biarawan.,2 Oktober 2025,Perjalanan Bisnis,"5,0",Keselamatan anak-anak adalah prioritas utama. Harga terjangkau dan kualitas bagus. Staf memperhatikan kenyamanan.,Ulasan terverifikasi dari tiket.com
-14,5,Saya seorang biarawan.,2 Oktober 2025,Perjalanan Bisnis,"5,0",Kamar selalu bersih. Suasana pedesaan yang tenang. Layanan parkir yang ramah.,Ulasan terverifikasi dari tiket.com
 15,1,ermi suganda,24 September 2025,Trip Keluarga,"4,0","Sdh 2x nginep dsni krn sepi enk utk refreshing otak, liburan ank”, kolam nya luas, karyawan nya ramah”",Ulasan terverifikasi dari tiket.com
 15,2,Dera Abdurrachman Iskandar,19 September 2025,Perjalanan Bisnis,"4,0",Suasana kolam renang yang menyegarkan.,Ulasan terverifikasi dari tiket.com
 15,3,GS,14 September 2025,Perjalanan Bisnis,"4,0",Cukup ok untuk menginap trip bisnis,Ulasan terverifikasi dari tiket.com
-15,4,DI DALAM,29 Agustus 2025,Perjalanan Bisnis,"5,0","Nyaman, masjid dekat, tempat tenang, warung soto tinggal nyebrang, ke tempat yang dituju tidak jauh Easy transportation access. Delicious menu.",Ulasan terverifikasi dari tiket.com
-15,5,MUHARDI SEPTRIYANA,28 Agustus 2025,Trip Keluarga,"3,2",Pelayanan crewnya sangat baik tapi kebersihan dikamar dan tempat gym nya kurang terawat. Ac d kamar kurang dingin…Mungkin karena hotel lama yaa…yah cobain aj kalau mau.,Ulasan terverifikasi dari tiket.com
-16,1,Topan ginanjar,27 Agustus 2025,Perjalanan Sendirian,"3,0",Kamar bersih dan sejuk.,Ulasan terverifikasi dari tiket.com
-16,2,ayu Ratna Larasati,26 Agustus 2025,Trip Keluarga,"4,4",Bersih keren hotelnya makanannnya enak,Ulasan terverifikasi dari tiket.com
-16,3,Imam Maulana,8 Agustus 2025,Perjalanan Bisnis,"5,0",Variasi rasa yang luar biasa. Tersedia layanan antar-jemput ke bandara. Kenyamanan maksimal di tepi kolam renang.,Ulasan terverifikasi dari tiket.com
-16,4,"Datanglah padaku, Ing Melani",6 Agustus 2025,Perjalanan Sendirian,"5,0",Tempat peristirahatan dengan kolam renang yang indah.,Ulasan terverifikasi dari tiket.com
-16,5,Rommy Purnama,4 Agustus 2025,Trip Keluarga,"5,0","all good, menu sarapan banyak variasi enak",Ulasan terverifikasi dari tiket.com
-17,1,Ari Dwi Utama,28 Juli 2025,Perjalanan Bisnis,"4,4",Upgrade dong tv nya jd smart tv,Ulasan terverifikasi dari tiket.com
-17,2,Gabriel Aridony Markus,25 Juli 2025,Trip Pasangan,"4,0",Recomended...makanannya enak,Ulasan terverifikasi dari tiket.com
-17,3,DS,21 Juli 2025,Perjalanan Bisnis,"5,0",Sudah sering menginap di santika..semuanya baik dan bagus,Ulasan terverifikasi dari tiket.com
-17,4,Ketut Sunaryanto,16 Juli 2025,Perjalanan Sendirian,"5,0",Ga di ragukan lagi kalo santika dimana mana Nyaman,Ulasan terverifikasi dari tiket.com
-17,5,Eunike Yusnina Santoso,10 Juli 2025,Trip Keluarga,"4,0",Tempatnya bagus. Hanya saja sarapannya butuh waktu lama untuk diisi ulang.,Ulasan terverifikasi dari tiket.com
-18,1,Lufina Manurung,5 Juli 2025,Perjalanan Bisnis,"5,0",Kamar mandi keluarga. Kolam renang yang indah. Daerah yang kaya akan budaya.,Ulasan terverifikasi dari tiket.com
-18,2,Lufina Manurung,5 Juli 2025,Perjalanan Bisnis,"5,0",Suasana pegunungan yang sejuk. Kasur yang nyaman.,Ulasan terverifikasi dari tiket.com
-18,3,Oki R kashmirputra,30 Juni 2025,Trip Pasangan,"5,0",Dilayani cukup baik terutama saat akan mengisi daya EV. Disediakan colokan listrik gratis...,Ulasan terverifikasi dari tiket.com
-18,4,Tekanan darah,25 Juni 2025,Perjalanan Bisnis,"5,0",Kamar bersih dan nyaman. Area tenang.,Ulasan terverifikasi dari tiket.com
-18,5,MATAHARI,22 Juni 2025,Trip Keluarga,"3,0","Hotel tua , bersih Full of hospitality.",Ulasan terverifikasi dari tiket.com
-19,1,Sonny Aprilia,12 Juni 2025,Trip Pasangan,"5,0","Kamar bersih , sarapan banyak variannya, pelayanan nya sangat ramah dari mulai security,receptionis,roomboy,dan restoran semua nya servis excellence pokoknya.. terimakasih 🙏",Ulasan terverifikasi dari tiket.com
-19,2,Akhmad Z,12 Juni 2025,Perjalanan Sendirian,"5,0","Hotel bangunan lama tapi sangat terawat,suka banget hotel2 model begini.Akan jadi hotel langganan kalau ke cirebon",Ulasan terverifikasi dari tiket.com
-19,3,Susanty Gunawan,5 Juni 2025,Trip Pasangan,"4,0",Kamar bersih dan nyaman. Penjaga parkir ramah.,Ulasan terverifikasi dari tiket.com
-19,4,ika wulandari,28 Mei 2025,Trip Keluarga,"5,0","Kolam renang besar,kaamr nyaman dan makanan cukup enak",Ulasan terverifikasi dari tiket.com
-19,5,ika wulandari,28 Mei 2025,Trip Keluarga,"5,0","Staff ramah,help full,kamar nyaman masakan lumayan enak Favorit aku wedang uwuh,segerr banget",Ulasan terverifikasi dari tiket.com
-20,1,Aris Sandi,28 Mei 2025,Trip Keluarga,"4,0",hotelnya bersih dan mobilnya dicuciin dari dateng kotor mobil jadi beraih saat check out,Ulasan terverifikasi dari tiket.com
-20,2,Aris Sandi,28 Mei 2025,Trip Keluarga,"4,0","asyik tempatnya, kamarnya bersih dan fasilitasnya lengkap sama sarapannya juga banyaknpilihan",Ulasan terverifikasi dari tiket.com
-20,3,Roberlin Purba Pakpak,26 Mei 2025,Perjalanan Bisnis,"4,0",Lumayan untuk hotel bintang 3. Mungkin bisa dicoba lagi.,Ulasan terverifikasi dari tiket.com
-20,4,SEBAGAI,24 Mei 2025,Perjalanan Sendirian,"5,0",Program keanggotaan eksklusif tersedia.,Ulasan terverifikasi dari tiket.com
-20,5,Shinta Nur Amalia Sholiha,23 Mei 2025,Trip Keluarga,"5,0","Menu sarapannya variatif, hotelnya bersih, front desk helpfull walau aku check out dinihari",Ulasan terverifikasi dari tiket.com
-21,1,Verdi prasiswa huwae,22 Mei 2025,Trip Keluarga,"5,0",Meskipun hotel yang tua dengan sekumpulan historis masih tetap layak huni dan nyaman.,Ulasan terverifikasi dari tiket.com
-21,2,PT JALUR MANDIRI UTAMA,20 Mei 2025,Perjalanan Bisnis,"5,0",Sangat rekomendasi untuk singgah,Ulasan terverifikasi dari tiket.com
-21,3,Narifah yang sama,17 Mei 2025,Trip Keluarga,"5,0","Udah 3 kali staycation disini, pelayanan selalu ramah, kamar yg nyaman, paling suka kolam renangnya sih bersih, makanannya juga lumayan enak.",Ulasan terverifikasi dari tiket.com
-21,4,Rangka kameswara,17 Mei 2025,Trip Keluarga,"5,0",Gastronomi yang luar biasa.,Ulasan terverifikasi dari tiket.com
-21,5,Juli,9 Mei 2025,Trip Pasangan,"4,8","Meskipun hotelnya cukup tua, namun terawat dengan baik. Saat saya kembali, mobil sudah bersih dan dicuci. Saya hanya perlu menunggu cukup lama untuk melakukan check-in.",Ulasan terverifikasi dari tiket.com
-22,1,SW,4 Mei 2025,Trip Keluarga,"5,0",Area parkir terlindungi dengan baik.,Ulasan terverifikasi dari tiket.com
-22,2,Amri Adrian Maliki,4 Mei 2025,Trip Keluarga,"4,6",Proses check lama..lumayan nunggu 30menit dari waktu kedatangan Over all semua baik,Ulasan terverifikasi dari tiket.com
-22,3,Rendiyan Saputra,3 Mei 2025,Trip Keluarga,"5,0",Makanan lezat. Pemandangan menarik untuk keluarga. Diskon pemesanan awal. Staf yang luar biasa dan ramah.,Ulasan terverifikasi dari tiket.com
-22,4,KS,2 Mei 2025,Perjalanan Bisnis,"5,0","Staf ramah. Hotel dengan harga terjangkau, pengalaman yang menyenangkan. Respon cepat. Fasilitas bisnis lengkap.",Ulasan terverifikasi dari tiket.com
 22,5,BM,29 April 2025,Perjalanan Bisnis,"5,0",Interior dengan warna-warna ceria. Sajian sarapan berkualitas tinggi. Staf yang ramah dan ramah tamah. Staf yang ahli dan energik.,Ulasan terverifikasi dari tiket.com
 23,1,budi hartmoko,29 April 2025,Trip Pasangan,"4,0",Area tempat duduk yang nyaman. Staf yang ramah. Area parkir yang terang.,Ulasan terverifikasi dari tiket.com
 23,2,Sandi Priyandi,29 April 2025,Perjalanan Sendirian,"5,0",Variasi rasa yang luar biasa.,Ulasan terverifikasi dari tiket.com
@@ -124,51 +42,6 @@
 25,3,Michelle Cecilia M Mailoor,9 April 2025,Trip Keluarga,"4,0","Nginap yang tidak sengaja, tapi sungguh tidak mengecewakan. Walau bangunannya sudah cukup berumur. Tapi masih sangat nyaman untuk menikmati kamar dan fasilitas hotelnya. Apa lagi pelayanannya. Mau keluar mobil kinclong karena ada fasilitas dicuciin mobil gratisssLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
 25,4,Dan Nugroho,8 April 2025,Trip Keluarga,"5,0",Kamarnya bersih dan pelayanannya bagus,Ulasan terverifikasi dari tiket.com
 25,5,Mamat Arohman,7 April 2025,Trip Keluarga,"5,0",Staf pengasuh anak yang dapat dipercaya. Kolam renang yang sangat bersih. Resepsionis yang kompeten.,Ulasan terverifikasi dari tiket.com
-26,1,Kota,30 Maret 2025,Trip Keluarga,"4,0",Kebersihan area parkir sangat baik.,Ulasan terverifikasi dari tiket.com
-26,2,M Rafidhia Mahardani,20 Maret 2025,Perjalanan Sendirian,"4,0",Mntap banget service cmn kl malem serem bgt kebuka depan kamarnya,Ulasan terverifikasi dari tiket.com
-26,3,RM,10 Maret 2025,Trip Pasangan,"4,6",Resepsionis yang profesional dan ramah.,Ulasan terverifikasi dari tiket.com
-26,4,supriyadi supriyadi,20 Februari 2025,Trip Keluarga,"4,0","Sekarang sepi banget, menu dan rasa makanan tolong ditingkatkan yaa, soalnya biasanya mantab banget",Ulasan terverifikasi dari tiket.com
-26,5,SEBUAH,17 Februari 2025,Perjalanan Sendirian,"5,0",Kebersihan sangat baik. Makanan hotel sangat enak. Nyaman,Ulasan terverifikasi dari tiket.com
-27,1,Tetty Lismey Verandina,10 Februari 2025,Trip Keluarga,"4,0","Kamar rapi, room service cepat Tatanan ruang sangat bagus. Staf yang tepat waktu dan terlatih baik.",Ulasan terverifikasi dari tiket.com
-27,2,Deddy Adriadi Setiawan,29 Januari 2025,Trip Keluarga,"4,8","Hotelnya bersih, lokasi startegis (dekat kota)",Ulasan terverifikasi dari tiket.com
-27,3,PS,28 Januari 2025,Perjalanan Bisnis,"5,0",Lingkungan yang tenang. Kolam estetik dan instagrammable. Tarif bersaing. Pelayan yang responsif dan ahli di bidangnya. Oke banget,Ulasan terverifikasi dari tiket.com
-27,4,Yuni Sartika,23 Januari 2025,Perjalanan Bisnis,"5,0","Bagus, saya sudah sering nginap disini",Ulasan terverifikasi dari tiket.com
-27,5,Yuni Sartika,21 Januari 2025,Perjalanan Bisnis,"5,0","Bagus, saya sudah sering nginap disini",Ulasan terverifikasi dari tiket.com
-28,1,DAN,21 Januari 2025,Perjalanan Sendirian,"4,0",Suasana sekitar sangat hidup.,Ulasan terverifikasi dari tiket.com
-28,2,DAN,21 Januari 2025,Perjalanan Sendirian,"4,0",Staf yang hangat. Harga sesuai kualitas.,Ulasan terverifikasi dari tiket.com
-28,3,Regina Prianto,20 Januari 2025,Perjalanan Sendirian,"5,0",Fasilitas yang terawat baik.,Ulasan terverifikasi dari tiket.com
-28,4,Teuku Ardhi Rahmawan,18 Januari 2025,Perjalanan Bisnis,"4,0","Terbaik , pelayanan baik, nyaman ..",Ulasan terverifikasi dari tiket.com
-28,5,JK,18 Januari 2025,Trip Keluarga,"5,0",Kamar bersih dan bagus banget. Lingkungan yang bersahabat.,Ulasan terverifikasi dari tiket.com
-29,1,JK,18 Januari 2025,Trip Keluarga,"5,0",Isi minibar lengkap. Pelayan yang ahli dan sigap.,Ulasan terverifikasi dari tiket.com
-29,2,Ken tinggal,14 Januari 2025,Perjalanan Sendirian,"5,0",Pelayanan parkir cepat. Cocok untuk menghabiskan waktu.,Ulasan terverifikasi dari tiket.com
-29,3,Sazkia Sutra Dewantari,12 Januari 2025,Perjalanan Bisnis,"4,0","Kamarnya oke, harganya lumayan, lokasi oke",Ulasan terverifikasi dari tiket.com
-29,4,Melia Yuniar,11 Januari 2025,Trip Keluarga,"5,0",Nyamaaaaaaaaaaaaaaannnnn,Ulasan terverifikasi dari tiket.com
-29,5,DAN,10 Januari 2025,Perjalanan Sendirian,"5,0",Lounge nyaman banget. Keseluruhan rapi. Pemandangan menakjubkan. Ketenangan di tepi kolam. Check-in yang ramah dan cepat.,Ulasan terverifikasi dari tiket.com
-30,1,Nurulia Rachmat,8 Januari 2025,Trip Keluarga,"4,0",Fasilitas ramah keluarga. Suasana sekitar sangat hidup. Fasilitas renang bagus. Ada diskon khusus. Staf profesional.,Ulasan terverifikasi dari tiket.com
-30,2,Purwanto SE,6 Januari 2025,Perjalanan Bisnis,"5,0",Nyaman dan betah nginep disini 😁👍,Ulasan terverifikasi dari tiket.com
-30,3,ITU,5 Januari 2025,Trip Keluarga,"5,0",Ada fasilitas khusus keluarga. Kuliner luar biasa.,Ulasan terverifikasi dari tiket.com
-30,4,KS,5 Januari 2025,Perjalanan Bisnis,"5,0",Keamanan dan privasi terjamin. Banyak pilihan vegetarian.,Ulasan terverifikasi dari tiket.com
-30,5,Mustaqimah Mustaqimah,4 Januari 2025,Trip Keluarga,"5,0",Nyaman dan sarapannya enak,Ulasan terverifikasi dari tiket.com
-31,1,Betty Yulita,29 Desember 2024,Trip Keluarga,"5,0",Selalu my santika krn anak2 suka kolam renangnya dimanapun selalu hangat,Ulasan terverifikasi dari tiket.com
-31,2,halima tussadiyah,28 Desember 2024,Trip Pasangan,"5,0","Hotel nya bersih dan nyaman, sarapan banyak pilihan, mobil nya di cuci keren",Ulasan terverifikasi dari tiket.com
-31,3,Dia Dia,27 Desember 2024,Trip Keluarga,"5,0","Kali ke 2 menginap dsini. Menu saraoan enak, kamar bersih, akses mudah, bisa naik gojek ke pasar kanoman",Ulasan terverifikasi dari tiket.com
-31,4,David Wirawan,27 Desember 2024,Trip Keluarga,"5,0","Lokasi mudah dijangkau, parkiran luas. Kamar bersih, luas. Penataan bagus. Hotel bangunan lama tapi masih terawat baik. Pelayanan ramah dan sangat helpful. Ada charging EV gratis Dan bahkan dapat cuci mobil gratis tanpa diminta. Jadi pagi2 senang lihat mobil bersih. Santika jadi opsi hotel di cirebon. RecomendedLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-31,5,PR,26 Desember 2024,Trip Keluarga,"2,0","Hotel lama, tua belum direnovasi, kurang sesuai sama harganya. Yg lumayan cuman kamar mandinya. Staffnya sih ramah tp seragamnya padah kotor2. Kamarnya bau sangit. AC kamar ga dingin.",Ulasan terverifikasi dari tiket.com
-32,1,Anda harus mencoba,25 Desember 2024,Trip Keluarga,"4,0","Sperti biasa makananya enak,bersih,pelayanan oke..malah di upgrade ke type deluxe krna sering ke santika cirebon..thanks santika cirebon",Ulasan terverifikasi dari tiket.com
-32,2,Korps Marinir,25 Desember 2024,Trip Keluarga,"5,0","Servicenya excellent, walau hotel tua tapi Terawat sekali, hanya kolam renang terlalu berkaporit, pedes dimata, Sarapan enak cuma kurang panas saja",Ulasan terverifikasi dari tiket.com
-32,3,Muhammad Samih Rozin,24 Desember 2024,Trip Keluarga,"5,0","SANTIKA THE BEST, FIX NO DEBAT Kebersihan sangat dijaga. Kenyamanan terjamin. Staf yang tulus.",Ulasan terverifikasi dari tiket.com
-32,4,Triyoga Agung,24 Desember 2024,Perjalanan Bisnis,"5,0",Interior yang indah. Hidangan tradisional yang lezat.,Ulasan terverifikasi dari tiket.com
-32,5,Ariyenny Helgawati,20 Desember 2024,Perjalanan Sendirian,"3,0",Booking buat business trip,Ulasan terverifikasi dari tiket.com
-33,1,Ariyenny Helgawati,20 Desember 2024,Perjalanan Sendirian,"3,0",Cukup bagus utk sekelas hotel lama,Ulasan terverifikasi dari tiket.com
-33,2,Anggota parlemen,18 Desember 2024,Trip Keluarga,"4,0",overall ok kamar bersih . saya ambil 2 kamar yang 1 kamar acnya kurang dingin saya minta ganti kamar ya so far responenya masih ok . keramahan para karyawan kudu di tingkatkan .,Ulasan terverifikasi dari tiket.com
-33,3,Nadya Tanjung,11 Desember 2024,Trip Keluarga,"3,6",Bagus sih unik hotelnya,Ulasan terverifikasi dari tiket.com
-33,4,ITU,9 Desember 2024,Trip Keluarga,"5,0","Kamar cukup luas dan bersih, furniture lama tp msh terawat, pagi2 mobil dicuci, kolam renang bersih",Ulasan terverifikasi dari tiket.com
-33,5,YouTube,9 Desember 2024,Trip Keluarga,"5,0",Sinyal handphone kuat.,Ulasan terverifikasi dari tiket.com
-34,1,ITU,9 Desember 2024,Trip Keluarga,"5,0","hotel lama yg masih terawat, parkir luas, kolam renang air hangat dan bersih, breakfast bervariasi dan enak",Ulasan terverifikasi dari tiket.com
-34,2,PS,5 Desember 2024,Trip Keluarga,"5,0",Hotel yang bagus dengan fasilitas dan layanan yang baik.,Ulasan terverifikasi dari tiket.com
-34,3,Ni Luh Putu Asri Cahyani,4 Desember 2024,Trip Pasangan,"5,0",Kamar terjaga dengan baik. Dekat dengan tempat wisata.,Ulasan terverifikasi dari tiket.com
-34,4,YH,4 Desember 2024,Trip Keluarga,"5,0",Akses mudah ke tempat-tempat terkenal.,Ulasan terverifikasi dari tiket.com
-34,5,Ariyenny Helgawati,1 Desember 2024,Perjalanan Sendirian,"5,0",View yang keren dipagi hari,Ulasan terverifikasi dari tiket.com
 35,1,MZ,28 November 2024,Perjalanan Bisnis,"5,0",Bersih dan nyaman…pelayanan baik..letaknya strategis,Ulasan terverifikasi dari tiket.com
 35,2,JP,28 November 2024,Perjalanan Bisnis,"3,0",Pelayanan baik dan ramah,Ulasan terverifikasi dari tiket.com
 35,3,AP,27 November 2024,Trip Keluarga,"4,0",Suasana lingkungan indah. Penawaran super.,Ulasan terverifikasi dari tiket.com
@@ -184,15 +57,6 @@
 37,3,Dinar Nurfadzniar,5 November 2024,Trip Keluarga,"3,4",Fasilitasnya cukup memadai,Ulasan terverifikasi dari tiket.com
 37,4,NK,5 November 2024,Trip Keluarga,"3,8",Fasilitas parkir nyaman banget. Ada pusat kebugaran.,Ulasan terverifikasi dari tiket.com
 37,5,PS,4 November 2024,Perjalanan Sendirian,"5,0","Lokasi strategis dan fasilitas ok, sarapan enak dam lumayan lengkap",Ulasan terverifikasi dari tiket.com
-38,1,Sri Noviati,26 Oktober 2024,Trip Keluarga,"5,0","Hotel dengan bangunan lama tapi sangat bersih. Kamar bersih, kamar mandi berfungsi dengan baik, amenities lengkap. Kolam renang dan kamar bilas bersih, karyawan hotel ramah ramah. Untuk variasi makanan saat sarapan cukup lengkap, makanan tradisional sampe modern tersedia. Keluarga saya juga dapat fasilitas pengantaran ke stasiun kereta, terima kasih.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-38,2,Pameran Andes,26 Oktober 2024,Trip Keluarga,"3,0",Permukaan yang sangat bersih. Tempat tidur tambahan aman untuk anak-anak.,Ulasan terverifikasi dari tiket.com
-38,3,Sandi Priyandi,22 Oktober 2024,Perjalanan Sendirian,"5,0",Kamar sudah disterilisasi.,Ulasan terverifikasi dari tiket.com
-38,4,Laretna Ariatni,14 Oktober 2024,Perjalanan Bisnis,"5,0","Bersih dan Adem, next time ke Cirebon lagi, pasti nginep di sini",Ulasan terverifikasi dari tiket.com
-38,5,Hariyanto Hariyanto,14 Oktober 2024,Perjalanan Bisnis,"1,0","Sprei semua yg diambil mw ganti kotor, yf terpasang di kasur juga kotor, ac ga dingin",Ulasan terverifikasi dari tiket.com
-39,1,RS,7 Oktober 2024,Perjalanan Bisnis,"3,0",Suasana yang santai dan asri.,Ulasan terverifikasi dari tiket.com
-39,2,SF,5 Oktober 2024,Perjalanan Bisnis,"5,0",Menyegarkan dan nyaman.,Ulasan terverifikasi dari tiket.com
-39,3,SF,5 Oktober 2024,Perjalanan Bisnis,"5,0",Kamar luas dan nyaman banget.,Ulasan terverifikasi dari tiket.com
-39,4,SF,5 Oktober 2024,Perjalanan Bisnis,"5,0",Pelayan yang santun dan responsif.,Ulasan terverifikasi dari tiket.com
 39,5,Theresia Aprillia simanjuntak,30 September 2024,Trip Pasangan,"5,0",Lingkungan sekitar bersih. Suasana nyaman. Fasilitas kolam sangat estetik.,Ulasan terverifikasi dari tiket.com
 40,1,Raditya Nursasongko,26 September 2024,Trip bareng Teman,"5,0",konsep warisan khusus,Ulasan terverifikasi dari tiket.com
 40,2,Ayu Purnamasari,25 September 2024,Trip Keluarga,"5,0","Good Tatanan ruang sangat bagus. Kamar nyaman, cocok untuk keluarga.",Ulasan terverifikasi dari tiket.com
@@ -211,71 +75,6 @@
 42,5,AB,6 September 2024,Perjalanan Bisnis,"5,0",Area bersantai tenang. Dekat dengan fasilitas umum. Staff luar biasa.,Ulasan terverifikasi dari tiket.com
 43,1,Yosi Puspita,5 September 2024,Trip Pasangan,"3,0",Mati lampu beberapa kali,Ulasan terverifikasi dari tiket.com
 43,2,Gunawan Prabawa,2 September 2024,Trip Keluarga,"5,0",Suasana parkir bersih. Pengaturan yang rapi.,Ulasan terverifikasi dari tiket.com
-43,3,ULANG,30 Agustus 2024,Trip Pasangan,"3,0","Cukup puas terimakasih , semoga bisa balik lagi😍😍",Ulasan terverifikasi dari tiket.com
-43,4,Mereka sedang melahirkan.,27 Agustus 2024,Trip Keluarga,"3,0",Enak untuk menengkan pikiran,Ulasan terverifikasi dari tiket.com
-43,5,POT BERBINTIK MASYANA,25 Agustus 2024,Trip Pasangan,"5,0","Hotelnya bagus walaupun bergaya klasik khas Cirebon. Lobby nya luas dan adem semilir angin. Tempat duduknya dan ruang tunggunya banyak kalo mau sekedar nongkrong. Hotel ini jauh dari kata seram lorong kamar karena sepanjang jalan mau ke kamar langsung berhadapan dengan pemandangan luar. Kamar dan kamar mandinya bersih, jauh dari kerak2 putih yg biasa ada di kamar mandi. Cuma minus di tv nya kebetulan dapet tv nya tampilannya ga cerah dan rada berbayang, entah karena dari MNC vision atau karena dari tv nya yg rusak. Untuk hairdrayer harus by request ya. Kolam renangnya bersih dan ga terlalu bau kaporit. Menu sarapan beragam dan enak. Terutama kuenya enak. Suasananya adem karena banyak ruang terbuka, membantu sekali karena saat saya menginap udara Cirebon itu panas banget.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-44,1,SEBAGAI,24 Agustus 2024,Trip Keluarga,"5,0",Bagus untuk hotel yang cukup senior..tetep terjaga perawatan semuanya.. perfect,Ulasan terverifikasi dari tiket.com
-44,2,SZ,20 Agustus 2024,Trip Keluarga,"5,0",Oke Rapi dan bersih. Rapi dan bersih.,Ulasan terverifikasi dari tiket.com
-44,3,hary gunawan,19 Agustus 2024,Trip Keluarga,"4,6","Cekin cepat. Lokasi pusat kota dekat kemana mana, walau hotel tua tapi dirawat dengan baik semua berfungsi dengan baik termasuk ac dingin sekali. Sarapan ok cukup variatif. Kolam renang cukup besar. Rekomen hotel dengan harga terjangkauLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-44,4,DN,19 Agustus 2024,Trip Keluarga,"5,0",Interior megah. Dekat dengan tempat kerja. Ketersediaan layanan concierge 24 jam.,Ulasan terverifikasi dari tiket.com
-44,5,Fadhiel Akbar,18 Agustus 2024,Trip Keluarga,"4,0",Tingkatkan lagi maintenance nya. So far ok,Ulasan terverifikasi dari tiket.com
-45,1,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-45,2,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-45,3,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-45,4,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-45,5,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-46,1,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-46,2,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-46,3,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-46,4,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-46,5,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-47,1,SF,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-47,2,SF,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-47,3,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-47,4,SF,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-47,5,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0","kamar bagus, akses mudah",Ulasan terverifikasi dari tiket.com
-48,1,Suci Rama Fauzi,18 Agustus 2024,Perjalanan Bisnis,"5,0",kamar nyaman dan bagus,Ulasan terverifikasi dari tiket.com
-48,2,Bakhtiar Eko,16 Agustus 2024,Trip Pasangan,"5,0",Kebersihan parkir terjaga.,Ulasan terverifikasi dari tiket.com
-48,3,Danny Setiawan Indra,14 Agustus 2024,Perjalanan Bisnis,"5,0",hotel memang sudah jadi langgangan perusahaan kami,Ulasan terverifikasi dari tiket.com
-48,4,Alya Anggraini Putri,14 Agustus 2024,Trip Keluarga,"5,0",staffnya ramah-ramah,Ulasan terverifikasi dari tiket.com
-48,5,Eka Septiana,12 Agustus 2024,Perjalanan Sendirian,"5,0",Lokasi Pelayanan Ok Kamar,Ulasan terverifikasi dari tiket.com
-49,1,DL,10 Agustus 2024,Perjalanan Bisnis,"5,0",Semuanya the best👍👍👍 Kamar super bersih.,Ulasan terverifikasi dari tiket.com
-49,2,Andika putra effendi,4 Agustus 2024,Perjalanan Sendirian,"5,0",okkelahhhh,Ulasan terverifikasi dari tiket.com
-49,3,Kachi Sulastri,4 Agustus 2024,Trip Keluarga,"5,0",Pengaturan tepi kolam yang elegan.,Ulasan terverifikasi dari tiket.com
-49,4,"sebagian hari, tolong",29 Juli 2024,Trip Keluarga,"4,0","Bersih, luas, sarapan enak dan variatif.. bakal balik lagi🤗🤗",Ulasan terverifikasi dari tiket.com
-49,5,Medi Ramdanni,23 Juli 2024,Perjalanan Sendirian,"5,0","Kamarnya ok, sarapan ok, kolamnya hangat",Ulasan terverifikasi dari tiket.com
-50,1,Medi Ramdanni,23 Juli 2024,Perjalanan Sendirian,"5,0","Sarapannya enak, kolamnya hangat",Ulasan terverifikasi dari tiket.com
-50,2,Elfina Sari,22 Juli 2024,Trip Keluarga,"5,0",Mantap bersih sekali,Ulasan terverifikasi dari tiket.com
-50,3,Semua Elizabeth,18 Juli 2024,Perjalanan Sendirian,"5,0",ok bagus baik bersih nice place nice location,Ulasan terverifikasi dari tiket.com
-50,4,Zahrina Haidi,15 Juli 2024,Trip Keluarga,"5,0",Lingkungan sangat bersih. Ada program liburan keluarga. Suasana malam yang ceria.,Ulasan terverifikasi dari tiket.com
-50,5,dwi yuniarti,12 Juli 2024,Trip Keluarga,"5,0",overall bagus nyaman...sarapan bnyk pilihan menu nya.. kolam renang bersih..,Ulasan terverifikasi dari tiket.com
-51,1,Gita Mariana,8 Juli 2024,Trip Keluarga,"3,6","Akses mudah ke stasiun, makanan enak, fasilitas ok, dan parkir pun banyak (mobil dicuciin). Kolam renang enak, pelayanan ramah",Ulasan terverifikasi dari tiket.com
-51,2,muhamad adinurkiat h,8 Juli 2024,Trip Keluarga,"2,6","kamar tidak bersih dan banyak debu dibawah nakas... extrabed kotor... breaksfast lama sekali refill nya, bahkan ada menu yg sampai selesai makan tidak si refill... cukup sekali lah transit disini",Ulasan terverifikasi dari tiket.com
-51,3,Adiwibawa Reksabuana,5 Juli 2024,Trip Keluarga,"4,2",Stasiun pengisian daya kendaraan listrik Ada,Ulasan terverifikasi dari tiket.com
-51,4,Reza Aditya,3 Juli 2024,Perjalanan Sendirian,"4,4","Hotel bangunan tua, tapi nyaman. Kamar luas, dan tidak spooky. Recommended",Ulasan terverifikasi dari tiket.com
-51,5,KARINA RAKHMADIA,2 Juli 2024,Trip Keluarga,"4,6",Lokasi hotel cukup strategis dan dekat kemana mana,Ulasan terverifikasi dari tiket.com
-52,1,Rudi Hartono,30 Juni 2024,Trip Keluarga,"4,0",Lumayanlah overall Pelayanan oke Sarapan berantakan,Ulasan terverifikasi dari tiket.com
-52,2,Eunike Yusnina Santoso,30 Juni 2024,Trip Keluarga,"5,0",Breakfast nya enak. Service bagus,Ulasan terverifikasi dari tiket.com
-52,3,Perang Dunia,24 Juni 2024,Perjalanan Sendirian,"5,0",Kebersihan kamar okee.. Suasana Oke.. Hotel pilihan jika ke cirebon,Ulasan terverifikasi dari tiket.com
-52,4,Rinaldy Edisyahputra,24 Juni 2024,Trip Keluarga,"5,0","Hotel lama yg selalu di jaga perawatannya.. pertahankan, rekomen",Ulasan terverifikasi dari tiket.com
-52,5,Reza Iman Satria,24 Juni 2024,Trip Keluarga,"4,8","Hotel tua cman sudah mulai di renovasi kamar mandi, lift, dll.. Cman harus diperhatikan toilet dekat FO & fitnes. Sama penerangan aja yg kurang.. Selebihnya udah cukup, trus pertahankan yang cuci mobil, pagi2 mobil sudah bersih..Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-53,1,Anto Murfratomo,23 Juni 2024,Trip Pasangan,"5,0",Excellent service dari staf. Gedung walaupun agka tua tapi tdk mengurangi service level. Dapat complimentary car wash bagi yg bawa mobil,Ulasan terverifikasi dari tiket.com
-53,2,Eko Ardy Prasetyo,18 Juni 2024,Perjalanan Sendirian,"5,0",Ruangan bersih dan nyaman banget.,Ulasan terverifikasi dari tiket.com
-53,3,Panca Nugroho,15 Juni 2024,Trip Keluarga,"5,0",Suasana bersahabat. Banyak ruang penyimpanan. Ruang tamu yang nyaman.,Ulasan terverifikasi dari tiket.com
-53,4,Nama: Prihasta,14 Juni 2024,Perjalanan Bisnis,"5,0",Hotel yang masoh terawat dengan baik. Ada fasilitas kolam renang yang air gak terlalu dingin,Ulasan terverifikasi dari tiket.com
-53,5,M N,14 Juni 2024,Trip Keluarga,"5,0",Makanan hotel sangat enak. Lokasi yang ramah keluarga. Kebersihan parkir terjaga. Resepsionis yang terlatih dengan baik dan cekatan.,Ulasan terverifikasi dari tiket.com
-54,1,Dewi puspla sari,12 Juni 2024,Perjalanan Bisnis,"5,0",Tempat parkir luas tersedia.,Ulasan terverifikasi dari tiket.com
-54,2,Jari-jari Dwi Aprilia,10 Juni 2024,Trip Pasangan,"5,0","Bersih, segar, dan nyaman banget. Parkir strategis dan terjangkau. Pengalaman mengesankan. Pelayan yang sigap dan tulus.",Ulasan terverifikasi dari tiket.com
-54,3,Tia Theresia G Sungkono,8 Juni 2024,Trip Keluarga,"4,0",Sarapan cocok untuk anak-anak.,Ulasan terverifikasi dari tiket.com
-54,4,Surya Wardhana,2 Juni 2024,Trip Keluarga,"5,0",Kamar bersih banget.,Ulasan terverifikasi dari tiket.com
-54,5,Dewi Puspla Sari,28 Mei 2024,Perjalanan Bisnis,"5,0",Good Kebersihan terjamin dan sangat baik.,Ulasan terverifikasi dari tiket.com
-55,1,Fernanda Harinsari,27 Mei 2024,Trip Keluarga,"3,0",Kamar yang nyaman untuk keluarga. Ada area bersantai keluarga.,Ulasan terverifikasi dari tiket.com
-55,2,Yunanto Widjaja,24 Mei 2024,Trip Keluarga,"4,6","Agak gelap, hotelnya cukup tua tapi masih oke.",Ulasan terverifikasi dari tiket.com
-55,3,FR,23 Mei 2024,Perjalanan Bisnis,"3,0",Ac kamar kurang dingin,Ulasan terverifikasi dari tiket.com
-55,4,dua rachma nisita,14 Mei 2024,Trip Keluarga,"5,0","Nginep Santika karena pengen nostalgia jaman dulu nginep disini, meski bangunan lama tapi maintenance oke.. yg bikin kagum adalah kebersihan kamarnya, especially kamar mandi.. handuk dan bed sheet semua bersih.. staff sangat ramah dan helpful, saya urgent butuh komputer disediakan.. breakfast jg enak dan variatif, pool bersiih anakku betah .. makasii santika and staff.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-55,5,CH,13 Mei 2024,Trip Keluarga,"5,0",Hotel dengan suasana sangat hangat. Layanan kebersihan harian oke banget. Keterampilan staf luar biasa.,Ulasan terverifikasi dari tiket.com
-56,1,HH,7 Mei 2024,Trip Keluarga,"4,0","Udah 2x nginep sini. Sebenarnya enak tempatnya, makanan jg enak, service jg bagus. Tapi di yang kedua ini, ACnya sedikit panas, tolong di service aja ACnya 🙏 Terima kasih",Ulasan terverifikasi dari tiket.com
-56,2,indry yanti meitha sari,4 Mei 2024,Trip Keluarga,"5,0","Hotel lama tpi lumyn bersin , pelayanan nya ramah"" Dan plus mobil di cuciin , the best pokok nya bru nemu hotel yg mobil nya di cuciin 👍👍👍",Ulasan terverifikasi dari tiket.com
 56,3,Ammar Muhtadi,30 April 2024,Perjalanan Bisnis,"5,0","Mobil ducucikan, Fasilitas kolam sangat estetik.",Ulasan terverifikasi dari tiket.com
 56,4,Dwiky Pujo Pratama,29 April 2024,Trip Keluarga,"5,0","Sarapan lumayan, kamar luas, model klasik",Ulasan terverifikasi dari tiket.com
 56,5,TT,25 April 2024,Trip Keluarga,"5,0",Interior ramah keluarga. Harga sangat terjangkau. Kualitas pelayanan terbaik.,Ulasan terverifikasi dari tiket.com
@@ -291,573 +90,55 @@
 58,5,Yusuf Alaidrus Hidayatullah,10 April 2024,Trip Keluarga,"5,0",Pengalaman menyenangkan menginap di santika cirebon bersama keluarga,Ulasan terverifikasi dari tiket.com
 59,1,Vernandus Hamonangan,10 April 2024,Trip Keluarga,"3,6",Nyaman buat istirahat perjalanan,Ulasan terverifikasi dari tiket.com
 59,2,Fadli Fadli,10 April 2024,Trip Keluarga,"3,8",Hotel nya keliatan sangat Tua...banyak binatang kecil Di kamar Mandi. Over all bagus pelayanan nya.,Ulasan terverifikasi dari tiket.com
-59,3,Omar Koswara,28 Maret 2024,Trip Pasangan,"5,0",Kamarnya cukup besar dan nyaman,Ulasan terverifikasi dari tiket.com
-59,4,Apakah Apakah,17 Maret 2024,Trip Keluarga,"4,6","Hotel bersih, dekat dengan kota.. kolam renang besar.. anak2 seneng bangat bisa renang",Ulasan terverifikasi dari tiket.com
-59,5,NM,14 Maret 2024,Trip Pasangan,"3,8","Parkir luas, mobil dicuciin gratis, kemarin ini stay di kamar 302 dan sayangnya pas masuk kamar lantainya sedikit basah dan pipa wastafelnya bocor 😢 namun housekeeping dan engineering sigap langsung bertugas. Pelayananan ramah dan menu sarapan ayam bakarnya enak 👍🏻 menu bubur kacang hijaunya kalau ga terlalu manis bakal maknyus banget, tapi tergantung masing-masing selera lah ya.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-60,1,RR,12 Maret 2024,Trip Keluarga,"5,0",Ok banget. Kamar ok. Tempat olahraga ok. Makan pagi ok.,Ulasan terverifikasi dari tiket.com
-60,2,DC,12 Maret 2024,Trip Keluarga,"3,2","Hotel ini bangunannya spt bangunan lama. Furniture dikamar juga terlihat lama, masih ada debu2 dilantai yg tidak dibersihkan. Sarapan bervariasi tapi untuk rasa biasa saja. Perlu diperbaiki lagi interiornya seperti santika di kota2 besar lainnya.utk hrga kamar seperti itu saya merasa kemahalan ya. ThanksLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-60,3,LC,11 Maret 2024,Trip Keluarga,"4,8",Pelayanan hotel top deh..breakfeast bervariasi..mobil diparkiran dicucikan sama pekerjanya..,Ulasan terverifikasi dari tiket.com
-60,4,Dody Tisna Amijaya,8 Maret 2024,Perjalanan Sendirian,"4,0",Tempat yang bagus untuk menginap sementara selama perjalanan bisnis.,Ulasan terverifikasi dari tiket.com
-60,5,BN,4 Maret 2024,Trip Keluarga,"1,6",Minta kamar yg no smoking dpt kamar smoking.. handuknya kotor.. ditmpt ditempat fitnes tdk ada petugas yg melayani sementara acnya mati.. dikolam renang orang-orang bebas merokok dan tidak ada safety guards nyaLihat lebih sedikit,Ulasan terverifikasi dari tiket.com
-61,1,Elwiena Maulida Munasir P,2 Maret 2024,Trip Keluarga,"4,0","Bawa anak di atas 5th kena charge Rp50.000/anak untuk sarapannya. Kamarnya bersih, tapi di bagian gorden jendela ada yg bernoda.. semoga bisa lebih baik kebersihannya. Staffnya ramah-ramah & sangat helpful. Parkir dengan pemandangan bagus. Suasana yang santai dan asri.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-61,2,ST,27 Februari 2024,Trip Keluarga,"4,8","Tempatnya nyaman, stategis dan pelayanannya sangat memuaskan",Ulasan terverifikasi dari tiket.com
-61,3,Haris gajang baskoro,23 Februari 2024,Trip Keluarga,"5,0",Nuansa romantis. Jarak terjangkau ke pusat kota. Tempat parkir strategis.,Ulasan terverifikasi dari tiket.com
-61,4,MATAHARI,22 Februari 2024,Trip Keluarga,"5,0","Fasilitas dengan kebersihan oke banget. Kebersihan parkir terjaga baik. Pelayanan untuk breakfast Fantastis, semua staff Ramah... Fasilitas kebugarannya juga oke... Meskipun bangunannya udah lama... Tapi puas banget menginap di Santika CirebonLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-61,5,KS,22 Februari 2024,Perjalanan Bisnis,"5,0",Staf sangat terbuka. Suasana malam yang menyenangkan.,Ulasan terverifikasi dari tiket.com
-62,1,Dwiyana Ruspianti Arief,21 Februari 2024,Trip Keluarga,"5,0","Kamar cukup luas, bersih. Kolam renang bersih Hanya TV blm smart TV.",Ulasan terverifikasi dari tiket.com
-62,2,Ramadan Mahartika,19 Februari 2024,Trip Keluarga,"5,0",Kebersihan di seluruh area hotel.,Ulasan terverifikasi dari tiket.com
-62,3,Puti Mahardiani,19 Februari 2024,Trip Keluarga,"5,0",Hidangan pilihan terbaik. Dekorasi menawan. Dekat dengan pusat kesehatan. Staf yang luar biasa dan sigap.,Ulasan terverifikasi dari tiket.com
-62,4,Handoko Handoko,18 Februari 2024,Trip Keluarga,"5,0","service sangat bagus, walau kamar old style tapi sgt bersih dan nyaman. sarapan variar if dan kids friendly",Ulasan terverifikasi dari tiket.com
-62,5,rieziq shihab,15 Februari 2024,Trip Pasangan,"3,0",Kebersihannya oke banget.,Ulasan terverifikasi dari tiket.com
-63,1,Rudy Kristianto,12 Februari 2024,Trip Keluarga,"4,2","Hotel Santika Cirebon memang terkesan hotel yang sudah tua, tapi kebersihan nya cukup baik dan tempat tidur benar2 masih nyaman untuk tidur. Pilihan sarapan tidak banyak tapi rasa makanan enak. Lokasi strategis dan dekat dengan banyak tempat makan. Tidak salah memilih Hotel ini ketika di Cirebon.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-63,2,Panji Agape Ginzel,11 Februari 2024,Trip Keluarga,"4,0",Suasana santai dan damai. Parkir luas,Ulasan terverifikasi dari tiket.com
-63,3,Muhammad Rifat,10 Februari 2024,Perjalanan Bisnis,"5,0",Pelayan top dan mobil tiba2 bersih dicuci sm orang hotel,Ulasan terverifikasi dari tiket.com
-63,4,Anggota parlemen,5 Februari 2024,Perjalanan Bisnis,"5,0",Kamar terjaga bersih.,Ulasan terverifikasi dari tiket.com
-63,5,Anggota parlemen,5 Februari 2024,Perjalanan Bisnis,"5,0",Terdapat akses menuju pusat perbelanjaan.,Ulasan terverifikasi dari tiket.com
-64,1,Muhammad Rizqy Hananto Putra,5 Februari 2024,Perjalanan Bisnis,"5,0",Suasana malam yang meriah.,Ulasan terverifikasi dari tiket.com
-64,2,Anggota parlemen,5 Februari 2024,Perjalanan Bisnis,"5,0",Lokasi strategis untuk keluarga.,Ulasan terverifikasi dari tiket.com
-64,3,Reyhan Ardiansyah,4 Februari 2024,Trip Keluarga,"4,6",Tatanan ruang sangat bagus.,Ulasan terverifikasi dari tiket.com
-64,4,JF,7 Januari 2024,Trip Keluarga,"3,8",Sudah 2x nginep disini. Cukup nyaman diantar hotel sekitar. Kolam renangnya oke bgt untuk anak2,Ulasan terverifikasi dari tiket.com
-64,5,Ria Deka Angelina,4 Januari 2024,,"4,0",,Ulasan terverifikasi dari tiket.com
-65,1,Ria Deka Angelina,4 Januari 2024,,"4,0",,Ulasan terverifikasi dari tiket.com
-65,2,Gigi Gigi,3 Januari 2024,,"5,0",,Ulasan terverifikasi dari tiket.com
-65,3,Daffa Fadilah,3 Januari 2024,,"5,0",,Ulasan terverifikasi dari tiket.com
-65,4,Erlin Nurlia,2 Januari 2024,,"4,0",Selalu mantap,Ulasan terverifikasi dari tiket.com
-65,5,Theodorus Sugiarto,1 Januari 2024,Trip Keluarga,"3,8","Santika masih salah satu hotel terbaik di cirebon, tapi beberapa hal sepertinya perlu dilakukan modernisasi. Makan pagi bisa lebih baik lagi dengan menu yang lebih variatif. Tapi overall Santika masih memberikan pengalaman menginap yang baik untuk keluarga.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-66,1,Amelia Julisdianti,30 Desember 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-66,2,Deby Dudih Gunawan,29 Desember 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-66,3,LC,28 Desember 2023,Trip Keluarga,"5,0","Hotel bersih, sarapan enak.. Perlu di upgrade furniture dikamar.. Spy lebih modern.",Ulasan terverifikasi dari tiket.com
-66,4,ULANG,28 Desember 2023,Trip Keluarga,"5,0",Bagus tempatnya. Lokasi juga strategis. Swimming pool-nya luaaas. Oke banget nginep di sini.,Ulasan terverifikasi dari tiket.com
-66,5,Indah Purnami,26 Desember 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-67,1,Dilla Aristarini,25 Desember 2023,Trip Keluarga,"5,0",Ramah bangeeettt,Ulasan terverifikasi dari tiket.com
 67,2,Manasye Agustinus Siregar,25 Desember 2023,Trip Keluarga,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
-67,3,Jamal Nazar,24 Desember 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-67,4,SEBAGAI,21 Desember 2023,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-67,5,DI DALAM,20 Desember 2023,,"4,6",,Ulasan terverifikasi dari tiket.com
-68,1,Hansen Hansen,20 Desember 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-68,2,Hansen Hansen,20 Desember 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-68,3,DAN,20 Desember 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-68,4,Lie Tabita Tania Libianto,19 Desember 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-68,5,Erwanda Rahmanto,18 Desember 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-69,1,Hoencoro Santoso,17 Desember 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-69,2,Mira Solihati,14 Desember 2023,Trip Pasangan,"4,0","Hotel tua tapi bersih, pelayanan bagus, fasilitasnya lengkap, strategis dekat kemana2",Ulasan terverifikasi dari tiket.com
-69,3,ariyan kamandanu,14 Desember 2023,,"3,2",,Ulasan terverifikasi dari tiket.com
-69,4,Asep Hadian Sasmita,12 Desember 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-69,5,Dinda Dinda,12 Desember 2023,,"4,6",,Ulasan terverifikasi dari tiket.com
-70,1,RIZKY ADITIA PUTRA,29 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-70,2,SEBAGAI,29 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-70,3,Dezya Salsabila Prawira,26 November 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-70,4,Pemandian Nistica,25 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-70,5,Neni Nurhayati,25 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
 71,1,Mohammad Wangsit Supriyadi,22 November 2023,,"4,8","Pelayanan sangat baik, fasilitas baik.",Ulasan terverifikasi dari tiket.com
-71,2,Caroliana Scipio,21 November 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-71,3,Annisa Nur Octaviani,18 November 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-71,4,Annisa Nur Octaviani,18 November 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-71,5,Annisa Nur Octaviani,18 November 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-72,1,Annisa Nur Octaviani,18 November 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-72,2,Jujun Junardi,18 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
 72,3,Cahyaning Tri Bintoro,14 November 2023,Trip Keluarga,"4,0",Bersih nyaman,Ulasan terverifikasi dari tiket.com
-72,4,Suci Rama,12 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-72,5,Suci Rama,12 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-73,1,rina pusphita dewi,12 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-73,2,Felizia Novi Kristanti,12 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-73,3,Agustin Fajarwati,12 November 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-73,4,Hansen Ezra,9 November 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-73,5,Baik Chandra,6 November 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
 74,1,Dewi Puspla Sari,4 November 2023,,"5,0",Kesalahan,Ulasan terverifikasi dari tiket.com
-74,2,KS,31 Oktober 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-74,3,KS,27 Oktober 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-74,4,Pandu Azaria Ginzel,24 Oktober 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-74,5,Baik Chandra,23 Oktober 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-75,1,Nurfajriah Anzani,20 Oktober 2023,,"5,0","Kamar oke, bersih, nyaman untuk bistrip",Ulasan terverifikasi dari tiket.com
-75,2,Yunis Dwi Setiawaty,20 Oktober 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-75,3,Yunis Dwi Setiawaty,20 Oktober 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-75,4,DAN,16 Oktober 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-75,5,DAN,16 Oktober 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-76,1,Frirobelle Chriessie Saranasthacia,14 Oktober 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-76,2,Sanidya Saraswati Buddhiputri,12 Oktober 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-76,3,Sanidya Saraswati Buddhiputri,12 Oktober 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-76,4,Sanidya Saraswati Buddhiputri,12 Oktober 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-76,5,Dezya Salsabila Prawira,2 Oktober 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-77,1,CM,2 Oktober 2023,,"5,0",Nyaman bgt,Ulasan terverifikasi dari tiket.com
 77,2,Luthfiyah Revi Sukmasari,29 September 2023,Perjalanan Bisnis,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
 77,3,Nur Hasanah Ahniar,28 September 2023,,"5,0","Pada dasarnya, ini bagus sekali.",Ulasan terverifikasi dari tiket.com
-77,4,Ida Rodhiani,28 September 2023,Trip bareng Teman,"4,0",,Ulasan terverifikasi dari tiket.com
-77,5,SN,28 September 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
 78,1,Eunike Yusnina Santoso,26 September 2023,Trip Keluarga,"5,0",Kaget banget pas check out mobilnya di cuci bersih padahl mobil aku lagi kotor.. hal kecil gini bikin aku bakal balik lgi ke santika cirebon.. terima kasi pelayanannya baik sekali..,Ulasan terverifikasi dari tiket.com
-78,2,Cici Badria,25 September 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-78,3,SEBAGAI,19 September 2023,Trip Pasangan,"5,0",,Ulasan terverifikasi dari tiket.com
-78,4,ITU,19 September 2023,,"3,4",,Ulasan terverifikasi dari tiket.com
-78,5,FF,19 September 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-79,1,Solusi Tautan Data,16 September 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-79,2,KS,15 September 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-79,3,Edward Moshaddeq,12 September 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-79,4,LR,10 September 2023,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-79,5,Deddy Sussantho,6 September 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-80,1,Vinny Sophia Amira,5 September 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
 80,2,MATIUS PERANGIN ANGIN,4 September 2023,Trip Pasangan,"4,0",Lokasi strategi,Ulasan terverifikasi dari tiket.com
-80,3,Benny Riansyah,4 September 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-80,4,Sri Ajeng Prihandini,1 September 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-80,5,Sri Ajeng Prihandini,1 September 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-81,1,PP,30 Agustus 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-81,2,SEBAGAI,29 Agustus 2023,Perjalanan Bisnis,"2,8",,Ulasan terverifikasi dari tiket.com
-81,3,Ari Dwi Utama,25 Agustus 2023,Perjalanan Bisnis,"4,2",,Ulasan terverifikasi dari tiket.com
-81,4,M N,25 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-81,5,ND,24 Agustus 2023,Perjalanan Bisnis,"5,0","Bagus, atasan saya suka dipesankan disinj",Ulasan terverifikasi dari tiket.com
-82,1,Makam Aditya Hanindipto,23 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-82,2,KS,23 Agustus 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-82,3,YS,23 Agustus 2023,Trip Pasangan,"5,0","Bangunan lama tapi standart Santika mmg luar biasa, sarapan sangat bervariatif dan enak banget, staff ramah, letak dijantung kota",Ulasan terverifikasi dari tiket.com
-82,4,Subkhan Subkhan,21 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-82,5,Danica Danica,21 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-83,1,Andy Radixson Manik,16 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-83,2,Asmat Susiyanto,15 Agustus 2023,,"5,0","Bersih, staff hotelnya juga ramah2, makanannya enak2, nyaman pokoknya",Ulasan terverifikasi dari tiket.com
-83,3,Asmat Susiyanto,15 Agustus 2023,,"5,0","Bersih, staff hotelnya juga ramah2, makanannya enak2, nyaman pokoknya",Ulasan terverifikasi dari tiket.com
 83,4,Selandia Baru,14 Agustus 2023,,"5,0",OKE,Ulasan terverifikasi dari tiket.com
-83,5,JB,13 Agustus 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-84,1,Hadi Christian,11 Agustus 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-84,2,Hanif Fadhilah,9 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-84,3,faisal assegaf,9 Agustus 2023,Trip Keluarga,"5,0","selalu disini , Terbaik dikelas nyaa.....kolam renang nya selalu bikin jatuh cinta bening cristal, restoran ok..",Ulasan terverifikasi dari tiket.com
-84,4,Baik Chandra,9 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-84,5,Pitria Hadi Istiyandari,8 Agustus 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-85,1,Hariyanto Hariyanto,7 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-85,2,Agus Suprayogi,7 Agustus 2023,Trip Keluarga,"5,0","Next Kalo ke Cirebon pasti ke Sini lagi Kolam renang buka sampe jam 8 malam Nyaman, Staf ramah Mantap pokoknya",Ulasan terverifikasi dari tiket.com
-85,3,Andhika Hewwit,7 Agustus 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-85,4,Muhammad Fachry Dharmawan,5 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
 85,5,Dewi Puspla Sari,4 Agustus 2023,,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
-86,1,Zulfadhli Zulfadhli,3 Agustus 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-86,2,Steven Lee,2 Agustus 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
 86,3,Dewi Puspla Sari,1 Agustus 2023,,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
-86,4,handi suryono,31 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-86,5,MUHAMAD ANDRE DARMAWAN,30 Juli 2023,,"4,4",,Ulasan terverifikasi dari tiket.com
-87,1,Stephan Nicolaus,28 Juli 2023,,"4,8",,Ulasan terverifikasi dari tiket.com
-87,2,Reny Sharfina,28 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-87,3,ITU,28 Juli 2023,Trip Keluarga,"4,6",Sudah cukup bagus untuk harga tertera,Ulasan terverifikasi dari tiket.com
-87,4,Andy Radixson Manik,28 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-87,5,Muhamad Nur Jamiludin,28 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-88,1,Muhamad Nur Jamiludin,28 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-88,2,Satria Wiguna,27 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-88,3,SS,26 Juli 2023,Perjalanan Bisnis,"4,0",,Ulasan terverifikasi dari tiket.com
-88,4,Harijanto Widjaya,25 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-88,5,Jostra Elia,24 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-89,1,JF,23 Juli 2023,Trip Keluarga,"4,2","Lokasi oke, dekat dengan kuliner. Kamar luas, cukup bersih, dan nyaman. Mungkin karna sudah tua jd kuranh segar tampilannya. Dan toilet agak bau. Kolam renang besar dan bersih. Sarapan enak.",Ulasan terverifikasi dari tiket.com
-89,2,Amalia Nurul Iman,16 Juli 2023,,"4,4",,Ulasan terverifikasi dari tiket.com
-89,3,Sherly Margaretha,14 Juli 2023,Perjalanan Bisnis,"4,4",Untuk dilevel harga hampir 700ribu Harusnya dpt yg lebih ok facilitynya.,Ulasan terverifikasi dari tiket.com
-89,4,Laksono Saptaningtyas,13 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-89,5,Dyah Ayu Palupi,13 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-90,1,Budi Susanto,11 Juli 2023,Trip Keluarga,"5,0","Pelayanan memuaskan, pagi-pagi mobil sudah di cuci bersih.",Ulasan terverifikasi dari tiket.com
-90,2,Dwiki Achmad Giffary,10 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-90,3,SS,5 Juli 2023,Trip Pasangan,"5,0",,Ulasan terverifikasi dari tiket.com
-90,4,DF,3 Juli 2023,,"4,0","kamar nyaman, kamar mandi besar dan bersih",Ulasan terverifikasi dari tiket.com
-90,5,AGUNG Setiyono,3 Juli 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-91,1,KU,3 Juli 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-91,2,RK,2 Juli 2023,Trip Keluarga,"4,4","Hotel Legend di cirebon yang mengingatkan pengalaman hospitality dengan ortu saya 20th an lalu. Suasana masih sama, mungkin perlu peremajaan supaya lebih modern dan tidak terkesan “gelap”. Hotel bersih, kamar luas, kolam renang air hangat yang khas dari jaman saya kanak-kanak, tetapi sayang untuk kualitas breakfast jauh di bawah standard Santika lain secara rasa. Untuk variasi masih ok untuk kelas nya tapi rasa sangat kurang. Yang improve saat ini di semua santika tersedia Charging Pile untuk kendaraan listrik, tetapi kalau bisa di tambah jumlah nya karena antrian pakai nya makin lama akan semakin menyulitkan seiring bertambah populasi EV. Apalagi charging memakan waktu yang lama. Yang masih dipertahankan juga service “cuci mobil”, di satu sisi nilai plus, di sisi lain baik nya di tanyakan dulu apakah perlu di cuci atau tidak, terutama untuk mobil yang memerlukan perawatan khusus saat cuci, maksud baik ini bisa jadi petaka bagi pemilik mobil tsb.. Sukses untuk Santika 🙏🏻Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-91,3,RD,1 Juli 2023,,"5,0","Bersih banget, tamannya indah, banyak bunga hidup dan semua staff hotel ramah luar biasa",Ulasan terverifikasi dari tiket.com
-91,4,Siti Mustabsyirah Dahlan,28 Juni 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-91,5,Odah Syarifudin,28 Juni 2023,,"5,0",Kolam renang bersih..pelayanan ramah dan cepat. Tempat strategis dekat mall dan tempat makan. Terima kasih,Ulasan terverifikasi dari tiket.com
-92,1,Odah Syarifudin,28 Juni 2023,,"5,0",Bagus ..lokasi strategis dekat mall dan tempat makan ...kolam renang bersih ..pelayanan cepat dan ramah . Terima kasih Santika,Ulasan terverifikasi dari tiket.com
-92,2,M Yunan Zulkarnain,28 Juni 2023,,"4,0","Jangan lupa nonton chanel ""single backpacker kejawen"" Untuk liat review hotelnya ya ges ya",Ulasan terverifikasi dari tiket.com
-92,3,rima rakhmawati,26 Juni 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-92,4,Agung Wibowo,26 Juni 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-92,5,Dwi Putri Astuti,25 Juni 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-93,1,annisa kesuma,25 Juni 2023,,"5,0",Buat perjalanan bisnis worth it,Ulasan terverifikasi dari tiket.com
-93,2,Doni Wahyu Indarto,21 Juni 2023,,"4,4",,Ulasan terverifikasi dari tiket.com
-93,3,Rima Rahmawati,20 Juni 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-93,4,Nanang Hadi Sumarsono,19 Juni 2023,,"4,2","Lokasi dekat kemana-mana, nyaman buat beristirahat, sarapan standart bila dibandingkan dengan hotel santika lainnya, banyak stock makanan yang habis dan refillnya lama",Ulasan terverifikasi dari tiket.com
-93,5,Fx Rudi,17 Juni 2023,,"3,8",,Ulasan terverifikasi dari tiket.com
-94,1,Kebahagiaan Nanang,17 Juni 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-94,2,DEWI AGTIANA,15 Juni 2023,,"1,8",,Ulasan terverifikasi dari tiket.com
-94,3,Febri Erdin,13 Juni 2023,Trip Keluarga,"5,0","Seperti biasa, tidak mengecewakan. Lain kali saya akan menginap di sini lagi.",Ulasan terverifikasi dari tiket.com
-94,4,NM,10 Juni 2023,Trip Keluarga,"4,8",Kamar luas dan bersih. Sarapan bakmi gorengnya mesti coba. Kaget pagi2 mobil ada yang cuciin. Parkiran luas dan kolam renang cukup lebar. Tidak coba gym dan seandainya di kamar ada hair dryer dan sisir lebih mantab lagi hotel santika cirebon ini 👍🏻Lihat lebih sedikit,Ulasan terverifikasi dari tiket.com
-94,5,NS,10 Juni 2023,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-95,1,PP,10 Juni 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-95,2,Budianto Istiadi,8 Juni 2023,,"2,2","Hotel sdh tua, tidak sesuai dgn standard SANTIKA. Perlu segera di renovasi.",Ulasan terverifikasi dari tiket.com
-95,3,SJ,8 Juni 2023,,"3,2",,Ulasan terverifikasi dari tiket.com
-95,4,Paul Robin,7 Juni 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-95,5,Albert Albert,7 Juni 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-96,1,Deni Aditiawarman,7 Juni 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-96,2,Sri Indarsih,6 Juni 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-96,3,Sandy Tirtokusumo,6 Juni 2023,,"4,6",Secara keseluruhan oke.,Ulasan terverifikasi dari tiket.com
-96,4,Ardhinata Rahadyan yang Mulia,6 Juni 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-96,5,Selandia Baru,4 Juni 2023,Trip Keluarga,"4,4","Pelayanan yg ramah, internet mayan kenceng. Cuma sayangnya menu sarapan harus diminta dulu baru ditambah, pdhal petugas restonya udh tau kl byk yg udh kosong dan waktu msh jam 9 pagi.",Ulasan terverifikasi dari tiket.com
-97,1,FF,31 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-97,2,Nadya Putri,31 Mei 2023,Perjalanan Bisnis,"5,0","Kamar rapih dan nyaman, pelayanan bagus, view bagus, makanan enak. Terimakasih yaa",Ulasan terverifikasi dari tiket.com
-97,3,Nadiar Ramadhan,28 Mei 2023,,"5,0",Hotel berusaha mengakomodir non smoking room dg upgrade kamar. Terlebih masuk kamar dg kondisi sudah dingin dan siap. Thanks. Untuk sarapannya oke. Sentuhan kecil yang masih sama sejak dlu tidak ada di hotel lain yaitu cuci mobil membuat pembeda dibanding hotel lainnya. Good job.Lihat lebih sedikit,Ulasan terverifikasi dari tiket.com
-97,4,SL,26 Mei 2023,Trip Keluarga,"4,8","Kamar luas, tenang, sarapan enak dan dipusat kota dan dekat tempat makanan",Ulasan terverifikasi dari tiket.com
-97,5,Frieska J Puteri,26 Mei 2023,,"5,0","100% akan menginap lagi disini kalo ke Cirebon.. semua staffnya ramah bgt, kamar luas, internet high speed. Suka bgt sm pelayanannya sih terutama.",Ulasan terverifikasi dari tiket.com
-98,1,Handi Subandi,25 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-98,2,Rima Rahmawati,24 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-98,3,SEBAGAI,21 Mei 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-98,4,Nurcahyo Kristiantoro,20 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-98,5,SS,19 Mei 2023,Trip Keluarga,"4,4",,Ulasan terverifikasi dari tiket.com
-99,1,Muhammad Ayyub,18 Mei 2023,Trip Keluarga,"5,0",Standar hotel Santika yang sangat baik,Ulasan terverifikasi dari tiket.com
-99,2,Dewi Puspla Sari,15 Mei 2023,,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
-99,3,Nur fitri palsu,14 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-99,4,Sihar Oktavianus,12 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-99,5,Handoyo Handoyo,11 Mei 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-100,1,Bastian Adi Nugroho,10 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-100,2,FK,10 Mei 2023,Trip Keluarga,"4,6",,Ulasan terverifikasi dari tiket.com
-100,3,Nur Ayuni,8 Mei 2023,Trip Keluarga,"4,0","Hotelnya looks old but hommy. Wifinya bagus kencang. Staff-nya cukup ramah. Namun dibeberapa space ada terlihat kerusakan walau tidak terlalu mengganggu. Utk menu breakfast walau lengkap ada nasi, bubur, sereal tapi kurang variatif. Dan di hari kedua sempat menemukan nasi yg keras. Diluar dari itu nyaman semua.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-100,4,Vidya Pardani,8 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-100,5,Juan Yamarson Pradana,7 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-101,1,A,7 Mei 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-101,2,rima rakhmawati,6 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-101,3,SD,6 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-101,4,SD,6 Mei 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-101,5,Charolus Adi Kurniawan,4 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-102,1,Stephan Nicolaus,3 Mei 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-102,2,PENGENAL,2 Mei 2023,Trip Keluarga,"4,8","Menginap di hotel santika sangat memuaskan, kamarnya bersih dan nyaman, akses parkirnya juga luas dan mudah, breakfastnya cukup enak. Stafnya ramah dan sangat membantu. Kami dibantu upgrade kamar free saat check in, terima kasih ☺️ Pertahankan pelayanannya yg sudah baik ini ya.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-102,3,Athiyyah Laila,2 Mei 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-102,4,tjong bui tshian,1 Mei 2023,Trip Keluarga,"3,8","Sarapannya standar, tempatnya sangat luas, kolam renangnya ramah untuk anak-anak.",Ulasan terverifikasi dari tiket.com
-102,5,Purwanti Bekti Utami,30 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
 103,1,Deden Ardiansyah,30 April 2023,,"5,0",Keren,Ulasan terverifikasi dari tiket.com
-103,2,Natasha Cindy,30 April 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-103,3,RZ,30 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-103,4,Dokter Umum,29 April 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
 103,5,Dewi Puspla Sari,29 April 2023,,"5,0",Kesalahan,Ulasan terverifikasi dari tiket.com
 104,1,Josephine Josephine,29 April 2023,Trip Keluarga,"4,4","Hotelnya ok. Swim pool nya besar dan puas. Breakfast nya kurang menurut saya. Dan pelayanan ok banget, setiap pagi mobil tamu di cuciin jd selalu bersih",Ulasan terverifikasi dari tiket.com
-104,2,Susanto Susanto,28 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
 104,3,anita fatonah,28 April 2023,,"3,0","Hotelnya zaman dulu, jadi interiornya udah jadul tapi bersih si kamarnya",Ulasan terverifikasi dari tiket.com
-104,4,Mega Setia pertiwi,28 April 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
 104,5,DH,27 April 2023,Trip Keluarga,"5,0","Stafnya ramah dan sangat membantu, kamarnya luas dan bersih, sarapan dengan menu standar tetapi rasanya sangat enak. Pengalaman menginap yang menyenangkan.",Ulasan terverifikasi dari tiket.com
-105,1,Elvira Dwi Gustyarini,27 April 2023,Trip Keluarga,"4,8",,Ulasan terverifikasi dari tiket.com
 105,2,HN,27 April 2023,Trip Keluarga,"4,6",Kamar luas dan ada sofa,Ulasan terverifikasi dari tiket.com
-105,3,Aldho Darma Seputro,26 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-105,4,Merghita Zahrah Yuliandari,26 April 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-105,5,Merghita Zahrah Yuliandari,26 April 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-106,1,Putri Cahya,25 April 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-106,2,Yulis Tiani,24 April 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-106,3,Pertama Pertama,23 April 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-106,4,Marselina Marselina,22 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-106,5,Marselina Marselina,22 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-107,1,MATAHARI,21 April 2023,Trip Pasangan,"5,0",,Ulasan terverifikasi dari tiket.com
-107,2,R R Rahayu Putricana Azis,21 April 2023,Trip Pasangan,"5,0",,Ulasan terverifikasi dari tiket.com
 107,3,Abror Abror,13 April 2023,,"5,0","Kamar nyaman, makanan enak, desain hotel unik",Ulasan terverifikasi dari tiket.com
-107,4,Frans Octavianus Manoppo,12 April 2023,Trip Keluarga,"3,0",,Ulasan terverifikasi dari tiket.com
 107,5,Frans Octavianus Manoppo,12 April 2023,Trip Keluarga,"3,0","Over all bagus, hanya menurut saya yang menurun adalah menu sarapan paginya varian menunya kurang rasanya juga menurun. Tidak seperti jaman pada saat Santika masih jaya2nya.",Ulasan terverifikasi dari tiket.com
 108,1,Amalia Nurul Iman,10 April 2023,Trip Keluarga,"5,0","Bersih, makanannya enak, kolam renangnya airnya pas, staff ramah & helpful, dapet bonus dicuciin mobilnya 👍👍",Ulasan terverifikasi dari tiket.com
-108,2,Gina Findiyandini,10 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-108,3,Oemar Saputra,9 April 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-108,4,Rima Rahmawati,9 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-108,5,Rima Rahmawati,9 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-109,1,Rima Rahmawati,9 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-109,2,rima rakhmawati,9 April 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-109,3,Sudono Sudono,8 April 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-109,4,Gani Abdullah,7 April 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
 109,5,KU,5 April 2023,Trip Keluarga,"4,0",Ok hotelnya,Ulasan terverifikasi dari tiket.com
-110,1,ITU,2 April 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
 110,2,Ari Pramudhito,1 April 2023,,"5,0","Oke bgt. Kolam renang gede, ada sauna, makanannya banyak",Ulasan terverifikasi dari tiket.com
-110,3,Lani Boginingsih,30 Maret 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-110,4,Lisah Gotanti,28 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-110,5,Nur Azizah Indah,25 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-111,1,Jesse Pat,24 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-111,2,Jesse Pat,24 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-111,3,Ahmad Sufian,24 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-111,4,Bony Pujiarto,24 Maret 2023,,"5,0",Nyaman,Ulasan terverifikasi dari tiket.com
-111,5,RG,21 Maret 2023,Trip Keluarga,"5,0","Hotel bersih, service bagus, luas parkir mobil dan dicuciin mobilnya... 👍",Ulasan terverifikasi dari tiket.com
-112,1,Prawira Ichsan,19 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-112,2,Prawira Ichsan,19 Maret 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-112,3,noviyanto gunawan,17 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-112,4,Dodik Prasetyo,17 Maret 2023,,"4,2","Sarapan variannya relatif sedikit. Laundry nya affordable, kamar perlu refreshment dengan TV yg lebih besar. Servis cuci mobil gratisnya cukup impressif. Overall oke.",Ulasan terverifikasi dari tiket.com
-112,5,Indra Jaya,17 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-113,1,rudy surya lesmana,17 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-113,2,SYIFA FAUZIA PUTRI,15 Maret 2023,Trip Keluarga,"5,0",Hotel yang bagus dengan kualitas yang baik.,Ulasan terverifikasi dari tiket.com
-113,3,Riswan Irfhandhy,13 Maret 2023,Trip Keluarga,"5,0","Komunikatif staffnya semua, ampe tukang kebun juga mantap.",Ulasan terverifikasi dari tiket.com
-113,4,Kunto Pramono,13 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-113,5,Dewi Puspla Sari,13 Maret 2023,,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
-114,1,Albert Albert,13 Maret 2023,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-114,2,Subkhan Subkhan,13 Maret 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-114,3,Yudistira Yudistira,11 Maret 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-114,4,Regina Prianto,6 Maret 2023,,"5,0",Suka kolam renangnya asri sekali,Ulasan terverifikasi dari tiket.com
-114,5,Regina Prianto,6 Maret 2023,Trip Keluarga,"5,0","Suka banget sm kolam renangnya asri.,,, kamarnya nyaman",Ulasan terverifikasi dari tiket.com
-115,1,PB,5 Maret 2023,Trip Keluarga,"5,0","Bagus, nginep dg 2 kamar superior & deluxe",Ulasan terverifikasi dari tiket.com
-115,2,Pramana Budi,5 Maret 2023,,"4,8",,Ulasan terverifikasi dari tiket.com
-115,3,Hafizh Muhammad Almaraghi Suharja,27 Februari 2023,,"5,0",Sangat puas dengan pelayanannya Saya salah bulan pemesanan dan di bantu untuk bisa disesuaikan agar bisa nginap pada hari itu jg Solutif dan cukup cepat Pagi2 saat check out tiba2 mobil sudah dicucikan Terima kasihLihat lebih sedikit,Ulasan terverifikasi dari tiket.com
-115,4,Reztie Ayu Whidyati,27 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-115,5,ADALAH,27 Februari 2023,Trip Keluarga,"4,2",,Ulasan terverifikasi dari tiket.com
-116,1,Dan Abud,26 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-116,2,Dan Abud,26 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-116,3,DI DALAM,25 Februari 2023,Perjalanan Bisnis,"4,0","Klasik, nyaman, bersih. Makin meningkat pelayanan. Makin oke.",Ulasan terverifikasi dari tiket.com
-116,4,KS,24 Februari 2023,Trip bareng Teman,"5,0",,Ulasan terverifikasi dari tiket.com
-116,5,Dewi Puspla Sari,23 Februari 2023,,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
-117,1,Judhi Yonathan,20 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-117,2,Asri Nur Fadilah,20 Februari 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-117,3,Fadhil Fadhil,18 Februari 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-117,4,Lusia Desianti,18 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-117,5,Waluyo Hari Sulistiyo,16 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-118,1,Panca Nugroho,15 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-118,2,Dwi Fitrianto,10 Februari 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-118,3,Agung Sugito,10 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-118,4,Pandu Azaria Ginzel,10 Februari 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-118,5,Iqbal Muzgakhan,10 Februari 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-119,1,Subkhan Subkhan,8 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-119,2,Subkhan Subkhan,8 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-119,3,Agy Gustia Abigail,6 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-119,4,jimmy irawan,3 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-119,5,Aloisius Ronald Lemew,2 Februari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-120,1,Dhika rahadian,29 Januari 2023,,"4,2",,Ulasan terverifikasi dari tiket.com
-120,2,Joey Varian Djuhana,29 Januari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-120,3,Achmad Shulton,28 Januari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-120,4,Daniel Louis,27 Januari 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-120,5,Banjir,27 Januari 2023,Lainnya,"4,6","Ga ada hairdryer di kamar biasa, wkt tanya cm ada d kmr ekskutif.ga ditawari jg klo bs pnjm by request, br dikasi tau setelah complaint mau pulang",Ulasan terverifikasi dari tiket.com
-121,1,elis kasoen,26 Januari 2023,Trip Keluarga,"5,0",Bagusss,Ulasan terverifikasi dari tiket.com
-121,2,Dewi Puspla Sari,26 Januari 2023,,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
-121,3,Razhez Akbar Wildan Utama,25 Januari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-121,4,Muhammad Arda Pratama,23 Januari 2023,Trip Keluarga,"5,0",Sangat puas. Pilihan pertama kalo ke cirebon pasti nginep disini.,Ulasan terverifikasi dari tiket.com
-121,5,Ridwan Sunardjo,21 Januari 2023,,"4,6","Pelayanan standar Santika, top! Cuma perlu peremajaan di beberapa bagian seperti tv, dipan dan shower. Flush button di kloset kamar 214 macet.",Ulasan terverifikasi dari tiket.com
-122,1,TK,16 Januari 2023,Trip Keluarga,"4,0",Hotel bersih tapi tua. Seharusnya mulai direnov,Ulasan terverifikasi dari tiket.com
-122,2,IMAN MUSIB,14 Januari 2023,Trip Pasangan,"5,0","Murah,tenang nyaman, parkir luas, lokasi tengah kota",Ulasan terverifikasi dari tiket.com
-122,3,Maisari Maisari,13 Januari 2023,,"3,0",Ternyata Santika yg ini hotel sdh lumayan lawas,Ulasan terverifikasi dari tiket.com
-122,4,Nadiya Sururi,13 Januari 2023,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-122,5,Ini Noor A,11 Januari 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-123,1,Ari Saputra,10 Januari 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-123,2,Amelia Dwi Agustin,10 Januari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-123,3,Kw Travel,10 Januari 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-123,4,Amelia Dwi Agustin,10 Januari 2023,Trip Keluarga,"5,0","Menyenangkan... kamar bersih, kolam renang bersih, staff helpfull banget. 🤩",Ulasan terverifikasi dari tiket.com
-123,5,YS,10 Januari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-124,1,Novrianty Wijaya,8 Januari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-124,2,Feny Wijaya,8 Januari 2023,,"4,8","Bagus hotelnya... Semi2 nuansa jawa ,nyaman, pelayanannya ok bgt, best hotel.",Ulasan terverifikasi dari tiket.com
-124,3,SW,8 Januari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-124,4,Kacung Abdullah,5 Januari 2023,,"3,0",,Ulasan terverifikasi dari tiket.com
-124,5,STEFANUS CHRISTIAN SIMANJUNTAK,4 Januari 2023,Trip Keluarga,"3,2",,Ulasan terverifikasi dari tiket.com
-125,1,Amalia Noor,3 Januari 2023,,"4,0",,Ulasan terverifikasi dari tiket.com
-125,2,SS,2 Januari 2023,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-125,3,Alfian Rasyid,2 Januari 2023,,"5,0",,Ulasan terverifikasi dari tiket.com
-125,4,Linda Sofyentri Nadran,2 Januari 2023,Trip Keluarga,"4,0","Santika cirebon hotel yg sudah ke 4 kalinya saya kunjungi, walaupun hotel lama tapi pelayanan, kebersihannya ok, cuma untuk toilet yg diluar sepertinya perlu di perbaharui, kalau yg dikamar ok,saya dapat upgrade kamar k deluxe, tks Santika atas upgrade nya, tks juga buat tiket. Come atas voucher nya, tiket. Com the bestLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-125,5,Rizka Amanda,31 Desember 2022,,"3,8",,Ulasan terverifikasi dari tiket.com
-126,1,lia awalia munazah,31 Desember 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-126,2,RR,30 Desember 2022,Trip Keluarga,"4,0","hotelnya bintang 3 tp bagus. servicenya reception bagus, ramah. kmr gede bgt, kmr mandi bersih, breakfast cukup enak. parkir luas bgt. kolam renang besar. ada live music kalo mlm di dkt lobby. keep do great ya. Thank youLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-126,3,Wanwan ridwan,30 Desember 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-126,4,Philiadi Permana Putra,30 Desember 2022,,"4,8",,Ulasan terverifikasi dari tiket.com
-126,5,Busana Busana,29 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-127,1,Vincent Kenny,28 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-127,2,Dewi Riantini,28 Desember 2022,Trip Keluarga,"5,0","Hotelnya enak, akses kemana"" deket coz ada ditengah kota, plus bonus nya sukaa sekali mobil di cuci bersih",Ulasan terverifikasi dari tiket.com
-127,3,Andrew Santoso,28 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-127,4,wibowo  tino sutejo,28 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-127,5,Anita Indra putri,27 Desember 2022,,"5,0","Oke, silakan.",Ulasan terverifikasi dari tiket.com
-128,1,Irpan Saripudin,27 Desember 2022,,"3,2",,Ulasan terverifikasi dari tiket.com
-128,2,Mohammad Rizal,27 Desember 2022,,"4,2",,Ulasan terverifikasi dari tiket.com
-128,3,Dian Trifana,27 Desember 2022,,"2,2",,Ulasan terverifikasi dari tiket.com
-128,4,Dian Trifana,27 Desember 2022,,"2,2",,Ulasan terverifikasi dari tiket.com
-128,5,Lindsay Fidel Margareth Rumapea,27 Desember 2022,,"3,0",,Ulasan terverifikasi dari tiket.com
-129,1,Bahasa Pujian,25 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-129,2,Deden Ardiansyah,23 Desember 2022,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-129,3,LS,22 Desember 2022,Trip Keluarga,"4,0",Overall baguss..plus nya mobil pagi pagi udahh kinclong dicuciin..mantap,Ulasan terverifikasi dari tiket.com
-129,4,novita kusuma dewi,19 Desember 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-129,5,Yusup Sulaiman,19 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-130,1,Muhammad Fahmi,18 Desember 2022,,"4,6",,Ulasan terverifikasi dari tiket.com
-130,2,YB,18 Desember 2022,Trip Keluarga,"3,2","first impression, ya diliat liat kayak hotel udah lama gitu, tapi pas masuk cukup oke lah. kamarnya cukup worth it dengan harga yang ditawarkan. kebersihan oke. fasilitas nya cukup ya walaupun fitness center saat saya menginap sedang dalam perbaikan. lokasi nya cukup strategis deket sama mall dan foodcourt. tapi ada beberapa lokasi di dalam hotel sudah rusak jadi mohon untuk diperbaikan bertahap. 7.5👌🤩Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-130,3,Albert Subrata,15 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-130,4,Ajat Sudrajat,15 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-130,5,soekat darna,14 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-131,1,HELMI MUHAMMAD,14 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-131,2,HELMI MUHAMMAD,14 Desember 2022,,"5,0","Waktunya direnovasi, sudah terlalu kuno",Ulasan terverifikasi dari tiket.com
-131,3,Denis Adi Mulia,10 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-131,4,JD,8 Desember 2022,Perjalanan Sendirian,"5,0",,Ulasan terverifikasi dari tiket.com
-131,5,Ari Dwi Utama,7 Desember 2022,,"4,8",,Ulasan terverifikasi dari tiket.com
-132,1,Siti Mustabsyirah Dahlan,7 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-132,2,Shelvy Winly,5 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-132,3,Theresia Anggraeni,5 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-132,4,Theresia Anggraeni,5 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-132,5,BV,3 Desember 2022,Trip Keluarga,"3,4",,Ulasan terverifikasi dari tiket.com
-133,1,Lulu Almarjan,2 Desember 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-133,2,Dan Ludiantoro,2 Desember 2022,,"5,0","Bagus, cocok untuk Liburan bersama Keluarga",Ulasan terverifikasi dari tiket.com
-133,3,Dewi Puspla Sari,30 November 2022,,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
-133,4,Dewi Puspla Sari,30 November 2022,,"5,0",Bagus,Ulasan terverifikasi dari tiket.com
 133,5,DS,30 November 2022,Perjalanan Bisnis,"5,0",Setiap dinas selalu ingin menginap disini,Ulasan terverifikasi dari tiket.com
 134,1,Amizal Nesbit,29 November 2022,,"4,4",Untuk ruang ganti dikolam renang tolong diberikan penerangan yang baik dan memiliki petugas jaga sehingga memudahkan tamu,Ulasan terverifikasi dari tiket.com
-134,2,Sukawati Udjung,27 November 2022,,"3,6",,Ulasan terverifikasi dari tiket.com
-134,3,Anggoro Anggoro,27 November 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-134,4,Prastyo Seftian Purwanto,27 November 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-134,5,A Nazal Ramadhan,23 November 2022,,"3,0",,Ulasan terverifikasi dari tiket.com
-135,1,Hafyz Iqbal,19 November 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
 135,2,Fajar Ramadan,18 November 2022,Trip Keluarga,"3,8",Lokasi hotel ditengah kota & dekat dengan spot kuliner khas cirebon,Ulasan terverifikasi dari tiket.com
-135,3,Stefanus Edo Sanjaya Adi Y,18 November 2022,Perjalanan Bisnis,"4,0",,Ulasan terverifikasi dari tiket.com
-135,4,Prayoga Sutrisna,17 November 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-135,5,Dicky Subekti,13 November 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-136,1,Muhammad Naufal Pratama,12 November 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
 136,2,MISALNYA,12 November 2022,Perjalanan Sendirian,"4,2","Hotel tua, tapi ga membuat jenuh di kamar. Good experience and good service. Saya yg tinggi 190 cm masuk kamar berasa kamarnya pendek, tapi tidak masalah.",Ulasan terverifikasi dari tiket.com
-136,3,Nurcahyo Kristiantoro,11 November 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-136,4,Bobby Lee,9 November 2022,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
 136,5,TM,8 November 2022,Trip Pasangan,"4,0",hotel yang tenang,Ulasan terverifikasi dari tiket.com
-137,1,Rusa kutub,8 November 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-137,2,KP,8 November 2022,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-137,3,dayan avianto,8 November 2022,,"3,2",,Ulasan terverifikasi dari tiket.com
-137,4,Merry Gorety,6 November 2022,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-137,5,Merry Gorety,5 November 2022,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
 138,1,Habib Hamidy,4 November 2022,,"5,0",Puas Ada Fasilitas Free Car Wash,Ulasan terverifikasi dari tiket.com
-138,2,Okky Djoko Prabowo,3 November 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
 138,3,MT,2 November 2022,Trip Keluarga,"5,0","Good, terus pertahankan",Ulasan terverifikasi dari tiket.com
-138,4,NURULLAILI FADHILAH,1 November 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-138,5,Abel Yudo Prakoso,30 Oktober 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-139,1,Bilal Waskitojati,30 Oktober 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-139,2,lima lima,28 Oktober 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-139,3,Triad Eka,27 Oktober 2022,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-139,4,lima,24 Oktober 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-139,5,lampu gantung,24 Oktober 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-140,1,Cucu Ruhidawati,22 Oktober 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-140,2,Astria Kusuma Wardani,20 Oktober 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-140,3,Aan Muhsin,16 Oktober 2022,,"4,0",Pelayanannya bagus.,Ulasan terverifikasi dari tiket.com
-140,4,Dedy Ardiansyah,12 Oktober 2022,,"3,2",,Ulasan terverifikasi dari tiket.com
-140,5,Shella Christina,12 Oktober 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-141,1,Aku tahu.,9 Oktober 2022,,"3,4",,Ulasan terverifikasi dari tiket.com
-141,2,Bernadheta Rismisari Handayani,7 Oktober 2022,,"3,0",,Ulasan terverifikasi dari tiket.com
-141,3,Ahmad Fadhilah,5 Oktober 2022,,"5,0",Recomended,Ulasan terverifikasi dari tiket.com
-141,4,Nurhayati Nurhayati,2 Oktober 2022,,"5,0","Hotelnya adem, dicuaca cirebon yg panass banget 🥰🥰 makanannya juga enak2 🤤",Ulasan terverifikasi dari tiket.com
-141,5,Muhammad khairun Nail,2 Oktober 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-142,1,Stella Caesilia,1 Oktober 2022,,"1,0",,Ulasan terverifikasi dari tiket.com
 142,2,sofyan Ar dan Alman rezkiawan,30 September 2022,,"4,0",Bagus dan nyaman,Ulasan terverifikasi dari tiket.com
 142,3,Wandi Hadju dan syahrir,30 September 2022,,"5,0","Bagus ,nyaman,bersih",Ulasan terverifikasi dari tiket.com
-142,4,Hendro Wasis Setiyanto,27 September 2022,,"2,2",,Ulasan terverifikasi dari tiket.com
-142,5,Rudy adalah,27 September 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-143,1,Agus Mahasin,27 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-143,2,Ratih Kusumawardani,26 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-143,3,Renie Wulandari,25 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-143,4,Edward Timothy,25 September 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-143,5,Jefrizal Tanjung,25 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-144,1,Industri Makanan Pt Alpen,24 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
 144,2,Industri Makanan Pt Alpen,24 September 2022,,"5,0",Hotelnya agak tua,Ulasan terverifikasi dari tiket.com
 144,3,Cucu Ruhidawati,23 September 2022,Perjalanan Bisnis,"5,0","Selalu puas nginep di sini. Hotel lama yang bener-bener dijaga kebersihan dan fasilitas. Kalau ada masalah tentang fasilitas kamar langsung ditangani. Ada plus nginep di sini, tiap pagi pasti mobil kita bersih karena ada abang2 yang selalu lap bersih mobil kita, cukup kasih tips seiklasnya aja 👌🏻 Sarapan juga enak dan lumayan variatif. Pertahankan dan tingkatkan terus pelayanannya.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-144,4,DP,23 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-144,5,ADALAH,23 September 2022,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-145,1,Rossi Azmatul Barro,21 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-145,2,Roro Ganis Primeta,19 September 2022,,"3,6",,Ulasan terverifikasi dari tiket.com
 145,3,Nabiel Gildas Halvawy,19 September 2022,,"5,0",Wow,Ulasan terverifikasi dari tiket.com
-145,4,Suharyono Suharyono,19 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-145,5,Dewi Sari,19 September 2022,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-146,1,Dewi puspla Sari,19 September 2022,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-146,2,Dewi puspla Sari,19 September 2022,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-146,3,Dewi Puspla Sari,19 September 2022,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-146,4,Dewi Puspla Sari,19 September 2022,Perjalanan Sendirian,"5,0",,Ulasan terverifikasi dari tiket.com
 146,5,ADALAH,18 September 2022,Perjalanan Sendirian,"4,0","Nyaman kamarnya, bersih, cuman kurang pada saat breakfast, makanan yg sdh habis dibiarin kosong lama ga langsung direfill, minta telur rebus 4, yg 3 busuk.",Ulasan terverifikasi dari tiket.com
-147,1,Meliyana Agustina,15 September 2022,,"3,0",,Ulasan terverifikasi dari tiket.com
-147,2,Dehan Firmansyah,13 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-147,3,Muhammad Rivki,12 September 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-147,4,Andrian Aritiarno,11 September 2022,,"5,0",Oke,Ulasan terverifikasi dari tiket.com
-147,5,Tonianto Tjahjono,11 September 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-148,1,Heru Koesnarjono,10 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-148,2,Heru Koesnarjono,10 September 2022,,"3,0",,Ulasan terverifikasi dari tiket.com
-148,3,Ayu Saras Pratiwi,9 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-148,4,Cucu Ruhidawati,9 September 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-148,5,Qatrunnada Fadhila,7 September 2022,,"4,6",,Ulasan terverifikasi dari tiket.com
 149,1,Dinar Permonowati,6 September 2022,,"4,6","Overall ok namun pada saat saya menginap, ada tenant yang tidak menjaga attitude",Ulasan terverifikasi dari tiket.com
-149,2,Arpin Unggul Mahendra,3 September 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-149,3,Desi Aryani,31 Agustus 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-149,4,suyatno,28 Agustus 2022,Trip bareng Teman,"5,0",,Ulasan terverifikasi dari tiket.com
-149,5,IMAN IRWANDY,28 Agustus 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-150,1,IMAN IRWANDY,27 Agustus 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-150,2,imam saeful millah a,26 Agustus 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-150,3,Ratih Febrianty,26 Agustus 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-150,4,AP,26 Agustus 2022,Perjalanan Bisnis,"3,6",,Ulasan terverifikasi dari tiket.com
-150,5,Episode Merlin Rinaldo,24 Agustus 2022,,"5,0","Bersih, wangi, harga oke, staff ramah",Ulasan terverifikasi dari tiket.com
-151,1,Olivia Putri Rosmala,24 Agustus 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-151,2,Rusnawati Wati,22 Agustus 2022,Trip Keluarga,"3,0",,Ulasan terverifikasi dari tiket.com
-151,3,Intan Sri Utami,22 Agustus 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-151,4,I Putu Dian Parmana,21 Agustus 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-151,5,Sekarang Fauzi,18 Agustus 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-152,1,Mila Okthora,14 Agustus 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-152,2,pada,12 Agustus 2022,Trip Keluarga,"2,8","nginep di sini karna udah kemaleman kalau mau nerusin perjalanan balik ke jakarta dari Semarang. yang kepikiran pertama kali pas cari penginapan di Cirebon ya hotel Santika karna dulu banget (sekitar 2010) pernah nginep di sini dan oke lah aksesnya. tapi.... mungkin karna hotel lama yaaa, jadi kek kunci kamar stuck ga bsa ngebuka, mereka cm punya 1 for each room; handuk udah belel gak layak pake; wastafel bocor; saluran air di area shower agak macet; ada sawang di area mini bar.. tapi berhubung di sana emg cuma buat bobo doang dan ngelanjutin perjalanan balik besok paginya, jadi yaaa.. udahlah ya.. terima aja hehe.. tp pelayan di restonya ramah, baik.. laff, walau varian sarapannya standar aja sih.. semoga bsa ditingkatin lagi lah itu fasilitasnya, minimal diperbarui handuk2nya dan upgrade kunci kamar, plus dicek berkala keran2 plus saluran air d kamar..Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-152,3,Himawan Wardhana,12 Agustus 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-152,4,Royce Granada,12 Agustus 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-152,5,UI,12 Agustus 2022,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-153,1,FW,11 Agustus 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-153,2,Rizka Abdullah,11 Agustus 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-153,3,Achmad Sofyan,10 Agustus 2022,,"4,4",,Ulasan terverifikasi dari tiket.com
-153,4,Moh Yasin,8 Agustus 2022,,"4,6",,Ulasan terverifikasi dari tiket.com
-153,5,Renie Wulandari,8 Agustus 2022,Perjalanan Bisnis,"5,0",,Ulasan terverifikasi dari tiket.com
-154,1,Yogie Sigit Poerwandono,6 Agustus 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-154,2,melani ervinawati,6 Agustus 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-154,3,AP,31 Juli 2022,Trip Keluarga,"3,0",,Ulasan terverifikasi dari tiket.com
-154,4,Muhammad Farid Mahmud,29 Juli 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-154,5,Stella Caesilia,29 Juli 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-155,1,Diana Aristiawan Setyo Wibowo,28 Juli 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-155,2,hermawan tanuwijaya,26 Juli 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-155,3,Hermawan Tanuwijaya,26 Juli 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-155,4,RIZKY ARDIANSYAH,26 Juli 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-155,5,Deden Ardiansyah,24 Juli 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-156,1,Deden Ardiansyah,24 Juli 2022,Trip Keluarga,"4,0",keren pada masa nya makanannya enak mantap pelayanannya,Ulasan terverifikasi dari tiket.com
-156,2,wahyu dwi prasetyo,24 Juli 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-156,3,Johan Kang,22 Juli 2022,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-156,4,Nasser Andiyansyah,19 Juli 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-156,5,SEBAGAI,15 Juli 2022,Trip Keluarga,"4,0","murah, bagus, makanan enak.",Ulasan terverifikasi dari tiket.com
-157,1,Ade Irwan,12 Juli 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-157,2,Ade Irwan,12 Juli 2022,Trip Keluarga,"5,0",,Ulasan terverifikasi dari tiket.com
-157,3,R Didi Setiawan,10 Juli 2022,Trip bareng Teman,"4,6",nyaman tinggal di santika hotel cirebon. 👍,Ulasan terverifikasi dari tiket.com
-157,4,Mohammad Lutfi,8 Juli 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-157,5,EP,6 Juli 2022,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-158,1,II,27 Juni 2022,Trip Pasangan,"5,0",sangat recommended ... walaupun hotel lama bersih terawat .... makananya enak,Ulasan terverifikasi dari tiket.com
-158,2,ADALAH,26 Juni 2022,Perjalanan Bisnis,"4,0",,Ulasan terverifikasi dari tiket.com
-158,3,Didin Zaenuddin,20 Juni 2022,Trip Keluarga,"4,2",mobilnya di cuciin,Ulasan terverifikasi dari tiket.com
-158,4,CC,14 Juni 2022,,"4,0",mantap menyenangkan,Ulasan terverifikasi dari tiket.com
-158,5,JM,12 Juni 2022,,"3,6","Hotel lama jadi kurang ada perubahan , tp kamarnya luas",Ulasan terverifikasi dari tiket.com
-159,1,RP,12 Juni 2022,Trip Keluarga,"5,0","Semua staff ramah, sarapan banyak variasi dan enak. Kamar jg bersih dan nyaman. Terima kasih santika cirebon 💛",Ulasan terverifikasi dari tiket.com
-159,2,Gendut Ganteng,11 Juni 2022,Perjalanan Bisnis,"4,0",,Ulasan terverifikasi dari tiket.com
-159,3,FP,9 Juni 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-159,4,siap,7 Juni 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-159,5,Intan yang gelisah,6 Juni 2022,Perjalanan Bisnis,"3,6","all good, pelayanan baik,",Ulasan terverifikasi dari tiket.com
-160,1,FK,6 Juni 2022,Trip Keluarga,"3,0",Semoga dapat ke sana lagi,Ulasan terverifikasi dari tiket.com
-160,2,TETAPI,5 Juni 2022,Trip Keluarga,"4,0","kolam renang nya semakin kereeen ada penambahan spot santai yg lebih sedikit elegan dan Air nya tetap jernih cristal ,dicirebon insya Allah ini yg paling nyaman dan terbaik dikelasnya ,hanya kebersihan lift dan koridor nya yg harus lebih diperhatikann,Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-160,3,Fahmi Sulistyohadi,3 Juni 2022,Perjalanan Sendirian,"5,0",,Ulasan terverifikasi dari tiket.com
-160,4,ITU,1 Juni 2022,,"5,0","kamarnya luas, breakfast nya enak, pool nya bersih. terimakasih pelayanannya",Ulasan terverifikasi dari tiket.com
-160,5,Kartini Dwi Handayani,30 Mei 2022,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-161,1,Agung Wahyudi,26 Mei 2022,Trip bareng Teman,"5,0","saya sangat senang nginap di hotel Santika dan untuk pelayanan resepsionis baik, di area pool suasana ny rasa ny di Bali,it's ok",Ulasan terverifikasi dari tiket.com
-161,2,Dan Nadia Miranti,23 Mei 2022,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-161,3,RR,22 Mei 2022,Trip Keluarga,"4,0",Cukup bagus walau hotel lama,Ulasan terverifikasi dari tiket.com
-161,4,Fahmi Sulistyohadi,13 Mei 2022,Perjalanan Sendirian,"4,0",,Ulasan terverifikasi dari tiket.com
-161,5,Sejak Ariyani Subekti,10 Mei 2022,Trip Keluarga,"4,0","kamar luas, bersih, letaknya strategis mobil di cuci staff ramah top deh makasih santika",Ulasan terverifikasi dari tiket.com
-162,1,TETAPI,6 Mei 2022,Trip Keluarga,"3,8","lokasi di kota, pelayanan ramah, sayang saat ke sana alat fitnessnya tidak semua berfungsi",Ulasan terverifikasi dari tiket.com
-162,2,Novera Dwi Rahmaulina,5 Mei 2022,Trip Keluarga,"4,8",Hotel tua msh terawat tp ada bbrp fasilitas yg perlu diperbaiki seperti toilet sekitar pool .petugas ramah2 terutama bag depan .makanan kurang bervariasi dan sdh menerapkan prokes.akan jd pilihan klo ke cirebon lgLihat lebih sedikit,Ulasan terverifikasi dari tiket.com
-162,3,Mochammad Faishal,3 Mei 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-162,4,Mochammad Faishal,2 Mei 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
 162,5,YA,27 April 2022,Lainnya,"5,0","selain makanan, yg lainnya oke...",Ulasan terverifikasi dari tiket.com
-163,1,Fahmi Sulistyohadi,27 April 2022,Perjalanan Sendirian,"5,0",,Ulasan terverifikasi dari tiket.com
 163,2,LM,25 April 2022,Trip Keluarga,"4,0","kamar nyaman dan bersih ... breakfast kurang variasi dan cuma sedikit menunya juga tdk bisa ambil sendiri jadi hrs nunggu diambilkan , mungkin krn msh pandemi walaupun di hotel2 lain utk breakfast sdh bisa ambil sendiriLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-163,3,Hendra Hendra,20 April 2022,Trip Keluarga,"4,0",,Ulasan terverifikasi dari tiket.com
-163,4,Berlian Berlian,15 April 2022,,"3,0",,Ulasan terverifikasi dari tiket.com
 163,5,Destiana Pratama Cindikiawati,8 April 2022,Trip Keluarga,"4,0","kamar bersih cuma, saat mau BAK waktu renang di kamar mandi tempat bilas dkt kolam renang, kamar mandinya serem trs kotor",Ulasan terverifikasi dari tiket.com
-164,1,Saya Nyoman Sukanta,7 April 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-164,2,endang ratrias w,1 April 2022,Trip Keluarga,"4,6",,Ulasan terverifikasi dari tiket.com
 164,3,RY,1 April 2022,,"3,0",🙏🏻,Ulasan terverifikasi dari tiket.com
-164,4,Risa Eka Yanuar,1 April 2022,,"3,0",,Ulasan terverifikasi dari tiket.com
-164,5,Citra Dwi Pratiwi,25 Maret 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-165,1,Reisa Saras Hapsari,25 Maret 2022,Trip Keluarga,"4,2",,Ulasan terverifikasi dari tiket.com
-165,2,Dewi Arisanti,21 Maret 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-165,3,DARI,21 Maret 2022,,"4,6","kamar terbilang luas untuk harganya dan sangat nyaman, fasilitas lengkap ada fitness center dan swimming pool yang luas. namun disayangkan untuk shower air panasnya tidak stabil dan pengatur arah air tidak berfungsiLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-165,4,Masteria Wijayanti,20 Maret 2022,Trip Keluarga,"5,0","pelayanannya ramah sekali, breakfastnya enak2, kolam renang bersih, kamarnya juga bersih..",Ulasan terverifikasi dari tiket.com
-165,5,Anisa Asri Hardini,20 Maret 2022,Trip Keluarga,"5,0","Nyaman banget hotel nya, paling suka kolam renang nya hangat..",Ulasan terverifikasi dari tiket.com
-166,1,DWI RISANTIKA,20 Maret 2022,Perjalanan Bisnis,"3,2",Oke,Ulasan terverifikasi dari tiket.com
-166,2,Vicky Amalia,19 Maret 2022,Trip Keluarga,"3,8",,Ulasan terverifikasi dari tiket.com
-166,3,Ade Oktalita,18 Maret 2022,Perjalanan Bisnis,"3,8",,Ulasan terverifikasi dari tiket.com
-166,4,YH,18 Maret 2022,Lainnya,"4,0",bagus,Ulasan terverifikasi dari tiket.com
-166,5,Davyan Ichsandira,15 Maret 2022,Trip Keluarga,"3,0",,Ulasan terverifikasi dari tiket.com
-167,1,malta mahardika,13 Maret 2022,Trip Keluarga,"4,0","Hotel lama yg masih lumayan terawat, akan tetapi variasi menu breakfast nya sedikit sekali dan petugas nya juga byk pengurangan berdampak sekali pada pelayanan. semoga kedepan bisa lebih baik lagi.",Ulasan terverifikasi dari tiket.com
-167,2,Djoko Widodo,13 Maret 2022,,"3,0",biasa biasa aja,Ulasan terverifikasi dari tiket.com
-167,3,AP,8 Maret 2022,,"4,4",,Ulasan terverifikasi dari tiket.com
-167,4,VV,8 Maret 2022,Perjalanan Bisnis,"3,0",,Ulasan terverifikasi dari tiket.com
-167,5,Muhamad Iqbal Abisaputra,7 Maret 2022,Trip bareng Teman,"4,0",Hotel tua yang menawan...,Ulasan terverifikasi dari tiket.com
-168,1,Andini Miranda,4 Maret 2022,,"5,0",,Ulasan terverifikasi dari tiket.com
-168,2,Lie Mey Ing,3 Maret 2022,,"3,8","Baru sekali inap disini, kamarnya bersih walaupun hotelnya sdh tua tapo pelayanannya ramah dan sangat membantu, tapi sayang saya dpt kamar di ujung , untungnya pemandangan dr kamar masih bisa lihat kolam rwnang, utk BF biasa saja tapi rasanya enakLihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-168,3,DL,28 Februari 2022,Trip Keluarga,"2,8","dapat kamar paling pojok 224, kamar terkesan jadul perlu perawatan dan harga hampir setara dgn hotel baru disekitar.over all untuk family ok ada kolam tapi kurang playground dan area gardennya perlu peremajaan supaya bs lebih bersaing dgn hotel setara. breakfast buffet tastenya juga sangat biasa tidak ada yg special. saran pd saat check in sebaiknya ditanyakan mau dilantai brp dan lokasi diujung apakah ada kejauhan? sepertinya ini mau2nya reception yg tempatkan posisi kamarnya.Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-168,4,Pringgo Putro,28 Februari 2022,Trip Keluarga,"4,6",,Ulasan terverifikasi dari tiket.com
-168,5,David Haryalesmana Wahid,27 Februari 2022,,"4,0",,Ulasan terverifikasi dari tiket.com
-169,1,Fathan Khairul,25 Februari 2022,Trip bareng Teman,"4,0",,Ulasan terverifikasi dari tiket.com
-169,2,AP,24 Februari 2022,,"4,4",,Ulasan terverifikasi dari tiket.com
-169,3,Prastiti Wahyu Utami,21 Februari 2022,,"5,0","tua-tua keladi, makin tua makin jadi. bersihnya maximal, saking julidnya, gue nyampe ngankat saringan air yg di shower, bersih gaeeessss...hehehehehe. tp ya gitu ya maintenance ruangan kurang. makanan okelah....Lihat lebih sedikit",Ulasan terverifikasi dari tiket.com
-169,4,SS,20 Februari 2022,Trip Pasangan,"5,0","Bagus, nyaman, bersih, staf ramah dan membantu, kami menyukainya, Alhamdulillah.",Ulasan terverifikasi dari tiket.com
-169,5,FT,19 Februari 2022,Trip Keluarga,"4,4",,Ulasan terverifikasi dari tiket.com
-170,1,Selpisandayani Gea,15 Feb 2022,,"5,0",,Verified review from tiket.com
-170,2,Suprianto Suprianto,15 Feb 2022,,"4,0",,Verified review from tiket.com
 170,3,HI,11 Feb 2022,Perjalanan Bisnis,"3,4",Lubang pembuangan air kamar Mandi surutnya lama. Yang lainnya Excellent,Verified review from tiket.com
 170,4,Irfan Arif Husen,11 Feb 2022,Trip Keluarga,"5,0",mantab luar biasa menyenangkan,Verified review from tiket.com
 170,5,Andik Eka,9 Feb 2022,Perjalanan Bisnis,"5,0","Hotel bersih, sarapan enak.",Verified review from tiket.com
 171,1,HN,7 Feb 2022,Perjalanan Bisnis,"5,0",hotel yg nyaman dan rapih. terima kasih,Verified review from tiket.com
-171,2,RH,3 Feb 2022,Trip Keluarga,"5,0",,Verified review from tiket.com
 171,3,Nicolas Agung,3 Feb 2022,Perjalanan Bisnis,"5,0",good hotel fasilitas lengkap hanya saja jenis makanan pas breakfast ga terlalu variatif,Verified review from tiket.com
 171,4,setia budi siswanto,2 Feb 2022,Trip Keluarga,"4,0","tempat tenang tidak bising , harga sangat bagus untuk kelas hotel ini .meski cat di dalam kamar sdh agak pudar mungkin karena pandemi , over all masih enak , kami betah selalu nginep di santika cirebon . kolam renang juga sangat bersih , parkiran juga luas . sangat nyaman dan aman , ke tempat kulineran juga sangat dekat . nasi jamblang , empal gentong semua dekat dari hotel ini . semoga tetap dijaga dan di rawat . love santikaLihat lebih sedikit",Verified review from tiket.com
 171,5,Laurentius Agus Susanto,2 Feb 2022,Trip Keluarga,"3,0","kamar mandi kurang bersih, keset kotor, variasi breakfast kurang",Verified review from tiket.com
 172,1,Tonan Jihano Sinaga,2 Feb 2022,Trip bareng Teman,"3,0","Small TV, old building",Verified review from tiket.com
-172,2,MF,1 Feb 2022,Trip Keluarga,"3,0",,Verified review from tiket.com
 172,3,HS,27 Jan 2022,Perjalanan Bisnis,"4,0",kamar luas dan bersih,Verified review from tiket.com
-172,4,hasrully hasrully,27 Jan 2022,Trip Keluarga,"3,8",,Verified review from tiket.com
 172,5,BS,26 Jan 2022,Perjalanan Bisnis,"4,0",Hotel lama tapi masih terawat dengan baik,Verified review from tiket.com
 173,1,LS,26 Jan 2022,Trip bareng Teman,"4,0",pkkny seu pling suka pelayanan ramah🥰🥰🙏🙏🙏🙏,Verified review from tiket.com
 173,2,NH,17 Jan 2022,Trip Keluarga,"1,0","uda pesen di app untuk minta double bed, sampe kamar ternyata twin bed yang digabung. check in jam 2 dapat kamar lantai 2 paling pojok dan kunci hampir patah. ternyata kejadian kan patah beneran. disuruh ke kamar sama resepsionisnya dulu SENDIRIAN GA DIKASI KUNCI CADANGAN dan tanpa ada kejelasan kamar kapan dibuka!!!! parah banget. sampe dianterin spv nya ternyata sampe depan kamar jg blm bs langsung dibuka. nunggu 20 menit sambil gendong anak kecil akhirnya teknisinya dateng. akhirnya dibenerin se handle nya sampe jam 5 sore. jadi sampe jam 5 sore ga bs ngapa2in magrib mau tidur anak nangis trus.. keluar kamar anteng masuk kamar nangis lagi akhirnya minta tuker kamar. upgrade bayar selisih jg gpp asal ga dpt kamar pojok. ternyata adanya kamar pojok aja. akhirnya checkout jam 18.30 MAKASIH SANTIKA CIREBON. WORST EXPERIENCE IVE EVER HADLihat lebih sedikit",Verified review from tiket.com
@@ -922,7 +203,6 @@
 185,1,TP,5 Jul 2021,Trip Keluarga,"4,2",kamar yang luas dan lokasinya strategis. lobby nya juga bagus,Verified review from tiket.com
 185,2,fery irawan,3 Jul 2021,Trip Pasangan,"5,0","Kamarnya bagus dan bersih, fasilitas lengkap, pool nya juga lumayan besar. Lain kali akan pilih lagi untuk menginap di sini",Verified review from tiket.com
 185,3,Petrus Widiyono,29 Jun 2021,Trip Keluarga,"4,0","kamar bersih, kolam renang bersih. protokol kesehatan baik. terletak di jalan yang enak untuk jalan2 pagi",Verified review from tiket.com
-185,4,LA,26 Jun 2021,Lainnya,"4,0",,Verified review from tiket.com
 185,5,Nicko Arywibowo,25 Jun 2021,Trip Keluarga,"5,0",mantap lah keren dan makanannya enak,Verified review from tiket.com
 186,1,MS,24 Jun 2021,Trip Keluarga,"4,0",penginapan nya sangat bagus,Verified review from tiket.com
 186,2,Dito Haryo Prasetyo,23 Jun 2021,Trip Keluarga,"3,8","tolong untuk kolam renangnya dibatasi jumlah pengunjungnya (ada peraturannya, tapi tidak ada petugas yang menegur saat overload), dan juga tolong dilarang jika ada yang renang dengan menggunakan baju (terlebih baju tidur), air kolam menjadi terkontaminasi kotoran dari baju, apalagi memakai pakaian dalam. cek juga lantai kayu sekitar kolam, saya lihat ada baut yang sudah terbuka, bahaya jika ada orang yg tidak menggunakan alas kaki, menginjak baut tsb.Lihat lebih sedikit",Verified review from tiket.com
@@ -975,7 +255,6 @@
 195,4,Sigit Aripriyono,13 Nov 2019,Perjalanan Bisnis,"5,0","Hotelnya nyaman, meskipun bangunannya udh agak lama, tp tetep menjaga fasilitas dan kebersihan kamar.",Verified review from tiket.com
 195,5,Andreas Norbert Raabe,4 Nov 2019,Perjalanan Bisnis,"3,0",I did not check in or out because I had to cancel my trip. Ticket.com however did not let me cancel the hotel. I therefore paid for 2 rooms which I did not use. Consequently I will not do any bookings through ticket.com anymore as I am very disappointed. I cannot recommend ticket.com Lihat lebih sedikit,Verified review from tiket.com
 196,1,Riko Wijayanto,28 Oct 2019,Trip Keluarga,"5,0","Kamar bersih, sarapan banyak jenis, kolam renang ada buat anak, cepat proses checkin nya",Verified review from tiket.com
-196,2,Tien Mingshuenn,18 Sep 2019,Trip Solo,"4,6",bagus,Verified review from tiket.com
 196,3,DP,18 Sep 2019,Trip Keluarga,"4,4","Lokasi ditengah kota dekat, ruangan bersih, staff ramah namun karena lagi ada acara nikahan jadi kami terganggu karena berisik saat acara pernikahan dari jam 15 hingga jam 21 malam saat beberes bongkar panggung padahal kami bawa bayi. lalu makanannya terlalu sedikit variasinya dan rasanya juga standar sangat disayangkanLihat lebih sedikit",Verified review from tiket.com
 196,4,SR,11 Sep 2019,Trip Keluarga,"4,6",Hotel nya sudah lama sekali...tp nyaman dan parkir luas,Verified review from tiket.com
 196,5,Marina Riskita,1 Sep 2019,Trip Pasangan,"5,0","Saat check in sempat kecewa berat berat karna dikasih kamar twin bed, padahal pesennya double bed.. tapi semua terbayarkan saat keesokan harinya dikasih surprise kue anniversary... makasihh hotel santika Cirebon.. 😊😘Lihat lebih sedikit",Verified review from tiket.com

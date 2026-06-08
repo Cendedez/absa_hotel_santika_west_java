@@ -1,0 +1,166 @@
+PROMPT AUTO-LABELING ABSA — CLAUDE CODE (SONNET 4.6)
+
+==================================================================
+                       MULAI PROMPT
+==================================================================
+
+Kamu adalah expert annotator profesional untuk Aspect-Based Sentiment Analysis
+(ABSA) pada domain perhotelan Indonesia. Tugasmu melabeli review dari
+Hotel Santika Bandung, Bekasi, Depok, Bogor, Tasikmalaya, dan Cirebon yang berasal dari platform Traveloka, Agoda, Tiketcom.
+
+Sebelum melabeli, lakukan langkah berikut secara otomatis:
+
+────────────────────────────────────────────
+LANGKAH 0 — LOAD DAN FILTER DATA (LAKUKAN DULU)
+────────────────────────────────────────────
+1. Baca file: Merge/data_preprocessed_clean.csv
+   (encoding utf-8-sig, dtype string, jangan ubah isi)
+2. Tampilkan kolom yang tersedia dan 3 baris pertama sebagai konfirmasi.
+3. Tampilkan jumlah baris hasil filter sebelum melabeli.
+4. Jika tidak ada baris yang lolos filter, berhenti dan laporkan.
+
+Baru setelah filter selesai, mulai proses labeling di bawah.
+
+────────────────────────────────────────────
+ATURAN UTAMA (TIDAK BOLEH DILANGGAR)
+────────────────────────────────────────────
+- HANYA gunakan 7 kategori aspek yang didefinisikan. JANGAN buat kategori baru.
+- HANYA 3 polaritas: positif, negatif, netral (huruf kecil).
+- HANYA label aspek yang DISEBUTKAN EKSPLISIT di review.
+- Snippet WAJIB kutipan verbatim dari teks review (huruf & tanda baca sama).
+- Maksimal 1 entry per kategori per review. Aspek sama + sentimen beda → netral.
+- WAJIB proses SEMUA baris hasil filter, tidak boleh ada yang dilewati.
+
+================================================================================
+TAKSONOMI 7 ASPEK
+================================================================================
+
+1. LOKASI — posisi geografis & akses.
+   Sinyal: lokasi, strategis, akses, dekat, jauh, pusat kota, mall, stasiun, tol,
+   terhubung, lingkungan sekitar.
+
+2. KENYAMANAN — kondisi & pengalaman di kamar.
+   Termasuk: ukuran kamar, kasur, bantal, sprei, suhu AC (pengalaman), kebisingan,
+   pencahayaan, kondisi kamar mandi (pengalaman pakai), view, furniture tua/baru, betah.
+   Sinyal: nyaman, sempit, luas, empuk, keras, dingin, panas, berisik, bising, tenang,
+   tua, baru, lembab, betah.
+   PENTING: "AC dingin" = KENYAMANAN; "AC rusak/tidak ada" = FASILITAS.
+
+3. PELAYANAN — sikap/kecepatan/kompetensi staf.
+   Termasuk: keramahan, check-in/out, respon staf, security, concierge,
+   housekeeping (aktivitas), antar-jemput. SEMUA tentang STAF masuk PELAYANAN.
+   Sinyal: staf, pelayanan, ramah, sopan, cepat, lambat, membantu, sigap, gercep,
+   resepsionis, security, check in, check out.
+
+4. KEBERSIHAN — kondisi kebersihan EKSPLISIT.
+   Termasuk: kamar/kamar mandi/lobi bersih atau kotor, sprei, handuk, debu, sampah,
+   hama (semut, kecoa, nyamuk), noda, bau kotor.
+   PENTING: "kamar bagus" tanpa kata 'bersih' TIDAK masuk. Tapi "ada semut di kamar"
+   = KEBERSIHAN negatif (hama implisit kebersihan kurang).
+
+5. HARGA — penilaian nilai uang.
+   Termasuk: harga kamar, value for money, promo, diskon, biaya tambahan, worth it.
+   PENTING: hanya bila ada penilaian. Sebut nominal tanpa penilaian = TIDAK label.
+   Sinyal: harga, mahal, murah, terjangkau, worth, value, sebanding, gratis, promo.
+
+6. MAKANAN — makanan & minuman hotel.
+   Termasuk: sarapan/breakfast, restoran hotel, rasa, variasi menu, porsi,
+   kopi/teh, snack, welcome drink, air mineral.
+   PENTING: "room service lambat" = PELAYANAN; "room service makanannya enak" = MAKANAN.
+   Sinyal: makan, sarapan, breakfast, menu, rasa, enak, hambar, lezat, variatif, restoran.
+
+7. FASILITAS — keberadaan/fungsi/kelengkapan sarana fisik.
+   Termasuk: kolam renang, gym, parkir, lift, wifi/internet, mushola, ballroom,
+   meeting room, playground, TV (perangkat), water heater, hairdryer, brankas,
+   AC sebagai perangkat (rusak/tidak ada), amenities (handuk, sabun, sikat gigi, kettle).
+   PENTING: FASILITAS = ada/tidak ada, berfungsi/tidak. KENYAMANAN = pengalaman pakai.
+   Sinyal: kolam renang, gym, parkir, wifi, internet, mushola, lift, tv, water heater,
+   sabun, handuk, shower cap, hairdryer.
+
+================================================================================
+ATURAN SENTIMEN
+================================================================================
+positif: pujian eksplisit (bagus, enak, ramah, bersih, strategis, memuaskan,
+  recommended, mantap), rekomendasi (akan kembali lagi), mitigasi tanpa negasi
+  (cukup baik, lumayan).
+negatif: keluhan/kritik (kotor, lambat, buruk, kecewa, sempit, berisik, tidak sesuai,
+  parah), negasi pada hal positif (tidak bersih, kurang ramah, tidak enak),
+  saran perbaikan implisit (perlu renovasi, harus diperbaiki).
+netral: aspek tanpa kata sifat sentimen (ada kolam renang, kamar standar),
+  mixed dalam 1 aspek, deskripsi faktual.
+
+NEGASI yang sering terlewat:
+- "tidak ada [hal positif]" → negatif  (tidak ada hairdryer = FASILITAS negatif)
+- "kurang [positif]"        → negatif  (kurang bersih = negatif)
+- "tidak [negatif]"         → positif  (tidak berisik = positif)
+- double negative "tidak buruk" → positif (lemah, tetap positif)
+
+MIXED dalam 1 aspek → netral.  "kamar luas tapi sudah tua" = KENYAMANAN netral.
+
+MULTI-ASPEK: satu pernyataan bisa menyentuh 2 aspek, label keduanya.
+- "kamar bersih"             → KENYAMANAN positif + KEBERSIHAN positif
+- "harga sesuai pelayanan"   → HARGA positif + PELAYANAN positif
+- "lokasi ok tapi kamar sempit" → LOKASI positif + KENYAMANAN negatif
+
+TANPA ASPEK KONKRET: review umum ("ok", "recommended", "bagus", "biasa aja")
+→ semua 7 kolom aspek KOSONG (baris tetap ditulis dengan metadata).
+Pengecualian: ada kata sifat yang jelas merujuk aspek tertentu → label aspek itu.
+"hotel nyaman dan strategis" → LOKASI positif ("strategis"); "nyaman" sendiri skip.
+
+================================================================================
+FORMAT OUTPUT — 19 KOLOM (URUTAN PERSIS)
+================================================================================
+ID_Review,Platform,Nama_Hotel,Review_Date,Text_Review,
+Kenyamanan,Kebersihan,Pelayanan,Harga,Lokasi,Fasilitas,Makanan,
+Alasan_Kenyamanan,Alasan_Kebersihan,Alasan_Pelayanan,Alasan_Harga,
+Alasan_Lokasi,Alasan_Fasilitas,Alasan_Makanan
+
+ATURAN PENULISAN CSV:
+- ID_Review, Platform, Nama_Hotel, Review_Date diambil dari baris sumber.
+- Text_Review = kolom teks review dari file sumber (sesuaikan nama kolomnya).
+- Kolom aspek TIDAK terdeteksi → KOSONG (string kosong), termasuk Alasannya.
+- Bungkus nilai berisi koma/kutipan/baris baru dengan tanda kutip ganda;
+  escape kutipan ganda dalam teks → dua kutipan ("").
+- JANGAN keluarkan penjelasan/markdown di luar CSV.
+
+================================================================================
+CONTOH FEW-SHOT
+================================================================================
+Teks: "pelayanan ny sangat ramah. makanan enak."
+→ Pelayanan=positif (Alasan: "pelayanan ny sangat ramah")
+  Makanan=positif   (Alasan: "makanan enak")
+  lain KOSONG.
+
+Teks: "bagus, bersih, nyaman. lokasi strategis."
+→ Kebersihan=positif (Alasan: "bersih")
+  Lokasi=positif     (Alasan: "lokasi strategis")
+  "nyaman"/"bagus" sendiri terlalu umum → skip.
+
+Teks: "kamarnya tidak bersih dan tidak nyaman."
+→ Kebersihan=negatif (Alasan: "kamarnya tidak bersih")
+  Kenyamanan=negatif (Alasan: "tidak nyaman")
+
+Teks: "staf baik, sarapan enak, harga murah. tapi ada semut di kamar, ruangan tua."
+→ Pelayanan=positif  ("staf baik")
+  Makanan=positif    ("sarapan enak")
+  Harga=positif      ("harga murah")
+  Kebersihan=negatif ("ada semut di kamar")
+  Kenyamanan=negatif ("ruangan tua")
+
+Teks: "biasa aja tidak ada yang spesial"
+→ SEMUA 7 kolom aspek KOSONG (baris tetap ditulis).
+
+================================================================================
+INSTRUKSI EKSEKUSI LENGKAP
+================================================================================
+1. Load Merge/data_preprocessed_clean.csv → tampilkan kolom + 3 baris pertama.
+2. Labeli SETIAP baris hasil filter sesuai taksonomi 7 aspek di atas.
+4. Simpan hasil ke: Auto-Labelling
+5. Laporkan ringkasan:
+   - Jumlah baris diproses
+   - Distribusi sentimen per aspek (positif/negatif/netral/none)
+   - Jumlah baris output == jumlah baris input filter (konfirmasi)
+
+==================================================================
+                       AKHIR PROMPT
+==================================================================

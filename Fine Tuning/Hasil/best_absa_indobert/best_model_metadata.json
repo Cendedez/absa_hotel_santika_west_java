@@ -1,0 +1,48 @@
+{
+  "best_config": {
+    "name": "c4_p1_cw_192_bs8",
+    "model_name": "indobenchmark/indobert-base-p1",
+    "lr": 2e-05,
+    "batch_size": 8,
+    "max_epochs": 10,
+    "max_len": 192,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "dropout": 0.2,
+    "scheduler": "cosine",
+    "optimizer": "adamw",
+    "label_smoothing": 0.05,
+    "freeze_layers": 0,
+    "class_weight": true,
+    "grad_accum": 2,
+    "patience": 3,
+    "seed": 42
+  },
+  "val_macro_f1": 0.7477314956208687,
+  "test_metrics": {
+    "macro_f1": 0.7454642699347086,
+    "weighted_f1": 0.9289441710218542,
+    "acc": 0.9283350666540607,
+    "non_none_macro_f1": 0.6726495611752565,
+    "aspect_detection_f1": 0.9177936558700134,
+    "false_aspect_rate": 0.04341760094259884,
+    "sentiment_macro_f1_present": 0.7156396713669554
+  },
+  "aspects": [
+    "Kenyamanan",
+    "Kebersihan",
+    "Pelayanan",
+    "Harga",
+    "Lokasi",
+    "Fasilitas",
+    "Makanan"
+  ],
+  "label2id": {
+    "none": 0,
+    "positif": 1,
+    "negatif": 2,
+    "netral": 3
+  },
+  "text_col": "text_model (lowercased Text_Review)",
+  "architecture": "MultiHead: 1 IndoBERT encoder + 7 linear heads (4 kelas)"
+}

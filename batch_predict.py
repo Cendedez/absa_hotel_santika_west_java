@@ -25,7 +25,7 @@ from transformers import AutoModel, AutoTokenizer
 # ========================================
 # KONFIGURASI
 # ========================================
-MODEL_DIR = Path(r"C:\Users\cencen04_\Downloads\ABSA Hotel Santika\Fine Tuning\best_absa_indobert")
+MODEL_DIR = Path(r"C:\Users\cencen04_\Downloads\ABSA Hotel Santika\Fine Tuning\Model Terbaik\best_absa_indobert")
 DATASET_PATH = Path(r"C:\Users\cencen04_\Downloads\ABSA Hotel Santika\Data Labeling\dataset_absa_labeled.csv")
 OUTPUT_PATH = Path(r"C:\Users\cencen04_\Downloads\ABSA Hotel Santika\dataset_with_predictions.csv")
 BATCH_SIZE = 64  # CPU-friendly batch size

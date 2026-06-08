@@ -1,2 +1,0 @@
-name,model_name,lr,batch_size,max_epochs,max_len,warmup_ratio,weight_decay,dropout,scheduler,optimizer,label_smoothing,freeze_layers,class_weight,seed,epochs_ran,val_macro_f1
-c4_p1_cw_ls,indobenchmark/indobert-base-p1,3e-05,16,10,128,0.1,0.01,0.2,linear,adamw,0.1,0,True,,10,0.7672365564315479
