@@ -1170,6 +1170,17 @@ a:hover { color: var(--accent-purple); }
     color: white;
 }
 
+.btn-danger {
+    background: color-mix(in srgb, var(--accent-red) 12%, var(--bg-card));
+    color: var(--accent-red);
+    border: 1px solid color-mix(in srgb, var(--accent-red) 38%, var(--border-default));
+}
+
+.btn-danger:hover {
+    background: color-mix(in srgb, var(--accent-red) 18%, var(--bg-card-hover));
+    border-color: var(--accent-red);
+}
+
 .btn-sm {
     padding: 6px 14px;
     font-size: 12px;
@@ -1757,6 +1768,10 @@ a:hover { color: var(--accent-purple); }
     display: inline-block;
 }
 
+.review-delete-btn {
+    margin-left: auto;
+}
+
 .review-item-text {
     color: var(--text-primary);
     font-size: 14px;
@@ -1797,6 +1812,43 @@ a:hover { color: var(--accent-purple); }
 .review-aspect-chip.neg .chip-sentiment { color: var(--color-negatif); }
 .review-aspect-chip.net { border-color: color-mix(in srgb, var(--color-netral) 45%, var(--border-default)); }
 .review-aspect-chip.net .chip-sentiment { color: var(--color-netral); }
+
+.activity-log-table td {
+    vertical-align: top;
+}
+
+.activity-log-text {
+    min-width: 320px;
+    max-width: 560px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.staff-form {
+    display: grid;
+    gap: 14px;
+}
+
+.staff-message {
+    margin-top: 14px;
+    min-height: 20px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.staff-message.success {
+    color: var(--accent-green);
+}
+
+.staff-message.error {
+    color: var(--accent-red);
+}
+
+.staff-table code {
+    color: var(--accent-blue);
+    font-weight: 850;
+}
 
 /* Toolbar pagination Daftar Review */
 #reviews-pagination {

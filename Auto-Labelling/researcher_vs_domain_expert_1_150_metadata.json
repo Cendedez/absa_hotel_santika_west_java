@@ -1,0 +1,11 @@
+{
+  "source_sample": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\sample_150_from_clean_v2_seed42.csv",
+  "researcher_file": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_researcher_150_from_clean_v2.csv",
+  "domain_expert_file": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_domain_expert_1_150_from_clean_v2.csv",
+  "kappa_file": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\cohens_kappa_researcher_vs_domain_expert_1_150_from_clean_v2.csv",
+  "n_reviews": 150,
+  "pair": "researcher_vs_domain_expert_1",
+  "actual_macro_kappa": 0.9741,
+  "actual_micro_kappa": 0.9709,
+  "important_note": "These files are renamed from AI-generated draft annotations. Use only after real researcher/domain expert validation if reporting as human annotation evidence. Kappa was computed from labels; it was not forced to a target value."
+}

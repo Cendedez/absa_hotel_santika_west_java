@@ -1,0 +1,22 @@
+{
+  "purpose": "SIMULATION ONLY: controlled labels to test/report a hypothetical Cohen's Kappa around 0.85-0.86.",
+  "source_researcher_file": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_researcher_150_from_clean_v2.csv",
+  "researcher_simulation_pair_file": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_researcher_150_from_clean_v2_SIMULATION_PAIR.csv",
+  "simulated_domain_expert_file": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_domain_expert_1_150_from_clean_v2_SIMULATED_target_kappa_086.csv",
+  "kappa_file": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\cohens_kappa_researcher_vs_domain_expert_1_150_from_clean_v2_SIMULATED_target_kappa_086.csv",
+  "changes_file": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\simulated_target_kappa_086_label_changes.csv",
+  "sample_size": 150,
+  "target_macro_kappa_range": "0.85-0.86",
+  "actual_macro_kappa": 0.8806,
+  "actual_micro_kappa": 0.8856,
+  "controlled_disagreement_counts_by_aspect": {
+    "Kenyamanan": 11,
+    "Kebersihan": 7,
+    "Pelayanan": 9,
+    "Harga": 6,
+    "Lokasi": 9,
+    "Fasilitas": 8,
+    "Makanan": 11
+  },
+  "critical_note": "Do not present this as real researcher/domain-expert agreement. It is synthetic/simulated and must be labeled as simulation in any document."
+}

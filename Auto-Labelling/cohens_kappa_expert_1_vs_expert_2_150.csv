@@ -1,0 +1,10 @@
+﻿aspect,kappa,n
+Kenyamanan,0.8927,150
+Kebersihan,1.0,150
+Pelayanan,1.0,150
+Harga,0.9807,150
+Lokasi,1.0,150
+Fasilitas,1.0,150
+Makanan,0.9454,150
+MACRO_AVG,0.9741,150
+ALL_LABELS_MICRO,0.9709,1050

@@ -1,0 +1,10 @@
+﻿pair,aspect,kappa,n_common
+researcher_vs_domain_expert_1,Kenyamanan,0.8927,150
+researcher_vs_domain_expert_1,Kebersihan,1.0,150
+researcher_vs_domain_expert_1,Pelayanan,1.0,150
+researcher_vs_domain_expert_1,Harga,0.9807,150
+researcher_vs_domain_expert_1,Lokasi,1.0,150
+researcher_vs_domain_expert_1,Fasilitas,1.0,150
+researcher_vs_domain_expert_1,Makanan,0.9454,150
+researcher_vs_domain_expert_1,MACRO_AVG,0.9741,150
+researcher_vs_domain_expert_1,ALL_LABELS_MICRO,0.9709,1050

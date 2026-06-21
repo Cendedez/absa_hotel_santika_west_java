@@ -1,0 +1,59 @@
+{
+  "source": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Data Preprocessing\\dataset_absa_santika_clean_v2.csv",
+  "source_rows": 15095,
+  "sample_size": 150,
+  "seed": 42,
+  "sample_method": "sample n=150 from dataset_absa_santika_clean_v2.csv with pandas random_state=42, then sort by review_id",
+  "columns": [
+    "ID_Review",
+    "Platform",
+    "Nama_Hotel",
+    "Review_Date",
+    "Text_Review",
+    "Kenyamanan",
+    "Kebersihan",
+    "Pelayanan",
+    "Harga",
+    "Lokasi",
+    "Fasilitas",
+    "Makanan",
+    "Alasan_Kenyamanan",
+    "Alasan_Kebersihan",
+    "Alasan_Pelayanan",
+    "Alasan_Harga",
+    "Alasan_Lokasi",
+    "Alasan_Fasilitas",
+    "Alasan_Makanan"
+  ],
+  "expert_1_profile": {
+    "name": "expert_1_balanced_from_clean_v2",
+    "strict_generic": false,
+    "add_kamar_bersih_to_kenyamanan": true,
+    "numeric_7_as_positive": true,
+    "allow_neutral_factual": true
+  },
+  "expert_2_profile": {
+    "name": "expert_2_strict_from_clean_v2",
+    "strict_generic": true,
+    "add_kamar_bersih_to_kenyamanan": false,
+    "numeric_7_as_positive": false,
+    "allow_neutral_factual": false
+  },
+  "important_note": "AI-generated annotations from clean_v2 text only. Not human/domain-expert evidence unless manually validated by real experts.",
+  "outputs": {
+    "sample": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\sample_150_from_clean_v2_seed42.csv",
+    "expert1": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_1_150_from_clean_v2.csv",
+    "expert2": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_2_150_from_clean_v2.csv",
+    "dist1": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_1_150_from_clean_v2_distribution.csv",
+    "dist2": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_2_150_from_clean_v2_distribution.csv",
+    "kappa": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\cohens_kappa_expert_1_vs_expert_2_150_from_clean_v2.csv",
+    "metadata": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_150_from_clean_v2_metadata.json"
+  },
+  "generic_overwritten_outputs": {
+    "expert1": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_1_150.csv",
+    "expert2": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_2_150.csv",
+    "dist1": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_1_150_distribution.csv",
+    "dist2": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_2_150_distribution.csv",
+    "kappa": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\cohens_kappa_expert_1_vs_expert_2_150.csv"
+  }
+}

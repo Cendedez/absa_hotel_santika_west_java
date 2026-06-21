@@ -10,10 +10,11 @@
     <script src="/static/vendor/chart.umd.min.js"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=20260605-manual-label">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=20260614-role-audit">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body data-user-role="{{ user.role }}">
+    {% set is_admin = user.role == "admin" %}
     <script>
         window.ABSA_USER = {{ user|tojson }};
     </script>
@@ -42,6 +43,9 @@
         <symbol id="icon-info" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="9"></circle><path d="M12 10v6"></path><path d="M12 7h.01"></path>
         </symbol>
+        <symbol id="icon-staff" viewBox="0 0 24 24">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </symbol>
         <symbol id="icon-calendar" viewBox="0 0 24 24">
             <rect x="4" y="5" width="16" height="16" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M4 10h16"></path>
         </symbol>
@@ -67,6 +71,7 @@
                 </div>
             </div>
             <nav class="sidebar-nav">
+                {% if is_admin %}
                 <div class="nav-section-label">Analisis</div>
                 <div class="nav-item active" data-page="overview" id="nav-overview">
                     <span class="nav-icon"><svg class="icon-svg"><use href="#icon-overview"></use></svg></span>
@@ -84,9 +89,10 @@
                     <span class="nav-icon"><svg class="icon-svg"><use href="#icon-trend"></use></svg></span>
                     <span>Tren Waktu</span>
                 </div>
+                {% endif %}
 
                 <div class="nav-section-label">Data</div>
-                <div class="nav-item" data-page="reviews" id="nav-reviews">
+                <div class="nav-item{% if not is_admin %} active{% endif %}" data-page="reviews" id="nav-reviews">
                     <span class="nav-icon"><svg class="icon-svg"><use href="#icon-review"></use></svg></span>
                     <span>Review Explorer</span>
                 </div>
@@ -100,6 +106,12 @@
                     <span class="nav-icon"><svg class="icon-svg"><use href="#icon-performance"></use></svg></span>
                     <span>Performa Model</span>
                 </div>
+                {% if is_admin %}
+                <div class="nav-item" data-page="staff" id="nav-staff">
+                    <span class="nav-icon"><svg class="icon-svg"><use href="#icon-staff"></use></svg></span>
+                    <span>Manajemen Staf OTA</span>
+                </div>
+                {% endif %}
                 <div class="nav-item" data-page="about" id="nav-about">
                     <span class="nav-icon"><svg class="icon-svg"><use href="#icon-info"></use></svg></span>
                     <span>Tentang Sistem</span>
@@ -115,14 +127,15 @@
         <main class="main-content">
             <header class="main-header">
                 <div>
-                    <h1 class="page-title" id="page-title">Overview</h1>
-                    <div class="page-subtitle" id="page-subtitle">Ringkasan analisis sentimen ulasan Hotel Santika</div>
+                    <h1 class="page-title" id="page-title">{{ "Overview" if is_admin else "Review Explorer" }}</h1>
+                    <div class="page-subtitle" id="page-subtitle">{{ "Ringkasan analisis sentimen ulasan Hotel Santika Jawa Barat" if is_admin else "Jelajahi, cari, dan kelola review OTA secara detail" }}</div>
                 </div>
                 <div class="header-actions">
                     <div class="user-chip" title="Pengguna aktif">
-                        <div class="user-avatar">M</div>
+                        <div class="user-avatar">{{ user.name[:1] }}</div>
                         <div class="user-meta">
-                            <div class="user-name" style="margin-bottom: 0;">Manajemen Hotel</div>
+                            <div class="user-name">{{ user.name }}</div>
+                            <div class="user-role">{{ user.role_label }}</div>
                         </div>
                     </div>
                     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ganti tema dashboard">
@@ -218,6 +231,7 @@
             </header>
 
             <div class="main-body">
+                {% if is_admin %}
                 <!-- ======== OVERVIEW ======== -->
                 <section class="page-section active" id="page-overview">
                     <div class="filters-bar">
@@ -421,9 +435,10 @@
                         <div class="card-body"><div class="chart-container chart-container-lg"><canvas id="chart-trend"></canvas></div></div>
                     </div>
                 </section>
+                {% endif %}
 
                 <!-- ======== REVIEW EXPLORER ======== -->
-                <section class="page-section" id="page-reviews">
+                <section class="page-section{% if not is_admin %} active{% endif %}" id="page-reviews">
                     <div class="filters-bar">
                         <div class="form-group">
                             <label class="form-label">Hotel</label>
@@ -476,6 +491,22 @@
                         </div>
                     </div>
                     <div class="pagination" id="reviews-pagination"></div>
+                    {% if is_admin %}
+                    <div class="card" id="review-log-card">
+                        <div class="card-header">
+                            <div>
+                                <div class="card-title">Log Aktivitas Review</div>
+                                <div class="card-subtitle">Riwayat input dan penghapusan review oleh pengguna dashboard, termasuk Staf OTA.</div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm" type="button" onclick="loadActivityLog()">Muat Ulang</button>
+                        </div>
+                        <div class="card-body card-body-flush">
+                            <div class="data-table-wrapper" id="review-log-body">
+                                <div class="empty-state"><div class="empty-state-text">Log aktivitas akan dimuat saat halaman dibuka.</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
                 </section>
 
                 <!-- ======== PREDIKSI SENTIMEN ======== -->
@@ -498,7 +529,7 @@
                                             <option value="Agoda">Agoda</option>
                                             <option value="Traveloka">Traveloka</option>
                                             <option value="Tiket">Tiket.com</option>
-                                            <option value="Manual">Lainnya / Manual</option>
+                                            <option value="Manual">Lainnya</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -550,6 +581,54 @@
                         <div class="card-body" id="perf-notes"></div>
                     </div>
                 </section>
+
+                {% if is_admin %}
+                <!-- ======== MANAJEMEN STAF OTA ======== -->
+                <section class="page-section" id="page-staff">
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <div>
+                                    <div class="card-title">Tambah Staf OTA</div>
+                                    <div class="card-subtitle">Buat akun staf yang bisa input review dari Prediksi Sentimen dan hapus review dari Review Explorer.</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form class="staff-form" id="staff-form" onsubmit="createStaffOta(event)">
+                                    <div class="form-group">
+                                        <label class="form-label" for="staff-name">Nama Staf</label>
+                                        <input class="form-input" id="staff-name" type="text" placeholder="Contoh: Staf OTA Bandung" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="staff-username">ID Pengguna</label>
+                                        <input class="form-input" id="staff-username" type="text" placeholder="contoh: ota_bandung" minlength="3" maxlength="32" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="staff-password">Password</label>
+                                        <input class="form-input" id="staff-password" type="text" placeholder="Minimal 6 karakter" minlength="6" required>
+                                    </div>
+                                    <button class="btn btn-primary" id="btn-create-staff" type="submit">Tambah Staf OTA</button>
+                                </form>
+                                <div class="staff-message" id="staff-message"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <div>
+                                    <div class="card-title">Daftar Staf OTA</div>
+                                    <div class="card-subtitle">Kelola akun staf yang diberi akses operasional review.</div>
+                                </div>
+                                <button class="btn btn-secondary btn-sm" type="button" onclick="loadStaffManagement()">Muat Ulang</button>
+                            </div>
+                            <div class="card-body card-body-flush">
+                                <div class="data-table-wrapper" id="staff-list">
+                                    <div class="empty-state"><div class="empty-state-text">Daftar staf akan dimuat saat halaman dibuka.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {% endif %}
 
                 <!-- ======== TENTANG SISTEM ======== -->
                 <section class="page-section" id="page-about">
@@ -612,6 +691,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="/static/js/dashboard.js?v=20260608-score-legend"></script>
+    <script src="/static/js/dashboard.js?v=20260614-role-audit"></script>
 </body>
 </html>

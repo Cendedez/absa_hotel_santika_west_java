@@ -1,0 +1,19 @@
+{
+  "source_clean_csv": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Data Preprocessing\\dataset_absa_santika_clean_v2.csv",
+  "source_labeled_csv_for_expert_1_basis": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Data Labeling\\dataset_absa_labeled.csv",
+  "sample_size": 150,
+  "seed": 42,
+  "sample_method": "pandas.DataFrame.sample(n=150, random_state=42), sorted by numeric review_id",
+  "important_note": "These files are AI-assisted/simulated annotation outputs. Do not report them as human domain-expert agreement evidence. Use real independent expert labels for research-valid Cohen's Kappa.",
+  "output_files": [
+    "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\sample_150_clean_v2_seed42.csv",
+    "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_1_150.csv",
+    "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_2_150.csv",
+    "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_1_150_distribution.csv",
+    "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_2_150_distribution.csv",
+    "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\cohens_kappa_expert_1_vs_expert_2_150.csv"
+  ],
+  "expert_2_generation": "Second-pass AI-assisted annotation: starts from expert_1 labels, removes generic labels, adds only strong missing explicit aspects, and treats numeric-only food ratings cautiously.",
+  "expert_2_rule_based_draft_backup": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_2_150_rule_based_draft.csv",
+  "second_pass_changes_csv": "C:\\Users\\cencen04_\\Downloads\\ABSA Hotel Santika\\Auto-Labelling\\annotations_expert_2_150_second_pass_changes.csv"
+}

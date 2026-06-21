@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe Mockup — Dashboard ABSA Hotel Santika</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e8e8e8;
+      color: #222;
+      line-height: 1.4;
+      min-height: 100vh;
+    }
+
+    /* ===== LAYOUT ===== */
+    .app { display: flex; min-height: 100vh; }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      width: 230px;
+      background: #1a1a1a;
+      color: #ccc;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      z-index: 100;
+    }
+
+    .sidebar-brand {
+      padding: 20px 18px 16px;
+      border-bottom: 1px solid #333;
+    }
+
+    .sidebar-brand h2 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+    }
+
+    .sidebar-brand p {
+      font-size: 11px;
+      color: #777;
+      margin-top: 3px;
+    }
+
+    .sidebar-nav { padding: 8px 8px; flex: 1; }
+
+    .nav-group-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #555;
+      padding: 14px 10px 5px;
+      font-weight: 700;
+    }
+
+    .nav-btn {
+      display: block;
+      width: 100%;
+      padding: 8px 12px;
+      border: none;
+      background: transparent;
+      color: #999;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 500;
+      text-align: left;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+
+    .nav-btn:hover { background: #2a2a2a; color: #ddd; }
+    .nav-btn.active { background: #333; color: #fff; }
+
+    .sidebar-footer {
+      padding: 12px 18px;
+      border-top: 1px solid #333;
+      font-size: 9px;
+      color: #555;
+    }
+
+    /* ===== MAIN ===== */
+    .main {
+      margin-left: 230px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-title { font-size: 15px; font-weight: 700; }
+    .header-sub { font-size: 11px; color: #888; }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .body { padding: 20px 24px 40px; }
+
+    /* ===== PAGE ===== */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ===== WIREFRAME COMPONENTS ===== */
+
+    /* Filter Bar */
+    .wf-filter-bar {
+      background: #fff;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      padding: 12px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: flex-end;
+      margin-bottom: 18px;
+    }
+
+    .wf-filter-group { display: flex; flex-direction: column; gap: 3px; }
+
+    .wf-filter-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      font-weight: 700;
+      color: #888;
+    }
+
+    .wf-dropdown {
+      border: 1px solid #aaa;
+      background: #fafafa;
+      padding: 5px 24px 5px 8px;
+      font-size: 11.5px;
+      font-family: inherit;
+      border-radius: 3px;
+      min-width: 120px;
+      color: #333;
+      appearance: auto;
+    }
+
+    .wf-btn {
+      border: 1px solid #999;
+      background: #444;
+      color: #fff;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-family: inherit;
+      font-weight: 600;
+      border-radius: 3px;
+      cursor: default;
+    }
+
+    .wf-btn-outline {
+      border: 1px solid #999;
+      background: #fff;
+      color: #555;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-family: inherit;
+      font-weight: 600;
+      border-radius: 3px;
+      cursor: default;
+    }
+
+    /* Grid */
+    .wf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+    .wf-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+    .wf-grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+    .wf-grid-5 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+
+    /* Scorecard */
+    .wf-scorecard {
+      background: #fff;
+      border: 1.5px solid #222;
+      border-radius: 4px;
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    .wf-scorecard-label {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .wf-scorecard-box {
+      border: 1px solid #aaa;
+      background: #f5f5f5;
+      border-radius: 3px;
+      padding: 10px 12px;
+      font-size: 11px;
+      color: #888;
+    }
+
+    /* Chart Placeholder */
+    .wf-card {
+      background: #fff;
+      border: 1.5px solid #222;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .wf-card-title {
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      border-bottom: 1px solid #ddd;
+      font-style: italic;
+    }
+
+    .wf-card-body { padding: 0; }
+
+    .wf-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      color: #999;
+      font-size: 13px;
+      font-weight: 500;
+      min-height: 180px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .wf-placeholder-tall { min-height: 240px; }
+    .wf-placeholder-short { min-height: 120px; }
+
+    /* Donut placeholder */
+    .wf-donut-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      min-height: 180px;
+      padding: 20px;
+    }
+
+    .wf-donut {
+      width: 120px;
+      height: 120px;
+      border: 3px solid #888;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #999;
+      background: #fff;
+    }
+
+    /* Gauge placeholder */
+    .wf-gauge-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      min-height: 160px;
+      padding: 20px;
+    }
+
+    .wf-gauge {
+      width: 130px;
+      height: 65px;
+      border: 3px solid #888;
+      border-radius: 130px 130px 0 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 8px;
+      font-size: 12px;
+      color: #999;
+      background: #fff;
+    }
+
+    /* Table Placeholder */
+    .wf-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+
+    .wf-table th {
+      text-align: left;
+      padding: 8px 12px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #666;
+      background: #eee;
+      border-bottom: 1.5px solid #aaa;
+      font-weight: 700;
+    }
+
+    .wf-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #ddd;
+      color: #555;
+    }
+
+    .wf-table tr:last-child td { border-bottom: none; }
+
+    /* Insight / Info Cards */
+    .wf-insight-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .wf-insight {
+      background: #fff;
+      border: 1.5px solid #222;
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+
+    .wf-insight-primary { border-left: 5px solid #222; }
+
+    .wf-insight-eyebrow {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .wf-insight h3 {
+      font-size: 12.5px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .wf-insight p {
+      font-size: 11px;
+      color: #777;
+      line-height: 1.45;
+    }
+
+    .wf-insight-metric {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 4px 0 6px;
+    }
+
+    .wf-insight-link {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 6px;
+      font-style: italic;
+    }
+
+    /* Priority bars inside insight */
+    .wf-priority-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .wf-priority-num {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      border: 1px solid #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .wf-priority-text { font-size: 11px; font-weight: 600; flex: 1; }
+
+    .wf-priority-bar {
+      height: 4px;
+      background: #ddd;
+      border-radius: 2px;
+      margin-top: 3px;
+      overflow: hidden;
+    }
+
+    .wf-priority-bar div {
+      height: 100%;
+      background: #888;
+      border-radius: 2px;
+    }
+
+    /* Review card placeholder */
+    .wf-review {
+      padding: 12px 16px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .wf-review:last-child { border-bottom: none; }
+
+    .wf-review-head {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 4px;
+    }
+
+    .wf-review-head strong {
+      color: #333;
+      font-weight: 700;
+    }
+
+    .wf-review-text {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .wf-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .wf-chip {
+      display: inline-block;
+      padding: 2px 8px;
+      border: 1px solid #bbb;
+      border-radius: 10px;
+      font-size: 10px;
+      color: #666;
+      background: #f5f5f5;
+    }
+
+    /* Pagination */
+    .wf-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 14px;
+    }
+
+    .wf-page-btn {
+      width: 28px; height: 28px;
+      border: 1px solid #bbb;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-family: inherit;
+      border-radius: 3px;
+      color: #555;
+    }
+
+    .wf-page-btn.active { background: #333; color: #fff; border-color: #333; }
+
+    /* Predict result */
+    .wf-predict-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: #f5f5f5;
+      border-radius: 3px;
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+
+    .wf-predict-label {
+      padding: 2px 10px;
+      border: 1px solid #aaa;
+      border-radius: 10px;
+      font-size: 10px;
+      background: #eee;
+    }
+
+    /* Metric cards */
+    .wf-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .wf-metric {
+      background: #fff;
+      border: 1.5px solid #222;
+      border-radius: 4px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .wf-metric-value {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .wf-metric-label {
+      font-size: 10px;
+      color: #888;
+      margin-top: 3px;
+    }
+
+    /* Config table */
+    .wf-config-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .wf-config-table th {
+      text-align: left;
+      padding: 7px 12px;
+      background: #eee;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #666;
+      border-bottom: 1px solid #bbb;
+    }
+
+    .wf-config-table td {
+      padding: 7px 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .wf-config-table td:first-child { font-weight: 600; }
+
+    /* About blocks */
+    .wf-about-callout {
+      padding: 14px 16px;
+      background: #f5f5f5;
+      border-left: 4px solid #555;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+
+    .wf-about-callout h3 { font-size: 13px; margin-bottom: 5px; }
+    .wf-about-callout p { font-size: 12px; color: #666; line-height: 1.55; }
+
+    .wf-about-block {
+      padding: 12px 16px;
+      border-left: 3px solid #ccc;
+      margin-bottom: 12px;
+    }
+
+    .wf-about-block h3 { font-size: 13px; margin-bottom: 5px; }
+    .wf-about-block p, .wf-about-block ul {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .wf-about-block ul { padding-left: 16px; }
+
+    /* Textarea */
+    .wf-textarea {
+      width: 100%;
+      border: 1px solid #aaa;
+      background: #fafafa;
+      border-radius: 3px;
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 11.5px;
+      resize: vertical;
+      color: #333;
+    }
+
+    .wf-input {
+      border: 1px solid #aaa;
+      background: #fafafa;
+      border-radius: 3px;
+      padding: 5px 8px;
+      font-family: inherit;
+      font-size: 11.5px;
+      width: 100%;
+      color: #333;
+    }
+
+    /* Section annotation */
+    .wf-section-note {
+      font-size: 10px;
+      color: #aaa;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    /* LOGIN */
+    .login-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e8e8e8;
+    }
+
+    .login-shell {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 700px;
+      width: 100%;
+      border: 2px solid #222;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .login-left {
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-left h1 {
+      font-size: 15px;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .login-left p {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    .login-right {
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-right h2 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .login-right .login-sub {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 22px;
+    }
+
+    .login-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .login-form-group { display: flex; flex-direction: column; gap: 4px; }
+
+    .login-form-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      font-weight: 700;
+      color: #888;
+    }
+
+    .login-form-input {
+      padding: 8px 10px;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      font-size: 12px;
+      font-family: inherit;
+      background: #fafafa;
+    }
+
+    .login-submit {
+      margin-top: 6px;
+      padding: 10px;
+      background: #333;
+      color: #fff;
+      border: 1px solid #222;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* Proto watermark */
+    .watermark {
+      position: fixed;
+      bottom: 12px;
+      right: 12px;
+      background: #333;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      z-index: 1000;
+    }
+
+    /* Phrase item */
+    .wf-phrase-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 10px;
+      background: #f5f5f5;
+      border-radius: 3px;
+      margin-bottom: 5px;
+      font-size: 11px;
+    }
+
+    .wf-phrase-rank {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      border: 1px solid #aaa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .wf-phrase-text { flex: 1; font-weight: 600; }
+    .wf-phrase-count { color: #999; font-size: 10px; }
+
+    .wf-phrase-section-title {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .mb-0 { margin-bottom: 0 !important; }
+  </style>
+</head>
+<body>
+
+<!-- ==================== LOGIN ==================== -->
+<div id="login-page" class="login-page">
+  <div class="login-shell">
+    <div class="login-left">
+      <h1>Customer Sentiment Dashboard Hotel Santika Jawa Barat</h1>
+      <p>Silakan masuk untuk mengakses analisis kepuasan tamu dan ringkasan sentimen pelanggan.</p>
+    </div>
+    <div class="login-right">
+      <h2>Masuk ke Dashboard</h2>
+      <p class="login-sub">Masukkan ID Pengguna dan Kata Sandi Anda.</p>
+      <div class="login-form">
+        <div class="login-form-group">
+          <label class="login-form-label">ID Pengguna</label>
+          <input class="login-form-input" type="text" value="admin">
+        </div>
+        <div class="login-form-group">
+          <label class="login-form-label">Kata Sandi</label>
+          <input class="login-form-input" type="password" value="password">
+        </div>
+        <div class="login-submit" onclick="showDashboard()">Masuk</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DASHBOARD ==================== -->
+<div id="dashboard" class="app" style="display:none;">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h2>Customer Sentiment Dashboard</h2>
+      <p>Hotel Santika Jawa Barat</p>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-group-label">Analisis</div>
+      <button class="nav-btn active" onclick="go('overview',this)">Overview</button>
+      <button class="nav-btn" onclick="go('aspect',this)">Analisis Aspek</button>
+      <button class="nav-btn" onclick="go('hotel',this)">Hotel dan Platform</button>
+      <button class="nav-btn" onclick="go('trend',this)">Tren Waktu</button>
+      <div class="nav-group-label">Data</div>
+      <button class="nav-btn" onclick="go('reviews',this)">Review Explorer</button>
+      <button class="nav-btn" onclick="go('predict',this)">Prediksi Sentimen</button>
+      <div class="nav-group-label">Sistem</div>
+      <button class="nav-btn" onclick="go('perf',this)">Performa Model</button>
+      <button class="nav-btn" onclick="go('about',this)">Tentang Sistem</button>
+    </nav>
+    <div class="sidebar-footer">Sistem Analisis Cerdas<br>Terus memantau kepuasan tamu</div>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <div>
+        <div class="header-title" id="hTitle">Overview</div>
+        <div class="header-sub" id="hSub">Ringkasan analisis sentimen ulasan Hotel Santika Jawa Barat</div>
+      </div>
+      <div class="header-right">
+        <span>Manajemen Hotel</span>
+        <span class="wf-btn-outline" onclick="showLogin()">Keluar</span>
+      </div>
+    </header>
+
+    <div class="body">
+
+      <!-- ======== OVERVIEW ======== -->
+      <div class="page active" id="p-overview">
+
+        <!-- Filter -->
+        <div class="wf-filter-bar">
+          <div class="wf-filter-group">
+            <span class="wf-filter-label">Hotel</span>
+            <select class="wf-dropdown"><option>Semua Hotel</option></select>
+          </div>
+          <div class="wf-filter-group">
+            <span class="wf-filter-label">Platform</span>
+            <select class="wf-dropdown"><option>Semua Platform</option></select>
+          </div>
+          <span class="wf-btn">Terapkan</span>
+          <span class="wf-btn-outline">Export Ringkasan Briefing</span>
+        </div>
+
+        <!-- Scorecards -->
+        <div class="wf-grid-5">
+          <div class="wf-scorecard"><div class="wf-scorecard-label">Periode Analisis</div><div class="wf-scorecard-box">Scorecard</div></div>
+          <div class="wf-scorecard"><div class="wf-scorecard-label">Total Review</div><div class="wf-scorecard-box">Scorecard</div></div>
+          <div class="wf-scorecard"><div class="wf-scorecard-label">Cabang Hotel</div><div class="wf-scorecard-box">Scorecard</div></div>
+          <div class="wf-scorecard"><div class="wf-scorecard-label">Platform OTA</div><div class="wf-scorecard-box">Scorecard</div></div>
+          <div class="wf-scorecard"><div class="wf-scorecard-label">Rasio Positif Aspek</div><div class="wf-scorecard-box">Scorecard</div></div>
+        </div>
+
+        <!-- Gauge + Composition -->
+        <div class="wf-grid-2">
+          <div class="wf-card">
+            <div class="wf-card-title">Tingkat Sentimen Keseluruhan</div>
+            <div class="wf-gauge-wrap">
+              <div class="wf-gauge">Gauge Chart</div>
+            </div>
+          </div>
+          <div class="wf-card">
+            <div class="wf-card-title">Komposisi Sentimen</div>
+            <div class="wf-donut-wrap">
+              <div class="wf-donut">Donut Diagram</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insight Cards -->
+        <div class="wf-insight-grid">
+          <div class="wf-insight wf-insight-primary">
+            <div class="wf-insight-eyebrow">SEGERA DIPERBAIKI</div>
+            <h3>Kenyamanan dan Fasilitas adalah sumber keluhan terbesar.</h3>
+            <p>Dari total review, sentimen positif masih dominan. Namun keluhan paling banyak terkonsentrasi pada aspek kenyamanan dan fasilitas.</p>
+            <div class="wf-insight-link">Klik untuk lihat review terkait</div>
+          </div>
+          <div class="wf-insight">
+            <div class="wf-insight-eyebrow">PRIORITAS PERBAIKAN</div>
+            <div class="wf-priority-item"><div class="wf-priority-num">1</div><div style="flex:1;"><div class="wf-priority-text">Kenyamanan</div><div class="wf-priority-bar"><div style="width:45%"></div></div></div></div>
+            <div class="wf-priority-item"><div class="wf-priority-num">2</div><div style="flex:1;"><div class="wf-priority-text">Fasilitas</div><div class="wf-priority-bar"><div style="width:38%"></div></div></div></div>
+            <div class="wf-priority-item"><div class="wf-priority-num">3</div><div style="flex:1;"><div class="wf-priority-text">Makanan</div><div class="wf-priority-bar"><div style="width:30%"></div></div></div></div>
+          </div>
+          <div class="wf-insight">
+            <div class="wf-insight-eyebrow">RISIKO TERTINGGI</div>
+            <div class="wf-insight-metric">Fasilitas</div>
+            <p>Aspek ini memiliki proporsi negatif tertinggi, perlu prioritas perbaikan.</p>
+            <div class="wf-insight-link">Klik untuk lihat review terkait</div>
+          </div>
+          <div class="wf-insight">
+            <div class="wf-insight-eyebrow">KEKUATAN UTAMA</div>
+            <div class="wf-insight-metric">Pelayanan</div>
+            <p>Aspek ini memiliki jumlah sentimen positif terbanyak dari seluruh aspek.</p>
+            <div class="wf-insight-link">Klik untuk lihat review terkait</div>
+          </div>
+        </div>
+
+        <!-- Priority Table -->
+        <div class="wf-card">
+          <div class="wf-card-title">Tabel Prioritas Perbaikan</div>
+          <div class="wf-card-body">
+            <table class="wf-table">
+              <thead><tr><th>No.</th><th>Hotel</th><th>Aspek</th><th>Jumlah Negatif</th><th>Rasio Negatif</th><th>Platform Dominan</th><th>Review Pendukung</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Depok</td><td>Kenyamanan</td><td>248</td><td>25.3%</td><td>Traveloka</td><td style="color:#999;font-size:10px;">AC kamar tidak dingin...</td></tr>
+                <tr><td>2</td><td>Bogor</td><td>Fasilitas</td><td>215</td><td>24.7%</td><td>Agoda</td><td style="color:#999;font-size:10px;">WiFi sangat lambat...</td></tr>
+                <tr><td>3</td><td>Bekasi</td><td>Makanan</td><td>186</td><td>24.5%</td><td>Tiket</td><td style="color:#999;font-size:10px;">Menu sarapan kurang variasi...</td></tr>
+                <tr><td>4</td><td>Bandung</td><td>Kebersihan</td><td>172</td><td>18.7%</td><td>Agoda</td><td style="color:#999;font-size:10px;">Kamar mandi ada noda...</td></tr>
+                <tr><td>5</td><td>Cirebon</td><td>Pelayanan</td><td>148</td><td>17.6%</td><td>Traveloka</td><td style="color:#999;font-size:10px;">Proses check-in lama...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="wf-grid-2">
+          <div class="wf-card">
+            <div class="wf-card-title">Distribusi Sentimen Berdasarkan Aspek</div>
+            <div class="wf-placeholder wf-placeholder-tall">Stacked Bar Chart</div>
+          </div>
+          <div class="wf-card">
+            <div class="wf-card-title">Aspek Negatif Dominan</div>
+            <div class="wf-placeholder wf-placeholder-tall">Horizontal Bar Chart</div>
+          </div>
+        </div>
+
+        <!-- Peta Sentimen -->
+        <div class="wf-card">
+          <div class="wf-card-title">Peta Sentimen Seluruh Aspek</div>
+          <div class="wf-placeholder wf-placeholder-tall">Stacked Bar Chart (7 Aspek x 3 Sentimen)</div>
+        </div>
+
+        <!-- Price vs Quality -->
+        <div class="wf-card">
+          <div class="wf-card-title">Analisis Harga vs Kualitas Layanan</div>
+          <div class="wf-placeholder wf-placeholder-tall">Grouped Bar Chart (Harga vs Pelayanan vs Fasilitas per Hotel)</div>
+        </div>
+      </div>
+
+      <!-- ======== ANALISIS ASPEK ======== -->
+      <div class="page" id="p-aspect">
+        <div class="wf-filter-bar">
+          <div class="wf-filter-group"><span class="wf-filter-label">Hotel</span><select class="wf-dropdown"><option>Semua Hotel</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Platform</span><select class="wf-dropdown"><option>Semua Platform</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Aspek</span><select class="wf-dropdown"><option>Semua Aspek</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Sentimen</span><select class="wf-dropdown"><option>Semua</option></select></div>
+          <span class="wf-btn">Terapkan</span>
+        </div>
+
+        <div class="wf-grid-2">
+          <div class="wf-card">
+            <div class="wf-card-title">Distribusi Sentimen per Aspek</div>
+            <div class="wf-placeholder wf-placeholder-tall">Grouped Bar Chart</div>
+          </div>
+          <div class="wf-card">
+            <div class="wf-card-title">Rasio Sentimen per Aspek (%)</div>
+            <div class="wf-placeholder wf-placeholder-tall">100% Stacked Bar Chart</div>
+          </div>
+        </div>
+
+        <!-- Complaint Phrases -->
+        <div class="wf-card">
+          <div class="wf-card-title">Top Frasa Keluhan Per Aspek</div>
+          <div style="padding:14px 16px;">
+            <div class="wf-grid-2 mb-0">
+              <div>
+                <div class="wf-phrase-section-title">Kenyamanan (320 review negatif)</div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">1</span><span class="wf-phrase-text">ac tidak dingin</span><span class="wf-phrase-count">48x</span></div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">2</span><span class="wf-phrase-text">kamar sempit</span><span class="wf-phrase-count">35x</span></div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">3</span><span class="wf-phrase-text">bising berisik</span><span class="wf-phrase-count">28x</span></div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">4</span><span class="wf-phrase-text">kasur tidak nyaman</span><span class="wf-phrase-count">22x</span></div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">5</span><span class="wf-phrase-text">bau rokok</span><span class="wf-phrase-count">18x</span></div>
+              </div>
+              <div>
+                <div class="wf-phrase-section-title">Fasilitas (280 review negatif)</div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">1</span><span class="wf-phrase-text">wifi lambat</span><span class="wf-phrase-count">52x</span></div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">2</span><span class="wf-phrase-text">kolam kotor</span><span class="wf-phrase-count">31x</span></div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">3</span><span class="wf-phrase-text">lift rusak</span><span class="wf-phrase-count">24x</span></div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">4</span><span class="wf-phrase-text">tv tidak berfungsi</span><span class="wf-phrase-count">19x</span></div>
+                <div class="wf-phrase-item"><span class="wf-phrase-rank">5</span><span class="wf-phrase-text">parkir sempit</span><span class="wf-phrase-count">16x</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example Reviews -->
+        <div class="wf-card">
+          <div class="wf-card-title">Contoh Review</div>
+          <div class="wf-card-body">
+            <div class="wf-review">
+              <div class="wf-review-head"><strong>Depok</strong> &middot; Traveloka &middot; 2026-04-12 &middot; REV-008421</div>
+              <div class="wf-review-text">AC kamar tidak dingin sama sekali, sudah komplain tapi lama ditangani oleh staff.</div>
+              <div class="wf-chips"><span class="wf-chip">Kenyamanan: Negatif</span><span class="wf-chip">Pelayanan: Negatif</span></div>
+            </div>
+            <div class="wf-review">
+              <div class="wf-review-head"><strong>Bandung</strong> &middot; Agoda &middot; 2026-03-22 &middot; REV-005193</div>
+              <div class="wf-review-text">Lokasi sangat strategis dekat pusat kota, staf ramah dan helpful.</div>
+              <div class="wf-chips"><span class="wf-chip">Lokasi: Positif</span><span class="wf-chip">Pelayanan: Positif</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== HOTEL & PLATFORM ======== -->
+      <div class="page" id="p-hotel">
+        <div class="wf-filter-bar">
+          <div class="wf-filter-group"><span class="wf-filter-label">Hotel</span><select class="wf-dropdown"><option>Semua Hotel</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Platform</span><select class="wf-dropdown"><option>Semua Platform</option></select></div>
+          <span class="wf-btn">Terapkan</span>
+        </div>
+
+        <div class="wf-card">
+          <div class="wf-card-title">Perbandingan Sentimen Antar Hotel</div>
+          <div class="wf-placeholder wf-placeholder-tall">Grouped Bar Chart (6 Hotel x 3 Sentimen)</div>
+        </div>
+        <div class="wf-card">
+          <div class="wf-card-title">Perbandingan Sentimen Antar Platform OTA</div>
+          <div class="wf-placeholder wf-placeholder-tall">Grouped Bar Chart (3 Platform x 3 Sentimen)</div>
+        </div>
+      </div>
+
+      <!-- ======== TREN WAKTU ======== -->
+      <div class="page" id="p-trend">
+        <div class="wf-filter-bar">
+          <div class="wf-filter-group"><span class="wf-filter-label">Hotel</span><select class="wf-dropdown"><option>Semua Hotel</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Platform</span><select class="wf-dropdown"><option>Semua Platform</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Aspek</span><select class="wf-dropdown"><option>Semua Aspek</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Granularitas</span><select class="wf-dropdown"><option>Per Tahun</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Tampilan</span><select class="wf-dropdown"><option>Jumlah Sentimen</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Dari Tanggal</span><input class="wf-input" type="date" style="width:120px;"></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Sampai Tanggal</span><input class="wf-input" type="date" style="width:120px;"></div>
+          <span class="wf-btn">Terapkan</span>
+          <span class="wf-btn-outline">Reset</span>
+        </div>
+
+        <!-- Trend Stat -->
+        <div class="wf-grid-4">
+          <div class="wf-scorecard"><div class="wf-scorecard-label">Total Review</div><div class="wf-scorecard-box">Scorecard</div></div>
+          <div class="wf-scorecard"><div class="wf-scorecard-label">Total Sentimen Aspek</div><div class="wf-scorecard-box">Scorecard</div></div>
+          <div class="wf-scorecard"><div class="wf-scorecard-label">Periode</div><div class="wf-scorecard-box">Scorecard</div></div>
+          <div class="wf-scorecard"><div class="wf-scorecard-label">Rata-rata Positif</div><div class="wf-scorecard-box">Scorecard</div></div>
+        </div>
+
+        <div class="wf-card">
+          <div class="wf-card-title">Tren Sentimen</div>
+          <div class="wf-placeholder wf-placeholder-tall">Line Chart (Positif / Negatif / Netral per Waktu)</div>
+        </div>
+      </div>
+
+      <!-- ======== REVIEW EXPLORER ======== -->
+      <div class="page" id="p-reviews">
+        <div class="wf-filter-bar">
+          <div class="wf-filter-group"><span class="wf-filter-label">Hotel</span><select class="wf-dropdown"><option>Semua Hotel</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Platform</span><select class="wf-dropdown"><option>Semua Platform</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Aspek</span><select class="wf-dropdown"><option>Semua Aspek</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Sentimen</span><select class="wf-dropdown"><option>Semua</option></select></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Cari Keyword</span><input class="wf-input" type="text" placeholder="Ketik kata kunci..." style="width:140px;"></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Dari Tanggal</span><input class="wf-input" type="date" style="width:120px;"></div>
+          <div class="wf-filter-group"><span class="wf-filter-label">Sampai Tanggal</span><input class="wf-input" type="date" style="width:120px;"></div>
+          <span class="wf-btn">Cari</span>
+          <span class="wf-btn-outline">Reset</span>
+          <span class="wf-btn-outline">Export CSV</span>
+        </div>
+
+        <div class="wf-card">
+          <div class="wf-card-title">Daftar Review &nbsp;&nbsp;<span style="font-weight:400;color:#999;font-style:normal;">Menampilkan 1-10 dari 15.234 review</span></div>
+          <div class="wf-card-body">
+            <div class="wf-review">
+              <div class="wf-review-head"><strong>Bandung</strong> &middot; Agoda &middot; 2026-05-17 &middot; REV-000001</div>
+              <div class="wf-review-text">Saya selalu menginap di Santika kalau ke Bandung. Banyak restoran dan tempat belanja di sekitar hotel. Staf sangat ramah.</div>
+              <div class="wf-chips"><span class="wf-chip">Lokasi: Positif</span><span class="wf-chip">Pelayanan: Positif</span><span class="wf-chip">Makanan: Positif</span></div>
+            </div>
+            <div class="wf-review">
+              <div class="wf-review-head"><strong>Bogor</strong> &middot; Traveloka &middot; 2026-05-10 &middot; REV-003456</div>
+              <div class="wf-review-text">Kamar lumayan bersih tapi AC kurang dingin. WiFi lambat sekali tidak bisa untuk kerja.</div>
+              <div class="wf-chips"><span class="wf-chip">Kebersihan: Positif</span><span class="wf-chip">Kenyamanan: Negatif</span><span class="wf-chip">Fasilitas: Negatif</span></div>
+            </div>
+            <div class="wf-review">
+              <div class="wf-review-head"><strong>Cirebon</strong> &middot; Tiket &middot; 2026-04-28 &middot; REV-007890</div>
+              <div class="wf-review-text">Overall oke untuk harganya. Lokasi di tengah kota. Sarapan standar tapi cukup.</div>
+              <div class="wf-chips"><span class="wf-chip">Harga: Netral</span><span class="wf-chip">Lokasi: Positif</span><span class="wf-chip">Makanan: Netral</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-pagination">
+          <div class="wf-page-btn">&lt;</div>
+          <div class="wf-page-btn active">1</div>
+          <div class="wf-page-btn">2</div>
+          <div class="wf-page-btn">3</div>
+          <div class="wf-page-btn">...</div>
+          <div class="wf-page-btn">1524</div>
+          <div class="wf-page-btn">&gt;</div>
+        </div>
+      </div>
+
+      <!-- ======== PREDIKSI SENTIMEN ======== -->
+      <div class="page" id="p-predict">
+        <div class="wf-grid-2">
+          <div class="wf-card">
+            <div class="wf-card-title">Input Review Baru</div>
+            <div style="padding:14px 16px;">
+              <div class="wf-filter-group" style="margin-bottom:12px;">
+                <span class="wf-filter-label">Nama Hotel</span>
+                <select class="wf-dropdown" style="width:100%"><option>Pilih Hotel...</option></select>
+              </div>
+              <div class="wf-grid-2" style="margin-bottom:12px;">
+                <div class="wf-filter-group">
+                  <span class="wf-filter-label">Platform OTA</span>
+                  <select class="wf-dropdown" style="width:100%"><option>Pilih Platform...</option></select>
+                </div>
+                <div class="wf-filter-group">
+                  <span class="wf-filter-label">Tanggal Review</span>
+                  <input class="wf-input" type="date">
+                </div>
+              </div>
+              <div class="wf-filter-group" style="margin-bottom:14px;">
+                <span class="wf-filter-label">Teks Review</span>
+                <textarea class="wf-textarea" rows="6" placeholder="Masukkan teks review hotel yang ingin dianalisis..."></textarea>
+              </div>
+              <span class="wf-btn">Jalankan Prediksi Sentimen</span>
+            </div>
+          </div>
+
+          <div class="wf-card">
+            <div class="wf-card-title">Hasil Prediksi (7 Aspek)</div>
+            <div style="padding:14px 16px;">
+              <div class="wf-predict-row"><span><strong>Lokasi</strong> <span style="color:#999;font-size:10px;">— 87.3%</span></span><span class="wf-predict-label">Positif</span></div>
+              <div class="wf-predict-row"><span><strong>Kenyamanan</strong> <span style="color:#999;font-size:10px;">— 72.1%</span></span><span class="wf-predict-label">Negatif</span></div>
+              <div class="wf-predict-row"><span><strong>Pelayanan</strong> <span style="color:#999;font-size:10px;">— 91.5%</span></span><span class="wf-predict-label">Positif</span></div>
+              <div class="wf-predict-row"><span><strong>Kebersihan</strong> <span style="color:#999;font-size:10px;">— 68.9%</span></span><span class="wf-predict-label">Netral</span></div>
+              <div class="wf-predict-row"><span><strong>Harga</strong> <span style="color:#999;font-size:10px;">— 82.4%</span></span><span class="wf-predict-label">None</span></div>
+              <div class="wf-predict-row"><span><strong>Makanan</strong> <span style="color:#999;font-size:10px;">— 55.2%</span></span><span class="wf-predict-label">Negatif</span></div>
+              <div class="wf-predict-row"><span><strong>Fasilitas</strong> <span style="color:#999;font-size:10px;">— 78.6%</span></span><span class="wf-predict-label">Positif</span></div>
+              <div style="margin-top:14px; padding-top:12px; border-top:1px solid #ddd; text-align:right;">
+                <span class="wf-btn-outline">Simpan ke Database</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== PERFORMA MODEL ======== -->
+      <div class="page" id="p-perf">
+        <div class="wf-metric-grid">
+          <div class="wf-metric"><div class="wf-metric-value">81.2%</div><div class="wf-metric-label">Macro F1</div></div>
+          <div class="wf-metric"><div class="wf-metric-value">84.7%</div><div class="wf-metric-label">Weighted F1</div></div>
+          <div class="wf-metric"><div class="wf-metric-value">86.3%</div><div class="wf-metric-label">Accuracy</div></div>
+          <div class="wf-metric"><div class="wf-metric-value">72.8%</div><div class="wf-metric-label">Non-None F1</div></div>
+          <div class="wf-metric"><div class="wf-metric-value">89.1%</div><div class="wf-metric-label">Aspect Detection F1</div></div>
+          <div class="wf-metric"><div class="wf-metric-value">6.2%</div><div class="wf-metric-label">False Aspect Rate</div></div>
+        </div>
+
+        <div class="wf-card">
+          <div class="wf-card-title">Performa Per Aspek</div>
+          <div class="wf-placeholder wf-placeholder-tall">Grouped Bar Chart (F1 Score dan Accuracy per Aspek)</div>
+        </div>
+
+        <div class="wf-card">
+          <div class="wf-card-title">Konfigurasi Model</div>
+          <div class="wf-card-body">
+            <table class="wf-config-table">
+              <thead><tr><th>Parameter</th><th>Nilai</th></tr></thead>
+              <tbody>
+                <tr><td>Model</td><td>indobenchmark/indobert-base-p1</td></tr>
+                <tr><td>Max Length</td><td>128</td></tr>
+                <tr><td>Dropout</td><td>0.3</td></tr>
+                <tr><td>Freeze Layers</td><td>6</td></tr>
+                <tr><td>Learning Rate</td><td>2e-5</td></tr>
+                <tr><td>Batch Size</td><td>32</td></tr>
+                <tr><td>Epochs</td><td>15</td></tr>
+                <tr><td>Class Weight</td><td>balanced</td></tr>
+                <tr><td>Label Smoothing</td><td>0.1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== TENTANG SISTEM ======== -->
+      <div class="page" id="p-about">
+        <div class="wf-card">
+          <div class="wf-card-title">Tentang Sistem</div>
+          <div style="padding:16px;">
+            <div class="wf-about-callout">
+              <h3>Ringkasan singkat</h3>
+              <p>Dashboard ini membaca ulasan tamu Hotel Santika dari platform pemesanan online, lalu mengelompokkan isi setiap ulasan ke tujuh area layanan beserta sentimennya.</p>
+            </div>
+            <div class="wf-about-block">
+              <h3>Latar belakang</h3>
+              <p>Tamu menulis ulasan di banyak tempat — Traveloka, Agoda, Tiket.com — dan jumlahnya terus bertambah setiap hari. Sistem ini dibangun untuk merangkum ulasan tersebut menjadi gambaran yang bisa langsung ditindaklanjuti.</p>
+            </div>
+            <div class="wf-about-block">
+              <h3>Bagaimana ulasan diproses</h3>
+              <ul>
+                <li>Ulasan dikumpulkan dari platform OTA, dirapikan, dan diterjemahkan.</li>
+                <li>Model bahasa IndoBERT membaca setiap ulasan dan menentukan sentimen per aspek.</li>
+                <li>Hasilnya diringkas menjadi grafik dan tabel yang dapat disaring.</li>
+              </ul>
+            </div>
+            <div class="wf-about-block">
+              <h3>Tujuh area layanan</h3>
+              <ul>
+                <li><strong>Lokasi</strong> — akses, jarak ke pusat kota, lingkungan sekitar.</li>
+                <li><strong>Kenyamanan</strong> — kondisi kamar, kualitas tidur, suhu, ketenangan.</li>
+                <li><strong>Pelayanan</strong> — keramahan dan kecepatan respons staf.</li>
+                <li><strong>Kebersihan</strong> — kebersihan kamar, kamar mandi, area umum.</li>
+                <li><strong>Harga</strong> — kesesuaian harga dengan layanan.</li>
+                <li><strong>Makanan</strong> — kualitas, variasi, dan rasa hidangan.</li>
+                <li><strong>Fasilitas</strong> — kelengkapan dan kondisi fasilitas.</li>
+              </ul>
+            </div>
+            <div class="wf-about-block">
+              <h3>Sumber dan cakupan data</h3>
+              <ul>
+                <li>Platform: Traveloka, Agoda, dan Tiket.com.</li>
+                <li>Jumlah ulasan: lebih dari 15.000 ulasan tamu.</li>
+                <li>Wilayah: cabang Hotel Santika di Jawa Barat.</li>
+                <li>Bahasa: Bahasa Indonesia (termasuk terjemahan otomatis).</li>
+              </ul>
+            </div>
+            <div class="wf-about-callout" style="border-left-color:#aaa;">
+              <h3>Hal yang perlu diperhatikan</h3>
+              <p>Prediksi sentimen dihasilkan secara otomatis dan tidak selalu sempurna. Angka pada dashboard sebaiknya dipakai sebagai indikator awal, bukan satu-satunya dasar keputusan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<div class="watermark">WIREFRAME MOCKUP</div>
+
+<script>
+const TITLES = {
+  overview: ['Overview','Ringkasan analisis sentimen ulasan Hotel Santika Jawa Barat'],
+  aspect: ['Analisis Aspek','Distribusi sentimen untuk setiap aspek layanan'],
+  hotel: ['Hotel dan Platform','Perbandingan sentimen antar hotel dan platform OTA'],
+  trend: ['Tren Waktu','Perubahan sentimen dari waktu ke waktu'],
+  reviews: ['Review Explorer','Jelajahi dan cari review secara detail'],
+  predict: ['Prediksi Sentimen','Analisis sentimen review baru menggunakan IndoBERT'],
+  perf: ['Performa Model','Metrik evaluasi model IndoBERT fine-tune'],
+  about: ['Tentang Sistem','Informasi tentang sistem dashboard ABSA'],
+};
+
+function go(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('p-' + id).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('hTitle').textContent = TITLES[id][0];
+  document.getElementById('hSub').textContent = TITLES[id][1];
+  window.scrollTo(0, 0);
+}
+
+function showDashboard() {
+  document.getElementById('login-page').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'flex';
+}
+
+function showLogin() {
+  document.getElementById('dashboard').style.display = 'none';
+  document.getElementById('login-page').style.display = 'flex';
+}
+</script>
+</body>
+</html>

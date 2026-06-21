@@ -11,7 +11,7 @@ import os
 import re
 from pathlib import Path
 from functools import wraps
-from collections import Counter
+from collections import Counter, deque
 
 import numpy as np
 import pandas as pd
@@ -25,6 +25,7 @@ from transformers import AutoConfig, AutoModel, AutoTokenizer, BertConfig
 # ========================================
 BASE_DIR = Path(__file__).parent.parent  # ABSA Hotel Santika/
 MODEL_CANDIDATES = [
+    BASE_DIR / "Fine Tuning" / "Hasil" / "best_absa_indobert",
     BASE_DIR / "Fine Tuning" / "Model Terbaik" / "best_absa_indobert",
     BASE_DIR / "Fine Tuning" / "Final Model",
     BASE_DIR / "Fine Tuning" / "best_absa_indobert",
@@ -34,10 +35,29 @@ MODEL_DIR = next(
         path for path in MODEL_CANDIDATES
         if (path / "config.json").exists() and (path / "model_state.pt").exists()
     ),
-    MODEL_CANDIDATES[-1],
+    None,
 )
+if MODEL_DIR is None:
+    checked_paths = "\n".join(f"- {path}" for path in MODEL_CANDIDATES)
+    raise FileNotFoundError(
+        "Model IndoBERT tidak ditemukan. Pastikan config.json dan model_state.pt "
+        f"ada di salah satu folder berikut:\n{checked_paths}"
+    )
 PREDICTIONS_PATH = BASE_DIR / "dataset_with_predictions.csv"
 LABELED_PATH = BASE_DIR / "Data Labeling" / "dataset_absa_labeled.csv"
+ACTIVITY_LOG_PATH = BASE_DIR / "Dashboard" / "review_activity_log.jsonl"
+STAFF_USERS_PATH = BASE_DIR / "Dashboard" / "staff_users.json"
+
+def parse_review_dates(values):
+    """Parse tanggal review dari CSV lama dan input baru yang formatnya bisa campuran."""
+    try:
+        return pd.to_datetime(values, errors="coerce", format="mixed")
+    except (TypeError, ValueError):
+        return pd.to_datetime(values, errors="coerce")
+
+def ordered_platforms(values):
+    platforms = sorted(str(v) for v in values if str(v).strip())
+    return sorted(platforms, key=lambda value: (value == "Manual", value.lower()))
 
 # ========================================
 # LOAD CONFIG
@@ -131,7 +151,7 @@ else:
     df = pd.DataFrame()
 
 if not df.empty and "Review_Date" in df.columns:
-    df["_Review_Date_Sort"] = pd.to_datetime(df["Review_Date"], errors="coerce")
+    df["_Review_Date_Sort"] = parse_review_dates(df["Review_Date"])
 
 # ========================================
 # FLASK APP
@@ -143,16 +163,79 @@ app.config.update(
     SESSION_COOKIE_SAMESITE="Lax",
 )
 
-USERS = {
+DEFAULT_USERS = {
     "admin": {
-        "password": "santika-login-123", # simple password for the single user
+        "password": "santika-login-123",
         "name": "Manajemen Hotel",
         "role": "admin",
-        "role_label": "Stakeholder",
+        "role_label": "Manajemen",
     }
 }
 
+DEFAULT_STAFF_USERS = {
+    "staf_ota": {
+        "password": "ota-santika-123",
+        "name": "Staf OTA",
+        "role": "staff_ota",
+        "role_label": "Staf OTA",
+    }
+}
+
+def normalize_username(username):
+    return re.sub(r"\s+", "_", str(username or "").strip().lower())
+
+def load_staff_users():
+    if STAFF_USERS_PATH.exists():
+        try:
+            with open(STAFF_USERS_PATH, "r", encoding="utf-8") as f:
+                payload = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            payload = {}
+        users = payload.get("users", payload if isinstance(payload, dict) else {})
+        return {
+            normalize_username(username): {
+                "password": str(user.get("password", "")),
+                "name": str(user.get("name", username)).strip() or username,
+                "role": "staff_ota",
+                "role_label": "Staf OTA",
+            }
+            for username, user in users.items()
+            if isinstance(user, dict) and str(user.get("password", "")).strip()
+        }
+    return DEFAULT_STAFF_USERS.copy()
+
+def save_staff_users():
+    STAFF_USERS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    staff_users = {
+        username: {
+            "password": user["password"],
+            "name": user["name"],
+            "role": "staff_ota",
+            "role_label": "Staf OTA",
+        }
+        for username, user in sorted(USERS.items())
+        if user.get("role") == "staff_ota"
+    }
+    with open(STAFF_USERS_PATH, "w", encoding="utf-8") as f:
+        json.dump({"users": staff_users}, f, ensure_ascii=False, indent=2)
+
+USERS = {**DEFAULT_USERS, **load_staff_users()}
+
 PUBLIC_ENDPOINTS = {"login", "static"}
+ADMIN_ENDPOINTS = {
+    "api_overview",
+    "api_aspect_analysis",
+    "api_complaint_phrases",
+    "api_hotel_platform",
+    "api_trend",
+    "api_export_summary",
+    "api_price_quality",
+    "api_activity_log",
+    "api_staff_ota",
+    "api_create_staff_ota",
+    "api_delete_staff_ota",
+    "api_date_range",
+}
 
 def current_user():
     username = session.get("username")
@@ -178,11 +261,33 @@ def login_required(fn):
         return redirect(url_for("login"))
     return wrapper
 
+def role_required(*roles):
+    def decorator(fn):
+        @wraps(fn)
+        def wrapper(*args, **kwargs):
+            user = current_user()
+            if not user:
+                if request.path.startswith("/api/"):
+                    return jsonify({"error": "Autentikasi diperlukan"}), 401
+                return redirect(url_for("login"))
+            if user["role"] not in roles:
+                if request.path.startswith("/api/"):
+                    return jsonify({"error": "Akses tidak tersedia untuk role pengguna ini"}), 403
+                return redirect(url_for("index"))
+            return fn(*args, **kwargs)
+        return wrapper
+    return decorator
+
 @app.before_request
 def require_authenticated_session():
     if request.endpoint in PUBLIC_ENDPOINTS or request.endpoint is None:
         return None
-    if current_user():
+    user = current_user()
+    if user:
+        if request.endpoint in ADMIN_ENDPOINTS and user["role"] != "admin":
+            if request.path.startswith("/api/"):
+                return jsonify({"error": "Akses tidak tersedia untuk role pengguna ini"}), 403
+            return redirect(url_for("index"))
         return None
     if request.path.startswith("/api/"):
         return jsonify({"error": "Autentikasi diperlukan"}), 401
@@ -209,15 +314,15 @@ def get_filtered_df(args):
         filtered = filtered[filtered["Platform"] == platform]
 
     if date_from:
-        start_date = pd.to_datetime(date_from, errors="coerce")
+        start_date = parse_review_dates(date_from)
         if not pd.isna(start_date):
-            review_dates = pd.to_datetime(filtered["Review_Date"], errors="coerce")
+            review_dates = parse_review_dates(filtered["Review_Date"])
             filtered = filtered[review_dates >= start_date]
 
     if date_to:
-        end_date = pd.to_datetime(date_to, errors="coerce")
+        end_date = parse_review_dates(date_to)
         if not pd.isna(end_date):
-            review_dates = pd.to_datetime(filtered["Review_Date"], errors="coerce")
+            review_dates = parse_review_dates(filtered["Review_Date"])
             filtered = filtered[review_dates <= end_date]
 
     if aspect and aspect != "all":
@@ -246,9 +351,71 @@ def sort_reviews_newest_first(dataframe):
     if "_Review_Date_Sort" in sorted_df.columns:
         sorted_df = sorted_df.sort_values("_Review_Date_Sort", ascending=False, na_position="last")
     elif "Review_Date" in sorted_df.columns:
-        sorted_df["_review_date_sort"] = pd.to_datetime(sorted_df["Review_Date"], errors="coerce")
+        sorted_df["_review_date_sort"] = parse_review_dates(sorted_df["Review_Date"])
         sorted_df = sorted_df.sort_values("_review_date_sort", ascending=False, na_position="last")
     return sorted_df
+
+def json_safe(value):
+    if pd.isna(value):
+        return ""
+    if isinstance(value, (np.integer, np.floating)):
+        return value.item()
+    return value
+
+def compact_review_record(row_like):
+    """Ambil field utama review untuk audit log dan respons aksi."""
+    row = row_like.to_dict() if hasattr(row_like, "to_dict") else dict(row_like or {})
+    keys = ["ID_Review", "Platform", "Nama_Hotel", "Review_Date", "Text_Review"]
+    record = {key: json_safe(row.get(key, "")) for key in keys}
+    text = str(record.get("Text_Review", ""))
+    record["Text_Review_Short"] = text[:220] + ("..." if len(text) > 220 else "")
+    return record
+
+def append_activity_log(action, review, details=None):
+    """Catat aktivitas input/hapus review agar manajemen dapat mengaudit pekerjaan staf."""
+    user = current_user() or {}
+    labels = {"input": "Input review", "delete": "Hapus review"}
+    entry = {
+        "timestamp": pd.Timestamp.now(tz="Asia/Bangkok").strftime("%Y-%m-%d %H:%M:%S %Z"),
+        "action": action,
+        "action_label": labels.get(action, action),
+        "actor_username": user.get("username", ""),
+        "actor_name": user.get("name", ""),
+        "actor_role": user.get("role", ""),
+        "actor_role_label": user.get("role_label", ""),
+        "review": compact_review_record(review),
+        "details": details or {},
+    }
+    ACTIVITY_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(ACTIVITY_LOG_PATH, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+    return entry
+
+def read_activity_logs(limit=100):
+    """Baca log aktivitas terbaru dari JSON Lines."""
+    if not ACTIVITY_LOG_PATH.exists():
+        return []
+
+    rows = deque(maxlen=limit)
+    with open(ACTIVITY_LOG_PATH, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rows.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    return list(reversed(rows))
+
+def write_predictions_csv_from_df(dataframe):
+    """Tulis ulang CSV utama memakai urutan kolom aslinya."""
+    original_cols = pd.read_csv(PREDICTIONS_PATH, nrows=0).columns
+    csv_df = dataframe.copy()
+    for col in original_cols:
+        if col not in csv_df.columns:
+            csv_df[col] = ""
+    csv_df[original_cols].to_csv(PREDICTIONS_PATH, index=False, encoding="utf-8-sig")
 
 def compute_sentiment_stats(filtered_df):
     """Hitung statistik sentimen per aspek."""
@@ -614,6 +781,94 @@ def index():
 def api_session():
     return jsonify({"user": current_user()})
 
+@app.route("/api/staff-ota")
+@role_required("admin")
+def api_staff_ota():
+    staff = [
+        {
+            "username": username,
+            "name": user["name"],
+            "role_label": user["role_label"],
+        }
+        for username, user in sorted(USERS.items())
+        if user.get("role") == "staff_ota"
+    ]
+    return jsonify({"staff": staff})
+
+@app.route("/api/staff-ota", methods=["POST"])
+@role_required("admin")
+def api_create_staff_ota():
+    data = request.get_json(silent=True) or {}
+    username = normalize_username(data.get("username", ""))
+    name = str(data.get("name", "")).strip()
+    password = str(data.get("password", "")).strip()
+
+    if not re.fullmatch(r"[a-z0-9_.-]{3,32}", username):
+        return jsonify({
+            "error": "ID staf harus 3-32 karakter dan hanya boleh berisi huruf kecil, angka, titik, strip, atau underscore."
+        }), 400
+    if username in USERS:
+        return jsonify({"error": "ID staf sudah digunakan"}), 409
+    if len(password) < 6:
+        return jsonify({"error": "Password minimal 6 karakter"}), 400
+
+    USERS[username] = {
+        "password": password,
+        "name": name or username.replace("_", " ").title(),
+        "role": "staff_ota",
+        "role_label": "Staf OTA",
+    }
+    save_staff_users()
+    return jsonify({
+        "success": True,
+        "message": "Staf OTA berhasil ditambahkan",
+        "staff": {
+            "username": username,
+            "name": USERS[username]["name"],
+            "role_label": USERS[username]["role_label"],
+        },
+    })
+
+@app.route("/api/staff-ota/<username>", methods=["DELETE"])
+@role_required("admin")
+def api_delete_staff_ota(username):
+    username = normalize_username(username)
+    user = USERS.get(username)
+    if not user or user.get("role") != "staff_ota":
+        return jsonify({"error": "Staf OTA tidak ditemukan"}), 404
+
+    deleted = {
+        "username": username,
+        "name": user["name"],
+        "role_label": user["role_label"],
+    }
+    del USERS[username]
+    save_staff_users()
+    return jsonify({
+        "success": True,
+        "message": "Staf OTA berhasil dihapus",
+        "staff": deleted,
+    })
+
+@app.route("/api/date-range")
+def api_date_range():
+    """Rentang tanggal berdasarkan filter hotel/platform aktif."""
+    if df.empty:
+        return jsonify({"date_range": {"min": "", "max": ""}})
+
+    filtered = df.copy()
+    hotel = request.args.get("hotel", "")
+    platform = request.args.get("platform", "")
+    if hotel and hotel != "all" and "Nama_Hotel" in filtered.columns:
+        filtered = filtered[filtered["Nama_Hotel"] == hotel]
+    if platform and platform != "all" and "Platform" in filtered.columns:
+        filtered = filtered[filtered["Platform"] == platform]
+
+    dates = parse_review_dates(filtered["Review_Date"]).dropna() if "Review_Date" in filtered.columns else pd.Series(dtype="datetime64[ns]")
+    date_min = dates.min().strftime("%Y-%m-%d") if len(dates) > 0 else ""
+    date_max = dates.max().strftime("%Y-%m-%d") if len(dates) > 0 else ""
+    return jsonify({"date_range": {"min": date_min, "max": date_max}})
+
 
 @app.route("/api/overview")
 def api_overview():
@@ -626,7 +881,7 @@ def api_overview():
     # Statistik dasar
     total_reviews = len(filtered)
     hotels = sorted(filtered["Nama_Hotel"].unique().tolist()) if "Nama_Hotel" in filtered.columns else []
-    platforms = sorted(filtered["Platform"].unique().tolist()) if "Platform" in filtered.columns else []
+    platforms = ordered_platforms(filtered["Platform"].unique().tolist()) if "Platform" in filtered.columns else []
 
     # Distribusi sentimen global (aggregate semua aspek)
     sentiment_counts = {"positif": 0, "negatif": 0, "netral": 0, "none": 0}
@@ -721,7 +976,7 @@ def api_hotel_platform():
 
     # Per platform
     platform_stats = {}
-    for platform in sorted(filtered["Platform"].unique()):
+    for platform in ordered_platforms(filtered["Platform"].unique()):
         platform_df = filtered[filtered["Platform"] == platform]
         platform_stats[platform] = compute_sentiment_stats(platform_df)
 
@@ -740,7 +995,7 @@ def api_trend():
 
     # Parse date
     filtered_copy = filtered.copy()
-    filtered_copy["_date"] = pd.to_datetime(filtered_copy["Review_Date"], errors="coerce")
+    filtered_copy["_date"] = parse_review_dates(filtered_copy["Review_Date"])
     filtered_copy = filtered_copy.dropna(subset=["_date"])
 
     granularity = request.args.get("granularity", "year")
@@ -825,6 +1080,57 @@ def api_reviews():
         "reviews": records,
     })
 
+@app.route("/api/reviews/<review_id>", methods=["DELETE"])
+@role_required("admin", "staff_ota")
+def api_delete_review(review_id):
+    """Hapus satu review dari dataset dan catat aktivitasnya."""
+    global df
+    if df.empty:
+        return jsonify({"error": "Data belum dimuat"}), 400
+    if "ID_Review" not in df.columns:
+        return jsonify({"error": "Kolom ID_Review tidak tersedia"}), 500
+
+    review_id = str(review_id).strip()
+    if not review_id:
+        return jsonify({"error": "ID review tidak valid"}), 400
+
+    match = df["ID_Review"].astype(str) == review_id
+    if not bool(match.any()):
+        return jsonify({"error": "Review tidak ditemukan"}), 404
+
+    deleted_row = df.loc[match].iloc[0].copy()
+    remaining_df = df.loc[~match].reset_index(drop=True)
+
+    try:
+        write_predictions_csv_from_df(remaining_df)
+    except Exception as e:
+        return jsonify({"error": f"Gagal menghapus dari CSV: {str(e)}"}), 500
+
+    df = remaining_df
+    log_entry = append_activity_log(
+        "delete",
+        deleted_row,
+        {"deleted_count": int(match.sum())},
+    )
+
+    return jsonify({
+        "success": True,
+        "message": "Review berhasil dihapus",
+        "deleted_review": compact_review_record(deleted_row),
+        "log": log_entry,
+    })
+
+@app.route("/api/activity-log")
+@role_required("admin")
+def api_activity_log():
+    """Log input/hapus review untuk tampilan manajemen."""
+    limit = request.args.get("limit", 100)
+    try:
+        limit = max(1, min(int(limit), 500))
+    except ValueError:
+        limit = 100
+    return jsonify({"logs": read_activity_logs(limit=limit)})
+
 @app.route("/api/export")
 def api_export():
     """Export filtered data ke CSV."""
@@ -846,7 +1152,7 @@ def api_export_summary():
     total_reviews = len(filtered)
 
     hotels = sorted(filtered["Nama_Hotel"].unique().tolist()) if "Nama_Hotel" in filtered.columns else []
-    platforms = sorted(filtered["Platform"].unique().tolist()) if "Platform" in filtered.columns else []
+    platforms = ordered_platforms(filtered["Platform"].unique().tolist()) if "Platform" in filtered.columns else []
 
     sentiment_counts = {"positif": 0, "negatif": 0, "netral": 0}
     for aspect in ASPECTS:
@@ -900,7 +1206,7 @@ def api_export_summary():
             })
     recent_neg = recent_neg[:10]
 
-    dates = pd.to_datetime(filtered["Review_Date"], errors="coerce").dropna()
+    dates = parse_review_dates(filtered["Review_Date"]).dropna()
     date_min = dates.min().strftime("%Y-%m-%d") if len(dates) > 0 else ""
     date_max = dates.max().strftime("%Y-%m-%d") if len(dates) > 0 else ""
 
@@ -974,9 +1280,10 @@ def api_price_quality():
     return jsonify({"hotels": hotel_data, "target_aspects": target_aspects})
 
 @app.route("/api/predict", methods=["POST"])
+@role_required("admin", "staff_ota")
 def api_predict():
     """Prediksi AI review baru menggunakan model IndoBERT."""
-    data = request.get_json()
+    data = request.get_json(silent=True) or {}
     text = data.get("text", "").strip()
 
     if not text:
@@ -1021,10 +1328,11 @@ def api_predict():
     })
 
 @app.route("/api/save-prediction", methods=["POST"])
+@role_required("admin", "staff_ota")
 def api_save_prediction():
     """Simpan hasil prediksi ke dataset."""
     global df
-    data = request.get_json()
+    data = request.get_json(silent=True) or {}
     
     text = data.get("text", "").strip()
     hotel = data.get("hotel", "").strip()
@@ -1036,7 +1344,7 @@ def api_save_prediction():
         return jsonify({"error": "Data tidak lengkap"}), 400
 
     # Generate unique ID
-    new_id = f"M-{pd.Timestamp.now().strftime('%Y%m%d%H%M%S')}"
+    new_id = f"M-{pd.Timestamp.now().strftime('%Y%m%d%H%M%S%f')}"
     
     # Construct row mapping
     row_data = {
@@ -1069,7 +1377,7 @@ def api_save_prediction():
     
     # Preprocess for memory df (similar to load_data)
     try:
-        new_row_df["_Review_Date_Sort"] = pd.to_datetime(new_row_df["Review_Date"])
+        new_row_df["_Review_Date_Sort"] = parse_review_dates(new_row_df["Review_Date"])
         new_row_df["_Review_Year"] = new_row_df["_Review_Date_Sort"].dt.year
         new_row_df["_Review_Month"] = new_row_df["_Review_Date_Sort"].dt.month
     except Exception:
@@ -1092,8 +1400,23 @@ def api_save_prediction():
 
     # Append to memory df at the top
     df = pd.concat([new_row_df, df], ignore_index=True)
+    log_entry = append_activity_log(
+        "input",
+        row_data,
+        {
+            "sentiment_summary": Counter(
+                p.get("prediction", "none") for p in predictions
+            ),
+            "manual_overrides": int(sum(1 for p in predictions if p.get("manual_override"))),
+        },
+    )
 
-    return jsonify({"success": True, "message": "Data berhasil disimpan"})
+    return jsonify({
+        "success": True,
+        "message": "Data berhasil disimpan",
+        "review_id": new_id,
+        "log": log_entry,
+    })
 
 @app.route("/api/model-performance")
 def api_model_performance():
@@ -1132,10 +1455,10 @@ def api_filters():
         return jsonify({"hotels": [], "platforms": [], "aspects": ASPECTS})
 
     hotels = sorted(df["Nama_Hotel"].unique().tolist()) if "Nama_Hotel" in df.columns else []
-    platforms = sorted(df["Platform"].unique().tolist()) if "Platform" in df.columns else []
+    platforms = ordered_platforms(df["Platform"].unique().tolist()) if "Platform" in df.columns else []
 
     # Rentang tanggal
-    dates = pd.to_datetime(df["Review_Date"], errors="coerce").dropna()
+    dates = parse_review_dates(df["Review_Date"]).dropna()
     date_min = dates.min().strftime("%Y-%m-%d") if len(dates) > 0 else ""
     date_max = dates.max().strftime("%Y-%m-%d") if len(dates) > 0 else ""
 

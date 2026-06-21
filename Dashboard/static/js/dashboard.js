@@ -50,8 +50,14 @@ const appState = {
     priorityPage: 1,
     priorityPerPage: 5,
     reviewPerPage: 10,
+    reviewPage: 1,
+    overviewDateRange: { min: '', max: '' },
 };
 const CURRENT_USER = window.ABSA_USER || {};
+const IS_ADMIN = CURRENT_USER.role === 'admin';
+const CAN_MANAGE_REVIEWS = ['admin', 'staff_ota'].includes(CURRENT_USER.role);
+const CAN_VIEW_ACTIVITY_LOG = IS_ADMIN;
+const STAFF_ALLOWED_PAGES = new Set(['reviews', 'predict', 'performance', 'about']);
 document.title = 'Customer Sentiment Dashboard - Hotel Santika Jawa Barat';
 
 function cssVar(name, fallback = '') {
@@ -100,6 +106,7 @@ function reloadActivePage() {
         case 'trend': loadTrend(); break;
         case 'reviews': loadReviews(1); break;
         case 'performance': loadPerformance(); break;
+        case 'staff': loadStaffManagement(); break;
     }
 }
 
@@ -116,11 +123,22 @@ const PAGE_TITLES = {
     'reviews': ['Review Explorer', 'Jelajahi dan cari review secara detail'],
     'predict': ['Prediksi Sentimen', 'Analisis sentimen review baru menggunakan IndoBERT'],
     'performance': ['Performa Model', 'Metrik evaluasi model IndoBERT fine-tune'],
+    'staff': ['Manajemen Staf OTA', 'Tambah, lihat, dan hapus akun Staf OTA'],
     'about': ['Tentang Sistem', 'Informasi tentang sistem dashboard ABSA'],
 };
 
 function checkAuth() {
-    // Stakeholder version has full access, no admin checks needed
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.hidden = !canAccessPage(item.dataset.page);
+    });
+}
+
+function canAccessPage(page) {
+    return IS_ADMIN || STAFF_ALLOWED_PAGES.has(page);
+}
+
+function getDefaultPage() {
+    return IS_ADMIN ? 'overview' : 'reviews';
 }
 
 document.querySelectorAll('.nav-item').forEach(item => {
@@ -131,6 +149,10 @@ document.querySelectorAll('.nav-item').forEach(item => {
 });
 
 function navigateTo(page) {
+    if (!canAccessPage(page) || !document.getElementById(`page-${page}`)) {
+        page = getDefaultPage();
+    }
+
     // Update nav
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     const navEl = document.querySelector(`[data-page="${page}"]`);
@@ -152,8 +174,12 @@ function navigateTo(page) {
         case 'aspect': loadAspectAnalysis(); break;
         case 'hotel-platform': loadHotelPlatform(); break;
         case 'trend': loadTrend(); break;
-        case 'reviews': loadReviews(1); break;
+        case 'reviews':
+            loadReviews(1);
+            if (CAN_VIEW_ACTIVITY_LOG) loadActivityLog();
+            break;
         case 'performance': loadPerformance(); break;
+        case 'staff': loadStaffManagement(); break;
     }
 
     // Close mobile sidebar
@@ -197,9 +223,10 @@ function renderReviewCard(r, options = {}) {
     const sentClass = { positif: 'pos', negatif: 'neg', netral: 'net' };
     const sentText = { positif: 'Positif', negatif: 'Negatif', netral: 'Netral' };
     const hotel = (r.Nama_Hotel || '').replace('Hotel Santika ', '') || '-';
-    const platform = r.Platform || '-';
+    const platform = platformLabel(r.Platform || '-');
     const date = r.Review_Date || '-';
     const id = r.ID_Review || '';
+    const showActions = Boolean(id && CAN_MANAGE_REVIEWS && options.actions !== false && !options.onlyAspect);
 
     // Jika options.onlyAspect diberikan, tonjolkan aspek itu; selain itu tampilkan semua aspek bersentimen.
     const aspectsToShow = options.onlyAspect ? [options.onlyAspect] : ASPECTS;
@@ -223,6 +250,7 @@ function renderReviewCard(r, options = {}) {
                 <span class="review-item-meta">${escapeHtml(platform)}</span>
                 <span class="review-item-meta">${escapeHtml(date)}</span>
                 ${id ? `<span class="review-item-meta">ID ${escapeHtml(id)}</span>` : ''}
+                ${showActions ? `<button class="btn btn-danger btn-sm review-delete-btn" type="button" data-review-id="${escapeHtml(id)}" onclick="deleteReview(this.dataset.reviewId)">Hapus</button>` : ''}
             </div>
             <div class="review-item-text">${escapeHtml(r.Text_Review || '')}</div>
             ${chipsBlock}
@@ -251,6 +279,12 @@ function escapeHtml(value) {
         .replace(/'/g, '&#039;');
 }
 
+function platformLabel(platform) {
+    if (platform === 'Manual') return 'Lainnya';
+    if (platform === 'Tiket') return 'Tiket.com';
+    return platform || '-';
+}
+
 function formatMetric(value) {
     const num = Number(value || 0);
     return `${(num * 100).toFixed(1)}%`;
@@ -272,10 +306,11 @@ function addMonths(date, months) {
     return next;
 }
 
-function getOverviewDateParams(rangeKey = appState.overviewRange) {
-    const maxDateText = appState.dateRange.max;
+function getOverviewDateParams(rangeKey = appState.overviewRange, dateRange = appState.overviewDateRange) {
+    const effectiveRange = dateRange?.max ? dateRange : appState.dateRange;
+    const maxDateText = effectiveRange.max;
     if (!maxDateText || rangeKey === 'all') {
-        return { params: {}, label: 'Seluruh rentang data' };
+        return { params: {}, label: 'Seluruh rentang data', dateRange: effectiveRange };
     }
 
     const maxDate = new Date(`${maxDateText}T00:00:00`);
@@ -283,21 +318,24 @@ function getOverviewDateParams(rangeKey = appState.overviewRange) {
     let endDate = maxDate;
     let label = 'Seluruh rentang data';
 
-    if (rangeKey === '7d') {
+    if (rangeKey === '1d') {
+        startDate = maxDate;
+        label = '1 hari terakhir pada filter ini';
+    } else if (rangeKey === '7d') {
         startDate = addDays(maxDate, -6);
-        label = '7 hari terakhir pada dataset';
+        label = '7 hari terakhir pada filter ini';
     } else if (rangeKey === '30d') {
         startDate = addDays(maxDate, -29);
-        label = '30 hari terakhir pada dataset';
+        label = '30 hari terakhir pada filter ini';
     } else if (rangeKey === '3m') {
         startDate = addMonths(maxDate, -3);
-        label = '3 bulan terakhir pada dataset';
+        label = '3 bulan terakhir pada filter ini';
     } else if (rangeKey === '6m') {
         startDate = addMonths(maxDate, -6);
-        label = '6 bulan terakhir pada dataset';
+        label = '6 bulan terakhir pada filter ini';
     } else if (rangeKey === '1y') {
         startDate = addMonths(maxDate, -12);
-        label = '1 tahun terakhir pada dataset';
+        label = '1 tahun terakhir pada filter ini';
     } else if (/^\d{4}$/.test(rangeKey)) {
         startDate = new Date(`${rangeKey}-01-01T00:00:00`);
         endDate = new Date(`${rangeKey}-12-31T00:00:00`);
@@ -307,7 +345,7 @@ function getOverviewDateParams(rangeKey = appState.overviewRange) {
     const params = {};
     if (startDate) params.date_from = toDateInputValue(startDate);
     if (endDate) params.date_to = toDateInputValue(endDate);
-    return { params, label };
+    return { params, label, dateRange: effectiveRange };
 }
 
 function getAspectRows(stats) {
@@ -682,6 +720,7 @@ function drillDownToReviews(filters = {}) {
 // ========================================
 async function initFilters() {
     const data = await fetchAPI('/api/filters');
+    if (data.error) return;
 
     // Populate all hotel dropdowns
     document.querySelectorAll('.filter-hotel').forEach(select => {
@@ -694,7 +733,7 @@ async function initFilters() {
     // Populate all platform dropdowns
     document.querySelectorAll('.filter-platform').forEach(select => {
         data.platforms.forEach(p => {
-            select.innerHTML += `<option value="${p}">${p}</option>`;
+            select.innerHTML += `<option value="${escapeHtml(p)}">${escapeHtml(platformLabel(p))}</option>`;
         });
     });
 
@@ -710,6 +749,7 @@ async function initFilters() {
 
     if (data.date_range) {
         appState.dateRange = data.date_range;
+        appState.overviewDateRange = data.date_range;
         ['trend-date-from', 'trend-date-to', 'review-date-from', 'review-date-to'].forEach(id => {
             const input = document.getElementById(id);
             if (input) {
@@ -725,8 +765,12 @@ async function initFilters() {
 // PAGE: OVERVIEW
 // ========================================
 async function loadOverview() {
-    const { params, label } = getOverviewDateParams();
     const { hotel: ovHotel, platform: ovPlatform } = getFilterValues('overview');
+    const rangeData = await fetchAPI('/api/date-range', { hotel: ovHotel, platform: ovPlatform });
+    if (!rangeData.error && rangeData.date_range) {
+        appState.overviewDateRange = rangeData.date_range;
+    }
+    const { params, label, dateRange } = getOverviewDateParams();
     const allParams = { ...params };
     if (ovHotel && ovHotel !== 'all') allParams.hotel = ovHotel;
     if (ovPlatform && ovPlatform !== 'all') allParams.platform = ovPlatform;
@@ -739,8 +783,8 @@ async function loadOverview() {
     const posRate = totalSentiment > 0 ? ((data.sentiment_counts.positif / totalSentiment) * 100).toFixed(1) : 0;
 
     const dateText = params.date_from || params.date_to
-        ? `${params.date_from || appState.dateRange.min} sampai ${params.date_to || appState.dateRange.max}`
-        : `${appState.dateRange.min || '-'} sampai ${appState.dateRange.max || '-'}`;
+        ? `${params.date_from || dateRange.min || '-'} sampai ${params.date_to || dateRange.max || '-'}`
+        : `${dateRange.min || '-'} sampai ${dateRange.max || '-'}`;
     const timeLabel = document.getElementById('overview-time-label');
     if (timeLabel) {
         timeLabel.textContent = `${label} - ${dateText}`;
@@ -754,6 +798,7 @@ async function loadOverview() {
                 <div class="stat-card-note" id="overview-time-label">${label} &middot; ${dateText}</div>
                 <select class="quick-filter-select" id="overview-time-select" aria-label="Filter waktu overview">
                     <option value="all">Semua data</option>
+                    <option value="1d">1 hari terakhir</option>
                     <option value="7d">7 hari terakhir</option>
                     <option value="30d">30 hari terakhir</option>
                     <option value="3m">3 bulan terakhir</option>
@@ -960,8 +1005,12 @@ async function loadPriceQuality(overviewParams = {}) {
 // EXPORT SUMMARY FOR BRIEFING
 // ========================================
 async function exportSummary() {
-    const { params } = getOverviewDateParams();
     const { hotel: ovHotel, platform: ovPlatform } = getFilterValues('overview');
+    const rangeData = await fetchAPI('/api/date-range', { hotel: ovHotel, platform: ovPlatform });
+    if (!rangeData.error && rangeData.date_range) {
+        appState.overviewDateRange = rangeData.date_range;
+    }
+    const { params } = getOverviewDateParams();
     const allParams = { ...params };
     if (ovHotel && ovHotel !== 'all') allParams.hotel = ovHotel;
     if (ovPlatform && ovPlatform !== 'all') allParams.platform = ovPlatform;
@@ -1016,7 +1065,7 @@ th{background:#f5f5f5;font-weight:600}
     Dibuat: ${escapeHtml(data.generated_at)} &bull;
     Periode data: ${escapeHtml(data.date_range?.min || '-')} s/d ${escapeHtml(data.date_range?.max || '-')} &bull;
     Hotel: ${data.hotels?.length || 0} cabang &bull;
-    Platform: ${escapeHtml((data.platforms || []).join(', ') || '-')}
+    Platform: ${escapeHtml((data.platforms || []).map(platformLabel).join(', ') || '-')}
 </div>
 
 <div class="stats-grid">
@@ -1284,7 +1333,7 @@ async function loadHotelPlatform() {
     charts['platform-compare'] = new Chart(ctx2, {
         type: 'bar',
         data: {
-            labels: platforms,
+            labels: platforms.map(platformLabel),
             datasets: [
                 { label: sentimentLabel('positif'), data: platPos, backgroundColor: COLORS.positif + 'cc', borderRadius: 4 },
                 { label: sentimentLabel('negatif'), data: platNeg, backgroundColor: COLORS.negatif + 'cc', borderRadius: 4 },
@@ -1479,6 +1528,7 @@ function resetTrendFilters() {
 // PAGE: REVIEW EXPLORER
 // ========================================
 async function loadReviews(page = 1) {
+    appState.reviewPage = page;
     const { hotel, platform } = getFilterValues('review');
     const aspect = document.getElementById('review-filter-aspect')?.value || 'all';
     const sentiment = document.getElementById('review-filter-sentiment')?.value || 'all';
@@ -1488,6 +1538,11 @@ async function loadReviews(page = 1) {
 
     const data = await fetchAPI('/api/reviews', { hotel, platform, aspect, sentiment, keyword, date_from: dateFrom, date_to: dateTo, page, per_page: appState.reviewPerPage });
     if (data.error) return;
+
+    if (data.total > 0 && page > (data.total_pages || 1)) {
+        await loadReviews(data.total_pages || 1);
+        return;
+    }
 
     // Count
     document.getElementById('review-count').textContent = `${data.total.toLocaleString()} review ditemukan`;
@@ -1527,6 +1582,93 @@ async function loadReviews(page = 1) {
     navHtml += `<span class="pagination-info">Hal ${page}/${totalPages}</span>`;
     navHtml += `<button class="pagination-btn" ${page >= totalPages ? 'disabled' : ''} onclick="loadReviews(${page + 1})">&raquo;</button>`;
     pagEl.innerHTML = navHtml;
+}
+
+async function deleteReview(reviewId) {
+    if (!CAN_MANAGE_REVIEWS || !reviewId) return;
+
+    const ok = confirm(`Hapus review ${reviewId} dari dataset? Aksi ini akan tercatat di log aktivitas.`);
+    if (!ok) return;
+
+    try {
+        const res = await fetch(`/api/reviews/${encodeURIComponent(reviewId)}`, {
+            method: 'DELETE',
+        });
+        const data = await res.json();
+
+        if (!res.ok || data.error) {
+            alert('Gagal menghapus review: ' + (data.error || res.statusText));
+            return;
+        }
+
+        alert('Review berhasil dihapus.');
+        await loadReviews(appState.reviewPage);
+        if (CAN_VIEW_ACTIVITY_LOG) {
+            await loadActivityLog();
+        }
+    } catch (err) {
+        alert('Terjadi kesalahan saat menghapus review: ' + err.message);
+    }
+}
+
+async function loadActivityLog() {
+    if (!CAN_VIEW_ACTIVITY_LOG) return;
+
+    const wrapper = document.getElementById('review-log-body');
+    if (!wrapper) return;
+
+    wrapper.innerHTML = '<div class="empty-state"><div class="empty-state-text">Memuat log aktivitas...</div></div>';
+    const data = await fetchAPI('/api/activity-log', { limit: 100 });
+    if (data.error) {
+        wrapper.innerHTML = `<div class="empty-state"><div class="empty-state-text">${escapeHtml(data.error)}</div></div>`;
+        return;
+    }
+
+    const logs = data.logs || [];
+    if (logs.length === 0) {
+        wrapper.innerHTML = '<div class="empty-state"><div class="empty-state-text">Belum ada aktivitas input atau penghapusan review.</div></div>';
+        return;
+    }
+
+    wrapper.innerHTML = `
+        <table class="data-table activity-log-table">
+            <thead>
+                <tr>
+                    <th>Waktu</th>
+                    <th>Aksi</th>
+                    <th>Pengguna</th>
+                    <th>Review</th>
+                    <th>Ringkasan</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${logs.map(log => {
+                    const review = log.review || {};
+                    const actionClass = log.action === 'delete' ? 'negatif' : 'positif';
+                    const reviewTitle = [
+                        review.Nama_Hotel,
+                        platformLabel(review.Platform),
+                        review.Review_Date,
+                    ].filter(Boolean).map(escapeHtml).join(' &middot; ');
+                    return `
+                        <tr>
+                            <td>${escapeHtml(log.timestamp || '-')}</td>
+                            <td><span class="badge badge-${actionClass}">${escapeHtml(log.action_label || log.action || '-')}</span></td>
+                            <td>
+                                <strong>${escapeHtml(log.actor_name || '-')}</strong>
+                                <div class="table-muted">${escapeHtml(log.actor_role_label || log.actor_username || '-')}</div>
+                            </td>
+                            <td>
+                                <strong>ID ${escapeHtml(review.ID_Review || '-')}</strong>
+                                <div class="table-muted">${reviewTitle || '-'}</div>
+                            </td>
+                            <td class="activity-log-text">${escapeHtml(review.Text_Review_Short || review.Text_Review || '-')}</td>
+                        </tr>
+                    `;
+                }).join('')}
+            </tbody>
+        </table>
+    `;
 }
 
 function setReviewPerPage(value) {
@@ -1780,7 +1922,7 @@ async function savePrediction() {
         if (data.error) {
             alert('Gagal menyimpan: ' + data.error);
         } else {
-            alert('Berhasil disimpan! Data telah ditambahkan ke database.');
+            alert(`Berhasil disimpan! Data telah ditambahkan ke database dengan ID ${data.review_id || 'baru'}.`);
             // Reset form
             document.getElementById('predict-input').value = '';
             document.getElementById('predict-input-hotel').value = '';
@@ -1789,6 +1931,9 @@ async function savePrediction() {
             document.getElementById('predict-results').innerHTML = '<div class="empty-state"><div class="empty-state-icon">AI</div><div class="empty-state-text">Masukkan review dan klik "Prediksi Sentimen" untuk melihat hasilnya.</div></div>';
             document.getElementById('predict-save-wrapper').style.display = 'none';
             lastPredictionData = null;
+            if (CAN_VIEW_ACTIVITY_LOG) {
+                loadActivityLog();
+            }
         }
     } catch (err) {
         alert('Terjadi kesalahan: ' + err.message);
@@ -1880,6 +2025,132 @@ async function loadPerformance() {
                 </ul>
             </div>
         `;
+    }
+}
+
+// ========================================
+// PAGE: STAFF MANAGEMENT
+// ========================================
+async function loadStaffManagement() {
+    if (!IS_ADMIN) return;
+
+    const wrapper = document.getElementById('staff-list');
+    if (!wrapper) return;
+
+    wrapper.innerHTML = '<div class="empty-state"><div class="empty-state-text">Memuat daftar staf OTA...</div></div>';
+    const data = await fetchAPI('/api/staff-ota');
+    if (data.error) {
+        wrapper.innerHTML = `<div class="empty-state"><div class="empty-state-text">${escapeHtml(data.error)}</div></div>`;
+        return;
+    }
+
+    const staff = data.staff || [];
+    if (!staff.length) {
+        wrapper.innerHTML = '<div class="empty-state"><div class="empty-state-text">Belum ada akun Staf OTA.</div></div>';
+        return;
+    }
+
+    wrapper.innerHTML = `
+        <table class="data-table staff-table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>ID Pengguna</th>
+                    <th>Role</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${staff.map(item => `
+                    <tr>
+                        <td><strong>${escapeHtml(item.name || '-')}</strong></td>
+                        <td><code>${escapeHtml(item.username || '-')}</code></td>
+                        <td><span class="badge badge-netral">${escapeHtml(item.role_label || 'Staf OTA')}</span></td>
+                        <td>
+                            <button class="btn btn-danger btn-sm" type="button" data-username="${escapeHtml(item.username)}" onclick="deleteStaffOta(this.dataset.username)">Hapus</button>
+                        </td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+    `;
+}
+
+function setStaffMessage(message, type = 'info') {
+    const box = document.getElementById('staff-message');
+    if (!box) return;
+    box.textContent = message || '';
+    box.className = `staff-message ${type}`;
+}
+
+async function createStaffOta(event) {
+    event.preventDefault();
+    if (!IS_ADMIN) return;
+
+    const name = document.getElementById('staff-name')?.value.trim() || '';
+    const username = document.getElementById('staff-username')?.value.trim() || '';
+    const password = document.getElementById('staff-password')?.value.trim() || '';
+    const button = document.getElementById('btn-create-staff');
+
+    if (!name || !username || !password) {
+        setStaffMessage('Nama, ID pengguna, dan password wajib diisi.', 'error');
+        return;
+    }
+
+    const originalText = button?.textContent || 'Tambah Staf OTA';
+    if (button) {
+        button.disabled = true;
+        button.textContent = 'Menyimpan...';
+    }
+    setStaffMessage('', 'info');
+
+    try {
+        const res = await fetch('/api/staff-ota', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, username, password }),
+        });
+        const data = await res.json();
+
+        if (!res.ok || data.error) {
+            setStaffMessage(data.error || 'Gagal menambahkan staf OTA.', 'error');
+            return;
+        }
+
+        document.getElementById('staff-form')?.reset();
+        setStaffMessage(`Staf OTA ${data.staff?.username || username} berhasil ditambahkan.`, 'success');
+        await loadStaffManagement();
+    } catch (err) {
+        setStaffMessage('Terjadi kesalahan: ' + err.message, 'error');
+    } finally {
+        if (button) {
+            button.disabled = false;
+            button.textContent = originalText;
+        }
+    }
+}
+
+async function deleteStaffOta(username) {
+    if (!IS_ADMIN || !username) return;
+
+    const ok = confirm(`Hapus akun Staf OTA "${username}"? Akun ini tidak bisa login lagi setelah dihapus.`);
+    if (!ok) return;
+
+    try {
+        const res = await fetch(`/api/staff-ota/${encodeURIComponent(username)}`, {
+            method: 'DELETE',
+        });
+        const data = await res.json();
+
+        if (!res.ok || data.error) {
+            setStaffMessage(data.error || 'Gagal menghapus staf OTA.', 'error');
+            return;
+        }
+
+        setStaffMessage(`Staf OTA ${username} berhasil dihapus.`, 'success');
+        await loadStaffManagement();
+    } catch (err) {
+        setStaffMessage('Terjadi kesalahan: ' + err.message, 'error');
     }
 }
 
@@ -2032,8 +2303,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         reloadActivePage();
     });
 
+    checkAuth();
     await initFilters();
-    loadOverview();
+    const initialPage = document.querySelector('.nav-item.active')?.dataset.page || getDefaultPage();
+    navigateTo(initialPage);
 
     initFontSettings();
 

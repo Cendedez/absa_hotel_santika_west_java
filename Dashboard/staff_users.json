@@ -1,0 +1,16 @@
+{
+  "users": {
+    "ota_aldi_tasik": {
+      "password": "Alditasik123",
+      "name": "Staf OTA Tasik (Aldi)",
+      "role": "staff_ota",
+      "role_label": "Staf OTA"
+    },
+    "staf_ota": {
+      "password": "ota-santika-123",
+      "name": "Staf OTA",
+      "role": "staff_ota",
+      "role_label": "Staf OTA"
+    }
+  }
+}

@@ -1,0 +1,6152 @@
+[
+  {
+    "no": 1,
+    "id": "170",
+    "text": "terima kasih to hotel santika bandung",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 2,
+    "id": "352",
+    "text": "hotel ini relatif tenang meskipun terletak dekat jalan utama. walaupun sudah tua tapi sudah diperbaharui sehingga kamarnya bersih. spa bagus untuk perawatan pijat.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "netral",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 3,
+    "id": "380",
+    "text": "nikmati masa menginap dengan staf yang membantu. telah ditingkatkan ke kamar suite. kondisi toilet perlu dilakukan renovasi karena sudah tua. secara keseluruhan, kamar hotel yang bagus dengan staf yang membantu dan ramah.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "netral",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "netral",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "netral",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 4,
+    "id": "412",
+    "text": "seperti pada review saya di atas hotel yang bagus dan menyenangkan dengan staf yang sangat membantu tetapi kurang fasilitas hotel bintang empat. paling nyaman bagi mereka yang suka berbelanja di factory outlet jalan riau karena jaraknya dapat dicapai dengan berjalan kaki. ada juga pusat perbelanjaan dan supermarket di seberang jalan.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 5,
+    "id": "477",
+    "text": "limayan dengan harga segitu. baik kok",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 6,
+    "id": "488",
+    "text": "bersih dan baik aja buat tinggal",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 7,
+    "id": "543",
+    "text": "ini adalah hotel favorite di bandung yang pertama kali dicari, bila tidak tersedia baru setelah itu cari yang lain",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 8,
+    "id": "863",
+    "text": "pendingin di kamar tidak beraza sama skali. dari malem ks pagi keringetan pdahal sudah di setting seminimal mungkin.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "netral",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "netral",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "negatif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 9,
+    "id": "885",
+    "text": "untuk hotel dan restonya cukup memuaskan, hanya untuk akses keluar masuk wisatawan yang tidak membawa kendaraan harus dilerhatikan juga, karena akses keluarnya hanya lewat mall dan tidak bisa diakses dimalam hari",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "negatif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 10,
+    "id": "1007",
+    "text": "lokasi strategis krena dekat dengan mall, sya dpat kamar yang agk mengecewakan. rak handuk d kamar mndinya rusak, bnyak yang kropos d dindingnya, staf d resto ada yang kurang ramah. makanannya kurang variatif, selebihnya baik!",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "negatif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "negatif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "negatif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "negatif",
+      "Lokasi": "netral",
+      "Fasilitas": "negatif",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 11,
+    "id": "1011",
+    "text": "sangat berkesan karena bisa cepat pesan kamar dan murah melalui agoda",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "negatif",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "netral",
+      "Harga": "negatif",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "netral"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "negatif",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "netral"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 12,
+    "id": "1036",
+    "text": "harga kompetitif di bekasi",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "netral"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "netral"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 13,
+    "id": "1108",
+    "text": "selalu puas dengan kebersihan keramahtamahan kompas gramedia group ini",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 14,
+    "id": "1140",
+    "text": "hotel nya bersih, lokasi top diatas mall.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "netral"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "netral"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 15,
+    "id": "1347",
+    "text": "tidak ada pengawasan di area kolam renang, staf tidak jujur ​​tentang ketersediaan kamar, tidak mengkomunikasikan hak istimewa, operator jarang mengangkat panggilan, lift sangat kecil. lobi dan area parkir sangat tidak nyaman.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 16,
+    "id": "1374",
+    "text": "bersenang-senang menginap di sini",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 17,
+    "id": "1656",
+    "text": "melihat keluarga dan anak yang menyenangkan selama liburan di hotel santika bogor",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 18,
+    "id": "1721",
+    "text": "bagus dekat dengan mall",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "netral",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "netral",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "netral",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 19,
+    "id": "1731",
+    "text": "service memuaskan, masakan enak, staf ramah dan baik",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 20,
+    "id": "1744",
+    "text": "terbaik untuk kenyamanan, keamanan, lokasi yang sangat strategis dri transportasi umum serta pusat perbelanjaan.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 21,
+    "id": "1804",
+    "text": "variasi untuk makanan pagi nya sedikit",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    }
+  },
+  {
+    "no": 22,
+    "id": "1890",
+    "text": "sangat menyenangkan dan akan kembali lagi untuk liburan thn depan",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 23,
+    "id": "1936",
+    "text": "kami menginap sayangnya hanya satu hari. anak2 senang bermain di kolam renang, dan jalan2 di mall malam hari",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "netral"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "netral"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 24,
+    "id": "2010",
+    "text": "lokasi ya berada di dalam botani juction, memudahkan untuk mencari makan dan nerbelanja, dekat dengan pusat kota, lokasi sangat menyenangkan dan kamar sangat bersih dan besar.",
+    "indobert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "netral"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "netral"
+    },
+    "claude_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "netral"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 25,
+    "id": "2089",
+    "text": "saya menginap di kamar superior di hotel santika cirebon untuk kedua kalinya karena hotel ini cukup nyaman untuk bermalam. kamar tidur dan kamar mandi cukup luas dan dilengkapi dengan fasilitas yang memadai. salah satu nilai tambah yang luar biasa dari hotel ini adalah pembersihan kendaraan gratis, yang merupakan sentuhan yang bagus. menu sahurnya cukup lengkap dan enak. stafnya ramah, dan proses check-in dan check-out cepat dan efisien. secara keseluruhan, menginap di hotel ini adalah pengalaman yang sangat menyenangkan.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "netral",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 26,
+    "id": "2237",
+    "text": "kamar yang nyaman bersih. namun furniturnya agak kumuh, diperlukan peningkatan / perbaikan. secara keseluruhan, kami menikmati masa menginap kami. direkomendasikan.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "netral",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "none",
+      "Pelayanan": "netral",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 27,
+    "id": "2361",
+    "text": "tidak ada yang kurang dari luar biasa. saya datang ke tempat ini bersama istri dan bayi saya yang berumur 4 bulan. saya singgah di cirebon selama perjalanan ke semarang. saya mendapatkan istirahat yang sangat baik di cirebon dan saya sangat puas dengan pilihan saya menginap di hotel santika cirebon.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "netral",
+      "Lokasi": "none",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "netral",
+      "Lokasi": "none",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "netral",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 28,
+    "id": "2677",
+    "text": "lokasi yang strategis namun sayangnya disebelah hotel adalah gedung pemerintahan dan pada saat sarapan pagi di hari jumat terganggu dengan suara musik senam massal. namun menu makanan cukup baik dengan menu tradisional nasi yang dibungkus dengan daun jati.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "netral"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "netral"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "negatif",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 29,
+    "id": "2678",
+    "text": "cukup bagus, variasi makanan paginya lumayan walaupun tidak banyak tapi televisi yang ada di kamar kecil sekali untuk harga yang lumayan mahal",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "netral",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "netral",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "netral",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 30,
+    "id": "2685",
+    "text": "kamar bagus, , kamar mandi luas, , view mengahadap ke swiming pool. bagus abis",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 31,
+    "id": "2803",
+    "text": "kami tinggal di sini dua malam. taksi sulit menemukan pintu masuk hotel. lokasinya strategis di sebelah pusat perbelanjaan kecil dan ada toko serba ada di dekatnya. tata letak ruangannya aneh. air conditioner di ruang tunggu tetapi tidak di kamar tidur, jadi kami merasa tidur di cuaca panas cukup sulit. air conditioner bermasalah dan bocor. sofa di ruang santai perlu diganti karena bernoda berat dan tidak nyaman untuk diduduki. kamar mandinya tidak sebersih yang kami inginkan, tapi baik. sarapannya enak dengan makanan lokal yang sangat kami nikmati",
+    "indobert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "negatif",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "negatif",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "negatif",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "netral",
+      "Pelayanan": "-",
+      "Harga": "netral",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 32,
+    "id": "2862",
+    "text": "seperti yang saya katakan sebelumnya, salah satu hotel terbaik di kota depok. jangan pernah meragukannya.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "netral",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "netral",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 33,
+    "id": "3044",
+    "text": "bagaimanapun, sarapannya luar biasa. anda bisa menikmati hidangan dari seluruh indonesia yang berubah setiap harinya. stafnya baik dan menyenangkan. ini adalah kunjungan saya yang kedua. saya berencana untuk tinggal di sana lagi lain kali. sayangnya, ini terkait dengan handuk. itu buruk. mempertimbangkan harganya, saya rasa saya tidak punya pilihan selain berkompromi.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "negatif",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "negatif"
+    }
+  },
+  {
+    "no": 34,
+    "id": "3064",
+    "text": "lokasi dan layanan staf keduanya bagus. tapi bau kamar mandinya agak menyengat jadi saya tutup pintu kamar mandinya. meski kecil, kecoa juga muncul.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 35,
+    "id": "3088",
+    "text": "staf baik sangat membantu dan yang jelas fasilitasnya bagus, makanan enak",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 36,
+    "id": "3185",
+    "text": "hotel sekelas santika msh kurang dalam fasilitas kamar, pelayanan bagus, untuk breakfast enak",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 37,
+    "id": "3356",
+    "text": "hotel yang bagus dengan kolam renang, makanan lezat",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 38,
+    "id": "3435",
+    "text": "pemeliharaan perlu banyak ditingkatkan.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "netral",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 39,
+    "id": "3636",
+    "text": "bagus kalau nginap di hotel santika via agoda",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 40,
+    "id": "3647",
+    "text": "nyaman untuk staycation keluarga",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 41,
+    "id": "3754",
+    "text": "harga pas, lokasi bagus, kamar bersih dan luas",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "netral",
+      "Pelayanan": "-",
+      "Harga": "netral",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 42,
+    "id": "3882",
+    "text": "proses check-in cukup baik, termasuk handling travel bag. petugas hotel cukup ramah. minus: - lift (kapasitas 1500kg) sangat lambat, dan sering muncul peringatan \"overload\" walaupun cuma berisi 4 orang dewasa. - bangunan yang relatif baru, masih sering tercium aroma cat.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 43,
+    "id": "3943",
+    "text": "staf nya baik semua. tambhin menu nya biar lebih byk pilihan. 2 malam disini. menyenangkan. cuma sapet kamar ujung. kalau malem seremm ajahh. krna lorkng kamar nya open space. bukan sprti hotel2 saat ini. old nya dapet. nyaman. anak2 suka kolam nya. kr a tidak langsung kena sina mataharilihat lebih sedikit",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 44,
+    "id": "3985",
+    "text": "kamarnya cozy, akses ke kota nya dekat sekali, pelayanannya excellent",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "negatif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 45,
+    "id": "4013",
+    "text": "tempat dekat rs dan riau juction. pelayanan ramah dan bersahabat. kebersihan baik hotel terjangkau, pilihan terbaik.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "netral",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 46,
+    "id": "4063",
+    "text": "sinyal handphone baik. hidangan gurih yang nikmat.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 47,
+    "id": "4105",
+    "text": "hotel bersih, pelayanan ramah.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 48,
+    "id": "4140",
+    "text": "hotel nya bagus deket kemanah2 hotel nya bersih makanan nya enak",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 49,
+    "id": "4297",
+    "text": "hotelnya nyaman kamarnya luas, bersih, lokasinya baik ada diantara mall jadi kalau mau beli makan dll gampang, sarapannya enak, pilihannya banyak. terima kasih santika bandung",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 50,
+    "id": "4330",
+    "text": "area yang nyaman. harga fantastis, pengalaman tak terlupakan. ada pilihan restoran di dalam hotel. staf yang luar biasa.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "netral",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "netral",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "negatif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 51,
+    "id": "4470",
+    "text": "tempat tidur anak nyaman. fasilitas up-to-date. suasana tropis di tepi kolam. resepsionis yang ramah dan sigap. menyediakan layanan shuttle ke pusat kota. menyediakan layanan shuttle ke pusat kota.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 52,
+    "id": "4503",
+    "text": "lokasinya baik, namun hotel sudah terlalu usang, makanannya tidak enak",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "negatif",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    }
+  },
+  {
+    "no": 53,
+    "id": "4561",
+    "text": "kamarnya bagus sangat bersih, segar, dan nyaman. taman yang terawat baik. ekonomis namun eksklusif.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 54,
+    "id": "4631",
+    "text": "staf ramah anak. fasilitas mewah. staf yang ramah anak dan tulus.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 55,
+    "id": "4666",
+    "text": "parkir dengan pencahayaan yang bagus. kebersihan tidak tertandingi.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "netral",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 56,
+    "id": "4788",
+    "text": "tipe kamar family nya asik. ada ruang tamu. kamar mandi luar. sayangnya agak sempit. tapi fasilitas baik. kamar bersih, sprei kasur juga bersih. breakfastnya standart.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "netral",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 57,
+    "id": "4827",
+    "text": "ini mah sudah jelas bagus n ya",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 58,
+    "id": "4849",
+    "text": "strategis dan di atas mall",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 59,
+    "id": "4871",
+    "text": "lounge nyaman banget. pelayan yang responsif dan ahli di bidangnya.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 60,
+    "id": "5203",
+    "text": "waktu cek in tidak bisa lebih maju 1 jam alasan kamar full itu aja yang disayangkan, so far bagus semua",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 61,
+    "id": "5295",
+    "text": "penginapan budget. dulu hampir setipa bulan pasti sempetin staycation disini. tapi sedih karna menu pizzanya gaada, padahal itu beneran best seller banget menurut ku. kembalikan menu pizzanya yaa ehehe",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 62,
+    "id": "5377",
+    "text": "baik, nyaman, fasilitasnya lengkap",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 63,
+    "id": "5439",
+    "text": "sedikit masukan ajh untuk toilet kamar nya bau gituh, tapi untuk keseluruhan sudah baik banget. bersih dan layanannya juga bagus.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "positif",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 64,
+    "id": "5461",
+    "text": "lumayan cuma dapat kamar yang tidak bisa lihat view luar. ketutup tembok",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "negatif",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "negatif",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "negatif",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 65,
+    "id": "5466",
+    "text": "kebersihan di seluruh area hotel.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 66,
+    "id": "5665",
+    "text": "jadi satu dengan mall dan masjid dekat, bagus",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 67,
+    "id": "5734",
+    "text": "suka bermalam di hotel santika bogor, tidak berisik. suasana hotel yang sangat menyenangkan dan pelayanan yang memuaskan dan petugas ramah\". jadi suka tidur di hotel ini. semua fasilitas baik banget deh. makanannyapun enak\"lihat lebih sedikit",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 68,
+    "id": "5837",
+    "text": "menyajikan hidangan khas daerah. keamanan parkir terbaik. hemat biaya.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 69,
+    "id": "6078",
+    "text": "hotel yang pas buat keluarga kolam renang nya enak banget buat anak2. lokasinya pas tengah kota deket mall. recomended deh",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 70,
+    "id": "6671",
+    "text": "jika anda mau pesan kamar pastikan contoh gambar kamarnya. kalau anda hanya lihat di profil bisa kecewa, kecewa dan kecewa. tidak sesuai yang kita mau. setelah check-in baru tahu deh. dalamnya ternyata",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 71,
+    "id": "6881",
+    "text": "officernya ramah, makanannya selalu enak",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "netral",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "netral",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 72,
+    "id": "7140",
+    "text": "lokasi strategis, menu breakfast cukup variasi, kamar nyaman and petugas ramah. sepadan dengan harganya. sayangnya wi-fi tidak berfungsi baik.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "netral",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 73,
+    "id": "7177",
+    "text": "hotel bagus, pelayanan memuaskan, sarapan enak. anak2 puas berenang, dan mobil dicuci. sangat berkesan",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 74,
+    "id": "7198",
+    "text": "lokasi strategis di tengah kota bandung",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 75,
+    "id": "7321",
+    "text": "kecuali makanannya, semua baik dan bagus",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 76,
+    "id": "7415",
+    "text": "secara keseluruhan, pengalaman menginap cukup baik. namun, hotel ini sudah tua dan perlu direnovasi. keunggulan hotel ini adalah lokasinya yang strategis, dengan supermarket dan restoran tepat di depannya.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 77,
+    "id": "7508",
+    "text": "ramah simpel dekat kemana mana",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 78,
+    "id": "7690",
+    "text": "sudah beberapa kali menginap di santika hotel bogor. sejauh ini kemudahan akses saat cek in dengan pelayanan staf yang ramah, serta koneksi ke mal untuk pemenuhan keperluan dan kebutuhan selama menginap. keramahan staf dan berkomunikasi dengan baik. semoga bisa terus dipertahankan dan ditingkatkan. terima kasih atas pelayanan yang baik ini.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 79,
+    "id": "7761",
+    "text": "semua orang ramah. kamarnya juga luas. dekat ke mana-mana. sangat mudah untuk pergi ke mal. meskipun kami menunggu cukup lama untuk check in, mereka berusaha memberi kami satu kamar untuk beristirahat.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 80,
+    "id": "7792",
+    "text": "di ruangan kamar, berasa banyak debu, ngeres, badan saya gatel-gatel setiap bangun tidur, tapi so far baik yang lain. tingkatkan ya!",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "negatif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 81,
+    "id": "7874",
+    "text": "semuanya ramah dan sangat membantu. buat yang akan menginap ke sini langsung aja masuk parkiran botani (depan convention hall). free parkir dengan stempel hotel. lokasi strategis, ke mall bisa punya akses langsung lewat lantai basement. bagi orang jakarta yang ingin pulang, bisa langsung akses toll jagorawi saat keluar parkir. makanan lumayan variatif, tersedia kolam renang buat anak. pagi-pagi bisa olahraga keliling kebun raya bogor.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 82,
+    "id": "7970",
+    "text": "alhamdulillah staffnya ramah, kalau ada kesempatan staycation lagi saya akan kesini lagi. makanan enak sangat bervariasi.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 83,
+    "id": "8006",
+    "text": "secara keseluruhan seperti biasa memenuhi ekspektasi. mungkin sedikit masukan untuk tayangan televisinya di review kembali karena pas di kamar saya kok tampilannya tidak jernih dan sepertinya tidak ada televisi kabel.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 84,
+    "id": "8019",
+    "text": "pelayanannya sangat baik, lokasi nyambung sama mall botani square, sarapan enak dan banyak macam nya dan kebersihannya terjamin.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "positif",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 85,
+    "id": "8029",
+    "text": "hotel yang lengkap dengan fasilitas dekat dengan mall jadi tidak perlu kemana-mana lagi untuk cari makan n hiburan untuk anak.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "netral",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "netral",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 86,
+    "id": "8210",
+    "text": "check-in sangat cepat, untuk roomnya sendiri kamarnya cukup luas tapi sayang sekali sprei dan sarung bantalnya banyak bercak-bercak entah bekas kopi atau bekas nyaman darah. untuk kamar mandi lampunya kurang terang agak remang-remang gitu dan agak berbau.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "netral",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 87,
+    "id": "8240",
+    "text": "sarapan yang lebih baik diantarkan ke kamar",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "negatif",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "negatif",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "negatif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 88,
+    "id": "8255",
+    "text": "hotelnya bersih, dekat dengan mal, jadi mau makan dan belanja gampang, pelayanannya ramah dan membantu, breakfast enak dan bervariasi, ada jamu juga, best pokoknya.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 89,
+    "id": "8292",
+    "text": "sangat meyenangkan dekat mall botani di pusat kota bogor dekat damri ke bandara dekat terminal baranag siang pokoknya sangat strategis lokasinya.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 90,
+    "id": "8331",
+    "text": "ramah, dekat kemana saja, sarapannya pun enak-enak.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 91,
+    "id": "8998",
+    "text": "tempat yang bagus dan pelayanan yang baik",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "netral",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 92,
+    "id": "9016",
+    "text": "tempat bersih dan nyaman, view bagus dan berada di pusat kota",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 93,
+    "id": "9122",
+    "text": "suasana dan pelayanan yang baik",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 94,
+    "id": "9265",
+    "text": "selalu nginap di sini karena kolam renang dan akses nya",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 95,
+    "id": "9280",
+    "text": "satu-satunya masalah adalah nyamuk. tapi selain itu baik",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "negatif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 96,
+    "id": "9361",
+    "text": "santika adalah hotel tua tetapi masih dikelola dengan baik. bersih, hangat, nyaman dan semua staf sangat membantu. kamar besar dan nyaman, makanan enak, parkir luas, ada kolam renang dan anak-anak saya senang bermain di kolam renang. akan memilih lagi ketika kita pergi ke cirebon lagi.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 97,
+    "id": "9407",
+    "text": "breakfast nya dilayani tapi pelayannya kurang sigap. juga kurang komplit.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 98,
+    "id": "9431",
+    "text": "ini pertama kalinya nginep di sini, proses check in cepat, kamar bagus bersih, air conditioner dingin, televisi banyak channel dan lengkap isinya. sarapan enak-enak dan menjaga prokes. kolam renang menyenangkan buat anak-anak dan berair hangat. fasilitas hotel bagus, parkiran luas dan setiap pagi mobil kita dicuci bersih. minusnya cuma 1: wi-fi di dalam kamar buruk (414), tapi kalau ke depan lorong bagus signalnya. kapan-kapan mau kesini lagi, tentunya kalau dapat harga promo.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "negatif",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 99,
+    "id": "9546",
+    "text": "pertama kali ke sini tahun 2009. lalu saat natal 2019 kemarin kamai pun kembali menginap di sini. interiornya tidak berubah, masih sama seperti 10 tahun lalu, kamar rapi dan bersih, yang agak susah kuncinya, karena kuncinya masih semi-manual, tidak seperti kunci zaman sekarang yang tinggal tap kartu saja. pelayanannya juga masih baik. dan karena datangnya saat liburan natal, kami dapat compliment berupa cookies ginger bread man, definitely will come here again.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 100,
+    "id": "9705",
+    "text": "kamar bersih, nyaman, pelayanan ramah, hanya 1 yang kurang tidak ada televisi cable kartun untuk anak-anak",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "negatif",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 101,
+    "id": "9712",
+    "text": "hotelnya walaupun lama tapi sangat terawat, mulai dari pintu masuk, securitynya ramah sekali sampai lobby, welcome drink langsung tersedia. semua pegawainya ramah dan membantu, kamarnya bersih, cukup tenang, enak banget buat istirahat, kolam renangnya juga bersih, aman buat anak-anak, kaporitnya juga tidak terlalu menyengat. makanannya enak, apalagi paket barbeque malamnya bagus banget, harganya juga terjangkau. satu lagi, pas mau check-out masukin barang ke mobil, ternyata mobil sudah dicuciin. overall, bagus banget nih hotel. terima kasih management hotel santika, terimakasih traveloka.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "netral",
+      "Pelayanan": "netral",
+      "Harga": "positif",
+      "Lokasi": "netral",
+      "Fasilitas": "netral",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 102,
+    "id": "9856",
+    "text": "pelayanan khas santika, namun kondisi hotel yang sudah tua sehingga banyak hal yang kurang optimal. dan perlu diperbaharui.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "negatif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 103,
+    "id": "9892",
+    "text": "sangat memuaskan pelayanannya, kebersihan, kenyamanan dan makannya.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 104,
+    "id": "9968",
+    "text": "saya pesan 2 kamar yang executive dan suite, yang kamar executive sempat masuk air dari jendela karena hujan tapi cepat diatasi setelah kami telepon room service, kamarnya yang suite bagus dan luas, cuma closet dan bathtubnya sudah lama tidak diganti warnanya kusam, hairdryernya juga copot pas mau digunakan, wifinya kenceng, sarapannya variatif, kolam renangnya luas, tapi sayang petugas penjaga kolam renangnya seperti kurang bersahabat, overall bagus.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 105,
+    "id": "10053",
+    "text": "cukup baik dan tidak mengecewakan",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "negatif",
+      "Lokasi": "positif",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 106,
+    "id": "10163",
+    "text": "sangat bagus dengan harga yang wajar. dengan dekorasi etnik dan unik.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "netral",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 107,
+    "id": "10309",
+    "text": "secara keseluruhan baik, hanya tidak ada wi-fi (tergantung ketersediaan kamar), televisi masih lcd jadul bukan internet televisi (tergantung ketersediaan kamar), sama tidak ada hairdryer kebersihan baik, keramahan staf baik, sarapan enak dan sangat variatif",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "negatif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "netral",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 108,
+    "id": "10375",
+    "text": "hotel terfavorit kalau lagi dinas ke depok",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 109,
+    "id": "10669",
+    "text": "kamar agak terlalu kecil dari foto. tapi, bersenang-senang tinggal!",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 110,
+    "id": "10837",
+    "text": "senang sekali menginap di hotel santika depok, pelayanan sangat ramah, kamar sangat nyaman, rapi dan bersih, dan breakfast menunya sangat enak dan memuaskan.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 111,
+    "id": "11045",
+    "text": "overall sangat puas dengan pelayanan.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 112,
+    "id": "11093",
+    "text": "layanan hebat dan sarapan enak.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 113,
+    "id": "11096",
+    "text": "kamarnya bersih, nyaman, dan makanannya enak.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 114,
+    "id": "11125",
+    "text": "kenyamanan saat istirahat/tidur kurang karena terdengar suara yang berisik seperti suara mesin/pompa air) mungkin karena dapat kamar dekat area pompa/mesin.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 115,
+    "id": "11201",
+    "text": "kamarnya kecil type deluxe breakfast baik menunya kamar mandi agak bau selebihnya baik.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "netral",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 116,
+    "id": "11227",
+    "text": "kalau booked via online booking harus isi special request. saya hampir dikasih smoking room, untungnya tidak jadi.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 117,
+    "id": "11335",
+    "text": "bagus, sipp, bagus, tingkatkan terus",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 118,
+    "id": "11482",
+    "text": "besar dan bersih, membuat saya merasa seperti di kamar saya sendiri",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 119,
+    "id": "11596",
+    "text": "sudah baik tapi belum terlalu sesuai dengan tarif",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 120,
+    "id": "11710",
+    "text": "kebersihan baik, kamarnya small, perlengkapan body masih kurang, cukur, bodylotion tidak ada, akses internet tidak normal, dengan tarif kamar yang ada harusnya sudah lengkap.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "negatif",
+      "Lokasi": "negatif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 121,
+    "id": "11954",
+    "text": "pelayanan yang bagus dan lokasi yang bagus",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 122,
+    "id": "12009",
+    "text": "banyak semut berjalan di teko listriknya. mungkin ada sisa gula atau minuman manis.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "negatif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "negatif",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "negatif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "negatif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 123,
+    "id": "12010",
+    "text": "walau semalam. ok semua. sedikit terganggu dengan adanya semut kecil keluar dari besek makan.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "negatif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    }
+  },
+  {
+    "no": 124,
+    "id": "12138",
+    "text": "bagus service, banget lah pokoknya, pelayanan memuaskan, roomnya juga",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 125,
+    "id": "12148",
+    "text": "kamarnya kecil, check-in baru bisa jam 2 siang jadi harus nunggu lama. tapi pelayanannya bagus, stafnya sangat ramah. bahkan barang saya yang sudah tertinggal lebih dari 1 minggu masih dapat diambil dan tidak hilang. tetapi harus call dulu untuk dicarikan. breakfastnya enak, beragam, dan jam 6 pagi sudah ready.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 126,
+    "id": "12197",
+    "text": "security hotel sangat baik dan ramah, petugas hotel juga sangat baik dan ramah, ada 1 sih yang agak jutek. tp untung yang lain baik2. makanan2nya enak, ada kids corner tapi lebih baik lagi jika diberi pagar sedikit. terima kasih santika",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 127,
+    "id": "12361",
+    "text": "lokasi bagus, tapi pintu kamar mandi di room saya rusak.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 128,
+    "id": "12401",
+    "text": "sudah jam check in, tapi room nya belum ready. perlengkapan di kamar mandi, sudah tidak layak.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 129,
+    "id": "12405",
+    "text": "tempatnya baik. sepi tidak berisik dengan suasana jalanan + langsung terkoneksi dengan pusat perbelanjaan. kolam renang baik buat anak-anak. varian sarapan juga banyak enak.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 130,
+    "id": "12484",
+    "text": "kamar bersih, receptionist ramah, tapi kalau mau gofood agak susah karena hotelnya di atas mall, menu breakfast kurang banyak.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 131,
+    "id": "12551",
+    "text": "akses yang sulit, mereka harus memastikan, customer tidak mendapatkan akses yang sulit untuk datang",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "negatif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 132,
+    "id": "12581",
+    "text": "saya suka sarapannya, enak!",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "positif",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 133,
+    "id": "12665",
+    "text": "air panas di kamar mandi tidak berfungsi, sudah dibayar dan memesan untuk perpanjangan check out tetapi masih mengetuk oleh layanan kamar karena kurangnya koordinasi dengan staf kantor depan. jika tidak, makanannya enak, ada begitu banyak pilihan menu dari sarapan. bukan layanan khas santika tapi mungkin bisa lebih baik di masa depan.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "negatif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "negatif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 134,
+    "id": "12672",
+    "text": "petugas resepsionis tidak memberikan informasi detail kepada pelanggan, dia tidak tersenyum dan makanannya tidak enak",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    }
+  },
+  {
+    "no": 135,
+    "id": "12801",
+    "text": "bagus makanan sedap tempat strategis.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 136,
+    "id": "13294",
+    "text": "waktu kita check-out. resepsionis lama responnya dan judes. padahal hanya ada 1 pengunjung yang di layani saat itu, dan tidak ramah dan senyum sama sekali, namanya laurnya enak",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    }
+  },
+  {
+    "no": 137,
+    "id": "13406",
+    "text": "mulai dari pelayanan, tempat, dan makanan semua enak nyaman.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "negatif",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "negatif",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "negatif",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 138,
+    "id": "13741",
+    "text": "akses menuju hotel dari mall kalau malam sedikit membingungkan. selebihnya baik",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    }
+  },
+  {
+    "no": 139,
+    "id": "13863",
+    "text": "sangat memuaskan, lift dari mall ke hotel rada lama.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "positif",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "netral",
+      "Fasilitas": "netral",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 140,
+    "id": "13873",
+    "text": "ada guest relation yang datang ke kamar untuk nawarin koran. tapi caranya yang main ketuk pintu terus langsung buka pintu itu tidak sopan banget ya.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "-",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 141,
+    "id": "13886",
+    "text": "lantainya berdebu, bedding setnya pemilihannya bahannya yang kasar. ketika order room service, pesanannya lama sekali datangnya. kemudian kembali order room service di jam 11 pm, line room service tidak diangkat, operator juga tidak di angkat (room service 24 hr)",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "negatif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 142,
+    "id": "13894",
+    "text": "kamar bau, tidak wangi. kamar mandi kuranh bersih. makanan sih enak ko",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "netral",
+      "Kebersihan": "netral",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 143,
+    "id": "13918",
+    "text": "enak dan nyaman, lokasinya strategis",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "negatif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "negatif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  },
+  {
+    "no": 144,
+    "id": "14137",
+    "text": "kami selalu menginap di hotel ini setiap kali kami bepergian ke tasikmalaya, baik untuk perjalanan keluarga maupun bisnis. stafnya ramah, makanannya enak, dan mereka menyajikan menu tradisional yang tidak akan anda temukan di tempat lain. kamar bersih dan bernilai uang. kolam renang yang bagus, meskipun saya tidak pernah memiliki kesempatan untuk mencoba gym. hotel ini terletak di sekitar restoran dan makanan jalanan, membuat hidup saya lebih mudah.",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "positif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "netral",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "netral",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 145,
+    "id": "14511",
+    "text": "menu sarapan komplet, kamar mandi perlu retouch sedikit dan handuk prefer lebih tebal lagi. saya request smoking room, tapi tidak ada asbak. apa harus request ya?",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "negatif",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "negatif"
+    }
+  },
+  {
+    "no": 146,
+    "id": "14573",
+    "text": "lokasi hotel strategis, dekat dengan kuliner dan tempat bordir khas tasik",
+    "indobert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 147,
+    "id": "14806",
+    "text": "pelayanan ramah, hotel yang bersih, sarapan yang variatif dan tempat yang strategis di tengah kota. pokoknya recommended hotel deh.",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "positif"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "netral",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 148,
+    "id": "14845",
+    "text": "sangat bersih. rapi. wifinya juga cepet. pelayan nya sopan. pokoknya the best la",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "positif",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    }
+  },
+  {
+    "no": 149,
+    "id": "14913",
+    "text": "hotel sahur prasmanan adalah menyenangkan! dan cinta keramahan. semua staf yang ramah kecuali staf meja depan. terima kasih",
+    "indobert_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "netral",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "none",
+      "Harga": "none",
+      "Lokasi": "netral",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "-",
+      "Lokasi": "netral",
+      "Fasilitas": "-",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "-",
+      "Makanan": "netral"
+    }
+  },
+  {
+    "no": 150,
+    "id": "15026",
+    "text": "lokasi strategis, sarapan enak, kamar luas. keluarga senang.",
+    "indobert_labels": {
+      "Kenyamanan": "negatif",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "none",
+      "Makanan": "none"
+    },
+    "indobert_label_labels": {
+      "Kenyamanan": "none",
+      "Kebersihan": "none",
+      "Pelayanan": "positif",
+      "Harga": "none",
+      "Lokasi": "none",
+      "Fasilitas": "negatif",
+      "Makanan": "none"
+    },
+    "claude_labels": {
+      "Kenyamanan": "-",
+      "Kebersihan": "-",
+      "Pelayanan": "positif",
+      "Harga": "-",
+      "Lokasi": "-",
+      "Fasilitas": "negatif",
+      "Makanan": "-"
+    },
+    "expert_labels": {
+      "Kenyamanan": "positif",
+      "Kebersihan": "-",
+      "Pelayanan": "-",
+      "Harga": "positif",
+      "Lokasi": "positif",
+      "Fasilitas": "-",
+      "Makanan": "positif"
+    }
+  }
+]
